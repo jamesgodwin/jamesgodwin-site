@@ -77,6 +77,12 @@ const ContactOutput = () => (
         <FontAwesomeIcon icon={faTiktok} className="font-awesome-icon-small" />
       </a>
     </div>
+    <hr />
+    <p className="commands-text">
+      Available commands: - help - about - now - apps - books - portfolio - paintings - uiux - contact - taoism
+      <br />
+      themes (default, snow, mist, zen, tao, mountain) - clear
+    </p>
   </div>
   
 );
