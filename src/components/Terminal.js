@@ -14,45 +14,51 @@ import paintingsOutput from '../outputs/paintings';
 import taoismOutput from '../outputs/taoism';
 import themesOutput from '../outputs/themes';
 
-// Define theme styles
+// Define theme styles with desktop and mobile background images
 const themes = {
   default: {
-    backgroundImage: '/default.webp', // Default background image
+    backgroundImage: '/default.webp', // Desktop background image
+    backgroundImageMobile: '/default-mobile.webp', // Mobile background image
     textColor: '#d4d4d4',
     inputBackgroundColor: '#292929',
     buttonImage: '/button.svg',
     buttonHoverImage: '/button2.svg',
   },
   snow: {
-    backgroundImage: '/snow.webp', // Background image for snow theme
+    backgroundImage: '/snow.webp', // Desktop background image
+    backgroundImageMobile: '/snow-mobile.webp', // Mobile background image
     textColor: '#000000',
     inputBackgroundColor: 'rgba(255, 255, 255, 0.3)',
     buttonImage: '/button-snow.svg',
     buttonHoverImage: '/button-snow-hover.svg',
   },
   zen: {
-    backgroundImage: 'zen.webp',
+    backgroundImage: '/zen.webp', // Desktop background image
+    backgroundImageMobile: '/zen-mobile.webp', // Mobile background image
     textColor: '#000000',
     inputBackgroundColor: 'rgba(210, 210, 210, 0.6)',
     buttonImage: '/button-zen.svg',
     buttonHoverImage: '/button-zen-hover.svg',
   },
   tao: {
-    backgroundImage: 'tao.webp',
+    backgroundImage: '/tao.webp', // Desktop background image
+    backgroundImageMobile: '/tao-mobile.webp', // Mobile background image
     textColor: '#1E1E1E',
     inputBackgroundColor: 'rgba(255, 255, 255, 0.3)',
     buttonImage: '/button-tao.svg',
     buttonHoverImage: '/button-tao-hover.svg',
   },
   mist: {
-    backgroundImage: '/mist.webp', // Background image for mist theme
+    backgroundImage: '/mist.webp', // Desktop background image
+    backgroundImageMobile: '/mist-mobile.webp', // Mobile background image
     textColor: '#1E1E1E',
     inputBackgroundColor: 'rgba(255, 255, 255, 0.3)',
     buttonImage: '/button-mist.svg',
     buttonHoverImage: '/button-mist-hover.svg',
   },
   mountain: {
-    backgroundImage: '/mountains.webp', // Background image for mist theme
+    backgroundImage: '/mountains.webp', // Desktop background image
+    backgroundImageMobile: '/mountains-mobile.webp', // Mobile background image
     textColor: '#1E1E1E',
     inputBackgroundColor: 'rgba(255, 255, 255, 0.3)',
     buttonImage: '/button-mountain.svg',
@@ -77,6 +83,11 @@ const Terminal = () => {
   // Function to apply the theme styles
   const applyTheme = (theme) => {
     setTheme(theme); // Update the theme state
+  };
+
+  // Function to determine the appropriate background image based on screen size
+  const getBackgroundImage = () => {
+    return window.innerWidth <= 768 ? theme.backgroundImageMobile : theme.backgroundImage;
   };
 
   // Handle command submission
@@ -197,7 +208,7 @@ const Terminal = () => {
     <div
       className="terminal-container"
       style={{
-        backgroundImage: `url(${theme.backgroundImage})`, // Dynamically set the background image
+        backgroundImage: `url(${getBackgroundImage()})`, // Dynamically set the background image
         color: theme.textColor, // Set the text color based on the current theme
         backgroundSize: 'cover', // Ensure the background image covers the entire container
         transition: 'background 0.5s ease', // Smooth transition for background changes
