@@ -12,6 +12,7 @@ import uiuxOutput from '../outputs/uiux';
 import ContactOutput from '../outputs/contact';
 import paintingsOutput from '../outputs/paintings';
 import taoismOutput from '../outputs/taoism';
+import codeOutput from '../outputs/code';
 import themesOutput from '../outputs/themes';
 
 // Define theme styles with desktop and mobile background images
@@ -128,6 +129,9 @@ const Terminal = () => {
         break;
       case 'taoism':
         newOutput = taoismOutput;
+        break;
+      case 'code':
+        newOutput = codeOutput;
         break;
       case 'themes':
         newOutput = themesOutput;

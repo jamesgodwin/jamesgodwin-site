@@ -12,7 +12,7 @@ Tai Chi trains one to calm the mind on demand and return it to a natural state o
 <p><a href="https://www.amazon.com/Tao-Pooh-Benjamin-Hoff/dp/0140067477" target="_blank">The Tao of Pooh</a> is my favourite book about Taoism. This book I have gifted the most.</p> 
 
 <hr>
-  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
+  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - code - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
 
 `;
 export default taoismOutput;

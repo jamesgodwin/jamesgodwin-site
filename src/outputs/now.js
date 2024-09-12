@@ -11,6 +11,6 @@ const nowOutput = `
 </ol>
 
 <hr>
-  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
+  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - code - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
 `;
 export default nowOutput;

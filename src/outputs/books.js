@@ -30,7 +30,7 @@ const booksOutput = `
 <p>In the vast expanse of the ocean, a small boat named Hope embarks on a journey unlike any other. Facing calm seas and raging storms, Hope discovers a profound truth: the power of choice. Inspired by the timeless wisdom of Viktor E. Frankl. - <a href="https://www.amazon.com/dp/B0CHYXFLRY" target="_black">view on amazon</a></p>
 
 <hr>
-  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
+  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - code - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
  
 `;
 export default booksOutput;

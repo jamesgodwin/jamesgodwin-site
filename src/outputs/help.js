@@ -9,6 +9,7 @@ Available commands:
 - paintings
 - uiux
 - contact
+- code
 - taoism
 - clear
 - themes (default, snow, mist, zen, tao, mountain)

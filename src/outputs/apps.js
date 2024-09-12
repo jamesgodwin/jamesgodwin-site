@@ -18,7 +18,7 @@ const appsOutput = `
 <p>Transform Your Dreams into Reality. Experience the ultimate manifestation tool designed to help you unlock your full potential and attract the life you desire. - <a href="https://369app.com" target="_black">369app.com</a></p>
 
 <hr>
-  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
+  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - code - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
  
 `;
 export default appsOutput;

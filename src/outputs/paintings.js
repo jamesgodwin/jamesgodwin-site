@@ -31,7 +31,7 @@ const paintingsOutput = `
 <p><strong>My Creative outlet</strong>: Artwork is hand-painted on an iPad using the Procreate app, an awesome painting app. <a href="https://www.deviantart.com/jamesgodwin" target="_blank">view all paintings</a></p>
 
 <hr>
-  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
+  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - code - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
  
 `;
 export default paintingsOutput;

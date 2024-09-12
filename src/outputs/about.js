@@ -10,7 +10,7 @@ const aboutOutput = `
   
   <p>Windsurfing & Kiteboarding for those days when you just have to hold on for the ride and also the cure for anything is saltwater!</p>
   <hr>
-  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
+  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - code - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
 
  
 `;
