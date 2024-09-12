@@ -1,0 +1,245 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  /* Use CSS variable for background color */
+  font-family: 'Poppins', sans-serif;
+  /* Set default font family to Poppins */
+}
+
+.terminal-container a {
+  text-decoration: underline !important;
+  color: inherit;
+  /* Ensure the color matches the theme */
+}
+
+hr {
+  border: none;
+  /* Remove any default border */
+  border-top: 1px solid currentColor;
+  /* 1px thick and use the current text color */
+  margin: 16px 0;
+  /* Optional: adjust margin to control spacing around the line */
+  width: 100%;
+  /* Optional: makes the line full width */
+}
+
+.terminal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100vh;
+  align-items: center;
+  /* Center the terminal content */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  color: var(--text-color);
+  /* Use CSS variable for text color */
+}
+
+.output-area {
+  width: 100%;
+  max-width: 767px;
+  /* Set max width for desktop */
+  overflow-y: auto;
+  color: var(--text-color);
+  /* Use CSS variable for text color */
+  padding: 0 20px;
+  /* Match padding for left and right */
+  font-family: 'Poppins', sans-serif;
+  /* Use Poppins font */
+  line-height: normal;
+  margin-bottom: 120px;
+  /* Space for the input bar and help text */
+  font-size: 16px; /* Explicit font size for desktop */
+}
+
+.output-line {
+  display: flex;
+  /* Flex container to align items */
+  width: 100%;
+  margin-bottom: 5px;
+  /* Space between lines */
+}
+
+.command {
+  justify-content: flex-end;
+  /* Align the command to the right */
+  text-align: right;
+  /* Ensure text is right-aligned */
+}
+
+.output {
+  justify-content: flex-start;
+  /* Align the output to the left */
+  text-align: left;
+  /* Ensure text is left-aligned */
+}
+
+.input-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Align input field and button */
+  position: fixed;
+  bottom: 72px;
+  /* 30px from the bottom of the screen + 42px total height of help text and spacing */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 807px;
+  /* Set max width */
+  height: 48px;
+  /* Fixed height */
+  background-color: var(--input-background-color);
+  /* Use CSS variable for input background color */
+  border-radius: 24px;
+  /* Rounded corners */
+  padding: 0px 20px;
+  /* Padding for the input field */
+  box-sizing: border-box;
+  /* Include padding in width calculation */
+  flex-shrink: 0;
+}
+
+.command-output {
+  padding: 0 8px;
+  /* Add padding around the command text */
+  border-radius: 8px;
+  /* Rounded corners */
+  display: inline-block;
+  /* Ensure background wraps only the text */
+  color: inherit;
+  /* Inherit the text color from the parent */
+}
+
+.output-content a {
+  color: inherit;
+  /* Ensure links have the same color as text */
+  text-decoration: none;
+  /* Remove underline from links */
+}
+
+
+.input-field {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--text-color);
+  /* Use CSS variable for text color */
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.submit-button {
+  border: none;
+  width: 24px;
+  /* Adjust width as needed */
+  height: 24px;
+  /* Adjust height as needed */
+  cursor: pointer;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--button-image) no-repeat center center;
+  /* Use CSS variable for button image */
+  background-size: contain;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background: var(--button-hover-image) no-repeat center center;
+  /* Use CSS variable for button hover image */
+  background-size: contain;
+}
+
+.bold-text {
+  font-weight: bold;
+  /* Make the text bold */
+}
+
+.app-item {
+  display: flex; /* Use Flexbox for alignment */
+  align-items: center; /* Vertically center the content */
+  margin: 0; /* Remove default margin for <p> if needed */
+}
+
+.app-icon {
+  margin-right: 12px; /* Adds space to the right of the image */
+}
+
+.app-item span {
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+.commands-text {
+  font-size: 12px;
+}
+
+.help-text {
+  color: var(--text-color); /* Use CSS variable for text color */
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  position: fixed;
+  bottom: 40px; /* Move the help text above the bottom of the screen */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5; /* Ensure the help text stays above most content */
+  text-align: center; /* Center the text horizontally */
+  width: 100%; /* Full width for mobile */
+  padding: 0 18px; /* Padding for left and right on mobile */
+}
+
+.font-awesome-icon {
+  font-size: 30px; /* Set the size of the FontAwesome icon */
+  width: 30px;     /* Set the width of the icon */
+  height: 30px;    /* Set the height of the icon */
+}
+
+.contact-info {
+  display: flex; /* Use Flexbox for horizontal alignment */
+  align-items: center; /* Center items vertically */
+  gap: 20px; /* Add 20px space between each icon */
+}
+
+.font-awesome-icon {
+  font-size: 30px; /* Set the size of the FontAwesome icons */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .help-text {
+    font-size: 12px; /* Slightly smaller text size for mobile */
+    bottom: 36px; /* Adjust position for mobile view */
+    padding: 0 18px; /* Ensure consistent padding */
+  }
+
+  .output-area {
+    max-width: 100%;
+    padding: 0 18px; /* Padding for left and right */
+    margin-bottom: 100px; /* Ensure enough space above the input bar */
+    font-size: 14px; /* Set output text size for mobile */
+  }
+
+  .input-bar {
+    width: calc(100% - 36px); /* Full width minus 18px padding on each side */
+    position: fixed; /* Keep the input bar fixed at the bottom */
+    bottom: 60px; /* Adjust based on your needs to leave space for help text */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    z-index: 10; /* Ensure the input bar stays above all content */
+  }
+
+  .commands-text {
+    font-size: 12px;
+  }
+}
