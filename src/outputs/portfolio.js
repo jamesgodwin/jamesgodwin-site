@@ -25,7 +25,7 @@ const PortfolioOutput = () => (
       <br />
       <li><a href="https://we-awards.com/winner/ai-ching-app/" target="_blank" rel="noopener noreferrer"><strong>Web Excellence Award</strong></a> for my <a href="https://aiching.app" target="_blank" rel="noopener noreferrer">AI Ching App</a></li>
       <br />
-      <li>I was part of the companies of two <strong>Google Launchpad Accelerator program winners</strong>. CTO at <a href="https://Jumo.world" target="_blank" rel="noopener noreferrer">Jumo.world</a> and Senior UX Designer & founder at <a href="https://www.swiftvee.com/" target="_blank" rel="noopener noreferrer">swiftvee.com</a></li>
+      <li>I was part of the companies of two <strong>Google Launchpad Accelerator program winners</strong>. CTO at <a href="https://Jumo.world" target="_blank" rel="noopener noreferrer">Jumo.world</a> and CXO & founder at <a href="https://www.swiftvee.com/" target="_blank" rel="noopener noreferrer">swiftvee.com</a></li>
     </ul>
 
     <hr />

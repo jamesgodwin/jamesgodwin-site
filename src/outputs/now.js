@@ -1,6 +1,6 @@
 const nowOutput = `
 <p><strong>What I'm doing now</strong><br />
-<i>Updated September 10th, 2024, from my home in South Africa, where it's the start of Spring.</i></p>
+<i>Updated <strong>September 10th, 2024</strong>, from my home in South Africa, where it's the start of Spring.</i></p>
 <ol>
 <li>Busy updating my website. App was previously written in vue.js busy upgrading it to React and theme overhaul.</li>
 <li>My day job is consulting to a UX agenecy in the US. iiimpact.io. Busy closing off on a "AI Powered Third Party Risk and Diligence Solutions" project and about to begin work on a "Managed Detection and Response Services" for cyber security.</li>
