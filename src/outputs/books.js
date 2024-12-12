@@ -1,5 +1,11 @@
 const booksOutput = `
 <p class="app-item">
+  <img src="the-flow-of-life-365-day-with-tao.webp" alt="The Flow of Life: 365 Days with Tao" class="app-icon">
+  <span><strong>The Flow of Life: 365 Days with Tao</strong></span>
+</p>
+<p>A Year of Taoist Wisdom to Cultivate Balance, Growth, and Inner Peace. - <a href="https://www.amazon.com/dp/B0DPGPSQ1C" target="_black">view on amazon</a></p>
+
+<p class="app-item">
   <img src="the-rhyming-tao.webp" alt="The Rhyming Tao: A Poetic Journey Through the Tao Te Ching" class="app-icon">
   <span><strong>The Rhyming Tao: A Poetic Journey Through the Tao Te Ching</strong></span>
 </p>
