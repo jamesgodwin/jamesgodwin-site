@@ -263,7 +263,7 @@ const Terminal = () => {
           onChange={handleInputChange}
           onKeyDown={handleKeyDown} // Handle key press events
           className="input-field"
-          placeholder="Message Me"
+          placeholder="Enter a command :)"
           autoFocus
           style={{
             color: theme.textColor, // Set the input text color based on the current theme
