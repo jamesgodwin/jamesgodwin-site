@@ -14,9 +14,6 @@ const ContactOutput = () => (
       <a href="https://www.linkedin.com/in/jamiegodwin/" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faLinkedin} className="font-awesome-icon" />
       </a>
-      <a href="https://x.com/j_r_s_g" target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon icon={faXTwitter} className="font-awesome-icon" />
-      </a>
       <a href="https://instagram.com/j.r.s.godwin" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon icon={faInstagram} className="font-awesome-icon" />
       </a>

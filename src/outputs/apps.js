@@ -13,7 +13,7 @@ const appsOutput = `
 
 <p class="app-item">
   <img src="369app.svg" alt="369 app" class="app-icon">
-  <span><strong>grateful for app</strong></span>
+  <span><strong>369 app</strong></span>
 </p>
 <p>Transform Your Dreams into Reality. Experience the ultimate manifestation tool designed to help you unlock your full potential and attract the life you desire. - <a href="https://369app.com" target="_black">369app.com</a></p>
 

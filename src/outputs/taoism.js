@@ -9,7 +9,9 @@ Tai Chi trains one to calm the mind on demand and return it to a natural state o
 
 <p>If you would like to find out more or are interested in a free Tai Chi Introduction Class</a>, please contact me. In just one hour, you can immediately start benefiting from just a few simple moves.</p>
 
-<p><a href="https://www.amazon.com/Tao-Pooh-Benjamin-Hoff/dp/0140067477" target="_blank">The Tao of Pooh</a> is my favourite book about Taoism. This book I have gifted the most.</p> 
+<p>One of the books I’ve gifted most is <a href="https://www.amazon.com/Tao-Pooh-Benjamin-Hoff/dp/0140067477" target="_blank">The Tao of Pooh</a>, a gentle and humorous introduction to Taoism that captures its essence beautifully.</p>
+
+<p>If you're looking to explore Taoism more deeply, my book <a href="https://www.amazon.com/dp/B0DPGPSQ1C" target="_blank"><em>The Flow of Life: 365 Days with Tao</em></a> offers a year-long journey of daily reflections, meditations, and I Ching insights to help you live with greater balance, presence, and inner peace.</p>
 
 <hr>
   <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - code - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
