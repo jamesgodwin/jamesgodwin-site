@@ -174,8 +174,10 @@ function App() {
         const parsedCommand = parseCommandFromSentence(finalTranscript);
         if(parsedCommand) {
           executeCommand(parsedCommand);
-          recognition.stop();
+        } else {
+          executeCommand(finalTranscript);
         }
+        recognition.stop();
       }
     };
 
