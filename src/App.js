@@ -14,6 +14,14 @@ import philosophyOutput from './outputs/philosophy';
 import unlearnOutput from './outputs/unlearn';
 import Breathe from './components/Breathe';
 
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = SpeechRecognition ? new SpeechRecognition() : null;
+
+if (recognition) {
+  recognition.continuous = true;
+  recognition.interimResults = true;
+}
+
 function App() {
   const [voiceIcon, setVoiceIcon] = useState('/images/voice-btn.svg');
   const [paletteIcon, setPaletteIcon] = useState('/images/palette-btn.svg');
@@ -27,85 +35,22 @@ function App() {
   const [suggestions, setSuggestions] = useState([]);
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
   const [isBreathing, setIsBreathing] = useState(false);
+  const [isListening, setIsListening] = useState(false);
 
   const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe'];
 
-  useEffect(() => {
-    document.body.className = theme;
-    const isLightTheme = theme === 'light';
-    setVoiceIcon(isLightTheme ? '/images/voice-btn.svg' : '/images/voice-btn-DM.svg');
-    setPaletteIcon(isLightTheme ? '/images/palette-btn.svg' : '/images/palette-btn-DM.svg');
-    if (terminalInputRef.current) {
-      terminalInputRef.current.focus();
-    }
-  }, [theme]);
-
-  useEffect(() => {
-    if (output) {
-      const getTheBookButton = document.getElementById('get-the-book-gift');
-      if (getTheBookButton) {
-        getTheBookButton.addEventListener('click', () => {
-          closeOutput();
-          const convertKitButton = document.querySelector('[data-formkit-toggle="0da6b662ba"]');
-          if (convertKitButton) {
-            convertKitButton.click();
-          }
-        });
+  const parseCommandFromSentence = (sentence) => {
+    const lowerCaseSentence = sentence.toLowerCase();
+    for (const cmd of allCommands) {
+      const regex = new RegExp(`\\b${cmd}\\b`);
+      if (regex.test(lowerCaseSentence)) {
+        return cmd;
       }
     }
-  }, [output]);
-
-  const toggleThemeMenu = () => {
-    setIsThemeMenuOpen(!isThemeMenuOpen);
+    return null;
   };
 
-  const handleThemeChange = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    setIsThemeMenuOpen(false);
-  };
-
-  const handleVoiceHover = (isHovering) => {
-    const isLightTheme = theme === 'light';
-    if (isLightTheme) {
-      setVoiceIcon(isHovering ? '/images/voice-btn-hover.svg' : '/images/voice-btn.svg');
-    } else {
-      setVoiceIcon(isHovering ? '/images/voice-btn-hover-DM.svg' : '/images/voice-btn-DM.svg');
-    }
-  };
-
-  const handlePaletteHover = (isHovering) => {
-    const isLightTheme = theme === 'light';
-    if (isLightTheme) {
-      setPaletteIcon(isHovering ? '/images/palette-btn-hover.svg' : '/images/palette-btn.svg');
-    } else {
-      setPaletteIcon(isHovering ? '/images/palette-btn-hover-DM.svg' : '/images/palette-btn-DM.svg');
-    }
-  };
-
-  const handleInputChange = (e) => {
-    const input = e.target.value;
-    setCommand(input);
-
-    if (input.length > 0) {
-      const filteredSuggestions = allCommands.filter(cmd =>
-        cmd.toLowerCase().startsWith(input.toLowerCase())
-      );
-      setSuggestions(filteredSuggestions);
-      setActiveSuggestionIndex(-1); // Reset active suggestion when input changes
-    } else {
-      setSuggestions([]);
-    }
-  };
-
-  const handleCommandSubmit = (e) => {
-    e.preventDefault();
-    let commandToExecute = command.trim();
-
-    if (activeSuggestionIndex !== -1 && suggestions.length > 0) {
-      commandToExecute = suggestions[activeSuggestionIndex];
-    }
-
+  const executeCommand = (commandToExecute) => {
     if (!commandToExecute) return;
 
     let newOutput;
@@ -163,39 +108,169 @@ function App() {
     setCommandHistory((prevHistory) => [...prevHistory, commandToExecute]);
     setHistoryIndex(-1);
     setCommand('');
-    setSuggestions([]); // Clear suggestions after command submission
+    setSuggestions([]);
+  };
+
+  useEffect(() => {
+    document.body.className = theme;
+    const isLightTheme = theme === 'light';
+    setVoiceIcon(isLightTheme ? '/images/voice-btn.svg' : '/images/voice-btn-DM.svg');
+    setPaletteIcon(isLightTheme ? '/images/palette-btn.svg' : '/images/palette-btn-DM.svg');
+    if (terminalInputRef.current) {
+      terminalInputRef.current.focus();
+    }
+  }, [theme]);
+
+  useEffect(() => {
+    if (output) {
+      const getTheBookButton = document.getElementById('get-the-book-gift');
+      if (getTheBookButton) {
+        getTheBookButton.addEventListener('click', () => {
+          closeOutput();
+          const convertKitButton = document.querySelector('[data-formkit-toggle="0da6b662ba"]');
+          if (convertKitButton) {
+            convertKitButton.click();
+          }
+        });
+      }
+    }
+  }, [output]);
+
+  useEffect(() => {
+    if (!recognition) {
+      return;
+    }
+
+    recognition.onresult = (event) => {
+      let interimTranscript = '';
+      let finalTranscript = '';
+      for (let i = event.resultIndex; i < event.results.length; ++i) {
+        if (event.results[i].isFinal) {
+          finalTranscript += event.results[i][0].transcript;
+        } else {
+          interimTranscript += event.results[i][0].transcript;
+        }
+      }
+      
+      const transcript = finalTranscript || interimTranscript;
+      setCommand(transcript);
+
+      if (finalTranscript) {
+        const parsedCommand = parseCommandFromSentence(finalTranscript);
+        if(parsedCommand) {
+          executeCommand(parsedCommand);
+          recognition.stop();
+        }
+      }
+    };
+
+    recognition.onend = () => {
+      setIsListening(false);
+    };
+
+    return () => {
+      recognition.onresult = null;
+      recognition.onend = null;
+    };
+  }, []);
+
+  const toggleThemeMenu = () => {
+    setIsThemeMenuOpen(!isThemeMenuOpen);
+  };
+
+  const handleThemeChange = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    setIsThemeMenuOpen(false);
+  };
+
+  const handleVoiceClick = () => {
+    if (!recognition) {
+      alert("Sorry, your browser doesn't support voice recognition.");
+      return;
+    }
+
+    if (isListening) {
+      recognition.stop();
+    } else {
+      recognition.start();
+    }
+    setIsListening(!isListening);
+  };
+
+  const handleVoiceHover = (isHovering) => {
+    if (isListening) return;
+    const isLightTheme = theme === 'light';
+    if (isLightTheme) {
+      setVoiceIcon(isHovering ? '/images/voice-btn-hover.svg' : '/images/voice-btn.svg');
+    } else {
+      setVoiceIcon(isHovering ? '/images/voice-btn-hover-DM.svg' : '/images/voice-btn-DM.svg');
+    }
+  };
+
+  const handlePaletteHover = (isHovering) => {
+    const isLightTheme = theme === 'light';
+    if (isLightTheme) {
+      setPaletteIcon(isHovering ? '/images/palette-btn-hover.svg' : '/images/palette-btn.svg');
+    } else {
+      setPaletteIcon(isHovering ? '/images/palette-btn-hover-DM.svg' : '/images/palette-btn-DM.svg');
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const input = e.target.value;
+    setCommand(input);
+
+    if (input.length > 0) {
+      const filteredSuggestions = allCommands.filter(cmd =>
+        cmd.toLowerCase().startsWith(input.toLowerCase())
+      );
+      setSuggestions(filteredSuggestions);
+      setActiveSuggestionIndex(-1);
+    } else {
+      setSuggestions([]);
+    }
+  };
+
+  const handleCommandSubmit = (e) => {
+    e.preventDefault();
+    let commandToExecute = command.trim();
+
+    if (activeSuggestionIndex !== -1 && suggestions.length > 0) {
+      commandToExecute = suggestions[activeSuggestionIndex];
+    }
+    
+    executeCommand(commandToExecute);
   };
 
   const handleKeyDown = (e) => {
     if (e.key === 'ArrowUp') {
-      e.preventDefault(); // Prevent cursor from moving to the beginning of the input
+      e.preventDefault();
       if (historyIndex < commandHistory.length - 1) {
         const newIndex = historyIndex + 1;
         setHistoryIndex(newIndex);
         setCommand(commandHistory[commandHistory.length - 1 - newIndex]);
-        setSuggestions([]); // Clear suggestions when navigating history
+        setSuggestions([]);
       }
     } else if (e.key === 'ArrowDown') {
-      e.preventDefault(); // Prevent cursor from moving to the end of the input
+      e.preventDefault();
       if (historyIndex > 0) {
         const newIndex = historyIndex - 1;
         setHistoryIndex(newIndex);
         setCommand(commandHistory[commandHistory.length - 1 - newIndex]);
-        setSuggestions([]); // Clear suggestions when navigating history
+        setSuggestions([]);
       } else {
         setHistoryIndex(-1);
         setCommand('');
-        setSuggestions([]); // Clear suggestions when navigating history
+        setSuggestions([]);
       }
     } else if (e.key === 'Tab') {
-      e.preventDefault(); // Prevent default tab behavior (focusing next element)
+      e.preventDefault();
       if (suggestions.length > 0) {
         const newIndex = (activeSuggestionIndex + 1) % suggestions.length;
         setActiveSuggestionIndex(newIndex);
         setCommand(suggestions[newIndex]);
       }
-    } else if (e.key === 'Enter') {
-      // handleCommandSubmit will take care of using the active suggestion
     }
   };
 
@@ -285,11 +360,12 @@ function App() {
             />
           </form>
           <img
-            src={voiceIcon}
+            src={isListening ? (theme === 'light' ? '/images/voice-btn-hover.svg' : '/images/voice-btn-hover-DM.svg') : voiceIcon}
             alt="Voice Icon"
             className="voice-button"
             onMouseEnter={() => handleVoiceHover(true)}
             onMouseLeave={() => handleVoiceHover(false)}
+            onClick={handleVoiceClick}
           />
           <img
             src={paletteIcon}
@@ -313,3 +389,4 @@ function App() {
 }
 
 export default App;
+
