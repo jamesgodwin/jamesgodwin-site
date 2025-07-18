@@ -9,9 +9,10 @@ import contactOutput from './outputs/contact';
 import taoismOutput from './outputs/taoism';
 import nowOutput from './outputs/now';
 import paintingsOutput from './outputs/paintings';
-import uiuxOutput from './outputs/uiux';
-import codeOutput from './outputs/code';
 import giftOutput from './outputs/gift';
+import philosophyOutput from './outputs/philosophy';
+import unlearnOutput from './outputs/unlearn';
+import Breathe from './components/Breathe';
 
 function App() {
   const [voiceIcon, setVoiceIcon] = useState('/images/voice-btn.svg');
@@ -25,10 +26,11 @@ function App() {
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [suggestions, setSuggestions] = useState([]);
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
+  const [isBreathing, setIsBreathing] = useState(false);
 
   const allCommands = [
-    'help', 'about', 'now', 'apps', 'books', 'portfolio', 'paintings',
-    'uiux', 'contact', 'code', 'taoism', 'clear', 'themes', 'blog', 'gift',
+    'help', 'about', 'now', 'apps', 'books', 'paintings',
+    'contact', 'taoism', 'clear', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe'
   ];
 
   useEffect(() => {
@@ -40,6 +42,21 @@ function App() {
       terminalInputRef.current.focus();
     }
   }, [theme]);
+
+  useEffect(() => {
+    if (output) {
+      const getTheBookButton = document.getElementById('get-the-book-gift');
+      if (getTheBookButton) {
+        getTheBookButton.addEventListener('click', () => {
+          closeOutput();
+          const convertKitButton = document.querySelector('[data-formkit-toggle="0da6b662ba"]');
+          if (convertKitButton) {
+            convertKitButton.click();
+          }
+        });
+      }
+    }
+  }, [output]);
 
   const toggleThemeMenu = () => {
     setIsThemeMenuOpen(!isThemeMenuOpen);
@@ -125,12 +142,21 @@ function App() {
       case 'paintings':
         newOutput = paintingsOutput;
         break;
-      case 'uiux':
-        newOutput = uiuxOutput;
+      case 'philosophy':
+        newOutput = philosophyOutput;
         break;
-      case 'code':
-        newOutput = codeOutput;
+      case 'unlearn':
+        newOutput = `<img src="/images/easter-egg.svg" alt="Easter Egg" style="width: 24px; height: 24px; margin-right: 10px; vertical-align: middle;" />${unlearnOutput()}`;
         break;
+      case 'return':
+        newOutput = `<img src="/images/easter-egg.svg" alt="Easter Egg" style="width: 24px; height: 24px; margin-right: 10px; vertical-align: middle;" />You've never left.`;
+        break;
+      case 'breathe':
+        setCommandHistory((prevHistory) => [...prevHistory, commandToExecute]);
+        setCommand('');
+        setSuggestions([]);
+        setIsBreathing(true);
+        return;
       default:
         newOutput = `Unknown command: ${commandToExecute}`;
     }
@@ -181,6 +207,7 @@ function App() {
 
   return (
     <div className="App">
+      {isBreathing && <Breathe onEnd={() => setIsBreathing(false)} theme={theme} />}
       {output && (
         <div className="output-overlay" onClick={closeOutput}>
           <div className="output-content-wrapper" onClick={(e) => e.stopPropagation()}>
@@ -198,16 +225,16 @@ function App() {
         Creating Sacred Technology for<br />Seekers of Stillness
       </div>
       <div className="sub-hero-text">
-        I build digital sanctuaries — where presence<br />deepens, gratitude awakens, and we return to<br />our true essence.
+        I build digital sanctuaries — where presence<br />deepens, gratitude awakens, and you return to<br />your true essence.
       </div>
       <div className="content-card">
         <div className="card-title">FREE GIFT FOR THE QUIETLY AWAKENING</div>
         <div className="card-text">
           A year of Taoist reflections and I Ching wisdom —<br />to help you realign, reflect, and return to our true essence.
         </div>
-        <button className="card-button">
+        <a href="#" className="card-button" data-formkit-toggle="0da6b662ba">
           GET THE BOOK <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
-        </button>
+        </a>
       </div>
       <div className="section-title">
         MY DIGITAL SANCTUARIES
@@ -216,7 +243,7 @@ function App() {
         <div className="project-card">
           <div className="project-card-title">AlChing</div>
           <div className="project-card-text">
-            An Al-powered companion for exploring the wisdom of the I Ching. Find clarity and guidance through ancient divination, reimagined.
+            A Taoist-inspired AI for navigating the I Ching. Find clarity through ancient insight, reimagined for the present.
           </div>
           <a href="https://aiching.app" target="_blank" rel="noopener noreferrer" className="project-card-link">
             Visit aiching.app <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
@@ -225,7 +252,7 @@ function App() {
         <div className="project-card">
           <div className="project-card-title">GratefulFor</div>
           <div className="project-card-text">
-            A quiet space to cultivate gratitude. A simple, private journal that adds to a shared map — a real-time pulse of collective appreciation.
+            A quiet space to cultivate gratitude. A simple, private journal that adds to a shared map — a living pulse of collective appreciation.
           </div>
           <a href="https://gratefulfor.com" target="_blank" rel="noopener noreferrer" className="project-card-link">
             Visit gratefulfor.com <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />

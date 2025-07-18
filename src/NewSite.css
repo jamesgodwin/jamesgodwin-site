@@ -127,10 +127,20 @@ body {
   font-size: 16px;
   color: var(--btn-text);
   transition: border-color 0.3s ease; /* Smooth transition for hover */
+  text-decoration: none;
 }
 
 .card-button:hover {
   border-color: var(--btn-stroke-hover);
+  text-decoration: none;
+}
+
+.card-button:visited {
+  text-decoration: none;
+}
+
+.output-content-wrapper .card-button {
+  margin-top: 0px;
 }
 
 .button-icon {
@@ -203,8 +213,24 @@ body {
   height: 16px;
 }
 
+.paintings-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.output-content-wrapper .app-item {
+  display: flex;
+  align-items: center;
+}
+
+.output-content-wrapper .app-icon {
+  margin-right: 8px;
+}
+
 .terminal-bar-wrapper {
   position: relative;
+  z-index: 1001;
 }
 
 .terminal-bar {
@@ -263,13 +289,14 @@ body {
 
 .theme-menu {
   position: absolute;
-  bottom: 84px; /* 4px above terminal input */
+  bottom: 52px; /* 40px (terminal height) + 8px + 4px (wrapper padding) */
   right: 12px; /* Align with the right edge of the terminal bar */
   background-color: var(--theme-menu-bg);
   border: 1px solid var(--theme-menu-border);
   border-radius: 4px;
   padding: 8px;
   box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10);
+  z-index: 1002;
 }
 
 .theme-menu button {
@@ -314,7 +341,7 @@ body {
   font-family: 'IBM Plex Mono', monospace;
   color: var(--hero-text);
   text-align: left;
-  margin-bottom: 100px; /* 20px gap + terminal height (40px) + terminal bottom (40px) */
+  margin-bottom: 110px; /* 30px gap + terminal height (40px) + terminal bottom (40px) */
 }
 
 .output-command {
@@ -331,7 +358,7 @@ body {
   color: var(--project-card-title);
   font-family: 'EB Garamond', serif;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .output-content-wrapper p {
@@ -363,16 +390,15 @@ body {
 .output-content-wrapper a,
 .output-content-wrapper a:link,
 .output-content-wrapper a:visited,
-.output-content-wrapper a:hover,
 .output-content-wrapper a:active {
   color: var(--project-card-link);
-  text-decoration: none;
+  text-decoration: underline;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
 }
 
 .output-content-wrapper a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .output-content-wrapper a:visited {
@@ -416,36 +442,35 @@ body {
 
 .suggestions-list {
   list-style: none;
-  padding: 0 24px;
+  /* This padding aligns the suggestions with the terminal's input text */
+  padding: 0 0 0 32px;
   margin: 0;
   box-sizing: border-box;
   position: fixed;
-  bottom: 84px; /* 40px (terminal bottom) + 40px (terminal height) + 4px */
+  bottom: 84px;
   left: 50%;
   transform: translateX(-50%);
-  width: 500px; /* Match terminal bar width */
-  z-index: 1002;
-  max-height: 150px; /* Limit height and enable scrolling */
-  overflow-y: auto;
-  text-align: left;
-  display: flex; /* Make suggestions horizontal */
-  flex-wrap: wrap; /* Allow suggestions to wrap to the next line */
+  width: 500px;
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  background-color: transparent;
 }
 
 .suggestions-list li {
-  padding: 2px 2px; /* Reduced padding for smaller text and narrower gap */
-  margin-right: 2px; /* Add some space between horizontal items */
+  padding: 2px 2px;
+  margin-right: 4px; /* Space out suggestions */
   cursor: pointer;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 12px; /* Smaller font size */
-  color: var(--terminal-input-text); /* Use existing text color */
-  text-align: left;
-  white-space: nowrap; /* Prevent text from wrapping within a suggestion */
-  }
+  font-size: 12px;
+  color: var(--terminal-input-text);
+  white-space: nowrap;
+  border: 1px solid transparent; /* Prevents layout shift on active */
+  border-radius: 4px;
+  background-color: transparent; /* No background */
+}
 
 .suggestions-list li.active-suggestion {
-  /* Removed background-color for active suggestion */
-  border-radius: 2px;
+  border-color: var(--terminal-focus-border); /* Border for active suggestion */
 }
 
 @media (max-width: 768px) {
