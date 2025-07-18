@@ -28,6 +28,8 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const terminalInputRef = useRef(null);
+  const outputContentWrapperRef = useRef(null);
+  const speechTimeoutRef = useRef(null);
   const [command, setCommand] = useState('');
   const [output, setOutput] = useState(null);
   const [commandHistory, setCommandHistory] = useState([]);
@@ -36,6 +38,7 @@ function App() {
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
   const [isBreathing, setIsBreathing] = useState(false);
   const [isListening, setIsListening] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(false);
 
   const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe'];
 
@@ -137,6 +140,19 @@ function App() {
   }, [output]);
 
   useEffect(() => {
+    if (output) {
+      document.documentElement.classList.add('body-no-scroll');
+      document.body.classList.add('body-no-scroll');
+      if (outputContentWrapperRef.current) {
+        outputContentWrapperRef.current.scrollTop = 0;
+      }
+    } else {
+      document.documentElement.classList.remove('body-no-scroll');
+      document.body.classList.remove('body-no-scroll');
+    }
+  }, [output]);
+
+  useEffect(() => {
     if (!recognition) {
       return;
     }
@@ -164,13 +180,29 @@ function App() {
       }
     };
 
+    recognition.onspeechstart = () => {
+      clearTimeout(speechTimeoutRef.current);
+      setIsSpeaking(true);
+    };
+
+    recognition.onspeechend = () => {
+      speechTimeoutRef.current = setTimeout(() => {
+        setIsSpeaking(false);
+      }, 300);
+    };
+
     recognition.onend = () => {
+      clearTimeout(speechTimeoutRef.current);
       setIsListening(false);
+      setIsSpeaking(false);
     };
 
     return () => {
       recognition.onresult = null;
       recognition.onend = null;
+      recognition.onspeechstart = null;
+      recognition.onspeechend = null;
+      clearTimeout(speechTimeoutRef.current);
     };
   }, []);
 
@@ -194,8 +226,9 @@ function App() {
       recognition.stop();
     } else {
       recognition.start();
+      setIsListening(true);
+      setIsSpeaking(true); // Start animation immediately
     }
-    setIsListening(!isListening);
   };
 
   const handleVoiceHover = (isHovering) => {
@@ -241,6 +274,10 @@ function App() {
     }
     
     executeCommand(commandToExecute);
+
+    if (terminalInputRef.current) {
+      terminalInputRef.current.blur();
+    }
   };
 
   const handleKeyDown = (e) => {
@@ -283,7 +320,7 @@ function App() {
       {isBreathing && <Breathe onEnd={() => setIsBreathing(false)} theme={theme} />}
       {output && (
         <div className="output-overlay" onClick={closeOutput}>
-          <div className="output-content-wrapper" onClick={(e) => e.stopPropagation()}>
+          <div ref={outputContentWrapperRef} className="output-content-wrapper" onClick={(e) => e.stopPropagation()}>
             <div className="output-command">{output.command}</div>
             <div className={`output-response ${output.command === '> help' ? 'help-output' : ''}`}
               dangerouslySetInnerHTML={typeof output.content === 'string' ? { __html: output.content } : null}>
@@ -332,6 +369,7 @@ function App() {
           </a>
         </div>
       </div>
+      <div style={{ height: '120px' }} />
       <div className="terminal-bar-wrapper">
         {suggestions.length > 0 && (
           <ul className="suggestions-list">
@@ -339,6 +377,7 @@ function App() {
               <li
                 key={sugg}
                 className={index === activeSuggestionIndex ? 'active-suggestion' : ''}
+                onClick={() => executeCommand(sugg)}
               >
                 {sugg}
               </li>
@@ -362,7 +401,7 @@ function App() {
           <img
             src={isListening ? (theme === 'light' ? '/images/voice-btn-hover.svg' : '/images/voice-btn-hover-DM.svg') : voiceIcon}
             alt="Voice Icon"
-            className="voice-button"
+            className={`voice-button ${isSpeaking ? 'listening' : ''}`}
             onMouseEnter={() => handleVoiceHover(true)}
             onMouseLeave={() => handleVoiceHover(false)}
             onClick={handleVoiceClick}
