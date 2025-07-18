@@ -1,25 +1,7 @@
 // src/outputs/about.js
 
-const aboutOutput = `
-  <p><strong>James Godwin</strong><br />
-  <i>15+ years UX specialist | Product Designer</i></p>
-  <p><strong>We take borrowed truths to become knowledgeable. But to be knowledgeable is not to know.</strong></p>
-  <p>I studied both Mechanical Engineering and Graphic Design. Engineering has given me a solid foundation to build a career in technology. Art and design, being my passion, has enabled me to understand the user. I've married the two worlds in the businesses and products I've built over the years.</p>
-  <p>As an Enneagram 7, my visionary drive and creative energy have shaped a career helping startups turn bold ideas into inspired realities.</p>
-  
-  <p>INTP personality. Creative, multi-dimensional, energetic, considerate, curious, explorer, and adaptable. Like to deeply experience and explore life and inspire others to do the same. An abstract thinker, enjoy looking at the bigger picture. Enjoy learning and committed to acquiring knowledge and/or skills. I have an inventive mind that usually generates more possibilities than I can handle or fund. I believe in balance so my technical pursuits are balanced with creative outlets. Believe anything is possible :)</p>
-
-  <p><strong>Other passions</strong>
-  <br />
-  Tai Chi which I've been studying for over 25 years with <a href="https://dantian.co.za/dr-lin-feng-chao/" target="_blank">Grandmaster Dr. Lin Feng-Chao</a> student of the legendary <a href="https://dantian.co.za/cheng-man-ching/" target="_blank">Cheng Man-Ching</a>.</p>
-
-  <p>The <a href="https://aiching.app/what-is-the-i-ching/" target="_blank">I Ching</a>, which has taught me how to adapt to the ever-changing world we live in. It has been a powerful tool for self-discovery and personal growth. Life’s GPS is the living essence of my <a href="https://aiching.app" target="_blank">I Ching journey—an app</a> that channels decades of ancient wisdom through AI, offering soulful guidance for life’s unfolding path.</p>
-  
-  <p>Windsurfing & Kiteboarding for those days when you just have to hold on for the ride and also the cure for anything is saltwater and wind blasting your face :)</p>
-  <hr>
-  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - code - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
-
- 
-`;
+const aboutOutput = `<p>I build digital sanctuaries for seekers of stillness.</p><p>As founder of GratefulFor and AIChing, my work blends technology with timeless wisdom — helping users reconnect with presence, gratitude, and their true essence.</p><p>With over 15 years in UX/UI design and product development, I specialise in creating tools that don’t just function — they feel. Tools that listen, reflect, and invite quiet transformation.</p><p>My background spans engineering, graphic design, and full-stack app development. I currently consult with <a href="https://from.digital" target="_blank">FROM.digital</a> and <a href="https://iiimpact.io" target="_blank">iiimpact.io</a> as a Senior UX Specialist, helping organisations translate complexity into clarity.</p><p>But my deeper mission lives in the products I build:<ul><li>✦ <a href="https://gratefulfor.com" target="_blank">GratefulFor</a> — a global gratitude map and private journaling app that shifts attention toward what matters</li>
+<li>✦ <a href="https://aiching.app" target="_blank">AIChing</a> — a clean, modern gateway to the Taoist I Ching, offering daily reflections and intuitive guidance</li>
+<li>✦ True Essence — an upcoming AI Sage that doesn’t teach, but reflects, helping users return to presence</li></ul></p><p>This approach is deeply personal.<br />For over 30 years, I’ve trained in the Taoist art of Tai Chi — a practice that shapes how I move through life, design digital spaces, and guide others back to stillness.</p><p>I studied under Dr Lin Feng-Chao, a direct student of Cheng Man-ch’ing, one of the great masters who brought Tai Chi to the West. Today, I continue to teach a free community class in Sedgefield, sharing what I’ve learned not just as movement — but as a way of being.</p><p>At the heart of all my work is a Taoist reminder:<br />“We take borrowed truths to become knowledgeable — but to be knowledgeable is not to know.” I create not to inform, but to uncover. To help others lay down the borrowed… and remember the true.</p><p>My work is for those on the quieter path — seekers who have done much, but now long for meaning, simplicity, and inner return.</p><ul><li>✹ Technology with soul</li><li>✹ Design with reverence</li><li>✹ Products that remember who we are</li></ul><hr><p class="commands-text"><span class="commands">Available commands:</span> help, about, apps, books, gift, contact, taoism, now, portfolio, paintings, uiux, code, clear, themes (default, snow, mist, zen, tao, mountain)</p>`;
 
 export default aboutOutput;

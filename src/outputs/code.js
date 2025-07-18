@@ -4,6 +4,6 @@ const codeOutput = `
 <p>This websites <a href="https://github.com/jamesgodwin/jamesgodwin-site" target="_blank">code is available on GitHub</a>. Feel free to share and help me improve as this was my first React project.</p>
 
 <hr>
-  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - code - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
+  <p class="commands-text"><span class="commands">Available commands:</span> help, about, apps, books, gift, contact, taoism, now, portfolio, paintings, uiux, code, clear, themes (default, snow, mist, zen, tao, mountain)</p>
 `;
 export default codeOutput;

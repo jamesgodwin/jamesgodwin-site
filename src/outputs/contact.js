@@ -76,9 +76,7 @@ const ContactOutput = () => (
     </div>
     <hr />
     <p className="commands-text">
-      Available commands: - help - about - now - apps - books - portfolio - paintings - uiux - contact - taoism
-      <br />
-      themes (default, snow, mist, zen, tao, mountain) - clear
+      Available commands: help, about, apps, books, gift, contact, taoism, now, portfolio, paintings, uiux, code, clear, themes (default, snow, mist, zen, tao, mountain)
     </p>
   </div>
   

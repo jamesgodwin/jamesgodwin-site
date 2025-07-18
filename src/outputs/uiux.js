@@ -14,6 +14,6 @@ const uiuxOutput = `
 <p>For me, great design is about more than aesthetics—it's about crafting experiences that connect, engage, and create lasting value.</p>
 
 <hr>
-  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - code - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
+  <p class="commands-text"><span class="commands">Available commands:</span> help, about, apps, books, gift, contact, taoism, now, portfolio, paintings, uiux, code, clear, themes (default, snow, mist, zen, tao, mountain)</p>
 `;
 export default uiuxOutput;

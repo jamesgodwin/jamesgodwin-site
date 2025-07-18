@@ -14,7 +14,7 @@ Tai Chi trains one to calm the mind on demand and return it to a natural state o
 <p>If you're looking to explore Taoism more deeply, my book <a href="https://www.amazon.com/dp/B0DPGPSQ1C" target="_blank"><em>The Flow of Life: 365 Days with Tao</em></a> offers a year-long journey of daily reflections, meditations, and I Ching insights to help you live with greater balance, presence, and inner peace.</p>
 
 <hr>
-  <p class="commands-text">Available commands: - help - about - now - apps - books - portfolio - paintings  - uiux - contact - code - taoism<br />themes (default, snow, mist, zen, tao, mountain)  - clear</p>
+  <p class="commands-text"><span class="commands">Available commands:</span> help, about, apps, books, gift, contact, taoism, now, portfolio, paintings, uiux, code, clear, themes (default, snow, mist, zen, tao, mountain)</p>
 
 `;
 export default taoismOutput;
