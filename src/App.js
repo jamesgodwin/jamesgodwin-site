@@ -22,6 +22,8 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
+const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe'];
+
 function App() {
   const [voiceIcon, setVoiceIcon] = useState('/images/voice-btn.svg');
   const [paletteIcon, setPaletteIcon] = useState('/images/palette-btn.svg');
@@ -40,8 +42,6 @@ function App() {
   const [isListening, setIsListening] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
 
-  const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe'];
-
   const parseCommandFromSentence = useCallback((sentence) => {
     const lowerCaseSentence = sentence.toLowerCase();
     for (const cmd of allCommands) {
@@ -51,7 +51,7 @@ function App() {
       }
     }
     return null;
-  }, [allCommands]);
+  }, []);
 
   const executeCommand = useCallback((commandToExecute) => {
     if (!commandToExecute) return;
