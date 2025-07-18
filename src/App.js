@@ -153,6 +153,7 @@ function App() {
         setCommand('');
         setSuggestions([]);
         setIsBreathing(true);
+        setOutput(null);
         return;
       default:
         newOutput = `Unknown command: ${commandToExecute}`;
@@ -209,7 +210,7 @@ function App() {
         <div className="output-overlay" onClick={closeOutput}>
           <div className="output-content-wrapper" onClick={(e) => e.stopPropagation()}>
             <div className="output-command">{output.command}</div>
-            <div className="output-response"
+            <div className={`output-response ${output.command === '> help' ? 'help-output' : ''}`}
               dangerouslySetInnerHTML={typeof output.content === 'string' ? { __html: output.content } : null}>
               {typeof output.content !== 'string' ? output.content : null}
             </div>

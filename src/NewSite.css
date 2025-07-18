@@ -593,6 +593,10 @@ body {
     font-size: 12px; /* Adjust commands text size */
   }
 
+  .help-output {
+    font-size: 12px;
+  }
+
   .close-button {
     margin-top: 20px; /* Revert to original margin-top */
     float: right; /* Revert to original float */
