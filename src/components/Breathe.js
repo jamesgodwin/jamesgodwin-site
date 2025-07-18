@@ -4,7 +4,6 @@ import './Breathe.css';
 
 const Breathe = ({ onEnd, theme }) => {
   const [phase, setPhase] = useState('start');
-  const circleRef = useRef(null);
 
   useEffect(() => {
     requestAnimationFrame(() => {

@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './NewSite.css';
 import helpOutput from './outputs/help';
 import aboutOutput from './outputs/about';
@@ -42,7 +42,7 @@ function App() {
 
   const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe'];
 
-  const parseCommandFromSentence = (sentence) => {
+  const parseCommandFromSentence = useCallback((sentence) => {
     const lowerCaseSentence = sentence.toLowerCase();
     for (const cmd of allCommands) {
       const regex = new RegExp(`\\b${cmd}\\b`);
@@ -51,9 +51,9 @@ function App() {
       }
     }
     return null;
-  };
+  }, []);
 
-  const executeCommand = (commandToExecute) => {
+  const executeCommand = useCallback((commandToExecute) => {
     if (!commandToExecute) return;
 
     let newOutput;
@@ -112,7 +112,7 @@ function App() {
     setHistoryIndex(-1);
     setCommand('');
     setSuggestions([]);
-  };
+  }, []);
 
   useEffect(() => {
     document.body.className = theme;
@@ -204,7 +204,7 @@ function App() {
       recognition.onspeechend = null;
       clearTimeout(speechTimeoutRef.current);
     };
-  }, []);
+  }, [executeCommand, parseCommandFromSentence]);
 
   const toggleThemeMenu = () => {
     setIsThemeMenuOpen(!isThemeMenuOpen);
@@ -342,9 +342,9 @@ function App() {
         <div className="card-text">
           A year of Taoist reflections and I Ching wisdom —<br />to help you realign, reflect, and return to our true essence.
         </div>
-        <a href="#" className="card-button" data-formkit-toggle="0da6b662ba">
+        <button className="card-button" data-formkit-toggle="0da6b662ba">
           GET THE BOOK <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
-        </a>
+        </button>
       </div>
       <div className="section-title">
         MY DIGITAL SANCTUARIES
