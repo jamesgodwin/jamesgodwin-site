@@ -31,7 +31,7 @@ function App() {
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const terminalInputRef = useRef(null);
   const outputContentWrapperRef = useRef(null);
-  const speechTimeoutRef = useRef(null);
+
   const [command, setCommand] = useState('');
   const [output, setOutput] = useState(null);
   const [commandHistory, setCommandHistory] = useState([]);
@@ -40,18 +40,6 @@ function App() {
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
   const [isBreathing, setIsBreathing] = useState(false);
   const [isListening, setIsListening] = useState(false);
-  const [isSpeaking, setIsSpeaking] = useState(false);
-
-  const parseCommandFromSentence = useCallback((sentence) => {
-    const lowerCaseSentence = sentence.toLowerCase();
-    for (const cmd of allCommands) {
-      const regex = new RegExp(`\b${cmd}\b`);
-      if (regex.test(lowerCaseSentence)) {
-        return cmd;
-      }
-    }
-    return null;
-  }, []);
 
   const executeCommand = useCallback((commandToExecute) => {
     if (!commandToExecute) return;
@@ -157,6 +145,17 @@ function App() {
       return;
     }
 
+    const parseCommandFromSentence = (sentence) => {
+      const lowerCaseSentence = sentence.toLowerCase();
+      for (const cmd of allCommands) {
+        const regex = new RegExp(`\\b${cmd}\\b`);
+        if (regex.test(lowerCaseSentence)) {
+          return cmd;
+        }
+      }
+      return null;
+    };
+
     recognition.onresult = (event) => {
       let interimTranscript = '';
       let finalTranscript = '';
@@ -180,31 +179,15 @@ function App() {
       }
     };
 
-    recognition.onspeechstart = () => {
-      clearTimeout(speechTimeoutRef.current);
-      setIsSpeaking(true);
-    };
-
-    recognition.onspeechend = () => {
-      speechTimeoutRef.current = setTimeout(() => {
-        setIsSpeaking(false);
-      }, 300);
-    };
-
     recognition.onend = () => {
-      clearTimeout(speechTimeoutRef.current);
       setIsListening(false);
-      setIsSpeaking(false);
     };
 
     return () => {
       recognition.onresult = null;
       recognition.onend = null;
-      recognition.onspeechstart = null;
-      recognition.onspeechend = null;
-      clearTimeout(speechTimeoutRef.current);
     };
-  }, [executeCommand, parseCommandFromSentence]);
+  }, [executeCommand]);
 
   const toggleThemeMenu = () => {
     setIsThemeMenuOpen(!isThemeMenuOpen);
@@ -227,7 +210,6 @@ function App() {
     } else {
       recognition.start();
       setIsListening(true);
-      setIsSpeaking(true); // Start animation immediately
     }
   };
 
@@ -401,7 +383,7 @@ function App() {
           <img
             src={isListening ? (theme === 'light' ? '/images/voice-btn-hover.svg' : '/images/voice-btn-hover-DM.svg') : voiceIcon}
             alt="Voice Icon"
-            className={`voice-button ${isSpeaking ? 'listening' : ''}`}
+            className={`voice-button ${isListening ? 'listening' : ''}`}
             onMouseEnter={() => handleVoiceHover(true)}
             onMouseLeave={() => handleVoiceHover(false)}
             onClick={handleVoiceClick}
@@ -428,4 +410,3 @@ function App() {
 }
 
 export default App;
-
