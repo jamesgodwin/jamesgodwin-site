@@ -28,10 +28,7 @@ function App() {
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
   const [isBreathing, setIsBreathing] = useState(false);
 
-  const allCommands = [
-    'help', 'about', 'now', 'apps', 'books', 'paintings',
-    'contact', 'taoism', 'clear', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe'
-  ];
+  const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe'];
 
   useEffect(() => {
     document.body.className = theme;

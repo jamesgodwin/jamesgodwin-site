@@ -1,5 +1,14 @@
 const helpOutput = `
-Available commands: help, about, apps, books, gift, contact, taoism, now, portfolio, paintings, uiux, code, clear, themes (default, snow, mist, zen, tao, mountain)
+> about       — meet the soul behind this space  
+> apps        — explore the sanctuaries 
+> books       — browse the written offerings  
+> gift        — receive a gift to join our newsletter  
+> contact     — reach out, gently  
+> taoism      — teachings, quotes, and quiet echoes  
+> now         — return to the present moment  
+> paintings   — see what stillness looks like  
+> philosophy  — read my deeper why
+> themes (default, dark, zen, tao, mountain)
 `;
 
 export default helpOutput;

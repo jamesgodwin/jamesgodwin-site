@@ -470,7 +470,7 @@ body {
 }
 
 .suggestions-list li.active-suggestion {
-  border-color: var(--terminal-focus-border); /* Border for active suggestion */
+  border-color: transparent; /* Border for active suggestion */
 }
 
 @media (max-width: 768px) {

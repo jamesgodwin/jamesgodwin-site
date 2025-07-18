@@ -1,7 +1,4 @@
-const giftOutput = `
-  <p>Gift content coming soon!</p>
-<hr>
-  <p class="commands-text"><span class="commands">Available commands:</span> help, about, apps, books, gift, contact, taoism, now, portfolio, paintings, uiux, code, clear, themes (default, snow, mist, zen, tao, mountain)</p>
+const giftOutput = `<strong>For the Quietly Awakening</strong><p>Get the "The Flow of Life: 365 Days with Tao" for FREE when you sign up for our newsletter. A year of Taoist reflections and I Ching wisdom — to help you realign, reflect, and return to our true essence.</p><button id="get-the-book-gift" class="card-button">GET THE BOOK <img src="/images/arrow-right.svg" alt="Arrow Right" class="button-icon" /></button><hr><p class="commands-text"><span class="commands">Available commands:</span> help, about, apps, books, gift, contact, taoism, now, paintings, philosophy, themes (default, snow, mist, zen, tao, mountain)</p>
 `;
 
 export default giftOutput;
