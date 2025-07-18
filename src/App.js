@@ -45,13 +45,13 @@ function App() {
   const parseCommandFromSentence = useCallback((sentence) => {
     const lowerCaseSentence = sentence.toLowerCase();
     for (const cmd of allCommands) {
-      const regex = new RegExp(`\\b${cmd}\\b`);
+      const regex = new RegExp(`\b${cmd}\b`);
       if (regex.test(lowerCaseSentence)) {
         return cmd;
       }
     }
     return null;
-  }, []);
+  }, [allCommands]);
 
   const executeCommand = useCallback((commandToExecute) => {
     if (!commandToExecute) return;
