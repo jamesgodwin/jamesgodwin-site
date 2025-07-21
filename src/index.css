@@ -1,13 +1,56 @@
-body {
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --text-color: #343a40;
+  --text-color-light: #6c757d;
+  --background-color: #f8f9fa;
+  --terminal-background: #e9ecef;
+  --terminal-border: #dee2e6;
+  --suggestion-hover-background: #007bff;
+  --suggestion-hover-color: #ffffff;
+  --link-color: #007bff;
+}
+
+body.dark {
+  --primary-color: #66fcf1;
+  --secondary-color: #45a29e;
+  --text-color: #c5c6c7;
+  --text-color-light: #a3a3a3;
+  --background-color: #1f2833;
+  --terminal-background: #0b0c10;
+  --terminal-border: #1a1a1a;
+  --suggestion-hover-background: #66fcf1;
+  --suggestion-hover-color: #0b0c10;
+  --link-color: #66fcf1;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.body-no-scroll {
+  overflow: hidden;
 }
