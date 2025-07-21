@@ -319,7 +319,7 @@ function App() {
         Creating Sacred Technology for<br />Seekers of Stillness
       </div>
       <div className="sub-hero-text">
-        I build digital sanctuaries — where presence<br />deepens, gratitude awakens, and you return to<br />your true essence.
+        I build & hold sanctuaries — where presence breathes,<br /> gratitude roots, and essence remembers itself.
       </div>
       <div className="content-card">
         <div className="card-title">FREE GIFT FOR THE QUIETLY AWAKENING</div>

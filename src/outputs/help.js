@@ -9,6 +9,8 @@ const helpOutput = `
 > paintings  — see what stillness looks like  
 > philosophy — read my deeper why
 > themes (default, dark, zen, tao, mountain)
+
+[3 commands remain hidden]
 `;
 
 export default helpOutput;
