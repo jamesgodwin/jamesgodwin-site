@@ -63,6 +63,19 @@ body {
   transition: background-color 0.5s ease-in-out;
 }
 
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.5s ease-in-out;
+}
+
 html.body-no-scroll,
 body.body-no-scroll {
   overflow: hidden;

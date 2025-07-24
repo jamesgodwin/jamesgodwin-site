@@ -1,6 +1,7 @@
 // src/App.js
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './NewSite.css';
+import themes from './themes'; // Import themes
 import helpOutput from './outputs/help';
 import aboutOutput from './outputs/about';
 import appsOutput from './outputs/apps';
@@ -12,6 +13,7 @@ import paintingsOutput from './outputs/paintings';
 import giftOutput from './outputs/gift';
 import philosophyOutput from './outputs/philosophy';
 import unlearnOutput from './outputs/unlearn';
+import themesOutput from './outputs/themes';
 import Breathe from './components/Breathe';
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -22,13 +24,16 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
-const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe'];
+const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness'];
 
 function App() {
   const [voiceIcon, setVoiceIcon] = useState('/images/voice-btn.svg');
   const [paletteIcon, setPaletteIcon] = useState('/images/palette-btn.svg');
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('default');
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
+  const [backgroundImage, setBackgroundImage] = useState('');
+  const [backgroundOpacity, setBackgroundOpacity] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const terminalInputRef = useRef(null);
   const outputContentWrapperRef = useRef(null);
 
@@ -91,6 +96,15 @@ function App() {
         setIsBreathing(true);
         setOutput(null);
         return;
+      case 'themes':
+        newOutput = themesOutput;
+        break;
+      case 'default':
+      case 'dark':
+      case 'stillness':
+        setTheme(lowerCaseCommand);
+        newOutput = `Theme set to ${lowerCaseCommand}`;
+        break;
       default:
         newOutput = `Unknown command: ${commandToExecute}`;
     }
@@ -103,14 +117,35 @@ function App() {
   }, []);
 
   useEffect(() => {
-    document.body.className = theme;
-    const isLightTheme = theme === 'light';
-    setVoiceIcon(isLightTheme ? '/images/voice-btn.svg' : '/images/voice-btn-DM.svg');
-    setPaletteIcon(isLightTheme ? '/images/palette-btn.svg' : '/images/palette-btn-DM.svg');
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const currentThemeObject = themes[theme];
+    const isImageBased = theme !== 'default' && theme !== 'dark' && currentThemeObject && currentThemeObject.backgroundImage;
+
+    document.body.className = theme === 'dark' ? 'dark' : 'default';
+
+    if (isImageBased) {
+      const imageUrl = windowWidth <= 768 && currentThemeObject.mobileBackgroundImage 
+        ? currentThemeObject.mobileBackgroundImage 
+        : currentThemeObject.backgroundImage;
+      setBackgroundImage(`url(${process.env.PUBLIC_URL}/${imageUrl})`);
+      setBackgroundOpacity(1);
+    } else {
+      setBackgroundOpacity(0);
+    }
+
+    const useDarkIcons = theme === 'dark';
+    setVoiceIcon(useDarkIcons ? '/images/voice-btn-DM.svg' : '/images/voice-btn.svg');
+    setPaletteIcon(useDarkIcons ? '/images/palette-btn-DM.svg' : '/images/palette-btn.svg');
+    
     if (terminalInputRef.current) {
       terminalInputRef.current.focus();
     }
-  }, [theme]);
+  }, [theme, windowWidth]);
 
   useEffect(() => {
     if (output) {
@@ -195,8 +230,7 @@ function App() {
     setIsThemeMenuOpen(!isThemeMenuOpen);
   };
 
-  const handleThemeChange = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+  const handleThemeChange = (newTheme) => {
     setTheme(newTheme);
     setIsThemeMenuOpen(false);
   };
@@ -217,20 +251,22 @@ function App() {
 
   const handleVoiceHover = (isHovering) => {
     if (isListening) return;
-    const isLightTheme = theme === 'light';
-    if (isLightTheme) {
-      setVoiceIcon(isHovering ? '/images/voice-btn-hover.svg' : '/images/voice-btn.svg');
+    const useDarkUI = theme === 'dark';
+
+    if (isHovering) {
+      setVoiceIcon(useDarkUI ? '/images/voice-btn-hover-DM.svg' : '/images/voice-btn-hover.svg');
     } else {
-      setVoiceIcon(isHovering ? '/images/voice-btn-hover-DM.svg' : '/images/voice-btn-DM.svg');
+      setVoiceIcon(useDarkUI ? '/images/voice-btn-DM.svg' : '/images/voice-btn.svg');
     }
   };
 
   const handlePaletteHover = (isHovering) => {
-    const isLightTheme = theme === 'light';
-    if (isLightTheme) {
-      setPaletteIcon(isHovering ? '/images/palette-btn-hover.svg' : '/images/palette-btn.svg');
+    const useDarkUI = theme === 'dark';
+
+    if (isHovering) {
+      setPaletteIcon(useDarkUI ? '/images/palette-btn-hover-DM.svg' : '/images/palette-btn-hover.svg');
     } else {
-      setPaletteIcon(isHovering ? '/images/palette-btn-hover-DM.svg' : '/images/palette-btn-DM.svg');
+      setPaletteIcon(useDarkUI ? '/images/palette-btn-DM.svg' : '/images/palette-btn.svg');
     }
   };
 
@@ -300,10 +336,18 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {isBreathing && <Breathe onEnd={() => setIsBreathing(false)} theme={theme} />}
-      {output && (
-        <div className="output-overlay" onClick={closeOutput}>
+    <>
+      <div
+        className={`background-container ${theme === 'stillness' ? 'stillness-bg' : ''}`}
+        style={{
+          backgroundImage: backgroundImage,
+          opacity: backgroundOpacity
+        }}
+      />
+      <div className="App">
+        {isBreathing && <Breathe onEnd={() => setIsBreathing(false)} theme={theme} />}
+        {output && (
+          <div className="output-overlay" onClick={closeOutput}>
           <div ref={outputContentWrapperRef} className="output-content-wrapper" onClick={(e) => e.stopPropagation()}>
             <div className="output-command">{output.command}</div>
             <div className={`output-response ${output.command === '> help' ? 'help-output' : ''}`}
@@ -400,14 +444,15 @@ function App() {
           />
           {isThemeMenuOpen && (
             <div className="theme-menu">
-              <button onClick={handleThemeChange}>
-                {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-              </button>
+              <button onClick={() => handleThemeChange('default')}>Default</button>
+              <button onClick={() => handleThemeChange('dark')}>Dark</button>
+              <button onClick={() => handleThemeChange('stillness')}>Stillness</button>
             </div>
           )}
         </div>
       </div>
     </div>
+  </>
   );
 }
 

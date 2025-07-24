@@ -34,6 +34,14 @@ const themes = {
       buttonImage: '/button.svg',
       buttonHoverImage: '/button2.svg',
     },
+    stillness: {
+      backgroundImage: 'images/stillness.webp',
+      mobileBackgroundImage: 'images/stillness-m.webp',
+      textColor: '#d4d4d4',
+      inputBackgroundColor: '#292929',
+      buttonImage: '/button.svg',
+      buttonHoverImage: '/button2.svg',
+    },
   };
   
   export default themes;

@@ -1,10 +1,8 @@
 const themesOutput = `
 Available themes:
 - default
-- snow
-- zen
-- tao
-- mist
+- dark
+- stillness
 `;
 
 export default themesOutput;
