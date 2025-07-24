@@ -48,7 +48,7 @@ function App() {
   const [isBreathing, setIsBreathing] = useState(false);
   const [isListening, setIsListening] = useState(false);
 
-  const handleThemeChange = (newTheme) => {
+  const handleThemeChange = useCallback((newTheme) => {
     if (isTransitioning) return;
 
     const newThemeObject = themes[newTheme];
@@ -65,7 +65,7 @@ function App() {
       setTheme(newTheme);
     }
     setIsThemeMenuOpen(false);
-  };
+  }, [isTransitioning]);
 
   const executeCommand = useCallback((commandToExecute) => {
     if (!commandToExecute) return;
