@@ -113,7 +113,7 @@ body.body-no-scroll {
   border-radius: 4px;
   padding: 30px;
   box-sizing: border-box; /* Include padding in width calculation */
-  background-color: transparent;
+  background-color: var(--project-card-bg);
   width: fit-content;
 }
 

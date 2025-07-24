@@ -24,7 +24,7 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
-const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains'];
+const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
 
 function App() {
   const [voiceIcon, setVoiceIcon] = useState('/images/voice-btn.svg');
@@ -105,7 +105,12 @@ function App() {
       case 'dark':
       case 'stillness':
       case 'mountains':
-        setTheme(lowerCaseCommand);
+      case 'essence':
+      case 'tao':
+      case 'zen':
+      case 'snow':
+      case 'void':
+        handleThemeChange(lowerCaseCommand);
         setCommandHistory((prevHistory) => [...prevHistory, commandToExecute]);
         setHistoryIndex(-1);
         setCommand('');
@@ -489,6 +494,11 @@ function App() {
               <button onClick={() => handleThemeChange('dark')}>Dark</button>
               <button onClick={() => handleThemeChange('stillness')}>Stillness</button>
               <button onClick={() => handleThemeChange('mountains')}>Mountains</button>
+              <button onClick={() => handleThemeChange('essence')}>Essence</button>
+              <button onClick={() => handleThemeChange('tao')}>Tao</button>
+              <button onClick={() => handleThemeChange('zen')}>Zen</button>
+              <button onClick={() => handleThemeChange('snow')}>Snow</button>
+              <button onClick={() => handleThemeChange('void')}>Void</button>
             </div>
           )}
         </div>

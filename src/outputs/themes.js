@@ -4,6 +4,11 @@ Available themes:
 - dark
 - stillness
 - mountains
+- essence
+- tao
+- zen
+- snow
+- void
 `;
 
 export default themesOutput;

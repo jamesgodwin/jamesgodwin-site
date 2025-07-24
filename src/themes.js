@@ -49,6 +49,46 @@ const themes = {
       buttonImage: '/button.svg',
       buttonHoverImage: '/button2.svg',
     },
+    essence: {
+      backgroundImage: 'images/essence.webp',
+      mobileBackgroundImage: 'images/essence-m.webp',
+      textColor: '#d4d4d4',
+      inputBackgroundColor: '#292929',
+      buttonImage: '/button.svg',
+      buttonHoverImage: '/button2.svg',
+    },
+    tao: {
+      backgroundImage: 'images/tao.webp',
+      mobileBackgroundImage: 'images/tao-m.webp',
+      textColor: '#d4d4d4',
+      inputBackgroundColor: '#292929',
+      buttonImage: '/button.svg',
+      buttonHoverImage: '/button2.svg',
+    },
+    zen: {
+      backgroundImage: 'images/zen.webp',
+      mobileBackgroundImage: 'images/zen-m.webp',
+      textColor: '#d4d4d4',
+      inputBackgroundColor: '#292929',
+      buttonImage: '/button.svg',
+      buttonHoverImage: '/button2.svg',
+    },
+    snow: {
+      backgroundImage: 'images/snow.webp',
+      mobileBackgroundImage: 'images/snow-m.webp',
+      textColor: '#d4d4d4',
+      inputBackgroundColor: '#292929',
+      buttonImage: '/button.svg',
+      buttonHoverImage: '/button2.svg',
+    },
+    void: {
+      backgroundImage: 'images/void.webp',
+      mobileBackgroundImage: 'images/void-m.webp',
+      textColor: '#d4d4d4',
+      inputBackgroundColor: '#292929',
+      buttonImage: '/button.svg',
+      buttonHoverImage: '/button2.svg',
+    },
   };
   
   export default themes;
