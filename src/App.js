@@ -48,6 +48,25 @@ function App() {
   const [isBreathing, setIsBreathing] = useState(false);
   const [isListening, setIsListening] = useState(false);
 
+  const handleThemeChange = (newTheme) => {
+    if (isTransitioning) return;
+
+    const newThemeObject = themes[newTheme];
+    const isNewThemeImageBased = newTheme !== 'default' && newTheme !== 'dark' && newThemeObject && newThemeObject.backgroundImage;
+
+    if (isNewThemeImageBased) {
+      setIsTransitioning(true);
+      setIsContentVisible(false);
+      setTimeout(() => {
+        setTheme(newTheme);
+        // The useEffect hook will handle the rest of the transition.
+      }, 500); // This duration should match the content fade-out transition.
+    } else {
+      setTheme(newTheme);
+    }
+    setIsThemeMenuOpen(false);
+  };
+
   const executeCommand = useCallback((commandToExecute) => {
     if (!commandToExecute) return;
 
@@ -125,7 +144,111 @@ function App() {
     setHistoryIndex(-1);
     setCommand('');
     setSuggestions([]);
-  }, []);
+  }, [handleThemeChange]);
+
+  const toggleThemeMenu = () => {
+    setIsThemeMenuOpen(!isThemeMenuOpen);
+  };
+
+  const handleVoiceClick = () => {
+    if (!recognition) {
+      alert("Sorry, your browser doesn't support voice recognition.");
+      return;
+    }
+
+    if (isListening) {
+      recognition.stop();
+    } else {
+      recognition.start();
+      setIsListening(true);
+    }
+  };
+
+  const handleVoiceHover = (isHovering) => {
+    if (isListening) return;
+    const useDarkUI = theme === 'dark';
+
+    if (isHovering) {
+      setVoiceIcon(useDarkUI ? '/images/voice-btn-hover-DM.svg' : '/images/voice-btn-hover.svg');
+    } else {
+      setVoiceIcon(useDarkUI ? '/images/voice-btn-DM.svg' : '/images/voice-btn.svg');
+    }
+  };
+
+  const handlePaletteHover = (isHovering) => {
+    const useDarkUI = theme === 'dark';
+
+    if (isHovering) {
+      setPaletteIcon(useDarkUI ? '/images/palette-btn-hover-DM.svg' : '/images/palette-btn-hover.svg');
+    } else {
+      setPaletteIcon(useDarkUI ? '/images/palette-btn-DM.svg' : '/images/palette-btn.svg');
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const input = e.target.value;
+    setCommand(input);
+
+    if (input.length > 0) {
+      const filteredSuggestions = allCommands.filter(cmd =>
+        cmd.toLowerCase().startsWith(input.toLowerCase())
+      );
+      setSuggestions(filteredSuggestions);
+      setActiveSuggestionIndex(-1);
+    } else {
+      setSuggestions([]);
+    }
+  };
+
+  const handleCommandSubmit = (e) => {
+    e.preventDefault();
+    let commandToExecute = command.trim();
+
+    if (activeSuggestionIndex !== -1 && suggestions.length > 0) {
+      commandToExecute = suggestions[activeSuggestionIndex];
+    }
+    
+    executeCommand(commandToExecute);
+
+    if (terminalInputRef.current) {
+      terminalInputRef.current.blur();
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (historyIndex < commandHistory.length - 1) {
+        const newIndex = historyIndex + 1;
+        setHistoryIndex(newIndex);
+        setCommand(commandHistory[commandHistory.length - 1 - newIndex]);
+        setSuggestions([]);
+      }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (historyIndex > 0) {
+        const newIndex = historyIndex - 1;
+        setHistoryIndex(newIndex);
+        setCommand(commandHistory[commandHistory.length - 1 - newIndex]);
+        setSuggestions([]);
+      } else {
+        setHistoryIndex(-1);
+        setCommand('');
+        setSuggestions([]);
+      }
+    } else if (e.key === 'Tab') {
+      e.preventDefault();
+      if (suggestions.length > 0) {
+        const newIndex = (activeSuggestionIndex + 1) % suggestions.length;
+        setActiveSuggestionIndex(newIndex);
+        setCommand(suggestions[newIndex]);
+      }
+    }
+  };
+
+  const closeOutput = () => {
+    setOutput(null);
+  };
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -251,129 +374,6 @@ function App() {
       recognition.onend = null;
     };
   }, [executeCommand]);
-
-  const toggleThemeMenu = () => {
-    setIsThemeMenuOpen(!isThemeMenuOpen);
-  };
-
-  const handleThemeChange = (newTheme) => {
-    if (isTransitioning) return;
-
-    const newThemeObject = themes[newTheme];
-    const isNewThemeImageBased = newTheme !== 'default' && newTheme !== 'dark' && newThemeObject && newThemeObject.backgroundImage;
-
-    if (isNewThemeImageBased) {
-      setIsTransitioning(true);
-      setIsContentVisible(false);
-      setTimeout(() => {
-        setTheme(newTheme);
-        // The useEffect hook will handle the rest of the transition.
-      }, 500); // This duration should match the content fade-out transition.
-    } else {
-      setTheme(newTheme);
-    }
-    setIsThemeMenuOpen(false);
-  };
-
-  const handleVoiceClick = () => {
-    if (!recognition) {
-      alert("Sorry, your browser doesn't support voice recognition.");
-      return;
-    }
-
-    if (isListening) {
-      recognition.stop();
-    } else {
-      recognition.start();
-      setIsListening(true);
-    }
-  };
-
-  const handleVoiceHover = (isHovering) => {
-    if (isListening) return;
-    const useDarkUI = theme === 'dark';
-
-    if (isHovering) {
-      setVoiceIcon(useDarkUI ? '/images/voice-btn-hover-DM.svg' : '/images/voice-btn-hover.svg');
-    } else {
-      setVoiceIcon(useDarkUI ? '/images/voice-btn-DM.svg' : '/images/voice-btn.svg');
-    }
-  };
-
-  const handlePaletteHover = (isHovering) => {
-    const useDarkUI = theme === 'dark';
-
-    if (isHovering) {
-      setPaletteIcon(useDarkUI ? '/images/palette-btn-hover-DM.svg' : '/images/palette-btn-hover.svg');
-    } else {
-      setPaletteIcon(useDarkUI ? '/images/palette-btn-DM.svg' : '/images/palette-btn.svg');
-    }
-  };
-
-  const handleInputChange = (e) => {
-    const input = e.target.value;
-    setCommand(input);
-
-    if (input.length > 0) {
-      const filteredSuggestions = allCommands.filter(cmd =>
-        cmd.toLowerCase().startsWith(input.toLowerCase())
-      );
-      setSuggestions(filteredSuggestions);
-      setActiveSuggestionIndex(-1);
-    } else {
-      setSuggestions([]);
-    }
-  };
-
-  const handleCommandSubmit = (e) => {
-    e.preventDefault();
-    let commandToExecute = command.trim();
-
-    if (activeSuggestionIndex !== -1 && suggestions.length > 0) {
-      commandToExecute = suggestions[activeSuggestionIndex];
-    }
-    
-    executeCommand(commandToExecute);
-
-    if (terminalInputRef.current) {
-      terminalInputRef.current.blur();
-    }
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (historyIndex < commandHistory.length - 1) {
-        const newIndex = historyIndex + 1;
-        setHistoryIndex(newIndex);
-        setCommand(commandHistory[commandHistory.length - 1 - newIndex]);
-        setSuggestions([]);
-      }
-    } else if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      if (historyIndex > 0) {
-        const newIndex = historyIndex - 1;
-        setHistoryIndex(newIndex);
-        setCommand(commandHistory[commandHistory.length - 1 - newIndex]);
-        setSuggestions([]);
-      } else {
-        setHistoryIndex(-1);
-        setCommand('');
-        setSuggestions([]);
-      }
-    } else if (e.key === 'Tab') {
-      e.preventDefault();
-      if (suggestions.length > 0) {
-        const newIndex = (activeSuggestionIndex + 1) % suggestions.length;
-        setActiveSuggestionIndex(newIndex);
-        setCommand(suggestions[newIndex]);
-      }
-    }
-  };
-
-  const closeOutput = () => {
-    setOutput(null);
-  };
 
   return (
     <>
