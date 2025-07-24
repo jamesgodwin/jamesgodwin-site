@@ -28,7 +28,6 @@ const themes = {
         buttonHoverImage: '/button.svg',
     },
     default: {
-      backgroundImage: 'default.webp',
       textColor: '#d4d4d4',
       inputBackgroundColor: '#292929',
       buttonImage: '/button.svg',
@@ -37,6 +36,14 @@ const themes = {
     stillness: {
       backgroundImage: 'images/stillness.webp',
       mobileBackgroundImage: 'images/stillness-m.webp',
+      textColor: '#d4d4d4',
+      inputBackgroundColor: '#292929',
+      buttonImage: '/button.svg',
+      buttonHoverImage: '/button2.svg',
+    },
+    mountains: {
+      backgroundImage: 'images/mountains.webp',
+      mobileBackgroundImage: 'images/mountains-m.webp',
       textColor: '#d4d4d4',
       inputBackgroundColor: '#292929',
       buttonImage: '/button.svg',

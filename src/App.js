@@ -24,7 +24,7 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
-const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness'];
+const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains'];
 
 function App() {
   const [voiceIcon, setVoiceIcon] = useState('/images/voice-btn.svg');
@@ -34,6 +34,8 @@ function App() {
   const [backgroundImage, setBackgroundImage] = useState('');
   const [backgroundOpacity, setBackgroundOpacity] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isContentVisible, setIsContentVisible] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const terminalInputRef = useRef(null);
   const outputContentWrapperRef = useRef(null);
 
@@ -102,9 +104,13 @@ function App() {
       case 'default':
       case 'dark':
       case 'stillness':
+      case 'mountains':
         setTheme(lowerCaseCommand);
-        newOutput = `Theme set to ${lowerCaseCommand}`;
-        break;
+        setCommandHistory((prevHistory) => [...prevHistory, commandToExecute]);
+        setHistoryIndex(-1);
+        setCommand('');
+        setSuggestions([]);
+        return;
       default:
         newOutput = `Unknown command: ${commandToExecute}`;
     }
@@ -125,6 +131,7 @@ function App() {
   useEffect(() => {
     const currentThemeObject = themes[theme];
     const isImageBased = theme !== 'default' && theme !== 'dark' && currentThemeObject && currentThemeObject.backgroundImage;
+    let timer;
 
     document.body.className = theme === 'dark' ? 'dark' : 'default';
 
@@ -132,10 +139,18 @@ function App() {
       const imageUrl = windowWidth <= 768 && currentThemeObject.mobileBackgroundImage 
         ? currentThemeObject.mobileBackgroundImage 
         : currentThemeObject.backgroundImage;
+      
       setBackgroundImage(`url(${process.env.PUBLIC_URL}/${imageUrl})`);
       setBackgroundOpacity(1);
+
+      timer = setTimeout(() => {
+        setIsContentVisible(true);
+        setIsTransitioning(false);
+      }, 3000);
     } else {
       setBackgroundOpacity(0);
+      setIsContentVisible(true);
+      setIsTransitioning(false);
     }
 
     const useDarkIcons = theme === 'dark';
@@ -145,6 +160,12 @@ function App() {
     if (terminalInputRef.current) {
       terminalInputRef.current.focus();
     }
+
+    return () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+    };
   }, [theme, windowWidth]);
 
   useEffect(() => {
@@ -231,7 +252,21 @@ function App() {
   };
 
   const handleThemeChange = (newTheme) => {
-    setTheme(newTheme);
+    if (isTransitioning) return;
+
+    const newThemeObject = themes[newTheme];
+    const isNewThemeImageBased = newTheme !== 'default' && newTheme !== 'dark' && newThemeObject && newThemeObject.backgroundImage;
+
+    if (isNewThemeImageBased) {
+      setIsTransitioning(true);
+      setIsContentVisible(false);
+      setTimeout(() => {
+        setTheme(newTheme);
+        // The useEffect hook will handle the rest of the transition.
+      }, 500); // This duration should match the content fade-out transition.
+    } else {
+      setTheme(newTheme);
+    }
     setIsThemeMenuOpen(false);
   };
 
@@ -344,7 +379,13 @@ function App() {
           opacity: backgroundOpacity
         }}
       />
-      <div className="App">
+      <div 
+        className="App"
+        style={{ 
+          opacity: isContentVisible ? 1 : 0, 
+          transition: 'opacity 0.5s ease-in-out' 
+        }}
+      >
         {isBreathing && <Breathe onEnd={() => setIsBreathing(false)} theme={theme} />}
         {output && (
           <div className="output-overlay" onClick={closeOutput}>
@@ -447,6 +488,7 @@ function App() {
               <button onClick={() => handleThemeChange('default')}>Default</button>
               <button onClick={() => handleThemeChange('dark')}>Dark</button>
               <button onClick={() => handleThemeChange('stillness')}>Stillness</button>
+              <button onClick={() => handleThemeChange('mountains')}>Mountains</button>
             </div>
           )}
         </div>

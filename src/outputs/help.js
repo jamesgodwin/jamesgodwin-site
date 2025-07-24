@@ -8,7 +8,7 @@ const helpOutput = `
 > now        — return to the present moment  
 > paintings  — see what stillness looks like  
 > philosophy — read my deeper why
-> themes (default, dark, stillness)
+> themes (default, dark, stillness, mountains)
 
 [3 commands remain hidden]
 `;
