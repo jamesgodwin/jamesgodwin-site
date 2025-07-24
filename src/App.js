@@ -251,6 +251,22 @@ function App() {
   };
 
   useEffect(() => {
+    if (!isThemeMenuOpen) return;
+
+    function handleClickOutside(event) {
+      if (event.target.closest('.theme-menu') || event.target.closest('.palette-button')) {
+        return;
+      }
+      setIsThemeMenuOpen(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isThemeMenuOpen]);
+
+  useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
