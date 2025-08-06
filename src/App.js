@@ -12,8 +12,9 @@ import nowOutput from './outputs/now';
 import paintingsOutput from './outputs/paintings';
 import giftOutput from './outputs/gift';
 import philosophyOutput from './outputs/philosophy';
-import unlearnOutput from './outputs/unlearn';
 import themesOutput from './outputs/themes';
+import unlearnOutput from './outputs/unlearn';
+import uxuiOutput from './outputs/uxui';
 import Breathe from './components/Breathe';
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -24,7 +25,7 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
-const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
+const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void', 'uxui'];
 
 function App() {
   const [voiceIcon, setVoiceIcon] = useState('/images/voice-btn.svg');
@@ -103,6 +104,9 @@ function App() {
         break;
       case 'philosophy':
         newOutput = philosophyOutput;
+        break;
+      case 'uxui':
+        newOutput = uxuiOutput;
         break;
       case 'unlearn':
         newOutput = `<img src="/images/easter-egg.svg" alt="Easter Egg" style="width: 24px; height: 24px; margin-right: 10px; vertical-align: middle;" />${unlearnOutput()}`;
@@ -422,15 +426,15 @@ function App() {
         </div>
       )}
       <div className="hero-text">
-        Creating Sacred Technology for<br />Seekers of Stillness
+        Build in Resonance
       </div>
       <div className="sub-hero-text">
-        I build & hold sanctuaries — where presence breathes,<br /> gratitude roots, and essence remembers itself.
+        I work with founders and teams to create products that<br />breathe — blending UX precision, Taoist insight,<br />and 15+ years of design experience to help your idea truly connect.
       </div>
       <div className="content-card">
         <div className="card-title">FREE GIFT FOR THE QUIETLY AWAKENING</div>
         <div className="card-text">
-          A year of Taoist reflections and I Ching wisdom —<br />to help you realign, reflect, and return to our true essence.
+          Not everything loud is worth hearing.<br />If you’re seeking a quieter way to grow — this is for you.
         </div>
         <button className="card-button" data-formkit-toggle="0da6b662ba">
           GET THE BOOK <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
@@ -443,7 +447,7 @@ function App() {
         <div className="project-card">
           <div className="project-card-title">AlChing</div>
           <div className="project-card-text">
-            A Taoist-inspired AI for navigating the I Ching. Find clarity through ancient insight, reimagined for the present.
+            A modern I Ching app for life’s questions. Find clarity and perspective through decades of translations, reimagined for today.
           </div>
           <a href="https://aiching.app" target="_blank" rel="noopener noreferrer" className="project-card-link">
             Visit aiching.app <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />

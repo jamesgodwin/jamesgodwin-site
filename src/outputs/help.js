@@ -8,6 +8,7 @@ const helpOutput = `
 > now        — return to the present moment  
 > paintings  — see what stillness looks like  
 > philosophy — read my deeper why
+> uxui       — design in resonance
 > themes (default, dark, stillness, mountains, essence, tao, zen, snow, void)
 
 [3 commands remain hidden]
