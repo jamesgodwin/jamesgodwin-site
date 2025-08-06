@@ -429,12 +429,12 @@ function App() {
         Build in Resonance
       </div>
       <div className="sub-hero-text">
-        I work with founders and teams to create products that<br />breathe — blending UX precision, Taoist insight,<br />and 15+ years of design experience to help your idea truly connect.
+        I work with founders and teams to create products that<br />breathe — blending UX precision, Taoist insight, and<br />15+ years of design experience to help your idea truly connect.
       </div>
       <div className="content-card">
         <div className="card-title">FREE GIFT FOR THE QUIETLY AWAKENING</div>
         <div className="card-text">
-          Not everything loud is worth hearing.<br />If you’re seeking a quieter way to grow — this is for you.
+          Not everything loud is worth hearing.<br />If you’re seeking a quieter way to grow<br />— this is for you.
         </div>
         <button className="card-button" data-formkit-toggle="0da6b662ba">
           GET THE BOOK <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
