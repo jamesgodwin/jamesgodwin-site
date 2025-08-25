@@ -87,6 +87,29 @@ body.body-no-scroll {
   display: flex;
   flex-direction: column;
   align-items: center; /* Center items horizontally */
+  position: relative;
+}
+
+/* Blur and lighten background for image-based themes when content is visible */
+body.image-theme .background-container {
+  transition: filter 0.8s ease-in-out;
+}
+
+body.image-theme.content-visible .background-container {
+  filter: blur(4px) brightness(1.2) contrast(0.9);
+}
+
+/* Theme-specific adjustments for better text readability */
+body.theme-snow.image-theme.content-visible .background-container {
+  filter: blur(5px) brightness(1.3) contrast(0.8);
+}
+
+body.theme-essence.image-theme.content-visible .background-container {
+  filter: blur(6px) brightness(1.3) contrast(0.7);
+}
+
+body.theme-void.image-theme.content-visible .background-container {
+  filter: blur(8px) brightness(1.4) contrast(0.6) saturate(0.4);
 }
 
 .hero-text {
@@ -252,6 +275,20 @@ body.body-no-scroll {
   max-width: 580px;
   margin: 0 auto;
   padding-left: 40px;
+}
+
+/* Add semi-transparent background for better readability on image themes */
+body.image-theme .sanctuaries-list {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 24px 40px 24px 40px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+}
+
+/* Center align section title when background is applied */
+body.image-theme .section-title {
+  text-align: center;
+  padding-left: 0;
 }
 
 .sanctuary-item {
@@ -616,6 +653,17 @@ body.body-no-scroll {
 
   .sanctuaries-list {
     gap: 16px;
+    padding: 0 20px;
+  }
+
+  /* Mobile adjustments for transparent background */
+  body.image-theme .sanctuaries-list {
+    padding: 20px;
+    margin: 0 20px;
+  }
+
+  body.image-theme .section-title {
+    text-align: center;
     padding: 0 20px;
   }
 

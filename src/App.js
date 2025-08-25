@@ -58,15 +58,24 @@ function App() {
     if (isNewThemeImageBased) {
       setIsTransitioning(true);
       setIsContentVisible(false);
+      
+      // If selecting the same theme, force a re-render by briefly changing theme
+      const isSameTheme = theme === newTheme;
+      
       setTimeout(() => {
-        setTheme(newTheme);
-        // The useEffect hook will handle the rest of the transition.
-      }, 500); // This duration should match the content fade-out transition.
+        if (isSameTheme) {
+          // Force re-render by setting to empty then back to desired theme
+          setTheme('');
+          setTimeout(() => setTheme(newTheme), 50);
+        } else {
+          setTheme(newTheme);
+        }
+      }, 500);
     } else {
       setTheme(newTheme);
     }
     setIsThemeMenuOpen(false);
-  }, [isTransitioning]);
+  }, [isTransitioning, theme]);
 
   const executeCommand = useCallback((commandToExecute) => {
     if (!commandToExecute) return;
@@ -134,11 +143,8 @@ function App() {
       case 'snow':
       case 'void':
         handleThemeChange(lowerCaseCommand);
-        setCommandHistory((prevHistory) => [...prevHistory, commandToExecute]);
-        setHistoryIndex(-1);
-        setCommand('');
-        setSuggestions([]);
-        return;
+        newOutput = `Theme changed to ${lowerCaseCommand}`;
+        break;
       default:
         newOutput = `Unknown command: ${commandToExecute}`;
     }
@@ -295,6 +301,24 @@ function App() {
     let timer;
 
     document.body.className = theme === 'dark' ? 'dark' : 'default';
+    
+    // Add image-based theme class for overlay
+    if (isImageBased) {
+      document.body.classList.add('image-theme');
+      // Add specific theme class for targeted CSS adjustments
+      document.body.classList.add(`theme-${theme}`);
+    } else {
+      document.body.classList.remove('image-theme');
+      // Remove any theme-specific classes
+      document.body.classList.remove(`theme-${theme}`);
+    }
+
+    // Add content-visible class when content is visible
+    if (isContentVisible) {
+      document.body.classList.add('content-visible');
+    } else {
+      document.body.classList.remove('content-visible');
+    }
 
     if (isImageBased) {
       const imageUrl = windowWidth <= 768 && currentThemeObject.mobileBackgroundImage 
@@ -327,7 +351,7 @@ function App() {
         clearTimeout(timer);
       }
     };
-  }, [theme, windowWidth]);
+  }, [theme, windowWidth, isContentVisible]);
 
   useEffect(() => {
     if (output) {
