@@ -107,6 +107,14 @@ body.body-no-scroll {
   color: var(--sub-hero-text);
 }
 
+.mobile-breaks {
+  display: none;
+}
+
+.desktop-breaks {
+  display: inline;
+}
+
 .content-card {
   margin: 40px auto 0 auto; /* 40px below sub-hero-text, centered horizontally */
   border: 1px solid var(--card-border);
@@ -560,6 +568,14 @@ body.body-no-scroll {
     margin-top: 8px;
     text-align: left;
     padding: 0 20px;
+  }
+
+  .desktop-breaks {
+    display: none;
+  }
+
+  .mobile-breaks {
+    display: inline;
   }
 
   .content-card {

@@ -442,7 +442,8 @@ function App() {
         Build in Resonance
       </div>
       <div className="sub-hero-text">
-        I work with founders and teams to create products that<br />breathe — blending UX precision, Taoist insight, and<br />15+ years of design experience to help your idea truly connect.
+        <span className="desktop-breaks">I specialise in Taoist-informed design and leadership for spiritually<br />curious professionals — guiding teams to create from stillness rather<br />than urgency, and to build technology that serves the soul.</span>
+        <span className="mobile-breaks">I specialise in Taoist-informed design and leadership for spiritually curious professionals — guiding teams to create from stillness rather than urgency, and to build technology that serves the soul.</span>
       </div>
       <div className="content-card">
         <div className="card-title">FREE GIFT FOR THE QUIETLY AWAKENING</div>
