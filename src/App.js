@@ -148,6 +148,13 @@ function App() {
     setHistoryIndex(-1);
     setCommand('');
     setSuggestions([]);
+    
+    // Focus terminal input when output appears
+    setTimeout(() => {
+      if (terminalInputRef.current) {
+        terminalInputRef.current.focus();
+      }
+    }, 100);
   }, [handleThemeChange]);
 
   const toggleThemeMenu = () => {
@@ -252,6 +259,12 @@ function App() {
 
   const closeOutput = () => {
     setOutput(null);
+    // Focus the terminal input after closing output
+    setTimeout(() => {
+      if (terminalInputRef.current) {
+        terminalInputRef.current.focus();
+      }
+    }, 100);
   };
 
   useEffect(() => {
