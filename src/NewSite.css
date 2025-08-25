@@ -90,10 +90,10 @@ body.body-no-scroll {
 }
 
 .hero-text {
-  margin-top: 70px;
+  margin-top: 60px;
   font-family: 'EB Garamond', serif;
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 48px;
+  line-height: 52px;
   text-align: center;
   color: var(--hero-text);
 }
@@ -169,7 +169,7 @@ body.body-no-scroll {
 }
 
 .section-title {
-  margin-top: 60px; /* 60px below the content-card */
+  margin-top: 30px; /* 30px below the content-card */
   margin-bottom: 30px; /* 30px below this text */
   width: 100%;
   color: var(--section-title);
@@ -177,7 +177,11 @@ body.body-no-scroll {
   font-weight: 500;
   font-size: 18px;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
 }
 
 .cards-container {
@@ -230,6 +234,41 @@ body.body-no-scroll {
   margin-left: 8px;
   width: 16px;
   height: 16px;
+}
+
+/* New Sanctuary Styles */
+.sanctuaries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 580px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+.sanctuary-item {
+  text-align: left;
+}
+
+.sanctuary-link {
+  color: var(--project-card-link);
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: normal;
+  font-size: 16px;
+  text-decoration: underline;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.sanctuary-link:hover {
+  text-decoration: underline;
+}
+
+.sanctuary-description {
+  color: var(--project-card-text);
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .paintings-grid {
@@ -511,20 +550,22 @@ body.body-no-scroll {
 
 @media (max-width: 768px) {
   .hero-text {
-    font-size: 24px;
-    line-height: 28px;
-    margin-top: 30px;
+    font-size: 28px;
+    line-height: 32px;
+    margin-top: 50px;
   }
 
   .sub-hero-text {
     font-size: 14px;
     margin-top: 8px;
+    text-align: left;
+    padding: 0 20px;
   }
 
   .content-card {
-    width: 100%;
-    padding: 20px 0;
-    margin-top: 24px;
+    width: calc(100% - 40px);
+    padding: 20px;
+    margin: 24px 20px 0;
   }
 
   .card-title {
@@ -555,6 +596,24 @@ body.body-no-scroll {
   .project-card-link {
     font-size: 14px;
     margin-top: 8px;
+  }
+
+  .sanctuaries-list {
+    gap: 16px;
+    padding: 0 20px;
+  }
+
+  .sanctuary-link {
+    font-size: 14px;
+  }
+
+  .sanctuary-description {
+    font-size: 14px;
+  }
+
+  .section-title {
+    text-align: left;
+    padding: 0 20px;
   }
 
   .terminal-input {

@@ -443,24 +443,24 @@ function App() {
       <div className="section-title">
         MY DIGITAL SANCTUARIES
       </div>
-      <div className="cards-container">
-        <div className="project-card">
-          <div className="project-card-title">AlChing</div>
-          <div className="project-card-text">
+      <div className="sanctuaries-list">
+        <div className="sanctuary-item">
+          <a href="https://aiching.app" target="_blank" rel="noopener noreferrer" className="sanctuary-link">AIChing</a>
+          <div className="sanctuary-description">
             A modern I Ching app for life’s questions. Find clarity and perspective through decades of translations, reimagined for today.
           </div>
-          <a href="https://aiching.app" target="_blank" rel="noopener noreferrer" className="project-card-link">
-            Visit aiching.app <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
-          </a>
         </div>
-        <div className="project-card">
-          <div className="project-card-title">GratefulFor</div>
-          <div className="project-card-text">
+        <div className="sanctuary-item">
+          <a href="https://gratefulfor.com" target="_blank" rel="noopener noreferrer" className="sanctuary-link">GratefulFor</a>
+          <div className="sanctuary-description">
             A quiet space to cultivate gratitude. A simple, private journal that adds to a shared map — a living pulse of collective appreciation.
           </div>
-          <a href="https://gratefulfor.com" target="_blank" rel="noopener noreferrer" className="project-card-link">
-            Visit gratefulfor.com <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
-          </a>
+        </div>
+        <div className="sanctuary-item">
+          <a href="https://taoistbreath.com" target="_blank" rel="noopener noreferrer" className="sanctuary-link">Taoist Breath</a>
+          <div className="sanctuary-description">
+            Breath is the doorway back to presence. Taoist Breath offers simple, timeless practices drawn from Taoist tradition — guiding you to slow down, soften the mind, and reconnect with the rhythm of life.
+          </div>
         </div>
       </div>
       <div style={{ height: '120px' }} />
