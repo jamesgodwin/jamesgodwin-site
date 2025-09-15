@@ -463,11 +463,11 @@ function App() {
         </div>
       )}
       <div className="hero-text">
-        Build in Resonance
+        Reconnect to Flow, Presence & Inner Clarity
       </div>
       <div className="sub-hero-text">
-        <span className="desktop-breaks">I specialise in Taoist-informed design and leadership for spiritually<br />curious professionals — guiding teams to create from stillness rather<br />than urgency, and to build technology that serves the soul.</span>
-        <span className="mobile-breaks">I specialise in Taoist-informed design and leadership for spiritually curious professionals — guiding teams to create from stillness rather than urgency, and to build technology that serves the soul.</span>
+        <span className="desktop-breaks">Through Taoist-inspired leadership mentoring and stillness-based design,<br />I guide people and teams to move from resistance to resonance<br /> — and create from a quieter power.</span>
+        <span className="mobile-breaks">Through Taoist-inspired leadership mentoring and stillness-based design, I guide people and teams to move from resistance to resonance — and create from a quieter power.</span>
       </div>
       <div className="content-card">
         <div className="card-title">FREE GIFT FOR THE QUIETLY AWAKENING</div>
