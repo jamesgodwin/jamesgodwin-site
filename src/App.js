@@ -58,10 +58,10 @@ function App() {
     if (isNewThemeImageBased) {
       setIsTransitioning(true);
       setIsContentVisible(false);
-      
+
       // If selecting the same theme, force a re-render by briefly changing theme
       const isSameTheme = theme === newTheme;
-      
+
       setTimeout(() => {
         if (isSameTheme) {
           // Force re-render by setting to empty then back to desired theme
@@ -154,7 +154,7 @@ function App() {
     setHistoryIndex(-1);
     setCommand('');
     setSuggestions([]);
-    
+
     // Focus terminal input when output appears
     setTimeout(() => {
       if (terminalInputRef.current) {
@@ -224,7 +224,7 @@ function App() {
     if (activeSuggestionIndex !== -1 && suggestions.length > 0) {
       commandToExecute = suggestions[activeSuggestionIndex];
     }
-    
+
     executeCommand(commandToExecute);
 
     if (terminalInputRef.current) {
@@ -301,7 +301,7 @@ function App() {
     let timer;
 
     document.body.className = theme === 'dark' ? 'dark' : 'default';
-    
+
     // Add image-based theme class for overlay
     if (isImageBased) {
       document.body.classList.add('image-theme');
@@ -321,10 +321,10 @@ function App() {
     }
 
     if (isImageBased) {
-      const imageUrl = windowWidth <= 768 && currentThemeObject.mobileBackgroundImage 
-        ? currentThemeObject.mobileBackgroundImage 
+      const imageUrl = windowWidth <= 768 && currentThemeObject.mobileBackgroundImage
+        ? currentThemeObject.mobileBackgroundImage
         : currentThemeObject.backgroundImage;
-      
+
       setBackgroundImage(`url(${process.env.PUBLIC_URL}/${imageUrl})`);
       setBackgroundOpacity(1);
 
@@ -341,7 +341,7 @@ function App() {
     const useDarkIcons = theme === 'dark';
     setVoiceIcon(useDarkIcons ? '/images/voice-btn-DM.svg' : '/images/voice-btn.svg');
     setPaletteIcon(useDarkIcons ? '/images/palette-btn-DM.svg' : '/images/palette-btn.svg');
-    
+
     if (terminalInputRef.current) {
       terminalInputRef.current.focus();
     }
@@ -407,13 +407,13 @@ function App() {
           interimTranscript += event.results[i][0].transcript;
         }
       }
-      
+
       const transcript = finalTranscript || interimTranscript;
       setCommand(transcript);
 
       if (finalTranscript) {
         const parsedCommand = parseCommandFromSentence(finalTranscript);
-        if(parsedCommand) {
+        if (parsedCommand) {
           executeCommand(parsedCommand);
         } else {
           executeCommand(finalTranscript);
@@ -441,128 +441,136 @@ function App() {
           opacity: backgroundOpacity
         }}
       />
-      <div 
+      <div
         className="App"
-        style={{ 
-          opacity: isContentVisible ? 1 : 0, 
-          transition: 'opacity 0.5s ease-in-out' 
+        style={{
+          opacity: isContentVisible ? 1 : 0,
+          transition: 'opacity 0.5s ease-in-out'
         }}
       >
         {isBreathing && <Breathe onEnd={() => setIsBreathing(false)} theme={theme} />}
         {output && (
           <div className="output-overlay" onClick={closeOutput}>
-          <div ref={outputContentWrapperRef} className="output-content-wrapper" onClick={(e) => e.stopPropagation()}>
-            <div className="output-command">{output.command}</div>
-            <div className={`output-response ${output.command === '> help' ? 'help-output' : ''}`}
-              dangerouslySetInnerHTML={typeof output.content === 'string' ? { __html: output.content } : null}>
-              {typeof output.content !== 'string' ? output.content : null}
+            <div ref={outputContentWrapperRef} className="output-content-wrapper" onClick={(e) => e.stopPropagation()}>
+              <div className="output-command">{output.command}</div>
+              <div className={`output-response ${output.command === '> help' ? 'help-output' : ''}`}
+                dangerouslySetInnerHTML={typeof output.content === 'string' ? { __html: output.content } : null}>
+                {typeof output.content !== 'string' ? output.content : null}
+              </div>
+              <button onClick={closeOutput} className="close-button">Close</button>
+              <div className="output-spacing"></div>
             </div>
-            <button onClick={closeOutput} className="close-button">Close</button>
-            <div className="output-spacing"></div>
           </div>
-        </div>
-      )}
-      <div className="hero-text">
-        Reconnect to Flow, Presence & Inner Clarity
-      </div>
-      <div className="sub-hero-text">
-        <span className="desktop-breaks">Through Taoist-inspired leadership mentoring and stillness-based design,<br />I guide people and teams to move from resistance to resonance<br /> — and create from a quieter power.</span>
-        <span className="mobile-breaks">Through Taoist-inspired leadership mentoring and stillness-based design, I guide people and teams to move from resistance to resonance — and create from a quieter power.</span>
-      </div>
-      <div className="content-card">
-        <div className="card-title">FREE GIFT FOR THE QUIETLY AWAKENING</div>
-        <div className="card-text">
-          Not everything loud is worth hearing.<br />If you’re seeking a quieter way to grow<br />— this is for you.
-        </div>
-        <button className="card-button" data-formkit-toggle="0da6b662ba">
-          GET THE BOOK <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
-        </button>
-      </div>
-      <div className="section-title">
-        MY DIGITAL SANCTUARIES
-      </div>
-      <div className="sanctuaries-list">
-        <div className="sanctuary-item">
-          <a href="https://aiching.app" target="_blank" rel="noopener noreferrer" className="sanctuary-link">AIChing</a>
-          <div className="sanctuary-description">
-            A modern I Ching app for life’s questions. Find clarity and perspective through decades of translations, reimagined for today.
-          </div>
-        </div>
-        <div className="sanctuary-item">
-          <a href="https://gratefulfor.com" target="_blank" rel="noopener noreferrer" className="sanctuary-link">GratefulFor</a>
-          <div className="sanctuary-description">
-            A quiet space to cultivate gratitude. A simple, private journal that adds to a shared map — a living pulse of collective appreciation.
-          </div>
-        </div>
-        <div className="sanctuary-item">
-          <a href="https://taoistbreath.com" target="_blank" rel="noopener noreferrer" className="sanctuary-link">Taoist Breath</a>
-          <div className="sanctuary-description">
-            Breath is the doorway back to presence. Taoist Breath offers simple, timeless practices drawn from Taoist tradition — guiding you to slow down, soften the mind, and reconnect with the rhythm of life.
-          </div>
-        </div>
-      </div>
-      <div style={{ height: '120px' }} />
-      <div className="terminal-bar-wrapper">
-        {suggestions.length > 0 && (
-          <ul className="suggestions-list">
-            {suggestions.map((sugg, index) => (
-              <li
-                key={sugg}
-                className={index === activeSuggestionIndex ? 'active-suggestion' : ''}
-                onClick={() => executeCommand(sugg)}
-              >
-                {sugg}
-              </li>
-            ))}
-          </ul>
         )}
-        <div className="terminal-bar">
-          <img src={theme === 'dark' ? '/images/terminal-DM.svg' : '/images/terminal.svg'} alt="Terminal Icon" className="terminal-icon" />
-          <form onSubmit={handleCommandSubmit} style={{ display: 'flex', flexGrow: 1 }}>
-            <input
-              ref={terminalInputRef}
-              type="text"
-              value={command}
-              onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
-              placeholder="type ‘help’ for list of commands."
-              className="terminal-input"
-              autoFocus
-            />
-          </form>
-          <img
-            src={isListening ? (theme === 'light' ? '/images/voice-btn-hover.svg' : '/images/voice-btn-hover-DM.svg') : voiceIcon}
-            alt="Voice Icon"
-            className={`voice-button ${isListening ? 'listening' : ''}`}
-            onMouseEnter={() => handleVoiceHover(true)}
-            onMouseLeave={() => handleVoiceHover(false)}
-            onClick={handleVoiceClick}
-          />
-          <img
-            src={paletteIcon}
-            alt="Palette Icon"
-            className="palette-button"
-            onMouseEnter={() => handlePaletteHover(true)}
-            onMouseLeave={() => handlePaletteHover(false)}
-            onClick={toggleThemeMenu}
-          />
-          {isThemeMenuOpen && (
-            <div className="theme-menu">
-              <button onClick={() => handleThemeChange('default')}>Default</button>
-              <button onClick={() => handleThemeChange('dark')}>Dark</button>
-              <button onClick={() => handleThemeChange('stillness')}>Stillness</button>
-              <button onClick={() => handleThemeChange('mountains')}>Mountains</button>
-              <button onClick={() => handleThemeChange('essence')}>Essence</button>
-              <button onClick={() => handleThemeChange('tao')}>Tao</button>
-              <button onClick={() => handleThemeChange('zen')}>Zen</button>
-              <button onClick={() => handleThemeChange('snow')}>Snow</button>
-              <button onClick={() => handleThemeChange('void')}>Void</button>
+        <div className="hero-text">
+          Reconnect to Flow, Presence & Inner Clarity
+        </div>
+        <div className="sub-hero-text">
+          <span className="desktop-breaks">Through Taoist-inspired leadership mentoring and stillness-based design,<br />I guide people and teams to move from resistance to resonance<br /> — and create from a quieter power.</span>
+          <span className="mobile-breaks">Through Taoist-inspired leadership mentoring and stillness-based design, I guide people and teams to move from resistance to resonance — and create from a quieter power.</span>
+        </div>
+        <div className="content-card">
+          <div className="card-title">FREE GIFT FOR THE QUIETLY AWAKENING</div>
+          <div className="card-text">
+            Not everything loud is worth hearing.<br />If you’re seeking a quieter way to grow<br />— this is for you.
+          </div>
+          <button className="card-button" data-formkit-toggle="0da6b662ba">
+            GET THE BOOK <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
+          </button>
+        </div>
+        <div className="section-title">
+          MY DIGITAL SANCTUARIES
+        </div>
+        <div className="sanctuaries-list">
+          <div className="sanctuary-item">
+            <a href="https://aiching.app" target="_blank" rel="noopener noreferrer" className="sanctuary-link">AIChing</a>
+            <div className="sanctuary-description">
+              A modern I Ching app for life’s questions. Find clarity and perspective through decades of translations, reimagined for today.
             </div>
+          </div>
+          <div className="sanctuary-item">
+            <a href="https://gratefulfor.com" target="_blank" rel="noopener noreferrer" className="sanctuary-link">GratefulFor</a>
+            <div className="sanctuary-description">
+              A quiet space to cultivate gratitude. A simple, private journal that adds to a shared map — a living pulse of collective appreciation.
+            </div>
+          </div>
+          <div className="sanctuary-item">
+            <a href="https://taoistbreath.com" target="_blank" rel="noopener noreferrer" className="sanctuary-link">Taoist Breath</a>
+            <div className="sanctuary-description">
+              Breath is the doorway back to presence. Taoist Breath offers simple, timeless practices drawn from Taoist tradition — guiding you to slow down, soften the mind, and reconnect with the rhythm of life.
+            </div>
+          </div>
+          <div className="sanctuary-item">
+            <a href="https://apps.apple.com/za/app/harmonic-echo/id6752900195" target="_blank" rel="noopener noreferrer" className="sanctuary-link">Harmonic Echo</a>
+            <div className="sanctuary-description">
+              Heal by humming: real‑time, audio‑reactive sacred geometry grows as you Hum. Gentle, focused, and shareable. Stimulates the vagus nerve → reduces stress hormones by up to 23%.
+
+
+            </div>
+          </div>
+        </div>
+        <div style={{ height: '120px' }} />
+        <div className="terminal-bar-wrapper">
+          {suggestions.length > 0 && (
+            <ul className="suggestions-list">
+              {suggestions.map((sugg, index) => (
+                <li
+                  key={sugg}
+                  className={index === activeSuggestionIndex ? 'active-suggestion' : ''}
+                  onClick={() => executeCommand(sugg)}
+                >
+                  {sugg}
+                </li>
+              ))}
+            </ul>
           )}
+          <div className="terminal-bar">
+            <img src={theme === 'dark' ? '/images/terminal-DM.svg' : '/images/terminal.svg'} alt="Terminal Icon" className="terminal-icon" />
+            <form onSubmit={handleCommandSubmit} style={{ display: 'flex', flexGrow: 1 }}>
+              <input
+                ref={terminalInputRef}
+                type="text"
+                value={command}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+                placeholder="type ‘help’ for list of commands."
+                className="terminal-input"
+                autoFocus
+              />
+            </form>
+            <img
+              src={isListening ? (theme === 'light' ? '/images/voice-btn-hover.svg' : '/images/voice-btn-hover-DM.svg') : voiceIcon}
+              alt="Voice Icon"
+              className={`voice-button ${isListening ? 'listening' : ''}`}
+              onMouseEnter={() => handleVoiceHover(true)}
+              onMouseLeave={() => handleVoiceHover(false)}
+              onClick={handleVoiceClick}
+            />
+            <img
+              src={paletteIcon}
+              alt="Palette Icon"
+              className="palette-button"
+              onMouseEnter={() => handlePaletteHover(true)}
+              onMouseLeave={() => handlePaletteHover(false)}
+              onClick={toggleThemeMenu}
+            />
+            {isThemeMenuOpen && (
+              <div className="theme-menu">
+                <button onClick={() => handleThemeChange('default')}>Default</button>
+                <button onClick={() => handleThemeChange('dark')}>Dark</button>
+                <button onClick={() => handleThemeChange('stillness')}>Stillness</button>
+                <button onClick={() => handleThemeChange('mountains')}>Mountains</button>
+                <button onClick={() => handleThemeChange('essence')}>Essence</button>
+                <button onClick={() => handleThemeChange('tao')}>Tao</button>
+                <button onClick={() => handleThemeChange('zen')}>Zen</button>
+                <button onClick={() => handleThemeChange('snow')}>Snow</button>
+                <button onClick={() => handleThemeChange('void')}>Void</button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  </>
+    </>
   );
 }
 
