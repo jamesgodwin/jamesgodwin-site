@@ -479,7 +479,7 @@ function App() {
           </button>
         </div>
         <div className="section-title">
-          MY DIGITAL SANCTUARIES
+          <a href="https://trueessence.tech/" target="_blank" rel="noopener noreferrer" className="sanctuary-link">MY DIGITAL SANCTUARIES</a>
         </div>
         <div className="sanctuaries-list">
           <div className="sanctuary-item">
