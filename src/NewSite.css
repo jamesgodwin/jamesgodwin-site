@@ -215,6 +215,31 @@ body.theme-void.image-theme.content-visible .background-container {
   padding-left: 40px;
 }
 
+/* Sanctuary intro text under the gift CTA */
+.sanctuary-intro {
+  margin-top: 90px; /* 90px below gift on desktop */
+  margin-bottom: 9px; /* 9px above the button */
+  width: 100%;
+  color: var(--hero-text);
+  font-family: 'Karla', sans-serif; /* Match sub-hero font */
+  font-size: 18px; /* Match sub-hero size */
+  line-height: 1.6; /* Match sub-hero line height */
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Centered CTA styled like the book button */
+.sanctuary-cta {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Remove default top margin on reused button to keep 9px spacing */
+.sanctuary-cta .card-button {
+  margin-top: 0;
+}
+
 .cards-container {
   display: flex;
   justify-content: center;
@@ -286,10 +311,16 @@ body.image-theme .sanctuaries-list {
 }
 
 /* Center align section title when background is applied */
-body.image-theme .section-title {
-  text-align: center;
-  padding-left: 0;
-}
+  body.image-theme .section-title {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  /* Keep intro centered on image themes as well */
+  body.image-theme .sanctuary-intro,
+  body.image-theme .sanctuary-cta {
+    text-align: center;
+  }
 
 .sanctuary-item {
   text-align: left;
@@ -636,6 +667,17 @@ body.image-theme .section-title {
   .section-title {
     font-size: 16px;
     margin-bottom: 8px;
+  }
+
+  .sanctuary-intro {
+    margin-top: 60px; /* 60px below gift on mobile */
+    font-size: 14px; /* Match mobile sub-hero size */
+    line-height: 1.6;
+    padding: 0 20px;
+  }
+
+  .sanctuary-cta {
+    margin-bottom: 20px;
   }
 
   .project-card-title {
