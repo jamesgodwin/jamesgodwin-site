@@ -466,8 +466,8 @@ function App() {
           Reconnect to Flow, Presence & Inner Clarity
         </div>
         <div className="sub-hero-text">
-          <span className="desktop-breaks">Through Taoist-inspired leadership mentoring and stillness-based design,<br />I guide people and teams to move from resistance to resonance<br /> — and create from a quieter power.</span>
-          <span className="mobile-breaks">Through Taoist-inspired leadership mentoring and stillness-based design, I guide people and teams to move from resistance to resonance — and create from a quieter power.</span>
+          <span className="desktop-breaks">Through Taoist-inspired leadership mentoring and stillness-based design,<br />I guide people and teams to move from resistance to resonance<br /> and create from a quieter power.</span>
+          <span className="mobile-breaks">Through Taoist-inspired leadership mentoring and stillness-based design, I guide people and teams to move from resistance to resonance and create from a quieter power.</span>
         </div>
         <div className="content-card">
           <div className="card-title">FREE GIFT FOR THE QUIETLY AWAKENING</div>
