@@ -463,11 +463,16 @@ function App() {
           </div>
         )}
         <div className="hero-text">
-          Reconnect to Flow, Presence & Inner Clarity
+          <span className="desktop-breaks">
+            Return to Flow, Presence, and the Quiet Clarity<br />That Leads You Forward
+          </span>
+          <span className="mobile-breaks">
+            Return to Flow, Presence, and the Quiet Clarity That Leads You Forward
+          </span>
         </div>
         <div className="sub-hero-text">
-          <span className="desktop-breaks">Through Taoist-inspired leadership mentoring and stillness-based design,<br />I guide people and teams to move from resistance to resonance<br /> and create from a quieter power.</span>
-          <span className="mobile-breaks">Through Taoist-inspired leadership mentoring and stillness-based design, I guide people and teams to move from resistance to resonance and create from a quieter power.</span>
+          <span className="desktop-breaks">Through Taoist-inspired leadership mentoring and stillness-based design,<br />I help leaders and teams replace resistance with<br /> and create from grounded, quiet clarity.</span>
+          <span className="mobile-breaks">Through Taoist-inspired leadership mentoring and stillness-based design, I help leaders and teams replace resistance with resonance and create from grounded, quiet clarity.</span>
         </div>
         <div className="content-card">
           <div className="card-title">FREE GIFT FOR THE QUIETLY AWAKENING</div>
@@ -484,6 +489,14 @@ function App() {
         <div className="sanctuary-cta">
           <a href="https://trueessence.tech/" target="_blank" rel="noopener noreferrer" className="card-button">
             Explore My Digital Sanctuaries <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
+          </a>
+        </div>
+        <div className="sanctuary-intro">
+          Where the body becomes the teacher, and movement returns you to yourself.
+        </div>
+        <div className="sanctuary-cta">
+          <a href="https://dantian.co.za" target="_blank" rel="noopener noreferrer" className="card-button">
+            Return to the Root (Tai Chi) <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
           </a>
         </div>
         {/* Sanctuaries list removed per request */}
