@@ -26,9 +26,10 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
-const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void', 'uxui', 'workshops'];
+const allCommands = ['help', 'about', 'workshops', 'apps', 'books', 'gift', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
 const commandRouteMap = {
   about: '/about',
+  workshops: '/workshops',
   apps: '/apps',
   books: '/books',
   contact: '/contact',
@@ -37,8 +38,7 @@ const commandRouteMap = {
   paintings: '/paintings',
   philosophy: '/philosophy',
   uxui: '/uxui',
-  gift: '/gift',
-  workshops: '/workshops',
+  gift: '/gift'
 };
 const routeCommandMap = Object.fromEntries(
   Object.entries(commandRouteMap).map(([cmd, path]) => [path, cmd])
@@ -66,6 +66,7 @@ function App() {
   const [isBreathing, setIsBreathing] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
+  const navMenuRef = useRef(null);
 
   const updateURLForCommand = useCallback((cmd) => {
     const path = commandRouteMap[cmd];
@@ -332,6 +333,19 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (!isNavMenuOpen) return;
+
+    function handleNavClickOutside(event) {
+      if (navMenuRef.current && !navMenuRef.current.contains(event.target)) {
+        setIsNavMenuOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleNavClickOutside);
+    return () => document.removeEventListener('mousedown', handleNavClickOutside);
+  }, [isNavMenuOpen]);
+
+  useEffect(() => {
     const currentThemeObject = themes[theme];
     const isImageBased = theme !== 'default' && theme !== 'dark' && currentThemeObject && currentThemeObject.backgroundImage;
     let timer;
@@ -514,7 +528,7 @@ function App() {
           transition: 'opacity 0.5s ease-in-out'
         }}
       >
-        <div className="nav-menu">
+        <div className="nav-menu" ref={navMenuRef}>
           <button
             className="nav-toggle"
             aria-label="Open navigation"
@@ -563,8 +577,8 @@ function App() {
           </span>
         </div>
         <div className="sub-hero-text">
-          <span className="desktop-breaks">Through Taoist-inspired leadership mentoring and stillness-based design,<br />I help leaders and teams replace resistance with<br /> and create from grounded, quiet clarity.</span>
-          <span className="mobile-breaks">Through Taoist-inspired leadership mentoring and stillness-based design, I help leaders and teams replace resistance with resonance and create from grounded, quiet clarity.</span>
+          <span className="desktop-breaks">I help founders and teams reconnect to presence, clarity,<br /> and calm through Taoist leadership mentoring,<br /> stillness workshops, and sacred digital design.</span>
+          <span className="mobile-breaks">I help founders and teams reconnect to presence, clarity, and calm through Taoist leadership mentoring, stillness workshops, and sacred digital design.</span>
         </div>
         <div className="content-card">
           <div className="card-title">FREE GIFT FOR THE QUIETLY AWAKENING</div>
@@ -576,19 +590,19 @@ function App() {
           </button>
         </div>
         <div className="sanctuary-intro">
-          Beyond words, there are spaces to experience presence.
-        </div>
-        <div className="sanctuary-cta">
-          <a href="https://trueessence.tech/" target="_blank" rel="noopener noreferrer" className="card-button">
-            Explore My Digital Sanctuaries <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
-          </a>
-        </div>
-        <div className="sanctuary-intro">
           Where presence becomes practical, and stillness becomes a skill you can use at work.
         </div>
         <div className="sanctuary-cta">
           <a href="/workshops" className="card-button">
             Explore My Corporate Workshops <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
+          </a>
+        </div>
+        <div className="sanctuary-intro">
+          Beyond words, there are spaces to experience presence.
+        </div>
+        <div className="sanctuary-cta">
+          <a href="https://trueessence.tech/" target="_blank" rel="noopener noreferrer" className="card-button">
+            Explore My Digital Sanctuaries <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
           </a>
         </div>
         <div className="sanctuary-intro">
