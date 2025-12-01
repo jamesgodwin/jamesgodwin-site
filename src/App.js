@@ -15,6 +15,7 @@ import philosophyOutput from './outputs/philosophy';
 import themesOutput from './outputs/themes';
 import unlearnOutput from './outputs/unlearn';
 import uxuiOutput from './outputs/uxui';
+import workshopsOutput from './outputs/workshops';
 import Breathe from './components/Breathe';
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -25,7 +26,23 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
-const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void', 'uxui'];
+const allCommands = ['help', 'about', 'now', 'apps', 'books', 'paintings', 'contact', 'taoism', 'themes', 'blog', 'gift', 'philosophy', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void', 'uxui', 'workshops'];
+const commandRouteMap = {
+  about: '/about',
+  apps: '/apps',
+  books: '/books',
+  contact: '/contact',
+  taoism: '/taoism',
+  now: '/now',
+  paintings: '/paintings',
+  philosophy: '/philosophy',
+  uxui: '/uxui',
+  gift: '/gift',
+  workshops: '/workshops',
+};
+const routeCommandMap = Object.fromEntries(
+  Object.entries(commandRouteMap).map(([cmd, path]) => [path, cmd])
+);
 
 function App() {
   const [voiceIcon, setVoiceIcon] = useState('/images/voice-btn.svg');
@@ -48,6 +65,16 @@ function App() {
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
   const [isBreathing, setIsBreathing] = useState(false);
   const [isListening, setIsListening] = useState(false);
+  const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
+
+  const updateURLForCommand = useCallback((cmd) => {
+    const path = commandRouteMap[cmd];
+    if (path) {
+      window.history.pushState({}, '', path);
+    } else {
+      window.history.pushState({}, '', '/');
+    }
+  }, []);
 
   const handleThemeChange = useCallback((newTheme) => {
     if (isTransitioning) return;
@@ -77,7 +104,8 @@ function App() {
     setIsThemeMenuOpen(false);
   }, [isTransitioning, theme]);
 
-  const executeCommand = useCallback((commandToExecute) => {
+  const executeCommand = useCallback((commandToExecute, options = {}) => {
+    const { updateURL = true } = options;
     if (!commandToExecute) return;
 
     let newOutput;
@@ -117,6 +145,9 @@ function App() {
       case 'uxui':
         newOutput = uxuiOutput;
         break;
+      case 'workshops':
+        newOutput = workshopsOutput;
+        break;
       case 'unlearn':
         newOutput = `<img src="/images/easter-egg.svg" alt="Easter Egg" style="width: 24px; height: 24px; margin-right: 10px; vertical-align: middle;" />${unlearnOutput()}`;
         break;
@@ -154,6 +185,9 @@ function App() {
     setHistoryIndex(-1);
     setCommand('');
     setSuggestions([]);
+    if (updateURL) {
+      updateURLForCommand(lowerCaseCommand);
+    }
 
     // Focus terminal input when output appears
     setTimeout(() => {
@@ -161,7 +195,7 @@ function App() {
         terminalInputRef.current.focus();
       }
     }, 100);
-  }, [handleThemeChange]);
+  }, [handleThemeChange, updateURLForCommand]);
 
   const toggleThemeMenu = () => {
     setIsThemeMenuOpen(!isThemeMenuOpen);
@@ -265,6 +299,8 @@ function App() {
 
   const closeOutput = () => {
     setOutput(null);
+    setIsNavMenuOpen(false);
+    window.history.pushState({}, '', '/');
     // Focus the terminal input after closing output
     setTimeout(() => {
       if (terminalInputRef.current) {
@@ -432,6 +468,36 @@ function App() {
     };
   }, [executeCommand]);
 
+  useEffect(() => {
+    const normalizePath = (path) => {
+      const lower = path.toLowerCase();
+      if (lower.endsWith('/') && lower.length > 1) {
+        return lower.replace(/\/+$/, '');
+      }
+      return lower;
+    };
+
+    const path = normalizePath(window.location.pathname);
+    const commandFromPath = routeCommandMap[path];
+    if (commandFromPath) {
+      executeCommand(commandFromPath, { updateURL: false });
+    }
+
+    const handlePopState = () => {
+      const newPath = normalizePath(window.location.pathname);
+      const cmd = routeCommandMap[newPath];
+      if (cmd) {
+        executeCommand(cmd, { updateURL: false });
+      } else {
+        setOutput(null);
+        setCommand('');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [executeCommand]);
+
   return (
     <>
       <div
@@ -448,6 +514,32 @@ function App() {
           transition: 'opacity 0.5s ease-in-out'
         }}
       >
+        <div className="nav-menu">
+          <button
+            className="nav-toggle"
+            aria-label="Open navigation"
+            onClick={() => setIsNavMenuOpen(!isNavMenuOpen)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+          {isNavMenuOpen && (
+            <div className="nav-dropdown">
+              {Object.keys(commandRouteMap).map((cmd) => (
+                <button
+                  key={cmd}
+                  onClick={() => {
+                    executeCommand(cmd);
+                    setIsNavMenuOpen(false);
+                  }}
+                >
+                  {cmd}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
         {isBreathing && <Breathe onEnd={() => setIsBreathing(false)} theme={theme} />}
         {output && (
           <div className="output-overlay" onClick={closeOutput}>
@@ -489,6 +581,14 @@ function App() {
         <div className="sanctuary-cta">
           <a href="https://trueessence.tech/" target="_blank" rel="noopener noreferrer" className="card-button">
             Explore My Digital Sanctuaries <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
+          </a>
+        </div>
+        <div className="sanctuary-intro">
+          Where presence becomes practical, and stillness becomes a skill you can use at work.
+        </div>
+        <div className="sanctuary-cta">
+          <a href="/workshops" className="card-button">
+            Explore My Corporate Workshops <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
           </a>
         </div>
         <div className="sanctuary-intro">

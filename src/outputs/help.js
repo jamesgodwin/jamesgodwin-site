@@ -9,6 +9,7 @@ const helpOutput = `
 > paintings  — see what stillness looks like  
 > philosophy — read my deeper why
 > uxui       — design in resonance
+> workshops  — book a stillness workshop
 > themes (default, dark, stillness, mountains, essence, tao, zen, snow, void)
 
 [3 commands remain hidden]
