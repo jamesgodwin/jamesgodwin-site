@@ -10,7 +10,7 @@ import contactOutput from './outputs/contact';
 import taoismOutput from './outputs/taoism';
 import nowOutput from './outputs/now';
 import paintingsOutput from './outputs/paintings';
-import giftOutput from './outputs/gift';
+import sanctuaryOutput from './outputs/sanctuary';
 import philosophyOutput from './outputs/philosophy';
 import themesOutput from './outputs/themes';
 import unlearnOutput from './outputs/unlearn';
@@ -26,7 +26,7 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
-const allCommands = ['help', 'about', 'workshops', 'apps', 'books', 'gift', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
+const allCommands = ['help', 'about', 'workshops', 'apps', 'books', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
 const commandRouteMap = {
   about: '/about',
   workshops: '/workshops',
@@ -38,7 +38,7 @@ const commandRouteMap = {
   paintings: '/paintings',
   philosophy: '/philosophy',
   uxui: '/uxui',
-  gift: '/gift'
+  sanctuary: '/sanctuary'
 };
 const routeCommandMap = Object.fromEntries(
   Object.entries(commandRouteMap).map(([cmd, path]) => [path, cmd])
@@ -125,8 +125,8 @@ function App() {
       case 'books':
         newOutput = booksOutput;
         break;
-      case 'gift':
-        newOutput = giftOutput;
+      case 'sanctuary':
+        newOutput = sanctuaryOutput;
         break;
       case 'contact':
         newOutput = contactOutput;
@@ -405,7 +405,7 @@ function App() {
 
   useEffect(() => {
     if (output) {
-      const getTheBookButton = document.getElementById('get-the-book-gift');
+      const getTheBookButton = document.getElementById('get-the-book-sanctuary');
       if (getTheBookButton) {
         getTheBookButton.addEventListener('click', () => {
           closeOutput();

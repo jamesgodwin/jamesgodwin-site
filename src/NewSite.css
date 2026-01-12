@@ -280,9 +280,9 @@ body.theme-void.image-theme.content-visible .background-container {
   padding-left: 40px;
 }
 
-/* Sanctuary intro text under the gift CTA */
+/* Sanctuary intro text under the sanctuary CTA */
 .sanctuary-intro {
-  margin-top: 90px; /* 90px below gift on desktop */
+  margin-top: 90px; /* 90px below sanctuary on desktop */
   margin-bottom: 9px; /* 9px above the button */
   width: 100%;
   color: var(--hero-text);
@@ -740,7 +740,7 @@ body.image-theme .sanctuaries-list {
   }
 
   .sanctuary-intro {
-    margin-top: 60px; /* 60px below gift on mobile */
+    margin-top: 60px; /* 60px below sanctuary on mobile */
     font-size: 14px; /* Match mobile sub-hero size */
     line-height: 1.6;
     padding: 0 20px;
