@@ -570,47 +570,46 @@ function App() {
         )}
         <div className="hero-text">
           <span className="desktop-breaks">
-            Return to Flow, Presence, and the Quiet Clarity<br />That Leads You Forward
+            Return to Your True Essence.<br />The Clarity You Seek is Already Within.
           </span>
           <span className="mobile-breaks">
-            Return to Flow, Presence, and the Quiet Clarity That Leads You Forward
+            Return to Your True Essence. The Clarity You Seek is Already Within.
           </span>
         </div>
         <div className="sub-hero-text">
-          <span className="desktop-breaks">I help founders and teams reconnect to presence, clarity,<br /> and calm through Taoist leadership mentoring,<br /> stillness workshops, and sacred digital design.</span>
-          <span className="mobile-breaks">I help founders and teams reconnect to presence, clarity, and calm through Taoist leadership mentoring, stillness workshops, and sacred digital design.</span>
+          <span className="desktop-breaks">I help high-stakes founders and teams find the 'Still Point' in the storm.<br />Through Taoist leadership, somatic workshops, and sacred tech,<br />we remove the noise so your natural authority can emerge.</span>
+          <span className="mobile-breaks">I help high-stakes founders and teams find the 'Still Point' in the storm. Through Taoist leadership, somatic workshops, and sacred tech, we remove the noise so your natural authority can emerge.</span>
         </div>
         <div className="content-card">
-          <div className="card-title">FREE GIFT FOR THE QUIETLY AWAKENING</div>
-          <div className="card-text">
-            Not everything loud is worth hearing.<br />If you’re seeking a quieter way to grow<br />— this is for you.
+          <div className="card-title">AN INVITATION FOR THE FOUNDERS OF STILLNESS</div>
+          <div className="card-text">Not everything loud is worth hearing.<br />If you are weary of the pursuit and ready for the return,<br />I invite you into The Sanctuary.
           </div>
           <button className="card-button" data-formkit-toggle="0da6b662ba">
-            GET THE BOOK <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
+            ENTER THE SANCTUARY <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
           </button>
         </div>
         <div className="sanctuary-intro">
-          Where presence becomes practical, and stillness becomes a skill you can use at work.
-        </div>
-        <div className="sanctuary-cta">
-          <a href="/workshops" className="card-button">
-            Explore My Corporate Workshops <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
-          </a>
-        </div>
-        <div className="sanctuary-intro">
-          Beyond words, there are spaces to experience presence.
+          <span><strong>The Digital Sanctuary</strong>: </span>Most technology is designed to extract. This is designed to regulate.<br />Experience the apps and sanctuaries built to return you to your center.
         </div>
         <div className="sanctuary-cta">
           <a href="https://trueessence.tech/" target="_blank" rel="noopener noreferrer" className="card-button">
-            Explore My Digital Sanctuaries <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
+            Experience the Sanctuary <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
           </a>
         </div>
         <div className="sanctuary-intro">
-          Where the body becomes the teacher, and movement returns you to yourself.
+          <span><strong>Stillness Under Pressure</strong>: </span>The presence you bring to work shapes the room.<br />I help founders and teams regulate their nervous systems to find clarity in the eye of the storm.
+        </div>
+        <div className="sanctuary-cta">
+          <a href="/workshops" className="card-button">
+            View the Workshops <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
+          </a>
+        </div>
+        <div className="sanctuary-intro">
+          <span><strong>The Wisdom of the Body</strong>: </span>Thirty years of Taoist practice have taught me one thing:<br />the body already knows the way. Return to the somatic roots of presence and movement.
         </div>
         <div className="sanctuary-cta">
           <a href="https://dantian.co.za" target="_blank" rel="noopener noreferrer" className="card-button">
-            Return to the Root (Tai Chi) <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
+            Return to the Root <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
           </a>
         </div>
         {/* Sanctuaries list removed per request */}
