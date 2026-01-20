@@ -600,6 +600,12 @@ body.image-theme .sanctuaries-list {
   padding-left: 20px; /* Indent the list */
 }
 
+.output-content-wrapper ul.legal-list {
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: 24px;
+}
+
 .output-content-wrapper li {
   font-family: 'Karla', sans-serif;
   font-size: 16px;

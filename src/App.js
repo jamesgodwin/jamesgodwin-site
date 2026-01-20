@@ -16,6 +16,8 @@ import themesOutput from './outputs/themes';
 import unlearnOutput from './outputs/unlearn';
 import uxuiOutput from './outputs/uxui';
 import workshopsOutput from './outputs/workshops';
+import servicesOutput from './outputs/services';
+import legalOutput from './outputs/legal';
 import Breathe from './components/Breathe';
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -26,9 +28,10 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
-const allCommands = ['help', 'about', 'workshops', 'apps', 'books', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
+const allCommands = ['help', 'about', 'services', 'workshops', 'apps', 'books', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'legal', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
 const commandRouteMap = {
   about: '/about',
+  services: '/services',
   workshops: '/workshops',
   apps: '/apps',
   books: '/books',
@@ -38,7 +41,8 @@ const commandRouteMap = {
   paintings: '/paintings',
   philosophy: '/philosophy',
   uxui: '/uxui',
-  sanctuary: '/sanctuary'
+  sanctuary: '/sanctuary',
+  legal: '/legal'
 };
 const routeCommandMap = Object.fromEntries(
   Object.entries(commandRouteMap).map(([cmd, path]) => [path, cmd])
@@ -119,6 +123,9 @@ function App() {
       case 'about':
         newOutput = aboutOutput;
         break;
+      case 'services':
+        newOutput = servicesOutput;
+        break;
       case 'apps':
         newOutput = appsOutput;
         break;
@@ -148,6 +155,9 @@ function App() {
         break;
       case 'workshops':
         newOutput = workshopsOutput;
+        break;
+      case 'legal':
+        newOutput = legalOutput;
         break;
       case 'unlearn':
         newOutput = `<img src="/images/easter-egg.svg" alt="Easter Egg" style="width: 24px; height: 24px; margin-right: 10px; vertical-align: middle;" />${unlearnOutput()}`;
