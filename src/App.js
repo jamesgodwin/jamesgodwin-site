@@ -10,7 +10,6 @@ import contactOutput from './outputs/contact';
 import taoismOutput from './outputs/taoism';
 import nowOutput from './outputs/now';
 import paintingsOutput from './outputs/paintings';
-import sanctuaryOutput from './outputs/sanctuary';
 import philosophyOutput from './outputs/philosophy';
 import themesOutput from './outputs/themes';
 import unlearnOutput from './outputs/unlearn';
