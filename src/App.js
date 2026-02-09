@@ -133,8 +133,24 @@ function App() {
         newOutput = booksOutput;
         break;
       case 'sanctuary':
-        newOutput = sanctuaryOutput;
-        break;
+        window.open('https://trueessence.space/', '_blank', 'noopener,noreferrer');
+        setOutput(null);
+        setCommandHistory((prevHistory) => [...prevHistory, commandToExecute]);
+        setHistoryIndex(-1);
+        setCommand('');
+        setSuggestions([]);
+
+        // If someone navigates directly to /sanctuary, don't leave them stuck on that route.
+        if (window.location.pathname.toLowerCase() === '/sanctuary') {
+          window.history.replaceState({}, '', '/');
+        }
+
+        setTimeout(() => {
+          if (terminalInputRef.current) {
+            terminalInputRef.current.focus();
+          }
+        }, 100);
+        return;
       case 'contact':
         newOutput = contactOutput;
         break;
@@ -587,39 +603,50 @@ function App() {
           </span>
         </div>
         <div className="sub-hero-text">
-          <span className="desktop-breaks">I help high-stakes founders and teams find the 'Still Point' in the storm.<br />Through Taoist leadership, somatic workshops, and sacred tech,<br />we remove the noise so your natural authority can emerge.</span>
-          <span className="mobile-breaks">I help high-stakes founders and teams find the 'Still Point' in the storm. Through Taoist leadership, somatic workshops, and sacred tech, we remove the noise so your natural authority can emerge.</span>
+          <span className="desktop-breaks">I create quiet spaces for people ready to return to presence.<br /> Through Taoist practice, somatic work, and sacred technology,<br />I help remove the noise so clarity can emerge.</span>
+          <span className="mobile-breaks">I create quiet spaces for people ready to return to presence. Through Taoist practice, somatic work, and sacred technology, I help remove the noise so clarity can emerge.</span>
         </div>
         <div className="content-card">
-          <div className="card-title">AN INVITATION FOR THE FOUNDERS OF STILLNESS</div>
-          <div className="card-text">Not everything loud is worth hearing.<br />If you are weary of the pursuit and ready for the return,<br />I invite you into The Sanctuary.
+          <div className="card-title">AN INVITATION TO THE RETURN</div>
+          <div className="card-text">Not everything loud is worth hearing.<br />If you feel the pull to come back to yourself,<br />
+you are welcome here.
           </div>
-          <button className="card-button" data-formkit-toggle="0da6b662ba">
-            ENTER THE SANCTUARY <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
-          </button>
+          <a
+            href="https://trueessence.space/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card-button"
+          >
+            ENTER THE SANCTUARY{' '}
+            <img
+              src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'}
+              alt="Arrow Right"
+              className="button-icon"
+            />
+          </a>
         </div>
         <div className="sanctuary-intro">
-          <span><strong>The Digital Sanctuary</strong>: </span>Most technology is designed to extract. This is designed to regulate.<br />Experience the apps and sanctuaries built to return you to your center.
+          <span><strong>The Digital Sanctuary</strong>: Most technology is designed to extract. This is designed to regulate.<br />A growing collection of quiet digital sanctuaries built to support presence, reflection, and inner coherence.</span>
         </div>
         <div className="sanctuary-cta">
           <a href="https://trueessence.tech/" target="_blank" rel="noopener noreferrer" className="card-button">
-            Experience the Sanctuary <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
+            EXPLORE THE SANCTUARIES <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
           </a>
         </div>
         <div className="sanctuary-intro">
-          <span><strong>Stillness Under Pressure</strong>: </span>The presence you bring to work shapes the room.<br />I help founders and teams regulate their nervous systems to find clarity in the eye of the storm.
+          <span><strong>Stillness Under Pressure</strong>: </span>The presence you bring to work shapes the room.<br />I work with founders and teams to regulate their nervous systems, so clarity,<br />grounded leadership, and natural authority can emerge.
         </div>
         <div className="sanctuary-cta">
           <a href="/workshops" className="card-button">
-            View the Workshops <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
+            VIEW THE WORKSHOPS <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
           </a>
         </div>
         <div className="sanctuary-intro">
-          <span><strong>The Wisdom of the Body</strong>: </span>Thirty years of Taoist practice have taught me one thing:<br />the body already knows the way. Return to the somatic roots of presence and movement.
+          <span><strong>The Wisdom of the Body</strong>: </span>Decades of Taoist practice have taught me one simple truth:<br />the body already knows the way. Return to the somatic roots of presence, breath, and movement.
         </div>
         <div className="sanctuary-cta">
           <a href="https://dantian.co.za" target="_blank" rel="noopener noreferrer" className="card-button">
-            Return to the Root <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
+            RETURN TO THE ROOT <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
           </a>
         </div>
         {/* Sanctuaries list removed per request */}
