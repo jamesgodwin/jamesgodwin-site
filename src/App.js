@@ -12,6 +12,7 @@ import taoismOutput from './outputs/taoism';
 import nowOutput from './outputs/now';
 import paintingsOutput from './outputs/paintings';
 import philosophyOutput from './outputs/philosophy';
+import thankYouOutput from './outputs/thankYou';
 import themesOutput from './outputs/themes';
 import unlearnOutput from './outputs/unlearn';
 import uxuiOutput from './outputs/uxui';
@@ -28,10 +29,11 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
-const allCommands = ['help', 'diagnostic', 'workshop-enquiry', 'about', 'workshops', 'apps', 'books', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'legal', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
+const allCommands = ['help', 'diagnostic', 'workshop-enquiry', 'thank-you', 'about', 'workshops', 'apps', 'books', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'legal', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
 const commandRouteMap = {
   diagnostic: '/executive-state-diagnostic',
   'workshop-enquiry': '/workshop-enquiry',
+  'thank-you': '/thank-you',
   about: '/about',
   workshops: '/workshops',
   apps: '/apps',
@@ -64,6 +66,7 @@ const pageHeadingLabels = {
   philosophy: 'Philosophy',
   taoism: 'Taoism',
   'workshop-enquiry': 'Workshop Enquiry',
+  'thank-you': 'Thank You',
   workshops: 'Stillness Under Pressure',
   uxui: 'Product Clarity'
 };
@@ -155,13 +158,6 @@ function App() {
       .replace(/<\/h3>/g, '</h2>')
     : inlineOutputContent;
   const pageHeading = pageHeadingLabels[outputTitle] || commandMenuLabels[outputTitle] || outputTitle;
-  const searchParams = new URLSearchParams(window.location.search);
-  const showFormSuccess = searchParams.get('submitted') === 'true';
-  const formSuccessMessage = {
-    diagnostic: 'Request received. I will respond personally within 24 hours.',
-    'workshop-enquiry': 'Enquiry received. I will respond personally within 24 hours.'
-  }[outputTitle];
-
   const updateURLForCommand = useCallback((cmd) => {
     const path = commandRouteMap[cmd];
     if (path) {
@@ -212,6 +208,9 @@ function App() {
         break;
       case 'about':
         newOutput = aboutOutput;
+        break;
+      case 'thank-you':
+        newOutput = thankYouOutput;
         break;
       case 'diagnostic':
         newOutput = diagnosticOutput;
@@ -689,11 +688,6 @@ function App() {
               ref={outputContentWrapperRef}
               className={`page-content-body ${output.command === '> help' ? 'help-output' : ''}`}
             >
-              {showFormSuccess && formSuccessMessage && (
-                <div className="page-form-success">
-                  {formSuccessMessage}
-                </div>
-              )}
               <div dangerouslySetInnerHTML={typeof normalizedInlineOutputContent === 'string' ? { __html: normalizedInlineOutputContent } : null}>
                 {typeof normalizedInlineOutputContent !== 'string' ? normalizedInlineOutputContent : null}
               </div>
