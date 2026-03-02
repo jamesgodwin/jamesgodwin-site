@@ -7,6 +7,7 @@ import aboutOutput from './outputs/about';
 import appsOutput from './outputs/apps';
 import booksOutput from './outputs/books';
 import contactOutput from './outputs/contact';
+import diagnosticOutput from './outputs/diagnostic';
 import taoismOutput from './outputs/taoism';
 import nowOutput from './outputs/now';
 import paintingsOutput from './outputs/paintings';
@@ -15,7 +16,7 @@ import themesOutput from './outputs/themes';
 import unlearnOutput from './outputs/unlearn';
 import uxuiOutput from './outputs/uxui';
 import workshopsOutput from './outputs/workshops';
-import servicesOutput from './outputs/services';
+import workshopEnquiryOutput from './outputs/workshopEnquiry';
 import legalOutput from './outputs/legal';
 import Breathe from './components/Breathe';
 
@@ -27,10 +28,11 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
-const allCommands = ['help', 'about', 'services', 'workshops', 'apps', 'books', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'legal', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
+const allCommands = ['help', 'diagnostic', 'workshop-enquiry', 'about', 'workshops', 'apps', 'books', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'legal', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
 const commandRouteMap = {
+  diagnostic: '/executive-state-diagnostic',
+  'workshop-enquiry': '/workshop-enquiry',
   about: '/about',
-  services: '/services',
   workshops: '/workshops',
   apps: '/apps',
   books: '/books',
@@ -43,11 +45,84 @@ const commandRouteMap = {
   sanctuary: '/sanctuary',
   legal: '/legal'
 };
+const commandMenuLabels = {
+  diagnostic: 'Executive State Diagnostic',
+  workshops: 'Stillness Under Pressure Workshops',
+  sanctuary: 'True Essence',
+  uxui: 'Product Clarity',
+  'workshop-enquiry': 'Workshop Enquiry'
+};
+const pageHeadingLabels = {
+  about: 'About',
+  apps: 'Apps',
+  books: 'Books',
+  contact: 'Contact',
+  diagnostic: 'Executive State Diagnostic',
+  legal: 'Legal',
+  now: 'Now',
+  paintings: 'Paintings',
+  philosophy: 'Philosophy',
+  taoism: 'Taoism',
+  'workshop-enquiry': 'Workshop Enquiry',
+  workshops: 'Stillness Under Pressure',
+  uxui: 'Product Clarity'
+};
+const navMenuItems = [
+  'diagnostic',
+  'workshops',
+  'divider',
+  'sanctuary',
+  'apps',
+  'divider',
+  'about',
+  'contact',
+  'divider',
+  'philosophy',
+  'taoism',
+  'books',
+  'uxui',
+  'paintings',
+  'now',
+  'legal'
+];
 const routeCommandMap = Object.fromEntries(
   Object.entries(commandRouteMap).map(([cmd, path]) => [path, cmd])
 );
 
 function App() {
+  const showTerminalUI = false;
+  const sharedFooterNav = (
+    <div className="page-footer-nav">
+      <div className="page-footer-nav-group">
+        <div className="page-footer-nav-title">Work</div>
+        <ul>
+          <li><a href="/executive-state-diagnostic">Executive State Diagnostic</a></li>
+          <li><a href="/workshops">Stillness Under Pressure Workshops</a></li>
+          <li><a href="https://trueessence.space/" target="_blank" rel="noopener noreferrer">True Essence</a></li>
+          <li><a href="/apps">Apps</a></li>
+        </ul>
+      </div>
+      <div className="page-footer-nav-group">
+        <div className="page-footer-nav-title">Writing & Thinking</div>
+        <ul>
+          <li><a href="/philosophy">Philosophy</a></li>
+          <li><a href="/taoism">Taoism</a></li>
+          <li><a href="/books">Books</a></li>
+        </ul>
+      </div>
+      <div className="page-footer-nav-group">
+        <div className="page-footer-nav-title">About</div>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/uxui">Product Clarity</a></li>
+          <li><a href="/paintings">Paintings</a></li>
+          <li><a href="/now">Now</a></li>
+          <li><a href="/legal">Legal</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  );
   const [voiceIcon, setVoiceIcon] = useState('/images/voice-btn.svg');
   const [paletteIcon, setPaletteIcon] = useState('/images/palette-btn.svg');
   const [theme, setTheme] = useState('default');
@@ -70,6 +145,22 @@ function App() {
   const [isListening, setIsListening] = useState(false);
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
   const navMenuRef = useRef(null);
+  const inlineOutputContent = typeof output?.content === 'string'
+    ? output.content.replace(/<hr><p class="commands-text">[\s\S]*$/, '')
+    : output?.content;
+  const outputTitle = output?.command ? output.command.replace(/^>\s*/, '') : '';
+  const normalizedInlineOutputContent = typeof inlineOutputContent === 'string'
+    ? inlineOutputContent
+      .replace(/<h3(\b[^>]*)>/g, '<h2$1>')
+      .replace(/<\/h3>/g, '</h2>')
+    : inlineOutputContent;
+  const pageHeading = pageHeadingLabels[outputTitle] || commandMenuLabels[outputTitle] || outputTitle;
+  const searchParams = new URLSearchParams(window.location.search);
+  const showFormSuccess = searchParams.get('submitted') === 'true';
+  const formSuccessMessage = {
+    diagnostic: 'Request received. I will respond personally within 24 hours.',
+    'workshop-enquiry': 'Enquiry received. I will respond personally within 24 hours.'
+  }[outputTitle];
 
   const updateURLForCommand = useCallback((cmd) => {
     const path = commandRouteMap[cmd];
@@ -122,8 +213,8 @@ function App() {
       case 'about':
         newOutput = aboutOutput;
         break;
-      case 'services':
-        newOutput = servicesOutput;
+      case 'diagnostic':
+        newOutput = diagnosticOutput;
         break;
       case 'apps':
         newOutput = appsOutput;
@@ -170,6 +261,9 @@ function App() {
         break;
       case 'workshops':
         newOutput = workshopsOutput;
+        break;
+      case 'workshop-enquiry':
+        newOutput = workshopEnquiryOutput;
         break;
       case 'legal':
         newOutput = legalOutput;
@@ -327,12 +421,6 @@ function App() {
     setOutput(null);
     setIsNavMenuOpen(false);
     window.history.pushState({}, '', '/');
-    // Focus the terminal input after closing output
-    setTimeout(() => {
-      if (terminalInputRef.current) {
-        terminalInputRef.current.focus();
-      }
-    }, 100);
   };
 
   useEffect(() => {
@@ -444,15 +532,10 @@ function App() {
   }, [output]);
 
   useEffect(() => {
+    document.documentElement.classList.remove('body-no-scroll');
+    document.body.classList.remove('body-no-scroll');
     if (output) {
-      document.documentElement.classList.add('body-no-scroll');
-      document.body.classList.add('body-no-scroll');
-      if (outputContentWrapperRef.current) {
-        outputContentWrapperRef.current.scrollTop = 0;
-      }
-    } else {
-      document.documentElement.classList.remove('body-no-scroll');
-      document.body.classList.remove('body-no-scroll');
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     }
   }, [output]);
 
@@ -565,22 +648,26 @@ function App() {
           </button>
           {isNavMenuOpen && (
             <div className="nav-dropdown">
-              {Object.keys(commandRouteMap).map((cmd) => (
-                <button
-                  key={cmd}
-                  onClick={() => {
-                    executeCommand(cmd);
-                    setIsNavMenuOpen(false);
-                  }}
-                >
-                  {cmd}
-                </button>
+              {navMenuItems.map((item, index) => (
+                item === 'divider' ? (
+                  <div key={`${item}-${index}`} className="nav-divider" />
+                ) : (
+                  <button
+                    key={item}
+                    onClick={() => {
+                      executeCommand(item);
+                      setIsNavMenuOpen(false);
+                    }}
+                  >
+                    {commandMenuLabels[item] || item}
+                  </button>
+                )
               ))}
             </div>
           )}
         </div>
         {isBreathing && <Breathe onEnd={() => setIsBreathing(false)} theme={theme} />}
-        {output && (
+        {showTerminalUI && output && (
           <div className="output-overlay" onClick={closeOutput}>
             <div ref={outputContentWrapperRef} className="output-content-wrapper" onClick={(e) => e.stopPropagation()}>
               <div className="output-command">{output.command}</div>
@@ -593,122 +680,176 @@ function App() {
             </div>
           </div>
         )}
-        <div className="hero-text">
-          <span className="desktop-breaks">
-            Return to Your True Essence.<br />The Clarity You Seek is Already Within.
-          </span>
-          <span className="mobile-breaks">
-            Return to Your True Essence. The Clarity You Seek is Already Within.
-          </span>
-        </div>
-        <div className="sub-hero-text">
-          <span className="desktop-breaks">I create quiet spaces for people ready to return to presence.<br /> Through Taoist practice, somatic work, and sacred technology,<br />I help remove the noise so clarity can emerge.</span>
-          <span className="mobile-breaks">I create quiet spaces for people ready to return to presence. Through Taoist practice, somatic work, and sacred technology, I help remove the noise so clarity can emerge.</span>
-        </div>
-        <div className="content-card">
-          <div className="card-title">AN INVITATION TO THE RETURN</div>
-          <div className="card-text">Not everything loud is worth hearing.<br />If you feel the pull to come back to yourself,<br />
-you are welcome here.
-          </div>
-          <a
-            href="https://trueessence.space/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card-button"
-          >
-            ENTER THE SANCTUARY{' '}
-            <img
-              src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'}
-              alt="Arrow Right"
-              className="button-icon"
-            />
-          </a>
-        </div>
-        <div className="sanctuary-intro">
-          <span><strong>The Digital Sanctuary</strong>: Most technology is designed to extract. This is designed to regulate.<br />A growing collection of quiet digital sanctuaries built to support presence, reflection, and inner coherence.</span>
-        </div>
-        <div className="sanctuary-cta">
-          <a href="https://trueessence.tech/" target="_blank" rel="noopener noreferrer" className="card-button">
-            EXPLORE THE SANCTUARIES <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
-          </a>
-        </div>
-        <div className="sanctuary-intro">
-          <span><strong>Stillness Under Pressure</strong>: </span>The presence you bring to work shapes the room.<br />I work with founders and teams to regulate their nervous systems, so clarity,<br />grounded leadership, and natural authority can emerge.
-        </div>
-        <div className="sanctuary-cta">
-          <a href="/workshops" className="card-button">
-            VIEW THE WORKSHOPS <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
-          </a>
-        </div>
-        <div className="sanctuary-intro">
-          <span><strong>The Wisdom of the Body</strong>: </span>Decades of Taoist practice have taught me one simple truth:<br />the body already knows the way. Return to the somatic roots of presence, breath, and movement.
-        </div>
-        <div className="sanctuary-cta">
-          <a href="https://dantian.co.za" target="_blank" rel="noopener noreferrer" className="card-button">
-            RETURN TO THE ROOT <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
-          </a>
-        </div>
-        {/* Sanctuaries list removed per request */}
-        <div style={{ height: '120px' }} />
-        <div className="terminal-bar-wrapper">
-          {suggestions.length > 0 && (
-            <ul className="suggestions-list">
-              {suggestions.map((sugg, index) => (
-                <li
-                  key={sugg}
-                  className={index === activeSuggestionIndex ? 'active-suggestion' : ''}
-                  onClick={() => executeCommand(sugg)}
-                >
-                  {sugg}
-                </li>
-              ))}
-            </ul>
-          )}
-          <div className="terminal-bar">
-            <img src={theme === 'dark' ? '/images/terminal-DM.svg' : '/images/terminal.svg'} alt="Terminal Icon" className="terminal-icon" />
-            <form onSubmit={handleCommandSubmit} style={{ display: 'flex', flexGrow: 1 }}>
-              <input
-                ref={terminalInputRef}
-                type="text"
-                value={command}
-                onChange={handleInputChange}
-                onKeyDown={handleKeyDown}
-                placeholder="type ‘help’ for list of commands."
-                className="terminal-input"
-                autoFocus
-              />
-            </form>
-            <img
-              src={isListening ? (theme === 'light' ? '/images/voice-btn-hover.svg' : '/images/voice-btn-hover-DM.svg') : voiceIcon}
-              alt="Voice Icon"
-              className={`voice-button ${isListening ? 'listening' : ''}`}
-              onMouseEnter={() => handleVoiceHover(true)}
-              onMouseLeave={() => handleVoiceHover(false)}
-              onClick={handleVoiceClick}
-            />
-            <img
-              src={paletteIcon}
-              alt="Palette Icon"
-              className="palette-button"
-              onMouseEnter={() => handlePaletteHover(true)}
-              onMouseLeave={() => handlePaletteHover(false)}
-              onClick={toggleThemeMenu}
-            />
-            {isThemeMenuOpen && (
-              <div className="theme-menu">
-                <button onClick={() => handleThemeChange('default')}>Default</button>
-                <button onClick={() => handleThemeChange('dark')}>Dark</button>
-                <button onClick={() => handleThemeChange('stillness')}>Stillness</button>
-                <button onClick={() => handleThemeChange('mountains')}>Mountains</button>
-                <button onClick={() => handleThemeChange('essence')}>Essence</button>
-                <button onClick={() => handleThemeChange('tao')}>Tao</button>
-                <button onClick={() => handleThemeChange('zen')}>Zen</button>
-                <button onClick={() => handleThemeChange('snow')}>Snow</button>
-                <button onClick={() => handleThemeChange('void')}>Void</button>
+        {output ? (
+          <section className="home-shell page-content-shell">
+            <button onClick={closeOutput} className="page-home-link">← Back to Home</button>
+            <div className="page-content-meta">{pageHeading}</div>
+            <h1 className="sr-only">{pageHeading}</h1>
+            <div
+              ref={outputContentWrapperRef}
+              className={`page-content-body ${output.command === '> help' ? 'help-output' : ''}`}
+            >
+              {showFormSuccess && formSuccessMessage && (
+                <div className="page-form-success">
+                  {formSuccessMessage}
+                </div>
+              )}
+              <div dangerouslySetInnerHTML={typeof normalizedInlineOutputContent === 'string' ? { __html: normalizedInlineOutputContent } : null}>
+                {typeof normalizedInlineOutputContent !== 'string' ? normalizedInlineOutputContent : null}
               </div>
+              {sharedFooterNav}
+            </div>
+          </section>
+        ) : (
+          <>
+            <section className="home-shell hero-section">
+              <div className="hero-text">
+                <span className="desktop-breaks">When pressure rises, decision quality drops.</span>
+                <span className="mobile-breaks">When pressure rises, decision quality drops.</span>
+              </div>
+              <div className="hero-supporting">
+                Strong leaders do not lose strategy. They lose regulation under stress.
+              </div>
+              <div className="hero-positioning">
+                I help founders and leadership teams make clearer decisions by regulating state first.
+              </div>
+            </section>
+            <section className="home-shell offer-section diagnostic-section">
+              <div className="offer-copy">
+                <div className="offer-label">Executive State Diagnostic</div>
+                <div className="offer-title">A focused 45-minute session for clearer decisions under pressure.</div>
+                <div className="offer-text">
+                  Identify how pressure is shaping your thinking, communication, and judgement, then leave with practical next steps.
+                </div>
+                <ul className="offer-list">
+                  <li>Identify where stress is reducing judgement</li>
+                  <li>Spot repeat patterns under pressure</li>
+                  <li>Leave with a practical regulation plan</li>
+                </ul>
+                <div className="section-actions">
+                  <a href="/executive-state-diagnostic" className="card-button primary-button">
+                    BOOK AN EXECUTIVE STATE DIAGNOSTIC →
+                  </a>
+                </div>
+              </div>
+            </section>
+            <section className="home-shell offer-section workshop-section">
+              <div className="offer-copy">
+                <div className="offer-label">Stillness Under Pressure</div>
+                <div className="offer-title">Workshops for leadership teams operating under pressure.</div>
+                <div className="offer-text">
+                  Teams learn how to reduce reactivity, improve response latency, and make better decisions when the stakes are high.
+                </div>
+                <ul className="offer-list">
+                  <li>Reduce defensive responses</li>
+                  <li>Improve communication under pressure</li>
+                  <li>Strengthen judgement in tense situations</li>
+                </ul>
+                <div className="section-actions">
+                  <a href="/workshops" className="card-button primary-button">
+                    EXPLORE STILLNESS UNDER PRESSURE WORKSHOPS{' '}
+                    <img
+                      src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'}
+                      alt="Arrow Right"
+                      className="button-icon"
+                    />
+                  </a>
+                </div>
+              </div>
+            </section>
+            <section className="home-shell secondary-section">
+              <div className="offer-copy secondary-offer">
+                <div className="offer-label">True Essence</div>
+                <div className="offer-title">True Essence is the longer arc of this work.</div>
+                <div className="offer-text">
+                  Where the workshop stabilises teams, the app reinforces personal regulation over time. It is a daily structure for maintaining clarity when pressure returns.
+                </div>
+                <div className="section-actions">
+                  <a href="https://trueessence.space/" target="_blank" rel="noopener noreferrer" className="card-button primary-button">
+                    EXPLORE TRUE ESSENCE →
+                  </a>
+                </div>
+              </div>
+            </section>
+            <section className="home-shell secondary-section">
+              <div className="offer-copy secondary-offer">
+                <div className="offer-label">Thirty Years of Practice</div>
+                <div className="offer-title">This work is grounded in three decades of Tai Chi and breath training.</div>
+                <div className="offer-text">
+                  Not as philosophy, but as applied regulation. When the body settles, perception sharpens. When perception sharpens, decisions improve.
+                </div>
+                <div className="section-actions">
+                  <a href="https://dantian.co.za" target="_blank" rel="noopener noreferrer" className="card-button secondary-button">
+                    LEARN ABOUT THE PRACTICE{' '}
+                    <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
+                  </a>
+                </div>
+              </div>
+            </section>
+            <div style={{ height: '90px' }} />
+          </>
+        )}
+        {showTerminalUI && (
+          <div className="terminal-bar-wrapper">
+            {suggestions.length > 0 && (
+              <ul className="suggestions-list">
+                {suggestions.map((sugg, index) => (
+                  <li
+                    key={sugg}
+                    className={index === activeSuggestionIndex ? 'active-suggestion' : ''}
+                    onClick={() => executeCommand(sugg)}
+                  >
+                    {sugg}
+                  </li>
+                ))}
+              </ul>
             )}
+            <div className="terminal-bar">
+              <img src={theme === 'dark' ? '/images/terminal-DM.svg' : '/images/terminal.svg'} alt="Terminal Icon" className="terminal-icon" />
+              <form onSubmit={handleCommandSubmit} style={{ display: 'flex', flexGrow: 1 }}>
+                <input
+                  ref={terminalInputRef}
+                  type="text"
+                  value={command}
+                  onChange={handleInputChange}
+                  onKeyDown={handleKeyDown}
+                  placeholder="type ‘help’ for list of commands."
+                  className="terminal-input"
+                  autoFocus
+                />
+              </form>
+              <img
+                src={isListening ? (theme === 'light' ? '/images/voice-btn-hover.svg' : '/images/voice-btn-hover-DM.svg') : voiceIcon}
+                alt="Voice Icon"
+                className={`voice-button ${isListening ? 'listening' : ''}`}
+                onMouseEnter={() => handleVoiceHover(true)}
+                onMouseLeave={() => handleVoiceHover(false)}
+                onClick={handleVoiceClick}
+              />
+              <img
+                src={paletteIcon}
+                alt="Palette Icon"
+                className="palette-button"
+                onMouseEnter={() => handlePaletteHover(true)}
+                onMouseLeave={() => handlePaletteHover(false)}
+                onClick={toggleThemeMenu}
+              />
+              {isThemeMenuOpen && (
+                <div className="theme-menu">
+                  <button onClick={() => handleThemeChange('default')}>Default</button>
+                  <button onClick={() => handleThemeChange('dark')}>Dark</button>
+                  <button onClick={() => handleThemeChange('stillness')}>Stillness</button>
+                  <button onClick={() => handleThemeChange('mountains')}>Mountains</button>
+                  <button onClick={() => handleThemeChange('essence')}>Essence</button>
+                  <button onClick={() => handleThemeChange('tao')}>Tao</button>
+                  <button onClick={() => handleThemeChange('zen')}>Zen</button>
+                  <button onClick={() => handleThemeChange('snow')}>Snow</button>
+                  <button onClick={() => handleThemeChange('void')}>Void</button>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

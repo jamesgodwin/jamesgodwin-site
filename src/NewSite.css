@@ -82,6 +82,18 @@ body.body-no-scroll {
   height: 100%;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .App {
   text-align: center;
   display: flex;
@@ -136,7 +148,7 @@ body.body-no-scroll {
   border-radius: 8px;
   box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10);
   padding: 8px;
-  min-width: 160px;
+  min-width: 280px;
 }
 
 .nav-dropdown button {
@@ -153,6 +165,13 @@ body.body-no-scroll {
 
 .nav-dropdown button:hover {
   background-color: var(--theme-menu-btn-hover-bg);
+}
+
+.nav-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--theme-menu-border);
+  margin: 8px 0;
 }
 
 /* Blur and lighten background for image-based themes when content is visible */
@@ -178,12 +197,16 @@ body.theme-void.image-theme.content-visible .background-container {
 }
 
 .hero-text {
-  margin-top: 60px;
+  margin-top: 42px;
   font-family: 'EB Garamond', serif;
-  font-size: 48px;
-  line-height: 52px;
+  font-size: 52px;
+  line-height: 56px;
   text-align: center;
   color: var(--hero-text);
+  max-width: 920px;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sub-hero-text {
@@ -201,6 +224,167 @@ body.theme-void.image-theme.content-visible .background-container {
 
 .desktop-breaks {
   display: inline;
+}
+
+.home-shell {
+  width: min(1040px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.hero-section {
+  padding-top: 0;
+}
+
+.hero-supporting {
+  margin-top: 14px;
+  max-width: 920px;
+  color: var(--hero-text);
+  font-family: 'Karla', sans-serif;
+  font-size: 21px;
+  line-height: 1.35;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-positioning {
+  margin-top: 12px;
+  max-width: 720px;
+  color: var(--card-title);
+  font-family: 'Karla', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.offer-section {
+  margin-top: 64px;
+}
+
+.diagnostic-section {
+  display: block;
+  max-width: 760px;
+}
+
+.offer-copy,
+.offer-cta-panel {
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  background-color: var(--project-card-bg);
+  padding: 28px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.offer-cta-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.offer-label {
+  color: var(--card-title);
+  font-family: 'Karla', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.offer-title {
+  margin-top: 10px;
+  color: var(--hero-text);
+  font-family: 'EB Garamond', serif;
+  font-size: 34px;
+  line-height: 1.12;
+  font-weight: 600;
+}
+
+.offer-text {
+  margin-top: 12px;
+  color: var(--card-title);
+  font-family: 'Karla', sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.offer-list {
+  margin: 18px 0 0 0;
+  padding-left: 22px;
+  color: var(--hero-text);
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.offer-list li + li {
+  margin-top: 8px;
+}
+
+.offer-anchor {
+  color: var(--hero-text);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.offer-cta-text {
+  margin-top: 12px;
+  color: var(--card-title);
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.section-actions {
+  margin-top: 18px;
+}
+
+.workshop-section {
+  text-align: left;
+  max-width: 760px;
+}
+
+.secondary-section {
+  margin-top: 56px;
+  padding-top: 4px;
+  text-align: left;
+  max-width: 760px;
+}
+
+.secondary-offer {
+  padding: 22px 28px;
+}
+
+.secondary-title {
+  color: var(--card-title);
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.secondary-text {
+  margin-top: 10px;
+  max-width: 620px;
+  color: var(--sub-hero-text);
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
 }
 
 .content-card {
@@ -233,15 +417,18 @@ body.theme-void.image-theme.content-visible .background-container {
   background-color: var(--btn-fill);
   border: 1px solid var(--btn-stroke);
   border-radius: 4px;
-  padding: 8px 20px;
+  padding: 10px 18px;
   margin-top: 30px; /* 30px below the card-text */
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   color: var(--btn-text);
-  transition: border-color 0.3s ease; /* Smooth transition for hover */
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   text-decoration: none;
 }
 
@@ -256,6 +443,28 @@ body.theme-void.image-theme.content-visible .background-container {
 
 .output-content-wrapper .card-button {
   margin-top: 0px;
+}
+
+.primary-button {
+  background-color: var(--hero-text);
+  border-color: var(--hero-text);
+  color: var(--main-bg);
+}
+
+.primary-button:hover {
+  background-color: var(--card-title);
+  border-color: var(--card-title);
+  color: var(--main-bg);
+}
+
+.primary-button .button-icon {
+  filter: invert(1);
+}
+
+.secondary-button {
+  background-color: transparent;
+  border-color: var(--btn-stroke);
+  color: var(--sub-hero-text);
 }
 
 .button-icon {
@@ -282,7 +491,7 @@ body.theme-void.image-theme.content-visible .background-container {
 
 /* Sanctuary intro text under the sanctuary CTA */
 .sanctuary-intro {
-  margin-top: 90px; /* 90px below sanctuary on desktop */
+  margin-top: 68px; /* Reduced spacing */
   margin-bottom: 9px; /* 9px above the button */
   width: 100%;
   color: var(--hero-text);
@@ -424,11 +633,80 @@ body.image-theme .sanctuaries-list {
 
 .output-content-wrapper .app-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .output-content-wrapper .app-icon {
-  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.page-content-body .app-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.page-content-body .app-icon {
+  flex-shrink: 0;
+}
+
+.output-content-wrapper .app-item span,
+.page-content-body .app-item span {
+  min-width: 0;
+  flex: 1;
+}
+
+.output-content-wrapper .app-item a,
+.page-content-body .app-item a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.page-content-shell {
+  width: min(920px, calc(100% - 48px));
+  margin: 42px auto 110px;
+  position: relative;
+}
+
+.page-home-link {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: var(--sub-hero-text);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.page-content-meta {
+  margin-top: 10px;
+  color: var(--card-title);
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.page-content-body {
+  background-color: var(--project-card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  padding: 28px;
+  margin-top: 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--hero-text);
+  text-align: left;
+}
+
+.page-content-body > div:first-child {
+  width: 100%;
 }
 
 .terminal-bar-wrapper {
@@ -574,60 +852,88 @@ body.image-theme .sanctuaries-list {
   word-wrap: break-word;
 }
 
-.output-content-wrapper strong {
+.output-content-wrapper strong,
+.page-content-body strong {
   color: var(--project-card-title);
   font-family: 'EB Garamond', serif;
   font-weight: 600;
   font-size: 20px;
 }
 
-.output-content-wrapper p {
+.output-content-wrapper h2,
+.page-content-body h2 {
+  color: var(--project-card-title);
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
+}
+
+.output-content-wrapper h2:not(:first-child),
+.page-content-body h2:not(:first-child) {
+  margin-top: 18px;
+}
+
+.output-content-wrapper p,
+.page-content-body p {
   font-family: 'Karla', sans-serif;
   font-size: 16px;
   color: var(--project-card-text);
   margin: 0; /* Reset all margins */
-  line-height: 1.5; /* Ensure a standard line height */
+  line-height: 1.6;
 }
 
-.output-content-wrapper p:not(:last-child) {
+.output-content-wrapper p:not(:last-child),
+.page-content-body p:not(:last-child) {
   margin-bottom: 10px; /* Add space between paragraphs, but not after the last one */
 }
 
-.output-content-wrapper ul {
+.output-content-wrapper ul,
+.page-content-body ul {
   list-style: none;
   padding: 0;
   margin: 0;
   padding-left: 20px; /* Indent the list */
 }
 
-.output-content-wrapper ul.legal-list {
+.output-content-wrapper ul.legal-list,
+.page-content-body ul.legal-list {
   list-style: disc;
   list-style-position: outside;
   padding-left: 24px;
 }
 
-.output-content-wrapper li {
+.output-content-wrapper li,
+.page-content-body li {
   font-family: 'Karla', sans-serif;
   font-size: 16px;
   color: var(--project-card-text);
-  margin-bottom: 5px; /* Space between list items */
+  line-height: 1.6;
+  margin-bottom: 6px;
 }
 
 .output-content-wrapper a,
 .output-content-wrapper a:link,
 .output-content-wrapper a:visited,
-.output-content-wrapper a:active {
+.output-content-wrapper a:active,
+.page-content-body a,
+.page-content-body a:link,
+.page-content-body a:visited,
+.page-content-body a:active {
   color: var(--project-card-link);
   text-decoration: underline;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
 }
 
-.output-content-wrapper a:hover {
+.output-content-wrapper a:hover,
+.page-content-body a:hover {
   text-decoration: none;
 }
 
-.output-content-wrapper a:visited {
+.output-content-wrapper a:visited,
+.page-content-body a:visited {
   text-decoration: underline;
 }
 
@@ -636,15 +942,151 @@ body.image-theme .sanctuaries-list {
   color: var(--hero-text);
 }
 
-.output-content-wrapper .commands-text {
+.output-content-wrapper .commands-text,
+.page-content-body .commands-text {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 12px;
 }
 
-.output-content-wrapper hr {
+.output-content-wrapper hr,
+.page-content-body hr {
   border: none;
   border-top: 1px solid var(--card-border);
   margin: 20px 0; /* Add some vertical spacing around the HR */
+}
+
+.output-content-wrapper .inline-session-form,
+.page-content-body .inline-session-form {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.output-content-wrapper .inline-session-form label,
+.page-content-body .inline-session-form label {
+  color: var(--card-title);
+  font-family: 'Karla', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.output-content-wrapper .inline-session-form input,
+.output-content-wrapper .inline-session-form textarea,
+.page-content-body .inline-session-form input,
+.page-content-body .inline-session-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--hero-text);
+  font-family: 'Karla', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.output-content-wrapper .inline-session-form textarea,
+.page-content-body .inline-session-form textarea {
+  resize: vertical;
+  min-height: 112px;
+}
+
+.output-content-wrapper .inline-session-form input:focus,
+.output-content-wrapper .inline-session-form textarea:focus,
+.page-content-body .inline-session-form input:focus,
+.page-content-body .inline-session-form textarea:focus {
+  border-color: var(--terminal-focus-border);
+}
+
+.output-content-wrapper .inline-session-form .inline-form-submit,
+.page-content-body .inline-session-form .inline-form-submit {
+  margin-top: 6px;
+}
+
+.page-form-success {
+  margin-bottom: 22px;
+  padding: 14px 16px;
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  background-color: var(--project-card-bg);
+  color: var(--card-title);
+  font-family: 'Karla', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.output-content-wrapper .page-footer-nav,
+.page-content-body .page-footer-nav {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--card-border);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px 36px;
+  align-items: flex-start;
+}
+
+.page-content-body .page-footer-nav {
+  grid-template-columns: minmax(320px, 1.6fr) minmax(220px, 1fr) minmax(180px, 1fr);
+  gap: 24px 44px;
+}
+
+.output-content-wrapper .page-footer-nav-group,
+.page-content-body .page-footer-nav-group {
+  min-width: 0;
+  text-align: left;
+}
+
+.output-content-wrapper .page-footer-nav-title,
+.page-content-body .page-footer-nav-title {
+  margin-bottom: 10px;
+  color: var(--card-title);
+  font-family: 'Karla', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.output-content-wrapper .page-footer-nav ul,
+.page-content-body .page-footer-nav ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  text-align: left;
+}
+
+.output-content-wrapper .page-footer-nav li,
+.page-content-body .page-footer-nav li {
+  list-style: none;
+  margin-bottom: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.output-content-wrapper .page-footer-nav a,
+.output-content-wrapper .page-footer-nav a:link,
+.output-content-wrapper .page-footer-nav a:visited,
+.output-content-wrapper .page-footer-nav a:active,
+.page-content-body .page-footer-nav a,
+.page-content-body .page-footer-nav a:link,
+.page-content-body .page-footer-nav a:visited,
+.page-content-body .page-footer-nav a:active {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--sub-hero-text);
+  text-decoration: none;
+  line-height: 1.4;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.output-content-wrapper .page-footer-nav a:hover,
+.page-content-body .page-footer-nav a:hover {
+  text-decoration: underline;
 }
 
 .close-button {
@@ -701,9 +1143,10 @@ body.image-theme .sanctuaries-list {
 
 @media (max-width: 768px) {
   .hero-text {
-    font-size: 28px;
-    line-height: 32px;
-    margin-top: 50px;
+    font-size: 34px;
+    line-height: 38px;
+    margin-top: 36px;
+    white-space: normal;
   }
 
   .sub-hero-text {
@@ -722,6 +1165,83 @@ body.image-theme .sanctuaries-list {
     text-align: center;
   }
 
+  .home-shell {
+    width: calc(100% - 32px);
+  }
+
+  .page-content-shell {
+    width: calc(100% - 32px);
+    margin: 32px auto 88px;
+  }
+
+  .page-content-body {
+    padding: 20px;
+  }
+
+  .page-home-link {
+    position: static;
+    transform: none;
+    margin-bottom: 10px;
+  }
+
+  .hero-supporting {
+    margin-top: 10px;
+    font-size: 18px;
+    white-space: normal;
+  }
+
+  .hero-positioning {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .hero-actions .card-button,
+  .section-actions .card-button,
+  .offer-cta-panel .card-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .offer-section,
+  .secondary-section {
+    margin-top: 44px;
+  }
+
+  .diagnostic-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .offer-copy,
+  .offer-cta-panel {
+    padding: 20px;
+  }
+
+  .offer-title {
+    font-size: 26px;
+  }
+
+  .offer-text,
+  .offer-list {
+    font-size: 14px;
+  }
+
+  .offer-list {
+    padding-left: 18px;
+  }
+
+  .secondary-text {
+    font-size: 13px;
+  }
+
   .content-card {
     width: calc(100% - 40px);
     padding: 20px;
@@ -738,6 +1258,13 @@ body.image-theme .sanctuaries-list {
 
   .card-button {
     margin-top: 16px;
+    font-size: 13px;
+  }
+
+  .page-content-body .page-footer-nav,
+  .output-content-wrapper .page-footer-nav {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .section-title {
@@ -746,7 +1273,7 @@ body.image-theme .sanctuaries-list {
   }
 
   .sanctuary-intro {
-    margin-top: 60px; /* 60px below sanctuary on mobile */
+    margin-top: 44px; /* Reduced spacing */
     font-size: 14px; /* Match mobile sub-hero size */
     line-height: 1.6;
     padding: 0 20px;
