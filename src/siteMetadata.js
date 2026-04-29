@@ -15,8 +15,8 @@ const pageMetadata = {
     path: '/about'
   },
   diagnostic: {
-    title: 'Executive State Diagnostic | James Godwin',
-    description: 'A focused 45-minute session for founders and senior leaders to identify pressure patterns, improve judgement, and leave with a practical regulation protocol.',
+    title: 'Executive State Diagnostic | Tai Chi Breathing for Leaders',
+    description: 'A private 45-minute session for founders and senior leaders to track pressure through the breath, work with the dantian, and respond with steadier judgement.',
     path: '/executive-state-diagnostic'
   },
   workshops: {
