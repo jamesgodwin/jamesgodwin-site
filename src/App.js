@@ -20,6 +20,7 @@ import workshopsOutput from './outputs/workshops';
 import workshopEnquiryOutput from './outputs/workshopEnquiry';
 import legalOutput from './outputs/legal';
 import Breathe from './components/Breathe';
+import siteMetadata from './siteMetadata';
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = SpeechRecognition ? new SpeechRecognition() : null;
@@ -91,6 +92,36 @@ const navMenuItems = [
 const routeCommandMap = Object.fromEntries(
   Object.entries(commandRouteMap).map(([cmd, path]) => [path, cmd])
 );
+const { getMetadataForCommand } = siteMetadata;
+
+const upsertMetaTag = (attribute, key, content) => {
+  if (!content) return;
+
+  let element = document.head.querySelector(`meta[${attribute}="${key}"]`);
+
+  if (!element) {
+    element = document.createElement('meta');
+    element.setAttribute(attribute, key);
+    document.head.appendChild(element);
+  }
+
+  element.setAttribute('content', content);
+};
+
+const applyPageMetadata = (metadata) => {
+  document.title = metadata.title;
+  upsertMetaTag('name', 'description', metadata.description);
+  upsertMetaTag('property', 'og:type', 'website');
+  upsertMetaTag('property', 'og:title', metadata.title);
+  upsertMetaTag('property', 'og:description', metadata.description);
+  upsertMetaTag('property', 'og:image', metadata.image);
+  upsertMetaTag('property', 'og:url', metadata.url);
+  upsertMetaTag('name', 'twitter:card', 'summary_large_image');
+  upsertMetaTag('name', 'twitter:title', metadata.title);
+  upsertMetaTag('name', 'twitter:description', metadata.description);
+  upsertMetaTag('name', 'twitter:image', metadata.twitterImage || metadata.image);
+  upsertMetaTag('name', 'twitter:url', metadata.url);
+};
 
 function App() {
   const showTerminalUI = false;
@@ -421,6 +452,10 @@ function App() {
     setIsNavMenuOpen(false);
     window.history.pushState({}, '', '/');
   };
+
+  useEffect(() => {
+    applyPageMetadata(getMetadataForCommand(outputTitle));
+  }, [outputTitle]);
 
   useEffect(() => {
     if (!isThemeMenuOpen) return;
