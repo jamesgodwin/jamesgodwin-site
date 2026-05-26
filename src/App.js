@@ -51,7 +51,17 @@ const commandRouteMap = {
   legal: '/legal'
 };
 const commandMenuLabels = {
+  about: 'About',
+  apps: 'Apps',
+  books: 'Books',
+  contact: 'Contact',
   diagnostic: 'Executive State Diagnostic',
+  legal: 'Legal',
+  'little-panda': 'Little Panda',
+  now: 'Now',
+  paintings: 'Paintings',
+  philosophy: 'Philosophy',
+  taoism: 'Taoism',
   workshops: 'Stillness Under Pressure Workshops',
   sanctuary: 'True Essence',
   uxui: 'Product Clarity',

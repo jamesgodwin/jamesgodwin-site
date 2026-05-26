@@ -12,6 +12,9 @@ This file is the single source of truth for current work status. Keep each item 
 
 ## Done
 
+- Updated `public/sitemap.xml` to include active local routes and remove the outbound sanctuary route.
+- Standardized dropdown navigation labels to title case.
+- Changed book cover image paths to root-relative URLs so `/little-panda/` and `/books/` work with trailing slashes in production.
 - Flattened `/books` so each book appears as its own individual section instead of category groupings.
 - Expanded and highlighted `Embracing Life's Journey` on `/books` with summarized copy and the corrected Amazon link.
 - Expanded and highlighted `Uncharted Waters` on `/books` with summarized copy and the corrected Amazon link.
