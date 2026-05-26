@@ -2,15 +2,15 @@
 
 ## Current Focus
 
-The project memory scaffold is in place and the Little Panda series page is live in code with the new `*-book.webp` cover filenames and expanded copy for both listed books.
+The project memory scaffold is in place. The Little Panda series page is live, and `/books` now presents each book as its own individual section with richer highlighted cards.
 
 ## Where Work Stopped
 
-The higher-resolution Little Panda cover files are present and wired into `/books`, `/little-panda`, and route metadata. The first book now has fuller descriptive copy on `/little-panda`.
+All non-Little-Panda blocks on `/books` have summarized copy, larger cover treatment matching the kids-book card scale, corrected Amazon links, and individual section headings.
 
 ## Next Recommended Step
 
-No immediate follow-up is required for the cover swap. The CSS now preserves the full cover image ratio instead of forcing a 2:3 crop.
+Review `/books` visually before deploy. All listed non-Little-Panda book covers now have larger exports, including `public/embracing-lifes-journey.webp` at `580x872`.
 
 ## Blockers
 
