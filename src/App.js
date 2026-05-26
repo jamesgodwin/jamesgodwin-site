@@ -6,6 +6,7 @@ import helpOutput from './outputs/help';
 import aboutOutput from './outputs/about';
 import appsOutput from './outputs/apps';
 import booksOutput from './outputs/books';
+import littlePandaOutput from './outputs/littlePanda';
 import contactOutput from './outputs/contact';
 import diagnosticOutput from './outputs/diagnostic';
 import taoismOutput from './outputs/taoism';
@@ -30,7 +31,7 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
-const allCommands = ['help', 'diagnostic', 'workshop-enquiry', 'thank-you', 'about', 'workshops', 'apps', 'books', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'legal', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
+const allCommands = ['help', 'diagnostic', 'workshop-enquiry', 'thank-you', 'about', 'workshops', 'apps', 'books', 'little-panda', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'legal', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
 const commandRouteMap = {
   diagnostic: '/executive-state-diagnostic',
   'workshop-enquiry': '/workshop-enquiry',
@@ -39,6 +40,7 @@ const commandRouteMap = {
   workshops: '/workshops',
   apps: '/apps',
   books: '/books',
+  'little-panda': '/little-panda',
   contact: '/contact',
   taoism: '/taoism',
   now: '/now',
@@ -59,6 +61,7 @@ const pageHeadingLabels = {
   about: 'About',
   apps: 'Apps',
   books: 'Books',
+  'little-panda': 'Little Panda Tao Stories',
   contact: 'Contact',
   diagnostic: 'Executive State Diagnostic',
   legal: 'Legal',
@@ -84,6 +87,7 @@ const navMenuItems = [
   'philosophy',
   'taoism',
   'books',
+  'little-panda',
   'uxui',
   'paintings',
   'now',
@@ -142,6 +146,7 @@ function App() {
           <li><a href="/philosophy">Philosophy</a></li>
           <li><a href="/taoism">Taoism</a></li>
           <li><a href="/books">Books</a></li>
+          <li><a href="/little-panda">Little Panda Tao Stories</a></li>
         </ul>
       </div>
       <div className="page-footer-nav-group">
@@ -251,6 +256,9 @@ function App() {
         break;
       case 'books':
         newOutput = booksOutput;
+        break;
+      case 'little-panda':
+        newOutput = littlePandaOutput;
         break;
       case 'sanctuary':
         window.open('https://trueessence.space/', '_blank', 'noopener,noreferrer');

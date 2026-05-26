@@ -3,6 +3,7 @@ const helpOutput = `
 > workshops  — book a stillness workshop
 > apps       — explore the sanctuaries 
 > books      — browse the written offerings  
+> little-panda — read the children's Tao stories
 > sanctuary  — Free book for you :)  
 > contact    — reach out, gently  
 > taoism     — wisdom, stillness, and flow  

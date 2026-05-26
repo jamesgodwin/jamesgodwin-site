@@ -663,6 +663,42 @@ body.image-theme .sanctuaries-list {
   word-break: break-word;
 }
 
+.kids-book-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 18px 0;
+}
+
+.kids-book-card {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.kids-book-card:hover {
+  text-decoration: underline;
+}
+
+.kids-book-feature {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.kids-book-cover {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
 .page-content-shell {
   width: min(920px, calc(100% - 48px));
   margin: 42px auto 110px;
@@ -1406,6 +1442,19 @@ body.image-theme .sanctuaries-list {
 
   .output-content-wrapper .commands-text {
     font-size: 12px; /* Adjust commands text size */
+  }
+
+  .kids-book-grid,
+  .kids-book-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .kids-book-card {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .kids-book-cover {
+    max-width: 190px;
   }
 
   .help-output {

@@ -39,6 +39,12 @@ const pageMetadata = {
     description: 'Books and visual editions exploring Taoist philosophy, regulation, the I Ching, daily reflection, and decision-making through practical and contemplative lenses.',
     path: '/books'
   },
+  'little-panda': {
+    title: 'Little Panda Tao Stories | James Godwin',
+    description: 'Gentle children\'s picture books inspired by the Tao Te Ching, including Little Panda and the Empty Cup and Little Panda Learns the Tao.',
+    image: `${siteUrl}/little-panda-and-empty-cup-book.webp`,
+    path: '/little-panda'
+  },
   contact: {
     title: 'Contact James Godwin',
     description: 'Contact James Godwin for executive diagnostics, Stillness Under Pressure workshops, product clarity engagements, Tai Chi sessions, or related enquiries.',
