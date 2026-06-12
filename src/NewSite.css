@@ -357,6 +357,11 @@ body.theme-void.image-theme.content-visible .background-container {
   max-width: 760px;
 }
 
+.systems-section {
+  text-align: left;
+  max-width: 760px;
+}
+
 .secondary-section {
   margin-top: 56px;
   padding-top: 4px;

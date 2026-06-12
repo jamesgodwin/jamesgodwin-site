@@ -11,13 +11,18 @@ const defaultMetadata = {
 const pageMetadata = {
   about: {
     title: 'About James Godwin | Regulation Before Strategy',
-    description: 'Thirty years of Tai Chi and breath training meet fifteen years of product architecture to help leaders regulate before acting under pressure.',
+    description: 'Thirty years of Tai Chi and breath training in the Cheng Man-Ching lineage meet twenty years of product architecture to help leaders regulate before acting under pressure.',
     path: '/about'
   },
   diagnostic: {
     title: 'Executive State Diagnostic | Tai Chi Breathing for Leaders',
     description: 'A private 45-minute session for founders and senior leaders to track pressure through the breath, work with the dantian, and respond with steadier judgement.',
     path: '/executive-state-diagnostic'
+  },
+  systems: {
+    title: 'Simple Workflow Systems for Service Businesses | James Godwin',
+    description: 'Fixed-price workflow audits and small internal systems for service businesses, trades, and field teams. Get the business out of the owner\'s head.',
+    path: '/systems'
   },
   workshops: {
     title: 'Stillness Under Pressure Workshops | James Godwin',

@@ -1,7 +1,8 @@
 const helpOutput = `
 > about      — meet the soul behind this space  
 > workshops  — book a stillness workshop
-> apps       — explore the sanctuaries 
+> systems    — get the business out of your head
+> apps       — explore the sanctuaries
 > books      — browse the written offerings  
 > little-panda — read the children's Tao stories
 > sanctuary  — Free book for you :)  

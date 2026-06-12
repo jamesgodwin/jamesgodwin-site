@@ -17,6 +17,7 @@ import thankYouOutput from './outputs/thankYou';
 import themesOutput from './outputs/themes';
 import unlearnOutput from './outputs/unlearn';
 import uxuiOutput from './outputs/uxui';
+import systemsOutput from './outputs/systems';
 import workshopsOutput from './outputs/workshops';
 import workshopEnquiryOutput from './outputs/workshopEnquiry';
 import legalOutput from './outputs/legal';
@@ -31,9 +32,10 @@ if (recognition) {
   recognition.interimResults = true;
 }
 
-const allCommands = ['help', 'diagnostic', 'workshop-enquiry', 'thank-you', 'about', 'workshops', 'apps', 'books', 'little-panda', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'legal', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
+const allCommands = ['help', 'diagnostic', 'systems', 'workshop-enquiry', 'thank-you', 'about', 'workshops', 'apps', 'books', 'little-panda', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'legal', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
 const commandRouteMap = {
   diagnostic: '/executive-state-diagnostic',
+  systems: '/systems',
   'workshop-enquiry': '/workshop-enquiry',
   'thank-you': '/thank-you',
   about: '/about',
@@ -64,6 +66,7 @@ const commandMenuLabels = {
   taoism: 'Taoism',
   workshops: 'Stillness Under Pressure Workshops',
   sanctuary: 'True Essence',
+  systems: 'Workflow Systems',
   uxui: 'Product Clarity',
   'workshop-enquiry': 'Workshop Enquiry'
 };
@@ -82,11 +85,13 @@ const pageHeadingLabels = {
   'workshop-enquiry': 'Workshop Enquiry',
   'thank-you': 'Thank You',
   workshops: 'Stillness Under Pressure',
+  systems: 'Simple Workflow Systems',
   uxui: 'Product Clarity'
 };
 const navMenuItems = [
   'diagnostic',
   'workshops',
+  'systems',
   'divider',
   'sanctuary',
   'apps',
@@ -146,6 +151,7 @@ function App() {
         <ul>
           <li><a href="/executive-state-diagnostic">Executive State Diagnostic</a></li>
           <li><a href="/workshops">Stillness Under Pressure Workshops</a></li>
+          <li><a href="/systems">Workflow Systems</a></li>
           <li><a href="https://trueessence.space/" target="_blank" rel="noopener noreferrer">True Essence</a></li>
           <li><a href="/apps">Apps</a></li>
         </ul>
@@ -306,6 +312,9 @@ function App() {
         break;
       case 'uxui':
         newOutput = uxuiOutput;
+        break;
+      case 'systems':
+        newOutput = systemsOutput;
         break;
       case 'workshops':
         newOutput = workshopsOutput;
@@ -758,7 +767,7 @@ function App() {
                 Strong leaders do not lose strategy. They lose regulation under stress.
               </div>
               <div className="hero-positioning">
-                I help founders and leadership teams make clearer decisions by regulating state first.
+                Sometimes the pressure is inside the leader. Sometimes it is inside the business. I work with both — state first, then systems.
               </div>
             </section>
             <section className="home-shell offer-section diagnostic-section">
@@ -800,6 +809,25 @@ function App() {
                       alt="Arrow Right"
                       className="button-icon"
                     />
+                  </a>
+                </div>
+              </div>
+            </section>
+            <section className="home-shell offer-section systems-section">
+              <div className="offer-copy">
+                <div className="offer-label">Workflow Systems</div>
+                <div className="offer-title">Simple internal systems for service businesses.</div>
+                <div className="offer-text">
+                  When the business runs on the owner's memory — WhatsApp threads, spreadsheets, scattered approvals — admin runs late and cashflow tightens. I build small systems that give that memory a home.
+                </div>
+                <ul className="offer-list">
+                  <li>Fixed-price workflow audit</li>
+                  <li>One bounded system, built around how your team works</li>
+                  <li>Optional care plan keeps it running</li>
+                </ul>
+                <div className="section-actions">
+                  <a href="/systems" className="card-button primary-button">
+                    EXPLORE WORKFLOW SYSTEMS →
                   </a>
                 </div>
               </div>
