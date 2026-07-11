@@ -14,6 +14,8 @@ This file is the single source of truth for current work status. Keep each item 
 
 ## Done
 
+- Centered the homepage opening headline and supporting line on desktop and mobile while preserving one-screen fit.
+- Tightened the desktop homepage encounter so the opening, prompt, rings, exploration, and browse link fit within a standard desktop viewport without vertical scrolling.
 - Aligned the primary route and conversion pages with the homepage, stacked the desktop encounter like mobile, and completed the deployment content and pricing pass using [the inner-page UI spec](specs/inner-page-ui-alignment.md).
 - Moved the homepage mobile prompt above the pressure circles and kept `I am only exploring` below the rings.
 - Simplified the homepage to its circle choices and authored reflections, retired text, voice, and public command inventories, and consolidated enquiries into one direct-contact destination using [the command discovery and contact consolidation spec](specs/command-discovery-and-contact-consolidation.md).

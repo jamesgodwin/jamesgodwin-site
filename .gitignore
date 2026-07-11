@@ -9,6 +9,10 @@ yarn-error.log*
 # Ignore build directory
 build/
 
+# Ignore local browser QA artifacts
+.playwright-cli/
+output/
+
 # Ignore environment variables
 .env
 

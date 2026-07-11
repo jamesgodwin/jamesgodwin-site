@@ -164,20 +164,21 @@ body.body-no-scroll {
 }
 
 .pressure-encounter {
-  width: min(760px, calc(100% - 64px));
+  width: min(680px, calc(100% - 64px));
   min-height: 100svh;
   margin: 0 auto;
-  padding: 116px 0 56px;
+  padding: clamp(78px, 8svh, 104px) 0 clamp(24px, 4svh, 44px);
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
   box-sizing: border-box;
-  text-align: left;
+  text-align: center;
 }
 
 .pressure-encounter__intro {
-  width: min(620px, 100%);
+  width: min(560px, 100%);
+  align-self: center;
 }
 
 .pressure-encounter__intro h1,
@@ -185,15 +186,15 @@ body.body-no-scroll {
   margin: 0;
   color: var(--hero-text);
   font-family: 'EB Garamond', Georgia, serif;
-  font-size: clamp(48px, 4.2vw, 68px);
+  font-size: clamp(44px, 3.7vw, 62px);
   font-weight: 400;
-  line-height: 0.98;
-  letter-spacing: -0.025em;
+  line-height: 1;
+  letter-spacing: -0.018em;
 }
 
 .pressure-encounter__intro p {
   max-width: 500px;
-  margin: 24px 0 0;
+  margin: 16px auto 0;
   color: var(--hero-text);
   font-family: 'Karla', sans-serif;
   font-size: 20px;
@@ -202,11 +203,11 @@ body.body-no-scroll {
 
 .pressure-encounter__rings {
   position: relative;
-  width: min(100%, 620px);
+  width: min(100%, clamp(430px, 50svh, 540px));
   aspect-ratio: 1;
   align-self: center;
   flex: 0 0 auto;
-  margin-top: 28px;
+  margin-top: clamp(16px, 2.4svh, 26px);
 }
 
 .pressure-encounter__rings img {
@@ -257,7 +258,7 @@ body.body-no-scroll {
 }
 
 .pressure-encounter__prompt {
-  margin-top: 38px;
+  margin-top: clamp(20px, 3svh, 30px);
   color: var(--hero-text);
   font-family: 'IBM Plex Mono', monospace;
   text-align: center;
@@ -285,12 +286,12 @@ body.body-no-scroll {
 
 .pressure-encounter__explore {
   align-self: center;
-  margin-top: 22px;
+  margin-top: clamp(12px, 1.8svh, 20px);
 }
 
 .pressure-encounter__browse {
   align-self: center;
-  margin-top: 22px;
+  margin-top: clamp(10px, 1.6svh, 18px);
 }
 
 .pressure-encounter button:focus-visible,
@@ -2013,7 +2014,7 @@ body.image-theme .sanctuaries-list {
     flex-direction: column;
     align-items: stretch;
     padding: 90px 18px 24px;
-    text-align: left;
+    text-align: center;
   }
 
   .pressure-encounter__intro h1,
