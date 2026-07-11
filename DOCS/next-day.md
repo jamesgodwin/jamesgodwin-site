@@ -2,21 +2,20 @@
 
 ## Current Focus
 
-The new `/systems` page (Simple Workflow Systems offer) is built and wired into nav, footer, help, metadata, redirects, and sitemap. It awaits James's local review and deploy.
+The site-wide content, pricing, homepage layout, and inner-page alignment pass is complete and production-build ready. The next focus is deployment followed by real-person validation.
 
 ## Where Work Stopped
 
-All seven registration points for the `systems` command/page are complete and grep-verified. Pricing live on the page: Workflow Audit R7,500 fixed, Care Plan from R1,500/month. LinkedIn About links to `/systems`, so deploy soon after review.
+Desktop now follows the same stacked homepage sequence as mobile: opening, prompt, circles, exploration, and browse. Primary and conversion routes use the shared editorial route shell with visible titles, offer facts, direct actions, readable body columns, and a compact footer. Pricing remains visible for the Executive State Diagnostic and Workflow Audit, while workshops continue through a scoped enquiry. Contact copy and hierarchy, offer copy, app claims, Taoism claims, book copy, paintings copy, and the portfolio-specific legal page were tightened. All 21 tests pass and the production build completes with metadata for 18 routes.
 
 ## Next Recommended Step
 
-Run `npm start`, review `localhost:3000/systems` (also check the nav dropdown, footer, and `help` command), then `npm run build` and deploy. After deploy, verify `https://jamesgodwin.me/systems` resolves and metadata renders.
+Deploy the current branch, smoke-test the live homepage plus `/executive-state-diagnostic`, `/workshops`, `/systems`, `/contact`, and `/legal`, then run the eight-person validation gate.
 
 ## Blockers
 
-None.
+No deployment blocker. The legal page is a practical portfolio-site alignment, not a substitute for formal legal review.
 
 ## Read These First
 
-- `DOCS/logs/2026-06-12-001-systems-page.md`
-- `src/outputs/systems.js`
+- `DOCS/specs/interactive-terminal-homepage.md`

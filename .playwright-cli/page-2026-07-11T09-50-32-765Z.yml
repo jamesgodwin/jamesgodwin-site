@@ -1,0 +1,14 @@
+- generic [ref=e4]:
+  - button "Open navigation" [ref=e6] [cursor=pointer]
+  - button "James Godwin" [ref=e9] [cursor=pointer]
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - heading "Pressure rarely stays where it begins." [level=1] [ref=e12]
+      - paragraph [ref=e13]: It moves through the person, the room, and the work.
+    - paragraph [ref=e15]: Where is it showing up?
+    - generic "Choose where the pressure is showing up" [ref=e16]:
+      - button "In the work" [ref=e17] [cursor=pointer]
+      - button "In a team" [ref=e18] [cursor=pointer]
+      - button "In me" [ref=e19] [cursor=pointer]
+    - button "I am only exploring" [ref=e20] [cursor=pointer]
+    - button "Browse without answering" [ref=e21] [cursor=pointer]

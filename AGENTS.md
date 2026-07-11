@@ -60,6 +60,40 @@ Within each section, order items top-down by priority. The top item is the next 
 
 When `## Done` exceeds 20 items, or at the end of a milestone, move Done items to `DOCS/archive/YYYY-MM-backlog.md` and clear the section.
 
+## Development Skills Pipeline
+
+If James has these personal Codex skills installed, use them as optional accelerators. If another agent does not have the skills installed, it must still follow the same behaviours from this file.
+
+| Phase | Skill | Use When | Durable Output |
+|---|---|---|---|
+| Feature framing | `app-feature-brief` | A new app feature, product idea, or meaningful change needs to become a buildable spec | `DOCS/specs/<topic>.md` plus one backlog line if real |
+| Work slicing | `app-vertical-slices` | A spec or plan needs to become small demoable implementation slices | `Implementation Slices` section inside the spec |
+| Implementation | `app-tdd-loop` | Building or changing behaviour where regression risk matters | Tests, code, backlog/log/next-day updates |
+| Bug fixing | `app-bug-diagnosis` | Something is broken, flaky, slow, or unclear | Red-capable repro, fix, regression test, log |
+| Architecture | `app-architecture-review` | Code is becoming tangled, hard to test, or hard for agents to navigate | 3-5 ranked candidates, then spec/backlog/ADR only if chosen |
+
+Rules:
+
+- Use one primary skill per phase. Do not stack every skill on every request.
+- Skills must respect the context loading strategy. They do not get permission to browse all specs, logs, or archive files.
+- Specs hold substance. Backlog items stay one-line. `DOCS/next-day.md` controls what future sessions load.
+- For exploratory conversations, draft a spec but do not update the backlog until the work is real.
+- Feature work starts with a brief when the change is meaningful.
+- Plans are split into vertical slices rather than layer tasks.
+- Implementation proceeds one behaviour test at a time when risk matters.
+- Bugs require a red-capable reproduction loop before diagnosis.
+- Architecture review recommends contained deepening moves, not broad rewrites.
+
+Recommended trigger language:
+
+```text
+Use app-feature-brief to turn this feature idea into a spec.
+Use app-vertical-slices to split this spec into buildable slices.
+Use app-tdd-loop to implement the first slice test-first.
+Use app-bug-diagnosis to debug this issue.
+Use app-architecture-review to find the smallest useful refactor.
+```
+
 ## Context Loading Strategy
 
 Follow this strict four-layer loading model to keep startup context lean as the project grows:
@@ -147,7 +181,7 @@ This is a personal portfolio site built as a terminal-style interactive React ap
 
 **Theme System**: Themes are defined in `src/themes.js` with CSS variable based light/dark schemes and image-based themes that include mobile variants and transition animations.
 
-**Voice Recognition**: The Web Speech API supports voice commands and natural language parsing to extract valid commands from speech input.
+**Homepage Encounter**: The homepage uses the concentric circles and authored reflections as its primary interaction. The legacy command architecture remains available through route and navigation handling, but the homepage does not expose text or voice input.
 
 **Background Transitions**: Theme switching uses fade transitions when moving between image-based themes.
 

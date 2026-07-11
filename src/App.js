@@ -7,7 +7,6 @@ import aboutOutput from './outputs/about';
 import appsOutput from './outputs/apps';
 import booksOutput from './outputs/books';
 import littlePandaOutput from './outputs/littlePanda';
-import contactOutput from './outputs/contact';
 import diagnosticOutput from './outputs/diagnostic';
 import taoismOutput from './outputs/taoism';
 import nowOutput from './outputs/now';
@@ -19,18 +18,16 @@ import unlearnOutput from './outputs/unlearn';
 import uxuiOutput from './outputs/uxui';
 import systemsOutput from './outputs/systems';
 import workshopsOutput from './outputs/workshops';
-import workshopEnquiryOutput from './outputs/workshopEnquiry';
 import legalOutput from './outputs/legal';
 import Breathe from './components/Breathe';
+import ContactPage from './components/ContactPage';
+import PressureEncounter from './components/PressureEncounter';
+import RoutePage from './components/RoutePage';
+import { getContactIntentFromSearch, getContactPath } from './contactIntent';
+import pagePresentation from './pagePresentation';
 import siteMetadata from './siteMetadata';
-
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-const recognition = SpeechRecognition ? new SpeechRecognition() : null;
-
-if (recognition) {
-  recognition.continuous = true;
-  recognition.interimResults = true;
-}
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const allCommands = ['help', 'diagnostic', 'systems', 'workshop-enquiry', 'thank-you', 'about', 'workshops', 'apps', 'books', 'little-panda', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'legal', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
 const commandRouteMap = {
@@ -82,7 +79,7 @@ const pageHeadingLabels = {
   paintings: 'Paintings',
   philosophy: 'Philosophy',
   taoism: 'Taoism',
-  'workshop-enquiry': 'Workshop Enquiry',
+  'workshop-enquiry': 'Contact',
   'thank-you': 'Thank You',
   workshops: 'Stillness Under Pressure',
   systems: 'Simple Workflow Systems',
@@ -144,41 +141,6 @@ const applyPageMetadata = (metadata) => {
 
 function App() {
   const showTerminalUI = false;
-  const sharedFooterNav = (
-    <div className="page-footer-nav">
-      <div className="page-footer-nav-group">
-        <div className="page-footer-nav-title">Work</div>
-        <ul>
-          <li><a href="/executive-state-diagnostic">Executive State Diagnostic</a></li>
-          <li><a href="/workshops">Stillness Under Pressure Workshops</a></li>
-          <li><a href="/systems">Workflow Systems</a></li>
-          <li><a href="https://trueessence.space/" target="_blank" rel="noopener noreferrer">True Essence</a></li>
-          <li><a href="/apps">Apps</a></li>
-        </ul>
-      </div>
-      <div className="page-footer-nav-group">
-        <div className="page-footer-nav-title">Writing & Thinking</div>
-        <ul>
-          <li><a href="/philosophy">Philosophy</a></li>
-          <li><a href="/taoism">Taoism</a></li>
-          <li><a href="/books">Books</a></li>
-          <li><a href="/little-panda">Little Panda Tao Stories</a></li>
-        </ul>
-      </div>
-      <div className="page-footer-nav-group">
-        <div className="page-footer-nav-title">About</div>
-        <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/uxui">Product Clarity</a></li>
-          <li><a href="/paintings">Paintings</a></li>
-          <li><a href="/now">Now</a></li>
-          <li><a href="/legal">Legal</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  );
-  const [voiceIcon, setVoiceIcon] = useState('/images/voice-btn.svg');
   const [paletteIcon, setPaletteIcon] = useState('/images/palette-btn.svg');
   const [theme, setTheme] = useState('default');
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
@@ -197,7 +159,6 @@ function App() {
   const [suggestions, setSuggestions] = useState([]);
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
   const [isBreathing, setIsBreathing] = useState(false);
-  const [isListening, setIsListening] = useState(false);
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
   const navMenuRef = useRef(null);
   const inlineOutputContent = typeof output?.content === 'string'
@@ -211,7 +172,7 @@ function App() {
     : inlineOutputContent;
   const pageHeading = pageHeadingLabels[outputTitle] || commandMenuLabels[outputTitle] || outputTitle;
   const updateURLForCommand = useCallback((cmd) => {
-    const path = commandRouteMap[cmd];
+    const path = cmd === 'workshop-enquiry' ? getContactPath('workshop') : commandRouteMap[cmd];
     if (path) {
       window.history.pushState({}, '', path);
     } else {
@@ -251,8 +212,9 @@ function App() {
     const { updateURL = true } = options;
     if (!commandToExecute) return;
 
-    let newOutput;
     const lowerCaseCommand = commandToExecute.toLowerCase();
+    let newOutput;
+    let renderedCommand = lowerCaseCommand;
 
     switch (lowerCaseCommand) {
       case 'help':
@@ -296,7 +258,7 @@ function App() {
         }, 100);
         return;
       case 'contact':
-        newOutput = contactOutput;
+        newOutput = <ContactPage initialIntent={getContactIntentFromSearch(window.location.search)} />;
         break;
       case 'taoism':
         newOutput = taoismOutput;
@@ -320,7 +282,8 @@ function App() {
         newOutput = workshopsOutput;
         break;
       case 'workshop-enquiry':
-        newOutput = workshopEnquiryOutput;
+        renderedCommand = 'contact';
+        newOutput = <ContactPage initialIntent="workshop" />;
         break;
       case 'legal':
         newOutput = legalOutput;
@@ -357,7 +320,7 @@ function App() {
         newOutput = `Unknown command: ${commandToExecute}`;
     }
 
-    setOutput({ command: `> ${commandToExecute}`, content: newOutput });
+    setOutput({ command: `> ${renderedCommand}`, content: newOutput });
     setCommandHistory((prevHistory) => [...prevHistory, commandToExecute]);
     setHistoryIndex(-1);
     setCommand('');
@@ -376,31 +339,6 @@ function App() {
 
   const toggleThemeMenu = () => {
     setIsThemeMenuOpen(!isThemeMenuOpen);
-  };
-
-  const handleVoiceClick = () => {
-    if (!recognition) {
-      alert("Sorry, your browser doesn't support voice recognition.");
-      return;
-    }
-
-    if (isListening) {
-      recognition.stop();
-    } else {
-      recognition.start();
-      setIsListening(true);
-    }
-  };
-
-  const handleVoiceHover = (isHovering) => {
-    if (isListening) return;
-    const useDarkUI = theme === 'dark';
-
-    if (isHovering) {
-      setVoiceIcon(useDarkUI ? '/images/voice-btn-hover-DM.svg' : '/images/voice-btn-hover.svg');
-    } else {
-      setVoiceIcon(useDarkUI ? '/images/voice-btn-DM.svg' : '/images/voice-btn.svg');
-    }
   };
 
   const handlePaletteHover = (isHovering) => {
@@ -562,9 +500,7 @@ function App() {
       setIsTransitioning(false);
     }
 
-    const useDarkIcons = theme === 'dark';
-    setVoiceIcon(useDarkIcons ? '/images/voice-btn-DM.svg' : '/images/voice-btn.svg');
-    setPaletteIcon(useDarkIcons ? '/images/palette-btn-DM.svg' : '/images/palette-btn.svg');
+    setPaletteIcon(theme === 'dark' ? '/images/palette-btn-DM.svg' : '/images/palette-btn.svg');
 
     if (terminalInputRef.current) {
       terminalInputRef.current.focus();
@@ -601,57 +537,6 @@ function App() {
   }, [output]);
 
   useEffect(() => {
-    if (!recognition) {
-      return;
-    }
-
-    const parseCommandFromSentence = (sentence) => {
-      const lowerCaseSentence = sentence.toLowerCase();
-      for (const cmd of allCommands) {
-        const regex = new RegExp(`\\b${cmd}\\b`);
-        if (regex.test(lowerCaseSentence)) {
-          return cmd;
-        }
-      }
-      return null;
-    };
-
-    recognition.onresult = (event) => {
-      let interimTranscript = '';
-      let finalTranscript = '';
-      for (let i = event.resultIndex; i < event.results.length; ++i) {
-        if (event.results[i].isFinal) {
-          finalTranscript += event.results[i][0].transcript;
-        } else {
-          interimTranscript += event.results[i][0].transcript;
-        }
-      }
-
-      const transcript = finalTranscript || interimTranscript;
-      setCommand(transcript);
-
-      if (finalTranscript) {
-        const parsedCommand = parseCommandFromSentence(finalTranscript);
-        if (parsedCommand) {
-          executeCommand(parsedCommand);
-        } else {
-          executeCommand(finalTranscript);
-        }
-        recognition.stop();
-      }
-    };
-
-    recognition.onend = () => {
-      setIsListening(false);
-    };
-
-    return () => {
-      recognition.onresult = null;
-      recognition.onend = null;
-    };
-  }, [executeCommand]);
-
-  useEffect(() => {
     const normalizePath = (path) => {
       const lower = path.toLowerCase();
       if (lower.endsWith('/') && lower.length > 1) {
@@ -660,14 +545,27 @@ function App() {
       return lower;
     };
 
-    const path = normalizePath(window.location.pathname);
+    let path = normalizePath(window.location.pathname);
+    let hasHandledInitialPath = false;
+    if (path === '/workshop-enquiry') {
+      window.history.replaceState({}, '', getContactPath('workshop'));
+      executeCommand('workshop-enquiry', { updateURL: false });
+      hasHandledInitialPath = true;
+    }
+
     const commandFromPath = routeCommandMap[path];
-    if (commandFromPath) {
+    if (!hasHandledInitialPath && commandFromPath) {
       executeCommand(commandFromPath, { updateURL: false });
     }
 
     const handlePopState = () => {
       const newPath = normalizePath(window.location.pathname);
+      if (newPath === '/workshop-enquiry') {
+        window.history.replaceState({}, '', getContactPath('workshop'));
+        executeCommand('workshop-enquiry', { updateURL: false });
+        return;
+      }
+
       const cmd = routeCommandMap[newPath];
       if (cmd) {
         executeCommand(cmd, { updateURL: false });
@@ -701,14 +599,14 @@ function App() {
           <button
             className="nav-toggle"
             aria-label="Open navigation"
+            aria-expanded={isNavMenuOpen}
+            aria-controls="site-navigation"
             onClick={() => setIsNavMenuOpen(!isNavMenuOpen)}
           >
-            <span />
-            <span />
-            <span />
+            <FontAwesomeIcon icon={faBars} />
           </button>
           {isNavMenuOpen && (
-            <div className="nav-dropdown">
+            <div className="nav-dropdown" id="site-navigation">
               {navMenuItems.map((item, index) => (
                 item === 'divider' ? (
                   <div key={`${item}-${index}`} className="nav-divider" />
@@ -727,6 +625,9 @@ function App() {
             </div>
           )}
         </div>
+        <button type="button" className="site-wordmark" onClick={closeOutput}>
+          James Godwin
+        </button>
         {isBreathing && <Breathe onEnd={() => setIsBreathing(false)} theme={theme} />}
         {showTerminalUI && output && (
           <div className="output-overlay" onClick={closeOutput}>
@@ -742,127 +643,19 @@ function App() {
           </div>
         )}
         {output ? (
-          <section className="home-shell page-content-shell">
-            <button onClick={closeOutput} className="page-home-link">← Back to Home</button>
-            <div className="page-content-meta">{pageHeading}</div>
-            <h1 className="sr-only">{pageHeading}</h1>
-            <div
-              ref={outputContentWrapperRef}
-              className={`page-content-body ${output.command === '> help' ? 'help-output' : ''}`}
-            >
-              <div dangerouslySetInnerHTML={typeof normalizedInlineOutputContent === 'string' ? { __html: normalizedInlineOutputContent } : null}>
-                {typeof normalizedInlineOutputContent !== 'string' ? normalizedInlineOutputContent : null}
-              </div>
-              {sharedFooterNav}
-            </div>
-          </section>
+          <RoutePage
+            command={outputTitle}
+            heading={pageHeading}
+            content={normalizedInlineOutputContent}
+            presentation={pagePresentation[outputTitle]}
+            onBack={closeOutput}
+            isHelp={output.command === '> help'}
+          />
         ) : (
-          <>
-            <section className="home-shell hero-section">
-              <div className="hero-text">
-                <span className="desktop-breaks">When pressure rises, decision quality drops.</span>
-                <span className="mobile-breaks">When pressure rises, decision quality drops.</span>
-              </div>
-              <div className="hero-supporting">
-                Strong leaders do not lose strategy. They lose regulation under stress.
-              </div>
-              <div className="hero-positioning">
-                Sometimes the pressure is inside the leader. Sometimes it is inside the business. I work with both — state first, then systems.
-              </div>
-            </section>
-            <section className="home-shell offer-section diagnostic-section">
-              <div className="offer-copy">
-                <div className="offer-label">Executive State Diagnostic</div>
-                <div className="offer-title">A focused 45-minute session for clearer decisions under pressure.</div>
-                <div className="offer-text">
-                  Identify how pressure is shaping your thinking, communication, and judgement, then leave with practical next steps.
-                </div>
-                <ul className="offer-list">
-                  <li>Identify where stress is reducing judgement</li>
-                  <li>Spot repeat patterns under pressure</li>
-                  <li>Leave with a practical regulation plan</li>
-                </ul>
-                <div className="section-actions">
-                  <a href="/executive-state-diagnostic" className="card-button primary-button">
-                    BOOK AN EXECUTIVE STATE DIAGNOSTIC →
-                  </a>
-                </div>
-              </div>
-            </section>
-            <section className="home-shell offer-section workshop-section">
-              <div className="offer-copy">
-                <div className="offer-label">Stillness Under Pressure</div>
-                <div className="offer-title">Workshops for leadership teams operating under pressure.</div>
-                <div className="offer-text">
-                  Teams learn how to reduce reactivity, improve response latency, and make better decisions when the stakes are high.
-                </div>
-                <ul className="offer-list">
-                  <li>Reduce defensive responses</li>
-                  <li>Improve communication under pressure</li>
-                  <li>Strengthen judgement in tense situations</li>
-                </ul>
-                <div className="section-actions">
-                  <a href="/workshops" className="card-button primary-button">
-                    EXPLORE STILLNESS UNDER PRESSURE WORKSHOPS{' '}
-                    <img
-                      src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'}
-                      alt="Arrow Right"
-                      className="button-icon"
-                    />
-                  </a>
-                </div>
-              </div>
-            </section>
-            <section className="home-shell offer-section systems-section">
-              <div className="offer-copy">
-                <div className="offer-label">Workflow Systems</div>
-                <div className="offer-title">Simple internal systems for service businesses.</div>
-                <div className="offer-text">
-                  When the business runs on the owner's memory — WhatsApp threads, spreadsheets, scattered approvals — admin runs late and cashflow tightens. I build small systems that give that memory a home.
-                </div>
-                <ul className="offer-list">
-                  <li>Fixed-price workflow audit</li>
-                  <li>One bounded system, built around how your team works</li>
-                  <li>Optional care plan keeps it running</li>
-                </ul>
-                <div className="section-actions">
-                  <a href="/systems" className="card-button primary-button">
-                    EXPLORE WORKFLOW SYSTEMS →
-                  </a>
-                </div>
-              </div>
-            </section>
-            <section className="home-shell secondary-section">
-              <div className="offer-copy secondary-offer">
-                <div className="offer-label">True Essence</div>
-                <div className="offer-title">True Essence is the longer arc of this work.</div>
-                <div className="offer-text">
-                  Where the workshop stabilises teams, the app reinforces personal regulation over time. It is a daily structure for maintaining clarity when pressure returns.
-                </div>
-                <div className="section-actions">
-                  <a href="https://trueessence.space/" target="_blank" rel="noopener noreferrer" className="card-button primary-button">
-                    EXPLORE TRUE ESSENCE →
-                  </a>
-                </div>
-              </div>
-            </section>
-            <section className="home-shell secondary-section">
-              <div className="offer-copy secondary-offer">
-                <div className="offer-label">Thirty Years of Practice</div>
-                <div className="offer-title">This work is grounded in three decades of Tai Chi and breath training.</div>
-                <div className="offer-text">
-                  Not as philosophy, but as applied regulation. When the body settles, perception sharpens. When perception sharpens, decisions improve.
-                </div>
-                <div className="section-actions">
-                  <a href="https://dantian.co.za" target="_blank" rel="noopener noreferrer" className="card-button secondary-button">
-                    LEARN ABOUT THE PRACTICE{' '}
-                    <img src={theme === 'dark' ? '/images/arrow-right-DM.svg' : '/images/arrow-right.svg'} alt="Arrow Right" className="button-icon" />
-                  </a>
-                </div>
-              </div>
-            </section>
-            <div style={{ height: '90px' }} />
-          </>
+          <PressureEncounter
+            onNavigate={executeCommand}
+            onBrowse={() => setIsNavMenuOpen(true)}
+          />
         )}
         {showTerminalUI && (
           <div className="terminal-bar-wrapper">
@@ -893,14 +686,6 @@ function App() {
                   autoFocus
                 />
               </form>
-              <img
-                src={isListening ? (theme === 'light' ? '/images/voice-btn-hover.svg' : '/images/voice-btn-hover-DM.svg') : voiceIcon}
-                alt="Voice Icon"
-                className={`voice-button ${isListening ? 'listening' : ''}`}
-                onMouseEnter={() => handleVoiceHover(true)}
-                onMouseLeave={() => handleVoiceHover(false)}
-                onClick={handleVoiceClick}
-              />
               <img
                 src={paletteIcon}
                 alt="Palette Icon"
