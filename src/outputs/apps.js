@@ -2,6 +2,10 @@ const appsOutput = `
 <p>These applications explore regulation, reflection, and cognitive steadiness through different lenses.</p>
 <p>True Essence is the centre of the collection. The other projects explore focused forms of reflection, breath, gratitude, and attention.</p>
 <hr>
+<p class="app-item"><img src="lookup/lookup-icon-192.png" alt="Look Up" class="app-icon" width="30" height="30"><span><strong>Look Up</strong></span></p>
+<p>A quiet pause when an app pulls you under. After 20 minutes in a chosen app, the screen turns near-black — catch your reflection, then choose: put it down, or continue consciously.</p>
+<p><a href="/app/lookup">Discover Look Up →</a></p>
+<hr>
 <p class="app-item"><img src="trueessence-logo.svg" alt="True Essence" class="app-icon"><span><strong>True Essence</strong></span></p>
 <p><a href="https://trueessence.space" target="_blank" rel="noopener noreferrer">trueessence.space</a></p>
 <p>A quiet practice space for returning to steadiness: a structured seven-day return, daily reflections, practical exercises, and an optional conversation with a Sage designed to mirror your own knowing.</p>

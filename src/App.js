@@ -21,6 +21,7 @@ import workshopsOutput from './outputs/workshops';
 import legalOutput from './outputs/legal';
 import Breathe from './components/Breathe';
 import ContactPage from './components/ContactPage';
+import LookUpPage from './components/LookUpPage';
 import PressureEncounter from './components/PressureEncounter';
 import RoutePage from './components/RoutePage';
 import { getContactIntentFromSearch, getContactPath } from './contactIntent';
@@ -29,8 +30,8 @@ import siteMetadata from './siteMetadata';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-const allCommands = ['help', 'diagnostic', 'systems', 'workshop-enquiry', 'thank-you', 'about', 'workshops', 'apps', 'books', 'little-panda', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'legal', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
-const commandRouteMap = {
+const allCommands = ['help', 'diagnostic', 'systems', 'workshop-enquiry', 'thank-you', 'about', 'workshops', 'apps', 'books', 'little-panda', 'sanctuary', 'contact', 'taoism', 'now', 'paintings', 'philosophy', 'uxui', 'legal', 'themes', 'blog', 'unlearn', 'return', 'breathe', 'lookup', 'default', 'dark', 'stillness', 'mountains', 'essence', 'tao', 'zen', 'snow', 'void'];
+export const commandRouteMap = {
   diagnostic: '/executive-state-diagnostic',
   systems: '/systems',
   'workshop-enquiry': '/workshop-enquiry',
@@ -47,7 +48,8 @@ const commandRouteMap = {
   philosophy: '/philosophy',
   uxui: '/uxui',
   sanctuary: '/sanctuary',
-  legal: '/legal'
+  legal: '/legal',
+  lookup: '/app/lookup'
 };
 const commandMenuLabels = {
   about: 'About',
@@ -105,7 +107,7 @@ const navMenuItems = [
   'now',
   'legal'
 ];
-const routeCommandMap = Object.fromEntries(
+export const routeCommandMap = Object.fromEntries(
   Object.entries(commandRouteMap).map(([cmd, path]) => [path, cmd])
 );
 const { getMetadataForCommand } = siteMetadata;
@@ -231,6 +233,9 @@ function App() {
         break;
       case 'apps':
         newOutput = appsOutput;
+        break;
+      case 'lookup':
+        newOutput = <LookUpPage />;
         break;
       case 'books':
         newOutput = booksOutput;
@@ -579,6 +584,48 @@ function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, [executeCommand]);
 
+  const siteNav = (
+    <div className="nav-menu" ref={navMenuRef}>
+      <button
+        className="nav-toggle"
+        aria-label="Open navigation"
+        aria-expanded={isNavMenuOpen}
+        aria-controls="site-navigation"
+        onClick={() => setIsNavMenuOpen(!isNavMenuOpen)}
+      >
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+      {isNavMenuOpen && (
+        <div className="nav-dropdown" id="site-navigation">
+          {navMenuItems.map((item, index) => (
+            item === 'divider' ? (
+              <div key={`${item}-${index}`} className="nav-divider" />
+            ) : (
+              <button
+                key={item}
+                onClick={() => {
+                  executeCommand(item);
+                  setIsNavMenuOpen(false);
+                }}
+              >
+                {commandMenuLabels[item] || item}
+              </button>
+            )
+          ))}
+        </div>
+      )}
+    </div>
+  );
+
+  if (output && outputTitle === 'lookup') {
+    return (
+      <>
+        {siteNav}
+        {output.content}
+      </>
+    );
+  }
+
   return (
     <>
       <div
@@ -595,36 +642,7 @@ function App() {
           transition: 'opacity 0.5s ease-in-out'
         }}
       >
-        <div className="nav-menu" ref={navMenuRef}>
-          <button
-            className="nav-toggle"
-            aria-label="Open navigation"
-            aria-expanded={isNavMenuOpen}
-            aria-controls="site-navigation"
-            onClick={() => setIsNavMenuOpen(!isNavMenuOpen)}
-          >
-            <FontAwesomeIcon icon={faBars} />
-          </button>
-          {isNavMenuOpen && (
-            <div className="nav-dropdown" id="site-navigation">
-              {navMenuItems.map((item, index) => (
-                item === 'divider' ? (
-                  <div key={`${item}-${index}`} className="nav-divider" />
-                ) : (
-                  <button
-                    key={item}
-                    onClick={() => {
-                      executeCommand(item);
-                      setIsNavMenuOpen(false);
-                    }}
-                  >
-                    {commandMenuLabels[item] || item}
-                  </button>
-                )
-              ))}
-            </div>
-          )}
-        </div>
+        {siteNav}
         <button type="button" className="site-wordmark" onClick={closeOutput}>
           James Godwin
         </button>

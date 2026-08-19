@@ -1,0 +1,847 @@
+/* Look Up landing page — always dark, scoped under .lookup-page.
+   Deliberately exempt from the site theme system and NewSite.css;
+   see DOCS/decisions/2026-08-17-lookup-page-identity.md. */
+
+html:has(.lookup-page),
+body:has(.lookup-page) {
+  background-color: #080808;
+}
+
+body:has(.lookup-page) [class*="formkit"],
+body:has(.lookup-page) [data-element="popup"],
+body:has(.lookup-page) iframe[src*="kit.com"] {
+  display: none !important;
+}
+
+.lookup-page {
+  --lookup-gutter: 24px;
+  --lookup-wide: 1180px;
+  --lookup-blue: #8CAECB;
+  --lookup-cream: #F1E7D9;
+  --lookup-electric: #4169E1;
+  --lookup-violet: #7B43F6;
+  --lookup-muted: rgba(242, 242, 237, 0.62);
+  --lookup-hair: rgba(242, 242, 237, 0.14);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 82% 4%, rgba(65, 105, 225, 0.12), transparent 23rem),
+    #080808;
+  color: #F2F2ED;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0 var(--lookup-gutter) 80px;
+}
+
+.lookup-topbar,
+.lookup-hero,
+.lookup-section,
+.lookup-footer {
+  max-width: var(--lookup-wide);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html:has(.lookup-page) .nav-toggle,
+html:has(.lookup-page) .nav-toggle svg {
+  color: #F2F2ED;
+}
+
+.lookup-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding-left: 44px;
+}
+
+.lookup-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #F2F2ED;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.lookup-wordmark img {
+  display: block;
+  width: 28px;
+  height: auto;
+}
+
+.lookup-nav {
+  display: none;
+  align-items: center;
+  gap: 28px;
+}
+
+.lookup-nav a {
+  color: rgba(242, 242, 237, 0.62);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 180ms ease;
+}
+
+.lookup-nav a:hover {
+  color: #F2F2ED;
+}
+
+.lookup-hero {
+  display: grid;
+  gap: 44px;
+  padding: 64px 0 24px;
+}
+
+.lookup-hero-copy {
+  max-width: 900px;
+}
+
+.lookup-eyebrow,
+.lookup-section-label {
+  margin: 0 0 18px;
+  color: var(--lookup-blue);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.lookup-page h1 {
+  margin: 0 0 24px;
+  font-size: clamp(72px, 14vw, 156px);
+  font-weight: 650;
+  line-height: 0.82;
+  letter-spacing: -0.075em;
+  color: #F2F2ED;
+}
+
+.lookup-page h1 span {
+  color: transparent;
+  background: linear-gradient(110deg, var(--lookup-blue) 4%, #E1E7FF 46%, #B275FF 94%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.lookup-name {
+  color: transparent;
+  background: linear-gradient(110deg, var(--lookup-blue), #D9CCFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.lookup-lede {
+  margin: 0;
+  max-width: 22em;
+  font-size: clamp(21px, 3vw, 30px);
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+  color: var(--lookup-muted);
+}
+
+.lookup-hero-copy .lookup-badge {
+  margin-top: 32px;
+}
+
+.lookup-hero-stage {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 70% 18%, rgba(255, 255, 255, 0.48), transparent 26%),
+    radial-gradient(circle at 18% 86%, rgba(241, 231, 217, 0.55), transparent 30%),
+    linear-gradient(135deg, #345ED2 0%, #6B43EB 52%, #D24ED2 100%);
+}
+
+.lookup-hero-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), transparent 85%);
+  pointer-events: none;
+}
+
+.lookup-hero-stage .lookup-phone {
+  width: min(72vw, 350px);
+  max-width: none;
+  margin-bottom: -118px;
+  border-radius: 48px;
+  box-shadow:
+    0 34px 90px rgba(9, 4, 38, 0.48),
+    0 0 0 1px rgba(255, 255, 255, 0.22);
+  transform: rotate(-2deg);
+}
+
+.lookup-stage-note {
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  padding: 11px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(12, 9, 31, 0.54);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 13px;
+  line-height: 1;
+  box-shadow: 0 12px 30px rgba(12, 9, 31, 0.22);
+  backdrop-filter: blur(14px);
+}
+
+.lookup-stage-note-time {
+  top: 11%;
+  left: 8%;
+}
+
+.lookup-stage-note-choice {
+  right: 8%;
+  bottom: 18%;
+}
+
+.lookup-section {
+  margin-top: 112px;
+  text-align: left;
+}
+
+.lookup-section h2 {
+  margin: 0 0 36px;
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #F2F2ED;
+}
+
+.lookup-coda h2::after,
+.lookup-wont h2::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  margin: 18px 0 0;
+  background: var(--lookup-blue);
+}
+
+.lookup-section p {
+  margin: 0 0 20px;
+}
+
+.lookup-coda {
+  padding-top: 72px;
+  max-width: 640px;
+}
+
+.lookup-coda-lead {
+  margin: 0 0 24px;
+  font-size: clamp(22px, 3.2vw, 30px);
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  color: #F2F2ED;
+}
+
+.lookup-coda-choice {
+  margin: 0;
+  font-size: 17px;
+  color: var(--lookup-muted);
+}
+
+.lookup-how h2 {
+  margin-bottom: 44px;
+}
+
+.lookup-steps {
+  list-style: none;
+  display: grid;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.lookup-steps li {
+  display: grid;
+  grid-template-rows: auto minmax(400px, 1fr);
+  min-height: 720px;
+  gap: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 28px;
+  background: #111112;
+}
+
+.lookup-step-copy {
+  position: relative;
+  z-index: 2;
+  padding: 34px 30px 28px;
+  text-align: left;
+}
+
+.lookup-step-index {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--lookup-blue);
+}
+
+.lookup-steps strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.lookup-steps p {
+  margin: 0;
+  max-width: 24em;
+  color: var(--lookup-muted);
+}
+
+.lookup-feature-stage {
+  position: relative;
+  min-height: 430px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  padding: 44px 24px 0;
+}
+
+.lookup-feature-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.lookup-feature-blue .lookup-feature-stage {
+  background:
+    radial-gradient(circle at 78% 15%, rgba(255, 255, 255, 0.48), transparent 24%),
+    linear-gradient(145deg, #2857CD, #7297FF);
+}
+
+.lookup-feature-violet .lookup-feature-stage {
+  background:
+    radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.35), transparent 26%),
+    linear-gradient(145deg, #5126B8, #AA45ED);
+}
+
+.lookup-feature-cream .lookup-feature-stage {
+  background:
+    radial-gradient(circle at 80% 24%, rgba(255, 255, 255, 0.9), transparent 24%),
+    linear-gradient(145deg, #A1BDD5, #F1E7D9);
+}
+
+.lookup-feature-stage .lookup-phone {
+  width: min(68vw, 284px);
+  max-width: none;
+  margin-bottom: -128px;
+  border-radius: 43px;
+  box-shadow:
+    0 28px 70px rgba(5, 6, 20, 0.38),
+    0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.lookup-phone {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  max-width: 260px;
+  overflow: hidden;
+  border-radius: 40px;
+  background: #000;
+  box-shadow: 0 0 0 1px var(--lookup-hair);
+}
+
+.lookup-phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.lookup-wont {
+  display: grid;
+  gap: 40px;
+  padding: 40px 30px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 90% 12%, rgba(140, 174, 203, 0.18), transparent 18rem),
+    #111112;
+}
+
+.lookup-refusals {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.lookup-refusals li {
+  margin: 0;
+  padding: 16px 0;
+  border-top: 1px solid var(--lookup-hair);
+  font-size: clamp(20px, 3.4vw, 26px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--lookup-cream);
+}
+
+.lookup-refusal-note {
+  margin: 0;
+  max-width: 28em;
+  color: var(--lookup-muted);
+}
+
+.lookup-pricing {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  padding: 0;
+  border: 0;
+}
+
+.lookup-price-copy {
+  padding: 8px 0 16px;
+}
+
+.lookup-price-trial {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.lookup-price-figure {
+  margin: 0;
+  font-size: clamp(76px, 18vw, 160px);
+  font-weight: 650;
+  line-height: 0.82;
+  letter-spacing: -0.075em;
+}
+
+.lookup-price-once {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.lookup-price-detail {
+  margin: 0;
+  color: var(--lookup-muted);
+}
+
+.lookup-price-copy .lookup-badge {
+  margin-top: 36px;
+}
+
+.lookup-price-stage {
+  position: relative;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 30px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 92% 10%, rgba(255, 255, 255, 0.48), transparent 24%),
+    linear-gradient(140deg, #315CD1, #7445EC 58%, #C04DDA);
+  color: #fff;
+}
+
+.lookup-price-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 52px 52px;
+  pointer-events: none;
+}
+
+.lookup-price-label,
+.lookup-price-stage img,
+.lookup-price-figure {
+  position: relative;
+  z-index: 1;
+}
+
+.lookup-price-label {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lookup-price-stage img {
+  align-self: flex-end;
+  width: 48px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.72;
+}
+
+.lookup-pause {
+  margin-top: 88px;
+  margin-left: calc(-1 * var(--lookup-gutter));
+  margin-right: calc(-1 * var(--lookup-gutter));
+}
+
+.lookup-pause-track {
+  position: relative;
+  height: 320vh;
+}
+
+.lookup-pause-panel {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #080808;
+  overflow: hidden;
+  transition: background-color 1.8s ease;
+}
+
+.lookup-pause-panel.is-glass {
+  background-color: #000000;
+}
+
+.lookup-pause-sheen {
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  top: 16%;
+  height: 52%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 42%, rgba(255, 255, 255, 0.08), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 2s ease;
+}
+
+.lookup-pause-panel.is-glass .lookup-pause-sheen {
+  opacity: 1;
+}
+
+.lookup-pause-title,
+.lookup-pause-subtitle,
+.lookup-pause-actions {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.lookup-pause-title {
+  font-size: clamp(40px, 8vw, 56px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.92);
+  transition: opacity 1.6s ease, transform 1.6s ease;
+}
+
+.lookup-pause-subtitle {
+  margin-top: 12px;
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+  transition: opacity 1.6s ease 0.25s, transform 1.6s ease 0.25s;
+}
+
+.lookup-pause-panel.is-titled .lookup-pause-title,
+.lookup-pause-panel.is-titled .lookup-pause-subtitle {
+  opacity: 1;
+  transform: none;
+}
+
+.lookup-pause-actions {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  transition: opacity 1.4s ease 0.1s, transform 1.4s ease 0.1s;
+}
+
+.lookup-pause-panel.is-choice .lookup-pause-actions {
+  opacity: 1;
+  transform: none;
+}
+
+.lookup-pause-putdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: min(100%, 320px);
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 12px;
+  background: #000000;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.lookup-pause-continue {
+  color: rgba(255, 255, 255, 0.30);
+  font-size: 17px;
+}
+
+.lookup-pause-sentinel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 24%;
+  pointer-events: none;
+}
+
+.lookup-pause-sentinel-glass {
+  top: 16%;
+}
+
+.lookup-pause-sentinel-title {
+  top: 42%;
+}
+
+.lookup-pause-sentinel-choice {
+  top: 68%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lookup-pause-track {
+    height: auto;
+  }
+
+  .lookup-pause-panel {
+    position: static;
+    min-height: 100vh;
+    background-color: #000000;
+    transition: none;
+  }
+
+  .lookup-pause-sheen,
+  .lookup-pause-title,
+  .lookup-pause-subtitle,
+  .lookup-pause-actions {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .lookup-pause-sentinel {
+    display: none;
+  }
+}
+
+@media (min-width: 860px) {
+  .lookup-nav {
+    display: flex;
+  }
+
+  .lookup-hero {
+    gap: 56px;
+    padding: 82px 0 48px;
+  }
+
+  .lookup-hero-copy {
+    max-width: 1040px;
+  }
+
+  .lookup-hero-stage {
+    min-height: 700px;
+  }
+
+  .lookup-hero-stage .lookup-phone {
+    width: 390px;
+    margin-bottom: -142px;
+  }
+
+  .lookup-stage-note {
+    padding: 13px 18px;
+    font-size: 14px;
+  }
+
+  .lookup-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lookup-feature:first-child {
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(280px, 0.75fr) minmax(480px, 1.25fr);
+    grid-template-rows: 620px;
+    min-height: 620px;
+  }
+
+  .lookup-feature:first-child .lookup-step-copy {
+    align-self: center;
+    padding: 48px;
+  }
+
+  .lookup-feature:first-child .lookup-feature-stage {
+    min-height: 620px;
+    align-items: flex-start;
+    padding-top: 54px;
+  }
+
+  .lookup-feature:first-child .lookup-phone {
+    width: 310px;
+  }
+
+  .lookup-feature:not(:first-child) .lookup-step-copy {
+    min-height: 242px;
+    padding: 40px 38px 32px;
+  }
+
+  .lookup-feature:not(:first-child) .lookup-feature-stage {
+    min-height: 500px;
+  }
+
+  .lookup-feature:not(:first-child) .lookup-phone {
+    width: 270px;
+  }
+
+  .lookup-wont {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 72px;
+    padding: 64px;
+  }
+
+  .lookup-wont-copy {
+    align-self: center;
+  }
+
+  .lookup-pricing {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 72px;
+  }
+
+  .lookup-price-copy {
+    padding-left: 24px;
+  }
+
+  .lookup-section {
+    margin-top: 144px;
+  }
+
+  .lookup-coda {
+    padding-top: 96px;
+  }
+
+  .lookup-pause {
+    margin-top: 128px;
+  }
+}
+
+.lookup-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 48px;
+  padding: 9px 24px;
+  border: 1px solid rgba(242, 242, 237, 0.28);
+  border-radius: 10px;
+  color: #F2F2ED;
+  text-decoration: none;
+  line-height: 1.25;
+}
+
+.lookup-badge-eyebrow {
+  font-size: 11px;
+  color: var(--lookup-muted);
+}
+
+.lookup-badge-label {
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.lookup-badge-disabled {
+  opacity: 0.72;
+  cursor: default;
+}
+
+.lookup-badge-note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: var(--lookup-muted);
+}
+
+.lookup-footer {
+  margin-top: 120px;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(242, 242, 237, 0.45);
+}
+
+.lookup-rule {
+  border: none;
+  border-top: 1px solid var(--lookup-hair);
+  margin: 0 0 32px;
+  max-width: 64px;
+}
+
+.lookup-footer p {
+  margin: 0 0 10px;
+  max-width: 36em;
+}
+
+.lookup-footer a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+.lookup-footer a:hover {
+  color: #F2F2ED;
+}
+
+@media (max-width: 520px) {
+  .lookup-refusals {
+    grid-template-columns: 1fr;
+  }
+
+  .lookup-stage-note-choice {
+    right: 5%;
+    bottom: 7%;
+  }
+}

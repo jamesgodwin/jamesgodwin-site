@@ -2,20 +2,21 @@
 
 ## Current Focus
 
-The site-wide content, pricing, homepage layout, and inner-page alignment pass is complete and production-build ready. The desktop homepage has also been tightened so the full opening encounter fits in one standard desktop viewport, with the opening headline and supporting line centered on both desktop and mobile. The next focus is deployment followed by real-person validation.
+Look Up is on hold. The landing page, assets, and docs live on git branch `lookup` and should not be merged to `main` until the app is resumed.
 
 ## Where Work Stopped
 
-Desktop now follows the same stacked homepage sequence as mobile: opening, prompt, circles, exploration, and browse. The opening headline, supporting line, prompt, and rings now share a centered axis on desktop and mobile. The desktop sizing is height-aware: on a 1440 x 900 viewport the document height matches the viewport height and the browse link remains visible without scrolling. Primary and conversion routes use the shared editorial route shell with visible titles, offer facts, direct actions, readable body columns, and a compact footer. Pricing remains visible for the Executive State Diagnostic and Workflow Audit, while workshops continue through a scoped enquiry. Contact copy and hierarchy, offer copy, app claims, Taoism claims, book copy, paintings copy, and the portfolio-specific legal page were tightened. All 21 tests pass and the production build completes with metadata for 18 routes.
+2026-08-19. James parked the project: Apple’s Screen Time / Family Controls API is too unreliable for a short-term ship. The page itself is visually complete (Framer-inspired layout, real screenshots, $19.99, site hamburger for wayfinding).
 
 ## Next Recommended Step
 
-Deploy the current branch, smoke-test the live homepage plus `/executive-state-diagnostic`, `/workshops`, `/systems`, `/contact`, and `/legal`, then run the eight-person validation gate.
+Leave Look Up on `lookup`. Resume site work from `main`. If Look Up is picked up later: `git checkout lookup`, then merge into `main`.
 
 ## Blockers
 
-No deployment blocker. The legal page is a practical portfolio-site alignment, not a substitute for formal legal review.
+Look Up: Apple Screen Time API reliability. Not a site-code blocker.
 
 ## Read These First
 
-- `DOCS/specs/interactive-terminal-homepage.md`
+- `DOCS/specs/lookup-landing-page.md`
+- `DOCS/decisions/2026-08-17-lookup-page-identity.md`

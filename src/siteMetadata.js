@@ -94,6 +94,12 @@ const pageMetadata = {
     title: 'Thank You | James Godwin',
     description: 'Thank you for getting in touch. James Godwin will respond personally to your enquiry.',
     path: '/thank-you'
+  },
+  lookup: {
+    title: 'Look Up — A quiet pause when an app pulls you under',
+    description: 'After 20 minutes in a chosen app, Look Up turns your iPhone screen near-black so you can catch your reflection and choose: put the phone down, or continue consciously. 7-day trial, lifetime unlock.',
+    image: `${siteUrl}/lookup/lookup-og.png`,
+    path: '/app/lookup'
   }
 };
 
