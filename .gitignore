@@ -11,6 +11,7 @@ build/
 
 # Ignore local browser QA artifacts
 .playwright-cli/
+.asset-harness/
 output/
 
 # Ignore environment variables

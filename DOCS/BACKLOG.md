@@ -12,6 +12,8 @@ This file is the single source of truth for current work status. Keep each item 
 
 ## Blocked
 
+- Look Up is on hold: Apple’s Screen Time API is too unreliable to pursue now. The landing page lives on branch `lookup` — https://github.com/jamesgodwin/jamesgodwin-site/tree/lookup — and should not be merged to `main` until the app is resumed.
+
 ## Done
 
 - Centered the homepage opening headline and supporting line on desktop and mobile while preserving one-screen fit.
