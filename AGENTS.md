@@ -1,244 +1,123 @@
 # AGENTS.md
 
-This is the root operating contract for AI agents working in this repository.
+James Godwin's personal portfolio site is a Create React App site with a terminal-inspired interactive interface and route-backed content pages. Read `DOCS/PROJECT.md` for purpose, users, stack, constraints, and environment. Active status lives in `DOCS/BACKLOG.md`; resumption context lives in `DOCS/next-day.md`.
 
-## Project
+This file is the repository operating contract. Product details, commands, and implementation maps belong in the files named below. Include each operating rule once; do not copy the startup sequence under later headings.
 
-James Godwin's personal portfolio site is a Create React App site with a terminal-inspired interactive interface and route-backed content pages for work, writing, Taoist practice, apps, books, and contact.
+Project-specific limits:
 
-Read `DOCS/PROJECT.md` for the full project brief, stack, constraints, and environment notes.
+- Preserve the terminal-inspired visual language and the command/page architecture.
+- Command content in `src/outputs/` is trusted HTML rendered through `dangerouslySetInnerHTML`. Do not inject user-generated HTML there.
+- When adding or changing a route-backed page, keep routing, output modules, metadata, redirects, sitemap, and help in sync. The checklist lives in `DOCS/PROJECT.md`.
+- Do not run `npm run eject` without explicit approval.
+- A backlog item, suggested next step, or programme date does not authorize deployment, publication, spending, contacting people, or merging the parked `lookup` branch.
 
-## Startup Read Order
+## A. Authority and placement
 
-Every session must start with this exact sequence:
-
-1. Read `AGENTS.md`.
-2. Read `DOCS/PROJECT.md`.
-3. Read `DOCS/BACKLOG.md`.
-4. Read `DOCS/next-day.md`.
-5. Load only the files named under "Read These First" in `DOCS/next-day.md`.
-6. Do not open any other project memory file until the user directs it.
-
-## File Authority
-
-| File / Folder | Authority |
+| File or folder | Owns |
 |---|---|
-| `AGENTS.md` | Root operating contract. The AI reads this first. |
-| `CLAUDE.md` | Claude Code entry point. Points to `AGENTS.md`. |
-| `DOCS/PROJECT.md` | Project identity: purpose, stack, constraints, non-goals. |
-| `DOCS/BACKLOG.md` | Single source of truth for current work status. |
-| `DOCS/next-day.md` | Short handoff for the next session. Overwritten each session. |
-| `DOCS/logs/` | Dated session history. Append only. Never delete. |
-| `DOCS/specs/` | Feature specs and implementation plans. Named by topic. |
-| `DOCS/runbooks/` | Repeatable operational workflows. Named verb-noun. |
-| `DOCS/decisions/` | Architectural and product decisions in ADR format. |
-| `DOCS/archive/` | Inactive material. Not authoritative for current work. |
+| `AGENTS.md` | Repository operating rules, context loading, and maintenance workflow. |
+| `CLAUDE.md` | Brief Claude entry point pointing to this contract. |
+| `.cursor/rules/` | Cursor rules; `agents-contract.mdc` points to this contract. Preserve other rules and their scopes. |
+| `DOCS/PROJECT.md` | Purpose, intended user, problem, success signal, stack, constraints, non-goals, and environment. |
+| `DOCS/BACKLOG.md` | Current work status and priority. |
+| `DOCS/next-day.md` | Resumption context and immediate next action for the current focus. |
+| `DOCS/specs/` | Agreed scope, acceptance criteria, implementation slices, and feature-specific evidence. Named by topic. |
+| `DOCS/runbooks/` | Repeatable procedures. Named verb-noun. |
+| `DOCS/decisions/` | Product and architecture decisions. Use `YYYY-MM-DD-short-title.md`. |
+| `DOCS/logs/` | Dated work history and verification evidence. Use `YYYY-MM-DD-NNN-short-topic.md`. |
+| `DOCS/archive/` | Inactive material and historical context, not current authority. |
 
-Do not duplicate active work state across multiple files. `DOCS/BACKLOG.md` owns status, `DOCS/next-day.md` owns the next handoff, and logs own history.
+The backlog owns status; specs own substance; the handoff points to these and explains how to resume. Brief summaries and links are appropriate; competing status lists are not. Code and observed checks establish implemented behavior. A plan or old log does not prove that behavior exists today. Reconcile contradictions with current evidence rather than silently treating an outdated document as fact.
 
-## Structure and Placement Rules
+Add any new `DOCS/` root entry to this table in the same session, or place its content in an existing folder. For additional Cursor rules, record a distinct authority or scope when necessary; the folder row already covers ordinary rule files. Update this contract when operating rules, structure, or authority change, not with routine progress notes.
 
-- Specs live in `DOCS/specs/` and are named by topic, for example `little-panda-series-page.md`.
-- Runbooks live in `DOCS/runbooks/` and are named verb-noun, for example `deploy-site.md`.
-- Decisions live in `DOCS/decisions/` using ADR format and `YYYY-MM-DD-short-title.md` filenames.
-- Session logs live in `DOCS/logs/` using `YYYY-MM-DD-NNN-short-topic.md` filenames.
-- `DOCS/next-day.md` is overwritten at the end of each meaningful session. Do not append to it.
-- `DOCS/archive/` holds inactive material. Do not delete archived material.
+## B. Startup and task investigation
 
-## Backlog Rules
+Read in this order at the beginning of a new session, using content already supplied in context when it is current:
 
-`DOCS/BACKLOG.md` uses four Kanban sections:
+1. `AGENTS.md` and other applicable scoped instructions.
+2. `DOCS/PROJECT.md`.
+3. `DOCS/BACKLOG.md`.
+4. `DOCS/next-day.md`.
+5. The smallest relevant set from `Read These First` for the user's actual task.
 
-- `## Backlog`
-- `## In Progress`
-- `## Blocked`
-- `## Done`
+The four layers are orientation (`AGENTS.md`, `PROJECT.md`), current state (`BACKLOG.md`, `next-day.md`), task documents (`specs/`, `runbooks/`, `decisions/`), and history (`logs/`, `archive/`). Do not load entire folders as routine orientation.
 
-Each backlog item must be a single line. If an item needs detail, write a spec and link to it from the backlog item.
+`Read These First` normally names 1–3 documents, never more than 5, with roughly 5,000 combined words as a practical startup target. A precise section reference can narrow a large document. Do not include later phases or parallel work just in case. If the user's request differs from the previous focus, skip irrelevant handoff readings and find the context for the requested task.
 
-Within each section, order items top-down by priority. The top item is the next thing to work on.
+These limits govern initial orientation, not the investigation needed to complete work. Independently search filenames and relevant text, follow links, and read source code, tests, configuration, specs, decisions, and runbooks needed for the authorized task. The user does not need to name each file or approve routine reads. Follow the narrowest relevant path; broaden when evidence requires it. Applicable instructions must not be skipped to satisfy a context budget.
 
-When `## Done` exceeds 20 items, or at the end of a milestone, move Done items to `DOCS/archive/YYYY-MM-backlog.md` and clear the section.
+Do not load log or archive content during routine startup. Read specific historical material when the user asks for history, when a scheduled milestone review requires it, or when active authority cannot resolve the task. Filename listing and targeted search are permitted. History informs investigation but does not supersede current authority without reconciliation.
 
-## Development Skills Pipeline
+For a missing reference, search narrowly for a moved or renamed equivalent and repair the link when the match is clear. Continue independent work. Surface unresolved gaps that affect the task; do not create a standalone log just to report a harmless broken link. If missing information prevents a correct next step, explain the dependency and ask only for what is needed.
 
-If James has these personal Codex skills installed, use them as optional accelerators. If another agent does not have the skills installed, it must still follow the same behaviours from this file.
+## C. Work modes and development
 
-| Phase | Skill | Use When | Durable Output |
-|---|---|---|---|
-| Feature framing | `app-feature-brief` | A new app feature, product idea, or meaningful change needs to become a buildable spec | `DOCS/specs/<topic>.md` plus one backlog line if real |
-| Work slicing | `app-vertical-slices` | A spec or plan needs to become small demoable implementation slices | `Implementation Slices` section inside the spec |
-| Implementation | `app-tdd-loop` | Building or changing behaviour where regression risk matters | Tests, code, backlog/log/next-day updates |
-| Bug fixing | `app-bug-diagnosis` | Something is broken, flaky, slow, or unclear | Red-capable repro, fix, regression test, log |
-| Architecture | `app-architecture-review` | Code is becoming tangled, hard to test, or hard for agents to navigate | 3-5 ranked candidates, then spec/backlog/ADR only if chosen |
+Infer the mode from the user's request. Do not require a formal mode selection.
 
-Rules:
+- **Exploration:** discuss possibilities and trade-offs. Do not automatically write a spec, add backlog items, accept decisions, or start implementation. Capture a clearly labelled exploratory note only when requested or useful to agreed ongoing work. A conversation may end with no file changes.
+- **Planning:** when asked to plan, or when a direction is chosen, create or update a focused spec with the outcome, scope, non-goals, acceptance criteria, and material open questions. Add backlog work only when it is intended work. Split larger plans into small slices that each demonstrate useful behavior.
+- **Implementation:** execute the authorized scope. Reuse an existing sufficient spec; do not force a new brief for a simple, clear change. Match verification effort to risk.
 
-- Use one primary skill per phase. Do not stack every skill on every request.
-- Skills must respect the context loading strategy. They do not get permission to browse all specs, logs, or archive files.
-- Specs hold substance. Backlog items stay one-line. `DOCS/next-day.md` controls what future sessions load.
-- For exploratory conversations, draft a spec but do not update the backlog until the work is real.
-- Feature work starts with a brief when the change is meaningful.
-- Plans are split into vertical slices rather than layer tasks.
-- Implementation proceeds one behaviour test at a time when risk matters.
-- Bugs require a red-capable reproduction loop before diagnosis.
-- Architecture review recommends contained deepening moves, not broad rewrites.
+Use one primary personal skill per phase when available and relevant. If unavailable, follow the behavior described here without blocking:
 
-Recommended trigger language:
+| Phase | Optional skill | Behavior |
+|---|---|---|
+| Feature framing | `app-feature-brief` | Turn chosen work into a focused, buildable spec. |
+| Work slicing | `app-vertical-slices` | Put demoable implementation slices inside the spec. |
+| Implementation | `app-tdd-loop` | For regression-sensitive behavior, work through one meaningful behavior test at a time. |
+| Bug diagnosis | `app-bug-diagnosis` | Establish a reproduction or observable failure, investigate its cause, then verify the fix with a regression check where practical. |
+| Architecture review | `app-architecture-review` | Recommend a few ranked, contained improvements; implement only the chosen scope. |
 
-```text
-Use app-feature-brief to turn this feature idea into a spec.
-Use app-vertical-slices to split this spec into buildable slices.
-Use app-tdd-loop to implement the first slice test-first.
-Use app-bug-diagnosis to debug this issue.
-Use app-architecture-review to find the smallest useful refactor.
-```
+If a bug cannot be reproduced, document the available evidence and uncertainty, investigate further, and avoid claiming an unverified fix. Tests should establish useful behavior, not merely mirror code. Simple copy or formatting changes may need inspection rather than new automated tests.
 
-## Context Loading Strategy
+The user's current request determines the authorized work. Respect existing authorization; do not repeatedly ask for approval already given. Ask about decisions only when their answer materially affects the task and cannot be resolved from established intent or evidence. Continue independent authorized work while waiting.
 
-Follow this strict four-layer loading model to keep startup context lean as the project grows:
+## D. Backlog and completion
 
-- Layer 1, load every session: `AGENTS.md`, `DOCS/PROJECT.md`.
-- Layer 2, load every session: `DOCS/BACKLOG.md`, `DOCS/next-day.md`.
-- Layer 3, load on demand only: `DOCS/specs/*`, `DOCS/runbooks/*`, `DOCS/decisions/*` only if named in `DOCS/next-day.md` under "Read These First" or explicitly requested by the user.
-- Layer 4, never load on startup: `DOCS/logs/*`, `DOCS/archive/*`.
+Use four sections: `Backlog`, `In Progress`, `Blocked`, `Done`. Each item is one line, with detail and evidence linked to a spec or log as needed. Within a section, order items by priority. The first actionable item is the default recommendation when the user asks what to work on; it does not override their request.
 
-A project with many logs, specs, and decisions still starts every session by loading exactly four files.
+Move work to Done only when its agreed acceptance criteria are met and relevant checks support completion. Record what was checked and the result, or why a check was not run, in the spec or log. Distinguish tests added or changed from tests actually executed. State remaining uncertainty.
 
-If a file listed under "Read These First" no longer exists, note the missing reference in the session log, continue with the remaining files, and surface the gap to the user.
+Distinguish implementation, automated verification, manual or exact-build validation, and release when relevant. Code completion does not imply deployment or validation of a distributed artifact. If release is outside the item's scope, an implementation item may be Done while a separate release item remains open. Do not mark an item Done while one of its required gates remains unmet.
 
-## Session Workflow - Start
+Beyond roughly 20 Backlog items, move the clearly deferred tail to `DOCS/archive/someday.md`; do not archive committed near-term work merely to hit a number. Review that file at milestones. When Done exceeds 20 items or a milestone ends, append its items to `DOCS/archive/YYYY-MM-backlog.md` with the archive date, then clear only the transferred items. Preserve previous batches in the same monthly file.
 
-1. Read `AGENTS.md`.
-2. Read `DOCS/PROJECT.md`.
-3. Read `DOCS/BACKLOG.md`.
-4. Read `DOCS/next-day.md`.
-5. Load only files named under "Read These First" in `DOCS/next-day.md`.
-6. Do not open any other project memory file until the user directs it.
+Edit the backlog only when scope, priority, or status changes. Do not manufacture bootstrap work or housekeeping Done items to satisfy this workflow.
 
-## Session Workflow - End
+## E. Handoff and interruption checkpoints
 
-For meaningful sessions only:
+`DOCS/next-day.md` carries the current focus. Use these sections:
 
-- Update `DOCS/BACKLOG.md`.
-- Create a dated log in `DOCS/logs/` using `YYYY-MM-DD-NNN-short-topic.md`.
-- Overwrite `DOCS/next-day.md` with a fresh handoff.
-- Record tests run, or note that no tests were added.
+- **Current Focus:** the primary outcome and a link to its authoritative work item or spec.
+- **Where Work Stopped:** the last meaningful checkpoint, relevant verification state, and branch/worktree or artifact identifier when necessary to resume accurately. Include the checkpoint date when updating substantive state.
+- **Next Recommended Step:** one concrete action, with an observable outcome when useful.
+- **Blockers:** unresolved dependencies affecting that action; do not duplicate the options held elsewhere.
+- **Parallel Threads:** at most 3 one-line references to unfinished side work likely to resume soon. Completed side work does not belong here.
+- **Needs Decisions:** at most 4 lines for unresolved human decisions that block or materially change the immediate work, linked to the authoritative options. Surface only those relevant to the current request. Remove resolved decisions and preserve the outcome in a spec or ADR.
+- **Read These First:** repository-relative paths, optionally with section references and a short reason, to relevant specs, runbooks, or decisions. Apply section B's startup budget. Empty is valid.
 
-## What Counts as a Meaningful Session
+Keep the handoff around 500 words or less when practical. Preserve the primary focus when doing side work. Replace the focus narrative only when that focus advances or deliberately changes; patch affected blockers, decisions, references, or parallel work whenever those facts change. Do not keep known stale facts merely because the main implementation did not advance.
 
-A session is meaningful if any of these are true:
+Do not rely solely on session end for persistence. After a material decision, completed slice, or new blocker, save a concise checkpoint if interruption would otherwise cause repeated or incorrect work. Update only the authoritative files affected; do not create a log per tool call or micro-step.
 
-- A file was created or modified.
-- A backlog item changed state.
-- A decision was made or reversed.
-- A blocker was identified or resolved.
-- Any spec, runbook, or decision doc was written or updated.
+Before updating shared backlog or handoff files, re-read their current contents and merge relevant changes. Do not overwrite another session's updates from a stale copy. If working in separate checkouts, record enough location context to avoid confusing their state.
 
-Short exploratory or read-only sessions do not require a log entry.
+## F. Logs and decisions
 
-## Log Format
+A session is meaningful when it changes material work, a decision, a blocker, or documentation that affects future action. Exploration or read-only review without a durable outcome does not require a log. Mechanical formatting and metadata fixes need no standalone entry.
 
-Use this structure for session logs:
+Use one dated log per meaningful session. Before assigning its three-digit sequence, list that day's filenames and choose the next free number. Create without overwriting an existing file; retry with a new number or unique topic suffix if another writer collides. Do not assume listing alone prevents concurrent collisions.
 
-```markdown
-# Session Log - YYYY-MM-DD-NNN
+Log headings are `Summary`, `Files Touched`, `Verification`, `Decisions`, and `Follow-ups`. Verification includes checks actually run, their results, tests added or changed when relevant, and checks not run with reasons. Record intent and evidence, not copied diffs or full tool output. Update the current session's log as checkpoints accumulate; preserve completed historical entries and append an explicit correction if one is needed.
 
-## Summary
+For consequential product or architecture decisions, use an ADR with `Status`, `Context`, `Decision`, and `Consequences`. Status is Proposed, Accepted, or Superseded with a link. Small local decisions can remain in their spec or log; an ADR is not required for every choice.
 
+## G. Reconciliation and archive
 
-## Files Touched
+At the end of meaningful work, reconcile changed backlog state, finish the session log, and update the handoff only where future-session information changed. Checkpoints already saved do not require redundant edits. Record required follow-ups without inflating the startup context.
 
+Archive implemented specs only when they no longer define current behavior or guide maintenance. Archive retired runbooks and superseded decisions when appropriate, preserving replacement links. Update inbound references when moving files; retain a pointer at the original path if it remains useful. Never overwrite or delete historical content as routine housekeeping. Archive material is not current authority.
 
-## Tests
-
-
-## Decisions
-
-
-## Follow-ups
-
-```
-
-## Development Commands
-
-- `npm start` - Run development server on `localhost:3000`.
-- `npm test` - Run the test runner in watch mode.
-- `npm run build` - Build production output to `build/` and prerender route metadata.
-- `npm run eject` - Eject from Create React App. This is irreversible and requires explicit approval.
-
-## Architecture Overview
-
-This is a personal portfolio site built as a terminal-style interactive React application. The core concept is a command-line interface where users type commands to explore different sections of the site. The app also renders route-backed page views for the same command outputs.
-
-### Key Architectural Components
-
-**Terminal Interface System**: `src/App.js` implements the command parser. Commands are defined in `allCommands` and handled in `executeCommand()`.
-
-**Command Output System**: Each command corresponds to a JavaScript module in `src/outputs/` that exports HTML content as strings. These modules are rendered with `dangerouslySetInnerHTML`, so keep content trusted and avoid injecting user-generated HTML.
-
-**Route Metadata System**: `src/siteMetadata.js` owns per-route titles, descriptions, images, and paths. `scripts/prerender-route-metadata.js` writes static metadata pages after `react-scripts build`.
-
-**Theme System**: Themes are defined in `src/themes.js` with CSS variable based light/dark schemes and image-based themes that include mobile variants and transition animations.
-
-**Homepage Encounter**: The homepage uses the concentric circles and authored reflections as its primary interaction. The legacy command architecture remains available through route and navigation handling, but the homepage does not expose text or voice input.
-
-**Background Transitions**: Theme switching uses fade transitions when moving between image-based themes.
-
-## File Structure Patterns
-
-- `src/outputs/[command].js` - HTML string content for terminal/page commands.
-- `src/components/` - React components such as `Breathe`.
-- `public/` - Public image assets, book covers, app icons, redirect rules, and sitemap.
-- `public/images/` - Theme backgrounds and UI icons with dark mode variants.
-- `src/NewSite.css` - Current site styling.
-- CSS uses custom properties for theme-based styling.
-
-## Command System
-
-Commands are processed through:
-
-1. Input validation against `allCommands`.
-2. Autocomplete suggestions based on input prefix.
-3. Command execution with output rendering.
-4. Command history navigation with up/down arrows.
-
-Special commands:
-
-- `breathe` - Launches the meditation component overlay.
-- `return` - Easter egg command.
-- Theme names such as `default`, `dark`, `stillness`, `mountains`, `essence`, `tao`, `zen`, `snow`, and `void` switch themes directly.
-- `unlearn` - Easter egg with special icon.
-
-When adding a new page-backed command, update:
-
-- `src/App.js` imports, `allCommands`, `commandRouteMap`, `pageHeadingLabels`, navigation where relevant, and `executeCommand()`.
-- `src/outputs/[command].js`.
-- `src/siteMetadata.js`.
-- `public/_redirects`.
-- `public/sitemap.xml`.
-- `src/outputs/help.js` if the command should be discoverable.
-
-## Content Integration
-
-- ConvertKit integration for email capture uses `data-uid="0da6b662ba"`.
-- Google Analytics tracking uses `G-0TCHNH6DEP`.
-- External links include portfolio projects such as AI Ching and GratefulFor.
-
-## Styling Architecture
-
-CSS uses a two-tier theming system:
-
-1. CSS custom properties for light and dark modes.
-2. Theme-specific background images with opacity transitions.
-3. Responsive design with mobile-specific background images.
-
-The site maintains a monospace terminal aesthetic with careful typography and spacing. Preserve that feel when adding pages or visual content.
-
-## Operating Principles
-
-- Git is the version history. Logs summarise intent and decisions, not diffs.
-- Keep changes minimal and aligned with the existing command/page architecture.
-- Do not create speculative docs.
-- Do not let planning files go stale. Update or archive, never leave outdated content in active files.
-- Update `AGENTS.md` itself if the project structure or operating model changes.
+Use version control when present, but do not assume a commit or push is authorized. Logs summarize work; they do not replace source history or evidence of verification.

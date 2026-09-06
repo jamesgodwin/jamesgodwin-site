@@ -1,4 +1,4 @@
-# Session Log - YYYY-MM-DD-NNN
+# Session Log — YYYY-MM-DD-NNN
 
 ## Summary
 
@@ -6,11 +6,10 @@
 ## Files Touched
 
 
-## Tests
+## Verification
 
 
 ## Decisions
 
 
 ## Follow-ups
-

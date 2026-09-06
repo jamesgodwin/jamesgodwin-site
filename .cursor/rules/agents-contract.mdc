@@ -1,0 +1,7 @@
+---
+description: Follow the repository operating contract.
+globs: []
+alwaysApply: true
+---
+
+Read `AGENTS.md` and follow its startup, task investigation, and maintenance rules. Project facts and current work live in the authoritative files it names.

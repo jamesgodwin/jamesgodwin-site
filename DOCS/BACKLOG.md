@@ -1,12 +1,12 @@
 # Backlog
 
-This file is the single source of truth for current work status. Keep each item to one line. If an item needs detail, create a spec in `DOCS/specs/` and link to it.
+Current work status and priority. Detail lives in linked specs or logs.
 
-<!-- Done purge rule: when Done exceeds 20 items, or at the end of a milestone, move Done items to DOCS/archive/YYYY-MM-backlog.md and clear the section. -->
+<!-- When Done exceeds 20 items, or a milestone ends, append transferred items to DOCS/archive/YYYY-MM-backlog.md with the archive date, then clear only those items. Preserve previous batches in the same monthly file. Beyond ~20 Backlog items, move the clearly deferred tail to DOCS/archive/someday.md. -->
 
 ## Backlog
 
-- Run the eight-person validation gate in [the interactive homepage spec](specs/interactive-terminal-homepage.md) after deployment.
+- Align the site with LinkedIn through product proof/enquiry, work discovery, identity and previews; execute P1 first, then remaining slices and combined visitor validation in [the alignment plan](specs/linkedin-site-alignment.md).
 
 ## In Progress
 
@@ -16,6 +16,7 @@ This file is the single source of truth for current work status. Keep each item 
 
 ## Done
 
+- Documented the LinkedIn-aligned website plan with three detailed specs, ordered vertical slices, acceptance criteria and a next-week execution handoff.
 - Centered the homepage opening headline and supporting line on desktop and mobile while preserving one-screen fit.
 - Tightened the desktop homepage encounter so the opening, prompt, rings, exploration, and browse link fit within a standard desktop viewport without vertical scrolling.
 - Aligned the primary route and conversion pages with the homepage, stacked the desktop encounter like mobile, and completed the deployment content and pricing pass using [the inner-page UI spec](specs/inner-page-ui-alignment.md).
