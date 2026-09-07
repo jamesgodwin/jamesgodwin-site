@@ -86,23 +86,23 @@ const pageHeadingLabels = {
   uxui: 'Product Clarity'
 };
 const navMenuItems = [
-  'diagnostic',
-  'workshops',
+  'uxui',
   'systems',
-  'divider',
-  'sanctuary',
   'apps',
   'divider',
+  'diagnostic',
+  'workshops',
+  'sanctuary',
+  'taoism',
+  'divider',
   'about',
+  'now',
   'contact',
   'divider',
   'philosophy',
-  'taoism',
   'books',
   'little-panda',
-  'uxui',
   'paintings',
-  'now',
   'legal'
 ];
 const routeCommandMap = Object.fromEntries(
@@ -161,6 +161,8 @@ function App() {
   const [isBreathing, setIsBreathing] = useState(false);
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
   const navMenuRef = useRef(null);
+  const navFirstItemRef = useRef(null);
+  const navReturnFocusRef = useRef(null);
   const inlineOutputContent = typeof output?.content === 'string'
     ? output.content.replace(/<hr><p class="commands-text">[\s\S]*$/, '')
     : output?.content;
@@ -450,14 +452,27 @@ function App() {
   useEffect(() => {
     if (!isNavMenuOpen) return;
 
+    navFirstItemRef.current?.focus();
+
     function handleNavClickOutside(event) {
       if (navMenuRef.current && !navMenuRef.current.contains(event.target)) {
         setIsNavMenuOpen(false);
       }
     }
 
+    function handleNavKeyDown(event) {
+      if (event.key !== 'Escape') return;
+
+      setIsNavMenuOpen(false);
+      navReturnFocusRef.current?.focus();
+    }
+
     document.addEventListener('mousedown', handleNavClickOutside);
-    return () => document.removeEventListener('mousedown', handleNavClickOutside);
+    document.addEventListener('keydown', handleNavKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleNavClickOutside);
+      document.removeEventListener('keydown', handleNavKeyDown);
+    };
   }, [isNavMenuOpen]);
 
   useEffect(() => {
@@ -604,7 +619,12 @@ function App() {
             aria-label="Open navigation"
             aria-expanded={isNavMenuOpen}
             aria-controls="site-navigation"
-            onClick={() => setIsNavMenuOpen(!isNavMenuOpen)}
+            onClick={(event) => {
+              if (!isNavMenuOpen) {
+                navReturnFocusRef.current = event.currentTarget;
+              }
+              setIsNavMenuOpen(!isNavMenuOpen);
+            }}
           >
             <FontAwesomeIcon icon={faBars} />
           </button>
@@ -616,6 +636,7 @@ function App() {
                 ) : (
                   <button
                     key={item}
+                    ref={index === 0 ? navFirstItemRef : undefined}
                     onClick={() => {
                       executeCommand(item);
                       setIsNavMenuOpen(false);
@@ -657,7 +678,10 @@ function App() {
         ) : (
           <PressureEncounter
             onNavigate={executeCommand}
-            onBrowse={() => setIsNavMenuOpen(true)}
+            onBrowse={(invoker) => {
+              navReturnFocusRef.current = invoker;
+              setIsNavMenuOpen(true);
+            }}
           />
         )}
         {showTerminalUI && (

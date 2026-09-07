@@ -1,1 +1,18 @@
-const philosophyOutput = `<p><strong>The Art of Returning</strong></p><p>A Philosophy of Regulation and Wholeness</p><p>In a culture obsessed with optimisation, I am interested in something else.</p><p>Returning.</p><p>Not adding more knowledge.<br />Not improving identity.<br />Not becoming someone new.</p><p>Returning to a steadier state beneath pressure.</p><p>You are not a project to be fixed.<br />But under stress, you can forget how to listen.</p><p>My work exists to restore that listening.</p><hr><h3>Stillness as Architecture</h3><p>This philosophy is shaped by two parallel paths.</p><p>Over thirty years of Tai Chi and Taoist practice, and twenty years designing digital systems in high-pressure environments.</p><p>When the system is overloaded, signal degrades.<br />When the state settles, clarity returns.</p><p>Tai Chi taught me that strength does not come from force. It comes from relaxation under load.</p><p>Clarity does not come from pursuit. It emerges when agitation stops.</p><hr><h3>Technology and the Nervous System</h3><p>Most technology amplifies urgency.</p><p>It fragments attention, accelerates reaction, and rewards speed over depth.</p><p>I build differently.</p><p>I build systems that respect the human nervous system, reducing unnecessary stimulation and protecting cognitive clarity.</p><p>This is not about aesthetic minimalism. It is about regulation.</p><p>When the creator is steady, the product carries that steadiness.</p><hr><h3>Laying Down Borrowed Truths</h3><p>Much of what we believe about success, performance, and leadership is inherited noise.</p><p>Borrowed truths.</p><p>Returning is the act of setting them down long enough to observe what remains.</p><p>Not to withdraw from the world.<br />But to re-enter it with steadier perception.</p><p>Wisdom does not emerge from urgency.<br />It emerges from a regulated state.</p><p>That is the foundation of all my work.</p><hr><blockquote>“We take borrowed truths to become knowledgeable. But to be knowledgeable is not to know.”</blockquote><hr><p class="commands-text"><span class="commands">Available commands:</span> help, diagnostic, workshop-enquiry, about, workshops, apps, books, sanctuary, contact, taoism, now, paintings, philosophy, uxui, legal, themes (default, dark, stillness, mountains, essence, tao, zen, snow, void)</p>`; export default philosophyOutput;
+const philosophyOutput = `
+<h3>The practice behind my judgement</h3>
+<p>Tai Chi has taught me to notice pressure, timing and unnecessary effort. I have found those lessons useful far beyond formal practice.</p>
+<p>When I work on a product or workflow, I often look for the same things. Where is effort accumulating? What is being forced? Which part of the system is carrying work that belongs somewhere else?</p>
+<hr>
+<h3>Returning</h3>
+<p>I think of practice as returning rather than acquiring. Returning to the breath. Returning attention to what is actually happening. Returning to a simpler movement after strain has entered it.</p>
+<p>This has been deeply useful in my own life. I share it as lived experience and an ongoing practice, rather than a universal answer.</p>
+<hr>
+<h3>Technology and attention</h3>
+<p>Digital products shape attention through every interruption, choice and piece of language. Good product work respects that attention.</p>
+<p>For me, clarity in an interface comes from understanding the task, removing avoidable effort and making the next useful action easier to see.</p>
+<hr>
+<h3>Two parts of one life</h3>
+<p>UX and product work are where most of my professional experience and commercial value sit. Tai Chi is the deeper practice that has shaped how I observe, decide and work with people.</p>
+<p>They do not need to become the same service to influence one another.</p>`;
+
+export default philosophyOutput;

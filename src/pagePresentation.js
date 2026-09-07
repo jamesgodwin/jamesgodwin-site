@@ -2,14 +2,14 @@ const pagePresentation = {
   diagnostic: {
     pathLabel: 'IN ME',
     title: 'Executive State Diagnostic',
-    lede: 'A private 45-minute session for noticing how pressure changes breath, attention, and judgement.',
-    facts: ['45 minutes', '$350 USD', 'Private video session'],
+    lede: 'A private 45-minute introduction to the breath, posture and attention practices that have helped me personally.',
+    facts: ['45 minutes', 'One-to-one practice', 'Private video session'],
     primaryAction: { label: 'Request a private session', href: '/contact?about=diagnostic' }
   },
   workshops: {
     pathLabel: 'IN A TEAM',
     title: 'Stillness Under Pressure',
-    lede: 'Practical regulation workshops for teams that need steadier judgement and communication when stakes are high.',
+    lede: 'Practice-led workshops for teams curious about how pressure affects breath, attention and communication.',
     facts: ['90 minutes', 'Half day', 'Full day', 'Integration series'],
     primaryAction: { label: 'Explore a workshop', href: '/contact?about=workshop' }
   },
@@ -22,15 +22,16 @@ const pagePresentation = {
   },
   about: {
     pathLabel: 'ONLY EXPLORING',
-    title: 'Regulation before strategy.',
-    lede: 'Thirty years of Tai Chi and breath training meet twenty years of digital product architecture.',
+    title: 'Seeing what is getting in the way.',
+    lede: 'I work across products, workflows and human attention, helping people notice what is stuck and make the next useful change.',
     primaryAction: { label: 'See how I work', href: '#how-i-work' }
   },
   uxui: {
     pathLabel: 'IN THE WORK',
     title: 'Get your product working cleanly.',
     lede: 'I help founders and small product teams close UX, accessibility and implementation gaps when fast-built or AI-assisted products stall.',
-    primaryAction: { label: 'Talk about your product', href: '/contact?about=product-clarity' }
+    primaryAction: { label: 'Talk about your product', href: '/contact?about=product-clarity' },
+    secondaryAction: { label: 'See an example', href: '#work-example' }
   },
   contact: {
     pathLabel: 'START A CONVERSATION',

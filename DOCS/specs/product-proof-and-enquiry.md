@@ -2,6 +2,8 @@
 
 Part of [LinkedIn and website alignment](linkedin-site-alignment.md). Proposed implementation copy and acceptance criteria, prepared 6 September 2026. Backlog owns status.
 
+Local status 7 September 2026: P1 and P2 implemented and verified. Release remains governed by the parent plan.
+
 ## Problem
 
 `/uxui` describes product design primarily through regulation and lacks a concrete case and prominent next step. Product enquiries fall back to General Enquiry because the existing allowlist has no product intent. Contact methods appear after a large hero and repeated introduction.

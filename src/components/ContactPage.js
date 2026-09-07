@@ -16,7 +16,7 @@ function getIntroCopy(intent) {
     case 'product-clarity':
       return 'Tell me what your product does, where people get stuck and what you want to improve. I respond personally.';
     default:
-      return 'For executive diagnostics, workshops, workflow systems, or product clarity engagements, use one of the direct contact options below.';
+      return 'For product clarity, workflow systems, workshops or personal practice, use one of the direct contact options below.';
   }
 }
 

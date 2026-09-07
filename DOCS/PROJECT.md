@@ -20,7 +20,7 @@ James is the author and maintainer. This is a personal site, not a multi-user pr
 
 Enduring signal: a visitor can recognise James, reach a relevant destination, and find a direct contact method without a site rebuild.
 
-Current goal: the bounded LinkedIn/site alignment in [the alignment plan](specs/linkedin-site-alignment.md), starting with a clear `/uxui` explanation and a working product-enquiry path. Combined visitor validation and live deployment are later gates in that plan; they are not yet passed. The exact deployed revision and previous eight-person homepage results remain unknown.
+Current goal: review and validate the local LinkedIn/site candidate in [the alignment plan](specs/linkedin-site-alignment.md). UX, product and workflow delivery are its commercial centre; Tai Chi remains visible as practice and a source of judgement. Combined visitor validation and live deployment are later gates and are not yet passed.
 
 ## Stack
 

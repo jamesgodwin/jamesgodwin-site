@@ -1,8 +1,8 @@
 const siteUrl = 'https://jamesgodwin.me';
 
 const defaultMetadata = {
-  title: 'James Godwin | Regulation for Leaders Under Pressure',
-  description: 'I help founders and leadership teams make clearer decisions under pressure by regulating state first. Executive diagnostics, workshops, product clarity, and Taoist practice.',
+  title: 'James Godwin | Product, UX and Workflow Clarity',
+  description: 'I help founders and teams close UX, accessibility and implementation gaps in products and workflows. Explore my work, writing and Tai Chi practice.',
   image: `${siteUrl}/og.webp`,
   twitterImage: `${siteUrl}/twitter.webp`,
   path: '/'
@@ -10,13 +10,13 @@ const defaultMetadata = {
 
 const pageMetadata = {
   about: {
-    title: 'About James Godwin | Regulation Before Strategy',
-    description: 'Thirty years of Tai Chi and breath training in the Cheng Man-Ching lineage meet twenty years of product architecture to help leaders regulate before acting under pressure.',
+    title: 'About James Godwin | Products, Practice and Perspective',
+    description: 'Twenty years across UX, product strategy and design systems, shaped by thirty years of Tai Chi practice. Meet James and explore his work.',
     path: '/about'
   },
   diagnostic: {
-    title: 'Executive State Diagnostic | Tai Chi Breathing for Leaders',
-    description: 'A private 45-minute session for founders and senior leaders to track pressure through the breath, work with the dantian, and respond with steadier judgement.',
+    title: 'Executive State Diagnostic | James Godwin',
+    description: 'A private 45-minute introduction to James Godwin\'s personal Tai Chi and Qigong practice, working with breath, posture, attention and the dantian.',
     path: '/executive-state-diagnostic'
   },
   systems: {
@@ -26,7 +26,7 @@ const pageMetadata = {
   },
   workshops: {
     title: 'Stillness Under Pressure Workshops | James Godwin',
-    description: 'Practical regulation workshops for leadership, product, design, and engineering teams who need steadier judgement and communication under load.',
+    description: 'Practice-led workshops using breath, posture and attention to help teams notice how pressure affects communication and shared decisions.',
     path: '/workshops'
   },
   'workshop-enquiry': {
@@ -52,7 +52,7 @@ const pageMetadata = {
   },
   contact: {
     title: 'Contact James Godwin',
-    description: 'Contact James Godwin for executive diagnostics, Stillness Under Pressure workshops, product clarity engagements, Tai Chi sessions, or related enquiries.',
+    description: 'Talk to James about a product, workflow, workshop or personal practice enquiry. Contact him directly by email or WhatsApp.',
     path: '/contact'
   },
   taoism: {
@@ -71,13 +71,13 @@ const pageMetadata = {
     path: '/paintings'
   },
   philosophy: {
-    title: 'Philosophy | The Art of Returning',
-    description: 'A philosophy of regulation and wholeness: returning to steadier perception beneath pressure, shaped by Taoist practice and product design.',
+    title: 'Philosophy | Products, Practice and Attention',
+    description: 'Reflections on attention, useful technology and how Tai Chi shapes James Godwin\'s judgement across products, workflows and daily life.',
     path: '/philosophy'
   },
   uxui: {
-    title: 'Product Clarity Under Pressure | James Godwin',
-    description: 'UX, interface, and product architecture work for founders and teams who want calmer, more coherent digital systems built from steadier decisions.',
+    title: 'Product Clarity | James Godwin',
+    description: 'Help for founders and small product teams whose fast-built or AI-assisted products have stalled. Close UX, accessibility and implementation gaps.',
     path: '/uxui'
   },
   sanctuary: {

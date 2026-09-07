@@ -2,30 +2,34 @@
 
 ## Current Focus
 
-Bounded LinkedIn/site alignment. Product explanation and enquiry first, then remaining slices and combined visitor validation in [the alignment plan](specs/linkedin-site-alignment.md). Preserve circle artwork, type, themes, URLs, reflective routes, and service prices. No site rebuild.
+Review and validate the completed local LinkedIn/site alignment candidate in [the alignment plan](specs/linkedin-site-alignment.md). Preserve the bounded release scope; no site rebuild.
 
 ## Where Work Stopped
 
-6 September 2026. Planning produced the parent plan and three child specs after a live website and LinkedIn review. No app code, Source programme, LinkedIn profile, commit, or deployment was changed for that work.
+7 September 2026. P1 through I2, the P3 commercial-centre refinement and the final proof-and-clarity pass are implemented in the working tree. Product Clarity now explains concrete UX, accessibility and implementation work, shows the checked anonymised operational example and reaches a labelled contact path. The homepage now leads with “Products and workflows, working cleanly.” Product Clarity and Workflow Systems each include a plain description, followed by a compact recent-delivery example. The circle experience begins below as a reflective layer. Navigation, footer and About separate commercial work from practice and perspective.
 
-Later the same day, the repository memory scaffold was migrated to startup template v5. That was documentation only. LinkedIn implementation has not started. The circle homepage was observed live; the exact deployed revision and eight-person validation results remain unknown.
+Diagnostic, Workshops and Philosophy now describe Tai Chi as James's lived practice without presenting it as a universal product theory. The unestablished $350 Diagnostic price was removed. The active fixed R7,500 Workflow Audit and optional care price remain. About, Now, metadata and share cards retain the same practical hierarchy. On mobile, an opaque theme-matched header now sits behind the fixed menu and wordmark so page copy scrolls out of view beneath them.
+
+All 33 tests pass and the production build generated metadata for 18 routes. The final proof-and-clarity pass passed focused behavior checks before the full suite and build. Static metadata for home, Product Clarity, Systems, About, Contact, Now, Diagnostic, Workshops and Philosophy was inspected. Final browser review covered the homepage at 390 × 844 and 1280 × 720, About and its work grouping at 1280 × 720, and both social cards; the browser console had no errors. An earlier effective 320px/200% zoom check found no horizontal overflow. The final proof now attributes its outcome to client feedback. No commit, deployment, LinkedIn edit or Source edit was made at this checkpoint. Preserve the unrelated changed `public/tapscribe/TapScribe-Pilot.dmg`.
 
 ## Next Recommended Step
 
-Implement P1 in `DOCS/specs/product-proof-and-enquiry.md`: `/uxui` explanation → `/contact?about=product-clarity`, with visible direct contact methods. Start with `CI=true npm test -- --watchAll=false --runInBand contactIntent.test.js`, adding one failing behaviour test first. Show the local result. Do not deploy without explicit approval. Do not merge `lookup`.
+Review the local copy and the revised `public/og.webp` / `public/twitter.webp` assets. If the candidate is accepted, run the combined visitor exercise before requesting deployment approval.
 
 ## Blockers
 
-None for P1.
+- James's visual/copy review and the eight-person exercise are still required before release.
+- Deployment remains unauthorised.
+- The LinkedIn article candidate still needs its exact native article URL checked during the Week 2 profile review.
 
 ## Parallel Threads
 
 
 ## Needs Decisions
 
-None for P1. Later-slice checks (Ben quote reuse, Now statements, social-image text) stay in the parent plan's Open Questions.
+None for continuing local review. External Featured/profile changes and deployment each require explicit authorisation.
 
 ## Read These First
 
 - `DOCS/specs/linkedin-site-alignment.md` — sequence, out of scope, validation and release gates
-- `DOCS/specs/product-proof-and-enquiry.md` — P1 acceptance criteria and first test seam
+- `DOCS/specs/identity-and-linkedin-destinations.md` — copy, metadata, social assets and Featured handoff

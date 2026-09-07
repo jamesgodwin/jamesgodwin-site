@@ -1,6 +1,23 @@
 # LinkedIn and website alignment plan
 
-Prepared 6 September 2026. James requested a full local plan and intends to begin execution next week, 7–11 September. This document defines the proposed work; `DOCS/BACKLOG.md` owns implementation status. No implementation, publication, profile edit or deployment was authorised in this planning session.
+Prepared 6 September 2026. James requested a full local plan and authorised local implementation on 7 September. This document defines the agreed work; `DOCS/BACKLOG.md` owns implementation status. Publication, profile edits and deployment remain separate.
+
+## Implementation Status
+
+P1 through I2, the P3 commercial-centre refinement and the subsequent proof-and-clarity pass are implemented in the local working tree as of 7 September 2026. The homepage service links now pair their names with plain descriptions, a supported delivery example appears before the reflective experience, and About visibly separates product/workflow work from practice/workshops. The full test suite passes, the production build succeeds, and generated metadata is correct on the priority and rewritten practice routes. Earlier key homepage/reflection layouts were checked at the target widths; later refinements received semantic and build verification without restarting memory-heavy browser tooling. V1's combined visitor exercise, final visual review, exact deployed revision and live smoke check remain pending.
+
+## Commercial Centre Decision
+
+Accepted 7 September 2026 after James reviewed the local direction:
+
+- UX, product and workflow delivery are the site's commercial centre and should match the active LinkedIn programme.
+- Tai Chi is a meaningful personal practice and a source of James's attention and judgement. It remains visible without carrying equal responsibility for generating income.
+- Keep the existing visual language and circle interaction. Move the practical work promise and two work destinations ahead of the reflective experience.
+- Keep the fixed R7,500 Workflow Audit price because it describes a bounded active offer. Keep Product Clarity and variable implementation unpriced. Remove the $350 Diagnostic price while that offer is not an established commercial lane. Workshops remain enquiry-led and unpriced.
+- Separate work from practice in navigation and footer hierarchy. Retain existing routes so reflective visitors and old links still work.
+- Bring the remaining Diagnostic, Workshops and Philosophy copy into the same restrained first-person voice. Remove defensive positioning, unsupported universal claims and legacy command inventories while preserving the substance of the practice.
+
+This refinement is P3. It includes homepage hierarchy, navigation/footer grouping, selective pricing and the three legacy-page rewrites. It excludes new routes, new offers, live LinkedIn changes and deployment.
 
 ## Problem
 
@@ -132,9 +149,9 @@ Recorded 6 September 2026 after the planning review:
 
 These are narrow content/release checks, not reasons to stop the first implementation slice.
 
-- Confirm reuse basis for Ben's identifying quote before adding new placements. Default to an anonymised paraphrase if unresolved.
-- Confirm current Now-page statements at execution. Do not publish the September draft with an invented “updated” date.
-- Inspect existing social image assets before deciding whether their embedded text conflicts with the new metadata. Replace only if necessary, with a reviewed asset.
+- Confirm reuse basis for Ben's identifying quote before adding new placements. Default to an anonymised paraphrase if unresolved. Existing live `/systems` quote remains: “For the first time, I feel I have full control over my business operations.” Source supports usability/visibility; it does not support “use it daily” or measured savings.
+- Current Now-page statements were checked on 7 September against the Source Business handoff, project index and TapScribe repository handoff. James authorised using those current project records. Recheck on any later deployment date if activity has changed.
+- The old social assets conflicted with the new positioning. Local replacements now use the existing cream, ink, mountain and standing-figure direction with the message “Products and workflows, working cleanly.” James's visual approval remains a deployment gate.
 - The exact live deployment revision and previous eight-person results are unknown. Verify rather than assume.
 
 ## First execution instruction

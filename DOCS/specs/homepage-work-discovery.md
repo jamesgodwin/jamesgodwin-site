@@ -2,6 +2,12 @@
 
 Part of [LinkedIn and website alignment](linkedin-site-alignment.md). Backlog owns status. This spec supersedes conflicting product-discovery and one-screen-fit details in the earlier interactive homepage brief; its circle concept and validation thresholds remain relevant.
 
+Local status 7 September 2026: H1 and H2 implemented. Automated focus/navigation checks pass; key responsive captures are recorded under `output/playwright/`. The combined visitor exercise remains pending.
+
+P3 refinement accepted later on 7 September: the homepage H1 is now “Products and workflows, working cleanly.” It leads with the LinkedIn-aligned UX, accessibility and implementation promise, followed by Product Clarity and Workflow Systems links. “Pressure rarely stays where it begins” now introduces the retained circle experience as a deeper reflective layer. This supersedes the earlier requirement to keep pressure as the opening H1 or fit the entire commercial and reflective experience into one screen. Natural scrolling is intentional; accessibility, narrow-width and focus requirements remain.
+
+Post-review refinement on 7 September: each work link now retains its service name and adds a plain description of the work. A compact recent-delivery statement links to the checked workflow-system example before the reflective section. This uses the existing typography and link treatment rather than introducing a separate case-study card.
+
 ## Problem
 
 The homepage does not plainly identify James's product capability. The work reflection routes only to Workflow Systems. Product Clarity sits among secondary menu pages and under About in the footer. At the observed 1280 × 720 viewport, exploration and browse links fell below the first screen.

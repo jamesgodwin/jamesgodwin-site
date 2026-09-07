@@ -164,20 +164,20 @@ body.body-no-scroll {
 }
 
 .pressure-encounter {
-  width: min(680px, calc(100% - 64px));
+  width: min(760px, calc(100% - 64px));
   min-height: 100svh;
   margin: 0 auto;
   padding: clamp(78px, 8svh, 104px) 0 clamp(24px, 4svh, 44px);
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: center;
+  justify-content: flex-start;
   box-sizing: border-box;
   text-align: center;
 }
 
 .pressure-encounter__intro {
-  width: min(560px, 100%);
+  width: min(680px, 100%);
   align-self: center;
 }
 
@@ -201,9 +201,131 @@ body.body-no-scroll {
   line-height: 1.45;
 }
 
+.pressure-encounter__intro .pressure-encounter__positioning {
+  max-width: 630px;
+  font-size: 21px;
+}
+
+.pressure-encounter__intro .pressure-encounter__practice {
+  max-width: 590px;
+  margin-top: 12px;
+  color: var(--sub-hero-text);
+  font-size: 17px;
+}
+
+.pressure-encounter__work-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.pressure-encounter__work-links a {
+  display: inline-flex;
+  min-width: 240px;
+  min-height: 58px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 1px solid var(--btn-stroke);
+  border-radius: 4px;
+  color: var(--hero-text);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.pressure-encounter__work-links strong {
+  font-weight: 500;
+}
+
+.pressure-encounter__work-links span {
+  margin-top: 2px;
+  font-family: 'Karla', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+.pressure-encounter__work-links a:first-child {
+  border-color: var(--hero-text);
+  background: var(--hero-text);
+  color: var(--main-bg);
+}
+
+.pressure-encounter__work-links a:first-child span {
+  opacity: 0.78;
+}
+
+.pressure-encounter__work-links a:hover {
+  border-color: var(--btn-stroke-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.pressure-encounter__work-links a:focus-visible {
+  outline: 2px solid var(--hero-text);
+  outline-offset: 4px;
+}
+
+.pressure-encounter__proof {
+  width: min(620px, 100%);
+  margin: 28px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--card-border);
+  text-align: left;
+}
+
+.pressure-encounter__proof .pressure-encounter__proof-label {
+  margin: 0 0 6px;
+  color: var(--sub-hero-text);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.pressure-encounter__proof p {
+  max-width: none;
+  margin: 0;
+  color: var(--sub-hero-text);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.pressure-encounter__proof a {
+  color: var(--hero-text);
+  text-underline-offset: 3px;
+}
+
+.pressure-encounter__reflection-intro {
+  width: min(560px, 100%);
+  margin: 68px auto 0;
+  padding-top: 56px;
+  border-top: 1px solid var(--card-border);
+}
+
+.pressure-encounter__reflection-intro h2 {
+  margin: 0;
+  color: var(--hero-text);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.pressure-encounter__reflection-intro p {
+  margin: 12px auto 0;
+  color: var(--sub-hero-text);
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
 .pressure-encounter__rings {
   position: relative;
-  width: min(100%, clamp(430px, 50svh, 540px));
+  width: min(100%, clamp(360px, 42svh, 500px));
   aspect-ratio: 1;
   align-self: center;
   flex: 0 0 auto;
@@ -388,6 +510,64 @@ body.body-no-scroll {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+@media (min-width: 769px) and (max-height: 760px) {
+  .pressure-encounter {
+    padding-top: 64px;
+    padding-bottom: 16px;
+  }
+
+  .pressure-encounter__intro h1,
+  .pressure-reflection h1 {
+    font-size: 44px;
+  }
+
+  .pressure-encounter__intro p {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  .pressure-encounter__intro .pressure-encounter__positioning {
+    font-size: 16px;
+  }
+
+  .pressure-encounter__intro .pressure-encounter__practice {
+    margin-top: 6px;
+    font-size: 13px;
+  }
+
+  .pressure-encounter__work-links {
+    margin-top: 16px;
+  }
+
+  .pressure-encounter__reflection-intro {
+    margin-top: 54px;
+    padding-top: 38px;
+  }
+
+  .pressure-encounter__prompt {
+    margin-top: 12px;
+  }
+
+  .pressure-encounter__prompt p {
+    font-size: 15px;
+  }
+
+  .pressure-encounter__rings {
+    width: 260px;
+    margin-top: 8px;
+  }
+
+  .pressure-encounter__rings button {
+    font-size: 13px;
+  }
+
+  .pressure-encounter__explore,
+  .pressure-encounter__browse {
+    margin-top: 7px;
+    font-size: 13px;
   }
 }
 
@@ -1133,6 +1313,18 @@ body.image-theme .sanctuaries-list {
   line-height: 1.68;
 }
 
+.route-page--contact .route-page__hero {
+  margin-top: 28px;
+}
+
+.route-page--contact .route-page__lede {
+  margin-top: 16px;
+}
+
+.route-page--contact .route-page__body {
+  margin-top: 28px;
+}
+
 .route-page__body p,
 .route-page__body li {
   max-width: 66ch;
@@ -1159,6 +1351,16 @@ body.image-theme .sanctuaries-list {
   font-size: 38px;
   font-weight: 400;
   line-height: 1.1;
+}
+
+.route-page__body h4 {
+  margin: 30px 0 12px;
+  color: var(--sub-hero-text);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .route-page__body hr {
@@ -1371,6 +1573,17 @@ body.image-theme .sanctuaries-list {
 .output-content-wrapper h2:not(:first-child),
 .page-content-body h2:not(:first-child) {
   margin-top: 18px;
+}
+
+.output-content-wrapper h4,
+.page-content-body h4 {
+  margin: 18px 0 10px;
+  color: var(--project-card-text);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .output-content-wrapper p,
@@ -1644,6 +1857,17 @@ body.image-theme .sanctuaries-list {
 }
 
 @media (max-width: 768px) {
+  .App::before {
+    content: '';
+    position: fixed;
+    inset: 0 0 auto;
+    height: 64px;
+    z-index: 1040;
+    pointer-events: none;
+    background-color: var(--main-bg);
+    border-bottom: 1px solid var(--card-border);
+  }
+
   .hero-text {
     font-size: 34px;
     line-height: 38px;
@@ -2013,7 +2237,7 @@ body.image-theme .sanctuaries-list {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding: 90px 18px 24px;
+    padding: 72px 18px 18px;
     text-align: center;
   }
 
@@ -2025,17 +2249,62 @@ body.image-theme .sanctuaries-list {
   }
 
   .pressure-encounter__intro p {
-    margin-top: 16px;
+    margin-top: 10px;
     font-size: 15px;
     line-height: 1.35;
   }
 
+  .pressure-encounter__intro .pressure-encounter__positioning {
+    font-size: 17px;
+    line-height: 1.42;
+  }
+
+  .pressure-encounter__intro .pressure-encounter__practice {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  .pressure-encounter__work-links {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .pressure-encounter__work-links a {
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 13px;
+  }
+
+  .pressure-encounter__proof {
+    margin-top: 22px;
+    padding-top: 18px;
+  }
+
+  .pressure-encounter__proof p {
+    font-size: 14px;
+  }
+
+  .pressure-encounter__reflection-intro {
+    margin-top: 48px;
+    padding-top: 42px;
+  }
+
+  .pressure-encounter__reflection-intro h2 {
+    font-size: 30px;
+  }
+
+  .pressure-encounter__reflection-intro p {
+    margin-top: 8px;
+    font-size: 15px;
+  }
+
   .pressure-encounter__rings {
-    width: 104vw;
-    max-width: 430px;
+    width: 86vw;
+    max-width: 350px;
     flex: 0 0 auto;
     align-self: center;
-    margin-top: 18px;
+    margin-top: 10px;
     margin-left: 0;
     transform: none;
   }
@@ -2061,7 +2330,7 @@ body.image-theme .sanctuaries-list {
   }
 
   .pressure-encounter__prompt {
-    margin-top: 24px;
+    margin-top: 16px;
     text-align: center;
   }
 
@@ -2071,13 +2340,13 @@ body.image-theme .sanctuaries-list {
 
   .pressure-encounter__explore {
     align-self: center;
-    margin-top: 18px;
+    margin-top: 10px;
     font-size: 14px;
   }
 
   .pressure-encounter__browse {
     align-self: center;
-    margin-top: 18px;
+    margin-top: 8px;
     font-size: 13px;
   }
 

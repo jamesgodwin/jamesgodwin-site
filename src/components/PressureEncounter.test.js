@@ -8,17 +8,41 @@ describe('PressureEncounter', () => {
     render(<PressureEncounter onNavigate={() => {}} />);
 
     expect(
-      screen.getByRole('heading', { name: 'Pressure rarely stays where it begins.' })
+      screen.getByRole('heading', { level: 1, name: 'Products and workflows, working cleanly.' })
     ).toBeInTheDocument();
     expect(
-      screen.getByText('It moves through the person, the room, and the work.')
+      screen.getByRole('heading', { level: 2, name: 'Pressure rarely stays where it begins.' })
     ).toBeInTheDocument();
+    expect(screen.getByText('It moves through the person, the room, and the work.')).toBeInTheDocument();
     expect(screen.getByText('Where is it showing up?')).toBeInTheDocument();
 
     expect(screen.getByRole('button', { name: 'In me' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'In a team' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'In the work' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'I am only exploring' })).toBeInTheDocument();
+  });
+
+  test('lets a visitor reach product work without entering a reflection', () => {
+    render(<PressureEncounter onNavigate={() => {}} />);
+
+    expect(
+      screen.getByText('I help founders and teams close UX, accessibility and implementation gaps in fast-built and AI-assisted products.')
+    ).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Product Clarity.*UX review and implementation/i })).toHaveAttribute('href', '/uxui');
+    expect(screen.getByRole('link', { name: /Workflow Systems.*Operational workflow design and build/i })).toHaveAttribute('href', '/systems');
+
+    expect(screen.getByText('Recent delivery')).toBeInTheDocument();
+    expect(screen.getByText(/in client feedback, the owner said an operational app I built gave supervisors clearer visibility/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'See the example' })).toHaveAttribute(
+      'href',
+      '/systems#client-example'
+    );
+
+    const workLinks = screen.getByLabelText('Ways to work with James');
+    const proof = screen.getByLabelText('Recent delivery example');
+    const rings = screen.getByLabelText('Choose where the pressure is showing up');
+    expect(workLinks.compareDocumentPosition(proof) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(proof.compareDocumentPosition(rings) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
 
   test('turns the team choice into an authored reflection and relevant route', () => {
@@ -51,7 +75,7 @@ describe('PressureEncounter', () => {
     expect(onNavigate).toHaveBeenCalledWith('diagnostic');
   });
 
-  test('turns the work choice into a systems reflection and workflow route', () => {
+  test('turns the work choice into product and workflow routes', () => {
     const onNavigate = jest.fn();
     render(<PressureEncounter onNavigate={onNavigate} />);
 
@@ -60,6 +84,10 @@ describe('PressureEncounter', () => {
     expect(
       screen.getByRole('heading', { name: 'When the system holds pressure, people become the workaround.' })
     ).toBeInTheDocument();
+    expect(screen.getByText(/a product can technically work while people still struggle to use it/i)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Explore Product Clarity' }));
+    expect(onNavigate).toHaveBeenCalledWith('uxui');
+
     fireEvent.click(screen.getByRole('button', { name: 'Explore Workflow Systems' }));
     expect(onNavigate).toHaveBeenCalledWith('systems');
   });
@@ -96,14 +124,19 @@ describe('PressureEncounter', () => {
     expect(rings.compareDocumentPosition(explore) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
 
-  test('lets a visitor begin again after reading a reflection', () => {
+  test('moves focus into a reflection and returns it to the initiating choice', () => {
     render(<PressureEncounter onNavigate={() => {}} />);
 
-    fireEvent.click(screen.getByRole('button', { name: 'In me' }));
+    const startingChoice = screen.getByRole('button', { name: 'In me' });
+    fireEvent.click(startingChoice);
+    expect(screen.getByRole('heading', { name: 'The pressure may be changing what you can see.' })).toHaveFocus();
+    expect(screen.getByRole('main')).not.toHaveAttribute('aria-live');
+
     fireEvent.click(screen.getByRole('button', { name: 'Begin again' }));
 
     expect(
-      screen.getByRole('heading', { name: 'Pressure rarely stays where it begins.' })
+      screen.getByRole('heading', { level: 1, name: 'Products and workflows, working cleanly.' })
     ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'In me' })).toHaveFocus();
   });
 });

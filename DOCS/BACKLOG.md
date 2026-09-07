@@ -6,7 +6,7 @@ Current work status and priority. Detail lives in linked specs or logs.
 
 ## Backlog
 
-- Align the site with LinkedIn through product proof/enquiry, work discovery, identity and previews; execute P1 first, then remaining slices and combined visitor validation in [the alignment plan](specs/linkedin-site-alignment.md).
+- Review the local LinkedIn-aligned candidate, run the combined eight-person visitor exercise, then prepare an explicitly approved deployment and live smoke check using [the alignment plan](specs/linkedin-site-alignment.md).
 
 ## In Progress
 
@@ -16,6 +16,9 @@ Current work status and priority. Detail lives in linked specs or logs.
 
 ## Done
 
+- Added a final proof-and-clarity pass: plain service descriptions and a recent delivery example on the homepage, plus explicit commercial and practice groupings on About. Full suite: 33/33 passed; production build: passed.
+- Tightened the local candidate around UX/product/workflow as the commercial centre: revised homepage hierarchy, separated work from practice in navigation, retained selective Workflow Systems pricing, removed the unestablished Diagnostic price, and rewrote Diagnostic, Workshops and Philosophy in a restrained first-person voice.
+- Implemented the local LinkedIn/site alignment through P1–I2: product proof and enquiry, homepage work discovery, current About/Now content, accurate metadata, and revised social preview assets. Full suite: 33/33 passed; production build: passed.
 - Documented the LinkedIn-aligned website plan with three detailed specs, ordered vertical slices, acceptance criteria and a next-week execution handoff.
 - Centered the homepage opening headline and supporting line on desktop and mobile while preserving one-screen fit.
 - Tightened the desktop homepage encounter so the opening, prompt, rings, exploration, and browse link fit within a standard desktop viewport without vertical scrolling.

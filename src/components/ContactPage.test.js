@@ -17,6 +17,7 @@ describe('ContactPage', () => {
     render(<ContactPage initialIntent="something-else" />);
 
     expect(screen.getByText('General Enquiry')).toBeInTheDocument();
+    expect(screen.getByText('For product clarity, workflow systems, workshops or personal practice, use one of the direct contact options below.')).toBeInTheDocument();
   });
 
   test('does not expose the legacy command inventory', () => {

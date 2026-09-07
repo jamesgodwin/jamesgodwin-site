@@ -2,6 +2,18 @@
 
 Part of [LinkedIn and website alignment](linkedin-site-alignment.md). Backlog owns status. This spec proposes supporting copy and a LinkedIn handoff; external profile changes remain separate.
 
+Local status 7 September 2026: I1 and the website portion of I2 are implemented. A subsequent hierarchy refinement groups Product Clarity and Workflow Systems under “Product and workflow work”, with the diagnostic, workshop and True Essence under “Practice and workshops”. External LinkedIn adoption remains in the Week 2 review.
+
+## Local Featured Handoff
+
+| Priority | Label | Destination | State on 7 September 2026 |
+| --- | --- | --- | --- |
+| 1 | The test was whether supervisors could use it | https://lnkd.in/p/dyAwpYgu | Verified published post; use as operational delivery evidence. |
+| 2 | AI Can Reconstruct Your Design System. It Cannot Use It. | Pending exact native article URL | Published status and announcement URL are recorded, but the article's canonical URL is not. Do not add this Featured item until Week 2 live verification. |
+| 3 | Help with a product that is almost there | https://jamesgodwin.me/uxui | Local candidate complete; treat as pending until the revised route is deployed and smoke-tested. |
+
+Recommended profile website destination after verified deployment: `https://jamesgodwin.me/uxui`. Keep `https://jamesgodwin.me/` for general personal-site references and use `/systems` for operational topics.
+
 ## Problem
 
 About and default previews lead with regulation while LinkedIn leads with practical delivery. Now is dated June. Featured needs a clear proof-to-engagement sequence. These surfaces should describe the same person without flattening his wider identity.
