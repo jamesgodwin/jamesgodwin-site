@@ -6,7 +6,7 @@ Current work status and priority. Detail lives in linked specs or logs.
 
 ## Backlog
 
-- Review the local LinkedIn-aligned candidate, run the combined eight-person visitor exercise, then prepare an explicitly approved deployment and live smoke check using [the alignment plan](specs/linkedin-site-alignment.md).
+- Run the combined eight-person visitor exercise on the deployed LinkedIn-aligned site, then record concrete confusion or validated comprehension using [the alignment plan](specs/linkedin-site-alignment.md).
 
 ## In Progress
 
@@ -16,6 +16,7 @@ Current work status and priority. Detail lives in linked specs or logs.
 
 ## Done
 
+- Released the LinkedIn-aligned site from commit `e50ba01`; Netlify published the reviewed build and live smoke checks passed for home, Product Clarity, Workflow Systems, About, Contact, Now, social images and sitemap. James separately published the verified TapScribe pilot download in commit `2e71d99`.
 - Added a final proof-and-clarity pass: plain service descriptions and a recent delivery example on the homepage, plus explicit commercial and practice groupings on About. Full suite: 33/33 passed; production build: passed.
 - Tightened the local candidate around UX/product/workflow as the commercial centre: revised homepage hierarchy, separated work from practice in navigation, retained selective Workflow Systems pricing, removed the unestablished Diagnostic price, and rewrote Diagnostic, Workshops and Philosophy in a restrained first-person voice.
 - Implemented the local LinkedIn/site alignment through P1–I2: product proof and enquiry, homepage work discovery, current About/Now content, accurate metadata, and revised social preview assets. Full suite: 33/33 passed; production build: passed.

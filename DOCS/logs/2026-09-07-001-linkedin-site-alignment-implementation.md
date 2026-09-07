@@ -12,7 +12,7 @@ Implemented the agreed local P1–I2 alignment, the P3 commercial-centre refinem
 - Identity: `src/outputs/about.js`, `src/outputs/now.js`, content/metadata tests, `public/og.webp`, `public/twitter.webp`.
 - Authority: parent/child specs, backlog and handoff.
 
-The pre-existing `public/tapscribe/TapScribe-Pilot.dmg` change was preserved and not modified as part of this work.
+The pre-existing `public/tapscribe/TapScribe-Pilot.dmg` change was not produced by the alignment work. James confirmed during release that it is the intended download owned by this website repository and published it separately in commit `2e71d99`.
 
 ## Verification
 
@@ -28,6 +28,8 @@ The pre-existing `public/tapscribe/TapScribe-Pilot.dmg` change was preserved and
 - After the mobile header refinement, the focused App navigation test passed, the production build passed and `git diff --check` passed. Browser automation remained closed to keep memory use low.
 - After the proof-and-clarity refinement, the two focused behavior files passed 10/10, the full suite passed 33/33, the production build passed with metadata for 18 routes, and `git diff --check` passed. Browser automation was not used.
 - Final release review: homepage inspected at 390 × 844 and 1280 × 720, About and its work grouping inspected at 1280 × 720, and both social preview assets inspected directly. Layout and hierarchy were coherent and the browser console had no errors. The homepage proof was tightened to attribute the result explicitly to client feedback. The browser was closed after the bounded review.
+- Release: committed the website changes as `e50ba01` and pushed `main`. Netlify published the exact reviewed JavaScript asset. Live home, Product Clarity, Workflow Systems, About, Contact and Now routes resolved successfully after their canonical trailing-slash redirects; route titles and Open Graph metadata matched the release. Both social images and the sitemap returned 200.
+- TapScribe download: `hdiutil verify` passed for `public/tapscribe/TapScribe-Pilot.dmg`; size 13,613,681 bytes and SHA-256 `b0945b05d7873be83551d10439e971797896496f3fc872acc998e5a5844e8e81` before publication.
 
 ## Decisions
 
@@ -41,6 +43,5 @@ The pre-existing `public/tapscribe/TapScribe-Pilot.dmg` change was preserved and
 ## Follow-ups
 
 - Review copy and social images.
-- Run the combined visitor exercise.
+- Run the combined visitor exercise on the live site.
 - During Week 2, verify the native LinkedIn article URL and then decide whether to adopt the three-item Featured order and `/uxui` profile destination.
-- Deploy only with explicit approval, then record the deployed revision and smoke-test affected routes.

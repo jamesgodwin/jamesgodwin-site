@@ -20,7 +20,7 @@ James is the author and maintainer. This is a personal site, not a multi-user pr
 
 Enduring signal: a visitor can recognise James, reach a relevant destination, and find a direct contact method without a site rebuild.
 
-Current goal: review and validate the local LinkedIn/site candidate in [the alignment plan](specs/linkedin-site-alignment.md). UX, product and workflow delivery are its commercial centre; Tai Chi remains visible as practice and a source of judgement. Combined visitor validation and live deployment are later gates and are not yet passed.
+Current goal: validate the deployed LinkedIn-aligned site through the combined visitor exercise in [the alignment plan](specs/linkedin-site-alignment.md). UX, product and workflow delivery are its commercial centre; Tai Chi remains visible as practice and a source of judgement. The release and live technical smoke check passed on 7 September 2026.
 
 ## Stack
 
