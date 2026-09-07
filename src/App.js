@@ -23,7 +23,7 @@ import Breathe from './components/Breathe';
 import ContactPage from './components/ContactPage';
 import PressureEncounter from './components/PressureEncounter';
 import RoutePage from './components/RoutePage';
-import { getContactIntentFromSearch, getContactPath } from './contactIntent';
+import { getContactPath, resolveContactIntent } from './contactIntent';
 import pagePresentation from './pagePresentation';
 import siteMetadata from './siteMetadata';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -258,7 +258,10 @@ function App() {
         }, 100);
         return;
       case 'contact':
-        newOutput = <ContactPage initialIntent={getContactIntentFromSearch(window.location.search)} />;
+        newOutput = <ContactPage initialIntent={resolveContactIntent({
+          search: window.location.search,
+          fromInAppNavigation: updateURL
+        })} />;
         break;
       case 'taoism':
         newOutput = taoismOutput;

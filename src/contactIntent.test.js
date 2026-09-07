@@ -2,7 +2,8 @@ import {
   getContactIntentFromSearch,
   getContactIntentFromValue,
   getContactIntentLabel,
-  getContactPath
+  getContactPath,
+  resolveContactIntent
 } from './contactIntent';
 
 describe('contactIntent helpers', () => {
@@ -22,5 +23,23 @@ describe('contactIntent helpers', () => {
     expect(getContactIntentLabel('workshop')).toBe('Stillness Under Pressure Workshop');
     expect(getContactPath('workshop')).toBe('/contact?about=workshop');
     expect(getContactPath('general')).toBe('/contact');
+  });
+
+  test('allowlists product-clarity as a labelled product enquiry', () => {
+    expect(getContactIntentFromValue('product-clarity')).toBe('product-clarity');
+    expect(getContactIntentFromSearch('?about=product-clarity')).toBe('product-clarity');
+    expect(getContactIntentLabel('product-clarity')).toBe('Product Clarity');
+    expect(getContactPath('product-clarity')).toBe('/contact?about=product-clarity');
+  });
+
+  test('preserves a product query from the current location and resets in-app contact navigation to general', () => {
+    expect(resolveContactIntent({
+      search: '?about=product-clarity',
+      fromInAppNavigation: false
+    })).toBe('product-clarity');
+    expect(resolveContactIntent({
+      search: '?about=product-clarity',
+      fromInAppNavigation: true
+    })).toBe('general');
   });
 });

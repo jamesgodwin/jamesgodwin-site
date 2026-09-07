@@ -98,7 +98,7 @@ Prepare exact labels and URLs locally. Pending/unpublished assets stay explicitl
 ### I1 Meet the same James on About and Now
 
 - Outcome: practical capability, deeper practice and truthful current activity are coherent.
-- Includes: About order/copy, checked proof link, retained exploration and verified Now content/date.
+- Includes: About order/copy, checked proof link, retained exploration, verified Now content/date, and removal of About's `Available commands` markup. Keep the shared site-navigation footer and underlying command functionality.
 - Test seam: rendered headings, `#how-i-work`, work links and absence of command inventories; manual claim/date check.
 - Blocked by: P1/P2. If Now confirmation is absent, finish About but record Now as unfinished.
 - Acceptance: no private biography; work before its philosophical explanation; practice routes retained; every Now statement verified or omitted; truthful update date.

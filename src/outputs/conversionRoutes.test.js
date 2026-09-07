@@ -1,7 +1,9 @@
 import diagnosticOutput from './diagnostic';
 import systemsOutput from './systems';
+import uxuiOutput from './uxui';
 import workshopsOutput from './workshops';
 import pagePresentation from '../pagePresentation';
+import siteMetadata from '../siteMetadata';
 
 describe('conversion route outputs', () => {
   test('diagnostic routes to the shared contact path with intent', () => {
@@ -23,5 +25,32 @@ describe('conversion route outputs', () => {
     expect(pagePresentation.systems.facts).toContain('R7,500 ZAR audit');
     expect(systemsOutput).toContain('R7,500 ZAR');
     expect(systemsOutput).toContain('R1,500 ZAR per month');
+  });
+
+  test('product page explains the work and leads to a labelled product enquiry without an empty example', () => {
+    expect(pagePresentation.uxui.title).toBe('Get your product working cleanly.');
+    expect(pagePresentation.uxui.primaryAction).toEqual({
+      label: 'Talk about your product',
+      href: '/contact?about=product-clarity'
+    });
+    expect(pagePresentation.uxui.secondaryAction).toBeUndefined();
+    expect(uxuiOutput).toContain('When the product is almost there');
+    expect(uxuiOutput).toContain('What I help resolve');
+    expect(uxuiOutput).toContain('Start with one flow');
+    expect(uxuiOutput).toContain('/contact?about=product-clarity');
+    expect(uxuiOutput).toContain('/systems');
+    expect(uxuiOutput).not.toContain('work-example');
+    expect(uxuiOutput).not.toContain('See an example');
+    expect(uxuiOutput).not.toContain('Available commands');
+    expect(uxuiOutput).not.toContain('Regulated Interface Design');
+  });
+
+  test('shortens the shared contact hero without adding a response-time promise', () => {
+    expect(pagePresentation.contact.title).toBe('Start a conversation.');
+    expect(pagePresentation.contact.lede).toBe('Tell me what is stuck, or what you would like to explore.');
+    expect(pagePresentation.contact.lede).not.toMatch(/24 hours/);
+    expect(pagePresentation['thank-you'].lede).toContain('within 24 hours');
+    expect(siteMetadata.uxui.title).toBe('Product Clarity | James Godwin');
+    expect(siteMetadata.contact.description).toContain('email or WhatsApp');
   });
 });

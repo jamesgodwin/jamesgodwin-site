@@ -2,6 +2,7 @@ const ALLOWED_CONTACT_INTENTS = {
   diagnostic: 'Executive State Diagnostic',
   workshop: 'Stillness Under Pressure Workshop',
   'workflow-system': 'Workflow System',
+  'product-clarity': 'Product Clarity',
   general: 'General Enquiry'
 };
 
@@ -13,6 +14,14 @@ export function getContactIntentFromValue(value) {
 export function getContactIntentFromSearch(search) {
   const params = new URLSearchParams(search);
   return getContactIntentFromValue(params.get('about'));
+}
+
+export function resolveContactIntent({ search, fromInAppNavigation = false } = {}) {
+  if (fromInAppNavigation) {
+    return 'general';
+  }
+
+  return getContactIntentFromSearch(search);
 }
 
 export function getContactIntentLabel(intent) {

@@ -26,20 +26,37 @@ describe('ContactPage', () => {
     expect(screen.queryByText(/themes \(default, dark/i)).not.toBeInTheDocument();
   });
 
-  test('keeps direct contact methods visible and adds the workflow WhatsApp shortcut when relevant', () => {
+  test('keeps the main WhatsApp method and Workflow System label without a second shortcut', () => {
     render(<ContactPage initialIntent="workflow-system" />);
 
+    expect(screen.getByText('Workflow System')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'WhatsApp James' })).toHaveAttribute('href', 'https://wa.me/27686038834');
-    expect(screen.getByRole('link', { name: 'WhatsApp me about a Workflow Audit →' })).toHaveAttribute('href', 'https://wa.me/27686038834');
+    expect(screen.queryByRole('link', { name: 'WhatsApp me about a Workflow Audit →' })).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'LinkedIn' })).toBeInTheDocument();
   });
 
-  test('leads with a confident contact invitation and labels secondary options', () => {
+  test('places email and WhatsApp after the intent introduction', () => {
     render(<ContactPage />);
 
-    expect(screen.getByText('Choose the easiest way to reach me. I respond personally.')).toBeInTheDocument();
     expect(screen.getByText('Email')).toBeInTheDocument();
     expect(screen.getByText('WhatsApp')).toBeInTheDocument();
     expect(screen.getByText('Other ways to connect')).toBeInTheDocument();
+    expect(screen.queryByText('Choose the easiest way to reach me. I respond personally.')).not.toBeInTheDocument();
+  });
+
+  test('labels a product enquiry without adding a response-time promise', () => {
+    render(<ContactPage initialIntent="product-clarity" />);
+
+    expect(screen.getByText('Product Clarity')).toBeInTheDocument();
+    expect(screen.getByText('Tell me what your product does, where people get stuck and what you want to improve. I respond personally.')).toBeInTheDocument();
+    expect(screen.queryByText(/within 24 hours/i)).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'james@jamesgodwin.me' })).toHaveAttribute('href', 'mailto:james@jamesgodwin.me');
+    expect(screen.getByRole('link', { name: 'WhatsApp James' })).toBeInTheDocument();
+  });
+
+  test('keeps the existing diagnostic response-time wording', () => {
+    render(<ContactPage initialIntent="diagnostic" />);
+
+    expect(screen.getByText(/I respond personally within 24 hours/)).toBeInTheDocument();
   });
 });

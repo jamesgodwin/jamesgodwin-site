@@ -73,8 +73,8 @@ These are the execution order, not separate status trackers. Detailed acceptance
 
 | Order | Slice | User-visible result | Depends on | Suggested work session |
 | --- | --- | --- | --- | --- |
-| 1 | P1 Product explanation to direct enquiry | A founder understands the work and reaches a correctly labelled enquiry with visible email/WhatsApp | None | First session next week |
-| 2 | P2 Credible example across product and systems | Visitors can inspect a bounded, accurately attributed delivery example | P1; evidence check | Next available session |
+| 1 | P1 Product explanation to direct enquiry | A founder understands the work and reaches a correctly labelled enquiry with visible email/WhatsApp. No example section or broken `#work-example` link. | None | First session next week |
+| 2 | P2 Credible example across product and systems | Visitors can inspect a bounded, accurately attributed delivery example. Add **See an example** and `#work-example` only once that copy exists. | P1; evidence check | Next available session |
 | 3 | H1 Find product work without the reflection | Product Clarity is visible from homepage, menu and Work footer | P1 | After destination is usable |
 | 4 | H2 Choose the relevant work route | Work reflection offers product and workflow destinations; circle/browse experience works across viewports | H1 | Following session |
 | 5 | I1 Meet the same James on About and Now | Practical capability and deeper identity are coherent; current activity is dated and checked | P1, P2 | Before final review |
@@ -118,6 +118,15 @@ Keep measurement lean. Existing page analytics may help if route tracking is con
 - Before deployment identify the existing host/deploy procedure, retain the previous revision for rollback and present changed routes, evidence limitations and test results. Do not invent a hosting migration.
 - Revert only this release's changes if core routes or contact access regress, using the authorised deployment workflow. Preserve unrelated user changes.
 - After a confirmed release, record date and URLs in the repository log. The programme's Week 2 review should reference that evidence; do not create another Source scorecard or publication queue here.
+
+## Confirmed decisions
+
+Recorded 6 September 2026 after the planning review:
+
+1. Omit “See an example” and the example section in P1. Add both in P2 when the checked example exists. P1 must not contain an empty section, placeholder or broken anchor.
+2. Do not add a response-time promise to the product enquiry or shared contact hero. Preserve the existing diagnostic/workshop sentences for this pass. Leave the existing thank-you wording unchanged.
+3. Remove the second “WhatsApp me about a Workflow Audit” shortcut. Keep the main WhatsApp contact method and the Workflow System enquiry label.
+4. Remove the legacy `Available commands` markup from each page as its assigned slice edits it: `/uxui` in P1, `/systems` in P2 and `/about` in I1. Keep the shared site-navigation footer and underlying command functionality.
 
 ## Open Questions
 

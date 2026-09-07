@@ -26,10 +26,17 @@ const pagePresentation = {
     lede: 'Thirty years of Tai Chi and breath training meet twenty years of digital product architecture.',
     primaryAction: { label: 'See how I work', href: '#how-i-work' }
   },
+  uxui: {
+    pathLabel: 'IN THE WORK',
+    title: 'Get your product working cleanly.',
+    lede: 'I help founders and small product teams close UX, accessibility and implementation gaps when fast-built or AI-assisted products stall.',
+    primaryAction: { label: 'Talk about your product', href: '/contact?about=product-clarity' }
+  },
   contact: {
     pathLabel: 'START A CONVERSATION',
-    title: 'Tell me where the pressure is showing up.',
-    lede: 'If the work feels relevant, reach out directly. James responds personally.'
+    title: 'Start a conversation.',
+    lede: 'Tell me what is stuck, or what you would like to explore.',
+    bodyClassName: 'route-page--contact'
   },
   'workshop-enquiry': {
     pathLabel: 'IN A TEAM',

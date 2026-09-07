@@ -13,6 +13,8 @@ function getIntroCopy(intent) {
       return 'If you want to explore a Stillness Under Pressure workshop for your team, reach out directly using the options below. I respond personally within 24 hours.';
     case 'workflow-system':
       return 'If you want to ask about a workflow system, start with one of the direct contact options below.';
+    case 'product-clarity':
+      return 'Tell me what your product does, where people get stuck and what you want to improve. I respond personally.';
     default:
       return 'For executive diagnostics, workshops, workflow systems, or product clarity engagements, use one of the direct contact options below.';
   }
@@ -26,20 +28,11 @@ function ContactPage({ initialIntent = 'general' }) {
     <>
       <p>{getIntroCopy(safeIntent)}</p>
       <p><strong>Current enquiry:</strong> {enquiryLabel}</p>
-      <hr />
-      <p>Choose the easiest way to reach me. I respond personally.</p>
       <p className="app-item"><img src="/images/email.svg" alt="" className="app-icon" /><span><strong>Email</strong><br /><a href="mailto:james@jamesgodwin.me">james@jamesgodwin.me</a></span></p>
       <p className="app-item"><img src="/images/phone.svg" alt="" className="app-icon" /><span><strong>WhatsApp</strong><br /><a href="https://wa.me/27686038834" target="_blank" rel="noopener noreferrer">WhatsApp James</a></span></p>
       <p><strong>Other ways to connect</strong></p>
       <p className="app-item"><img src="/images/phone.svg" alt="" className="app-icon" /><span><strong>Telephone</strong><br /><a href="tel:+27686038834">+27 68 603 8834</a></span></p>
       <p className="app-item"><img src="/images/linkedin.svg" alt="" className="app-icon" /><span><strong>Professional profile</strong><br /><a href="https://www.linkedin.com/in/jamiegodwin/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span></p>
-
-      {safeIntent === 'workflow-system' && (
-        <>
-          <hr />
-          <p><a href="https://wa.me/27686038834" target="_blank" rel="noopener noreferrer">WhatsApp me about a Workflow Audit →</a></p>
-        </>
-      )}
 
       {safeIntent === 'workshop' && (
         <>
