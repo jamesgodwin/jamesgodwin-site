@@ -116,6 +116,7 @@ body.body-no-scroll {
   height: 40px;
   border: none;
   background: transparent;
+  color: var(--hero-text);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,6 +129,8 @@ body.body-no-scroll {
 .nav-toggle svg {
   width: 23px;
   height: 23px;
+  color: inherit;
+  fill: currentColor;
 }
 
 .nav-toggle span {
