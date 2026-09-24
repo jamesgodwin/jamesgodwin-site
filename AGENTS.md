@@ -60,6 +60,10 @@ Infer the mode from the user's request. Do not require a formal mode selection.
 - **Planning:** when asked to plan, or when a direction is chosen, create or update a focused spec with the outcome, scope, non-goals, acceptance criteria, and material open questions. Add backlog work only when it is intended work. Split larger plans into small slices that each demonstrate useful behavior.
 - **Implementation:** execute the authorized scope. Reuse an existing sufficient spec; do not force a new brief for a simple, clear change. Match verification effort to risk.
 
+For substantial features, keep intended behavior separate from the technical approach within the spec. Describe acceptance using concrete starting conditions, actions, and observable results; cover relevant failure or recovery cases as well as the happy path. Record material assumptions explicitly. Keep headings proportionate to the work; separate plan or task files and requirement IDs are optional, not defaults.
+
+Before substantial implementation, briefly check that requirements are clear, consistent, and verifiable; each acceptance criterion has a planned slice and verification method; and each slice serves the agreed scope. Include dependencies and relevant permissions, data, interface, or failure behavior where omission could change the result. Resolve gaps from repository evidence and established intent first. Ask only about material unresolved choices, continuing independent work when possible. This is a readiness check, not a new approval stage or a mandatory report. For simple changes, apply the same reasoning without creating extra documents.
+
 Use one primary personal skill per phase when available and relevant. If unavailable, follow the behavior described here without blocking:
 
 | Phase | Optional skill | Behavior |
@@ -79,6 +83,8 @@ The user's current request determines the authorized work. Respect existing auth
 Use four sections: `Backlog`, `In Progress`, `Blocked`, `Done`. Each item is one line, with detail and evidence linked to a spec or log as needed. Within a section, order items by priority. The first actionable item is the default recommendation when the user asks what to work on; it does not override their request.
 
 Move work to Done only when its agreed acceptance criteria are met and relevant checks support completion. Record what was checked and the result, or why a check was not run, in the spec or log. Distinguish tests added or changed from tests actually executed. State remaining uncertainty.
+
+Before marking substantial work complete, compare current behavior and verification evidence with the latest agreed acceptance criteria, not just the task checklist. Identify missing, partial, contradictory, or unrequested behavior. Correct gaps within authorized scope and record unresolved work in the existing spec or backlog without duplicating trackers. Do not weaken criteria to fit the implementation; reconcile intentional scope changes explicitly. Code inspection alone does not establish runtime behavior, and passing tests establish only what they exercise. Keep post-release product outcomes separate from implementation acceptance unless explicitly part of the agreed completion gate.
 
 Distinguish implementation, automated verification, manual or exact-build validation, and release when relevant. Code completion does not imply deployment or validation of a distributed artifact. If release is outside the item's scope, an implementation item may be Done while a separate release item remains open. Do not mark an item Done while one of its required gates remains unmet.
 
