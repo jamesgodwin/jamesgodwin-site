@@ -23,6 +23,9 @@ output/
 .claude/
 .posthog-wizard-cache/
 
+# Ignore project MCP config; it holds API keys
+.cursor/mcp.json
+
 # Ignore cache files
 .cache/
 .DS_Store
