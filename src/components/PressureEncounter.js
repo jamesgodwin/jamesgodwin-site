@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { capturePostHogEvent } from '../posthog';
+import { capturePostHogLog } from '../posthog-logs';
 
 const reflections = {
   explore: {
@@ -59,8 +61,22 @@ function PressureEncounter({
   }, [selectedPath]);
 
   const selectPath = (path) => {
+    capturePostHogEvent('pressure_path_selected', { pressure_path: path });
+    capturePostHogLog('Visitor selected a pressure reflection path', { pressure_path: path });
     lastSelectedPathRef.current = path;
     setSelectedPath(path);
+  };
+
+  const navigateFromReflection = (destination) => {
+    capturePostHogEvent('pressure_reflection_cta_clicked', {
+      pressure_path: selectedPath,
+      destination
+    });
+    capturePostHogLog('Visitor continued from a pressure reflection', {
+      pressure_path: selectedPath,
+      destination
+    });
+    onNavigate(destination);
   };
 
   if (reflection) {
@@ -78,16 +94,16 @@ function PressureEncounter({
             <button
               type="button"
               className="pressure-reflection__primary"
-              onClick={() => onNavigate(reflection.command)}
+              onClick={() => navigateFromReflection(reflection.command)}
             >
               {reflection.action}
             </button>
             {reflection.secondaryCommand && (
-              <button type="button" onClick={() => onNavigate(reflection.secondaryCommand)}>
+              <button type="button" onClick={() => navigateFromReflection(reflection.secondaryCommand)}>
                 {reflection.secondaryAction}
               </button>
             )}
-            <button type="button" onClick={() => onNavigate('contact')}>Talk to James</button>
+            <button type="button" onClick={() => navigateFromReflection('contact')}>Talk to James</button>
             <button type="button" onClick={() => setSelectedPath(null)}>Begin again</button>
           </div>
         </div>

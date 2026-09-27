@@ -1,4 +1,6 @@
 import React from 'react';
+import { capturePostHogEvent } from '../posthog';
+import { capturePostHogLog } from '../posthog-logs';
 import {
   getContactIntentFromValue,
   getContactIntentLabel,
@@ -23,16 +25,26 @@ function getIntroCopy(intent) {
 function ContactPage({ initialIntent = 'general' }) {
   const safeIntent = getContactIntentFromValue(initialIntent);
   const enquiryLabel = getContactIntentLabel(safeIntent);
+  const captureContactMethod = (contactMethod) => {
+    capturePostHogEvent('contact_method_selected', {
+      contact_method: contactMethod,
+      enquiry_type: safeIntent
+    });
+    capturePostHogLog('Visitor selected a contact method', {
+      contact_method: contactMethod,
+      enquiry_type: safeIntent
+    });
+  };
 
   return (
     <>
       <p>{getIntroCopy(safeIntent)}</p>
       <p><strong>Current enquiry:</strong> {enquiryLabel}</p>
-      <p className="app-item"><img src="/images/email.svg" alt="" className="app-icon" /><span><strong>Email</strong><br /><a href="mailto:james@jamesgodwin.me">james@jamesgodwin.me</a></span></p>
-      <p className="app-item"><img src="/images/phone.svg" alt="" className="app-icon" /><span><strong>WhatsApp</strong><br /><a href="https://wa.me/27686038834" target="_blank" rel="noopener noreferrer">WhatsApp James</a></span></p>
+      <p className="app-item"><img src="/images/email.svg" alt="" className="app-icon" /><span><strong>Email</strong><br /><a href="mailto:james@jamesgodwin.me" onClick={() => captureContactMethod('email')}>james@jamesgodwin.me</a></span></p>
+      <p className="app-item"><img src="/images/phone.svg" alt="" className="app-icon" /><span><strong>WhatsApp</strong><br /><a href="https://wa.me/27686038834" target="_blank" rel="noopener noreferrer" onClick={() => captureContactMethod('whatsapp')}>WhatsApp James</a></span></p>
       <p><strong>Other ways to connect</strong></p>
-      <p className="app-item"><img src="/images/phone.svg" alt="" className="app-icon" /><span><strong>Telephone</strong><br /><a href="tel:+27686038834">+27 68 603 8834</a></span></p>
-      <p className="app-item"><img src="/images/linkedin.svg" alt="" className="app-icon" /><span><strong>Professional profile</strong><br /><a href="https://www.linkedin.com/in/jamiegodwin/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span></p>
+      <p className="app-item"><img src="/images/phone.svg" alt="" className="app-icon" /><span><strong>Telephone</strong><br /><a href="tel:+27686038834" onClick={() => captureContactMethod('telephone')}>+27 68 603 8834</a></span></p>
+      <p className="app-item"><img src="/images/linkedin.svg" alt="" className="app-icon" /><span><strong>Professional profile</strong><br /><a href="https://www.linkedin.com/in/jamiegodwin/" target="_blank" rel="noopener noreferrer" onClick={() => captureContactMethod('linkedin')}>LinkedIn</a></span></p>
 
       {safeIntent === 'workshop' && (
         <>

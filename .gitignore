@@ -16,6 +16,12 @@ output/
 
 # Ignore environment variables
 .env
+.env.local
+.env.*.local
+
+# Ignore local agent and PostHog wizard files
+.claude/
+.posthog-wizard-cache/
 
 # Ignore cache files
 .cache/

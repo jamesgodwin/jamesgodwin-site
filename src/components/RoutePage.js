@@ -1,7 +1,8 @@
 import React from 'react';
 import SiteFooter from './SiteFooter';
+import { capturePostHogEvent } from '../posthog';
 
-function RouteAction({ action, className }) {
+function RouteAction({ action, className, onClick }) {
   if (!action) return null;
 
   const isExternal = action.href.startsWith('http');
@@ -11,6 +12,7 @@ function RouteAction({ action, className }) {
       href={action.href}
       target={isExternal ? '_blank' : undefined}
       rel={isExternal ? 'noopener noreferrer' : undefined}
+      onClick={onClick}
     >
       {action.label}
     </a>
@@ -22,6 +24,15 @@ function RoutePage({ command, heading, content, presentation, onBack, isHelp = f
   const bodyHtml = typeof content === 'string'
     ? content.replace(/^\s*<p><strong>[\s\S]*?<\/strong><\/p>/, '')
     : content;
+  const captureContactCta = (action) => {
+    if (!action?.href.startsWith('/contact')) return;
+
+    const enquiryType = new URL(action.href, window.location.origin).searchParams.get('about') || 'general';
+    capturePostHogEvent('contact_cta_clicked', {
+      source_page: command,
+      enquiry_type: enquiryType
+    });
+  };
 
   return (
     <main className={`route-page ${presentation?.bodyClassName || ''}`}>
@@ -37,8 +48,8 @@ function RoutePage({ command, heading, content, presentation, onBack, isHelp = f
         )}
         {(presentation?.primaryAction || presentation?.secondaryAction) && (
           <div className="route-page__actions">
-            <RouteAction action={presentation.primaryAction} className="route-page__primary" />
-            <RouteAction action={presentation.secondaryAction} className="route-page__secondary" />
+            <RouteAction action={presentation.primaryAction} className="route-page__primary" onClick={() => captureContactCta(presentation.primaryAction)} />
+            <RouteAction action={presentation.secondaryAction} className="route-page__secondary" onClick={() => captureContactCta(presentation.secondaryAction)} />
           </div>
         )}
       </header>
