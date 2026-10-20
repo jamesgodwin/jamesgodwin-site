@@ -25,6 +25,8 @@ The commit uses `[skip netlify]` to avoid triggering the existing deployment fro
 - Browser through the Pages emulator: keyboard selector → TapScribe → all chapters → Product Clarity contact intent; Writing → complete article. No console warnings/errors.
 - Staged tree inspected for local environment files, generated output, MCP credentials and private credential patterns; none included. `.env.example` is placeholders. GitHub repository verified as `jamesgodwin/jamesgodwin-site`, public, default branch main; local/remote started at `2d55a83` with no divergence. `git diff --cached --check` passed after whitespace correction.
 - Live homepage fetched before push for comparison; actual hosted Pages build, Cloudflare environment values and hosted analytics delivery remain unverified. James reported entering the variables.
+- GitHub push succeeded: app candidate `c1dce0412c76483d00e37580cd45b6e4e072fe89`, message `Prepare reviewed Astro site for Cloudflare Pages [skip netlify]`. `git ls-remote origin refs/heads/main` returned the identical SHA; working tree was clean. All 219 staged runtime/check files matched the exported clean candidate that passed.
+- Public homepage HTML was byte-identical before and immediately after that push: SHA-256 `ea625090ece900311f4615bde19213a62f2f16f75ce8524809bf826e564e882d`. The skip marker is in the commit; no dashboard-level Netlify build lock was set. A documentation-only follow-up records this result without changing the app candidate.
 
 ## Decisions
 
@@ -34,4 +36,4 @@ Commit and push are authorised for this candidate. Future preparation commits ne
 
 ## Follow-ups
 
-Complete the authorised commit/push and verify remote main, then record its SHA here. James can deploy that candidate from the open Pages setup screen. Verify the actual Pages URL, routing, indexing headers and PostHog delivery before moving the custom domain. The public domain is not cut over by a GitHub readiness claim.
+The authorised app commit/push and remote verification are complete. James can deploy the latest main from the open Pages setup screen; the documentation-only follow-up has the same application source. Verify the actual Pages URL, routing, indexing headers and PostHog delivery before moving the custom domain. The public domain is not cut over by a GitHub readiness claim.

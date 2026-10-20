@@ -2,11 +2,11 @@
 
 ## Current Focus
 
-Hand off the reviewed site through GitHub so James can deploy it on Cloudflare Pages, then verify the hosted candidate. [Hosting scope](specs/essays-home-and-agent-readiness.md#pages-github-handoff-20-october-2026) and [deployment runbook](runbooks/deploy-cloudflare-pages.md) own the next stage. The domain cutover remains separate.
+Verify the Cloudflare Pages candidate after James deploys it. The GitHub handoff is complete. [Hosting scope](specs/essays-home-and-agent-readiness.md#pages-github-handoff-20-october-2026) and [deployment runbook](runbooks/deploy-cloudflare-pages.md) own the next stage. The domain cutover remains separate.
 
 ## Where Work Stopped
 
-20 October 2026: James accepted the direction, completed the Pages setup fields and reported adding Node/PostHog build variables. He explicitly authorised preparing and pushing the reviewed site. Target is `jamesgodwin/jamesgodwin-site`, `main`; repository is public. At this checkpoint the candidate is staged and qualified; commit/push are next. [Session evidence](logs/2026-10-20-022-cloudflare-pages-github-handoff.md).
+20 October 2026: James completed the Pages setup fields, reported adding Node/PostHog variables and authorised the GitHub handoff. App candidate `c1dce0412c76483d00e37580cd45b6e4e072fe89` was pushed to `jamesgodwin/jamesgodwin-site`, `main`; remote SHA matched. This documentation-only follow-up records the result. The public homepage was byte-identical before/after the app push. [Session evidence](logs/2026-10-20-022-cloudflare-pages-github-handoff.md).
 
 The complete Astro build includes four static stories, three published essays with original bodies/covers, aligned supporting pages, current Apps logos, refreshed Now and the wrapping paintings gallery. Ben and QC are the same client; TapScribe is James’s product with fictional sample transcript content; Plumbline remains with IIIMPACT/in progress. App screens are static. Writing importer protects drafts and local edits. No Source authoring changes.
 
@@ -18,11 +18,11 @@ Local review: `http://127.0.0.1:4173/`; rebuild then reload. The generic social 
 
 ## Next Recommended Step
 
-Complete the authorised GitHub push, then have James select Save and Deploy. Verify the exact resulting Pages URL and commit before attaching the custom domain.
+Have James select Save and Deploy in the open Pages setup screen. Verify the exact resulting Pages URL and commit before attaching the custom domain.
 
 ## Blockers
 
-None for GitHub handoff. Hosted verification awaits James’s Pages deployment.
+Hosted verification awaits James’s Pages deployment. No remaining local/GitHub preparation blocker.
 
 ## Parallel Threads
 

@@ -12,7 +12,7 @@ Deferred proposals, including terminal restoration, agent tools, opening questio
 
 ## In Progress
 
-- Slice 3: hand off the reviewed candidate through GitHub for Cloudflare Pages, verify the hosted build, then perform a separately authorised domain cutover with PostHog verification and Netlify rollback retained ([scope](specs/essays-home-and-agent-readiness.md#slice-3--cloudflare-preview-and-production-cutover), [preparation evidence](logs/2026-10-20-022-cloudflare-pages-github-handoff.md)).
+- Slice 3: reviewed candidate pushed to GitHub; verify James’s Cloudflare Pages deployment, then perform a separately authorised domain cutover with PostHog verification and Netlify rollback retained ([scope](specs/essays-home-and-agent-readiness.md#slice-3--cloudflare-preview-and-production-cutover), [handoff evidence](logs/2026-10-20-022-cloudflare-pages-github-handoff.md)).
 
 ## Blocked
 
