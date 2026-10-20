@@ -1,0 +1,20 @@
+---
+import { Image, getImage } from 'astro:assets';
+import index from '../../assets/concept/writing-index.png';
+import article from '../../assets/concept/writing-article.png';
+const indexFull = await getImage({src:index,format:'webp',quality:90});
+const articleFull = await getImage({src:article,format:'webp',quality:90});
+---
+<header class="review-intro">
+ <p class="eyebrow">Writing · Design for review</p>
+ <h1>Original images.<br /><span>Room for the words.</span></h1>
+ <p class="concept-lead">Two proposed layouts, using your published LinkedIn covers and original writing.</p>
+ <p class="demo-meta">Open either board to inspect it at full size. These are mockups awaiting your review.</p>
+</header>
+<figure class="review-board"><a href={indexFull.src} aria-label="Open writing index mockup at full size"><Image src={index} alt="Proposed writing index with a featured article and two image-led entries, shown on desktop and mobile." width={1440} format="webp" quality={90} /></a><figcaption>01 · Writing index. Each piece keeps its original published image.</figcaption></figure>
+<figure class="review-board"><a href={articleFull.src} aria-label="Open article mockup at full size"><Image src={article} alt="Proposed article page with original cover, author, date, LinkedIn source, readable prose and a different related essay." width={1440} format="webp" quality={90} /></a><figcaption>02 · Article. A clear reading column, a source link and another essay at the end.</figcaption></figure>
+<section class="system-section"><h2>Published sources</h2><ul>
+ <li><a href="https://www.linkedin.com/pulse/how-i-keep-my-projects-portable-between-ai-assistants-james-godwin-i9r3f/">How I Keep My Projects Portable Between AI Assistants</a> · 14 October 2026</li>
+ <li><a href="https://www.linkedin.com/pulse/what-healing-begins-wrong-question-james-godwin-ixiwf">What If Healing Begins With the Wrong Question?</a> · 1 October 2026</li>
+ <li><a href="https://www.linkedin.com/pulse/your-ai-using-design-system-producing-convincing-picture-james-godwin-mx42c/">Is your AI using your design system, or producing a convincing picture of it?</a> · 21 July 2026</li>
+</ul></section>

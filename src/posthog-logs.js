@@ -1,9 +1,10 @@
+import { verificationProperties } from './posthog';
 import { SeverityNumber } from '@opentelemetry/api-logs';
 import { OTLPLogExporter } from '@opentelemetry/exporter-logs-otlp-http';
 import { LoggerProvider, SimpleLogRecordProcessor } from '@opentelemetry/sdk-logs';
 
-const posthogKey = process.env.REACT_APP_POSTHOG_KEY;
-const posthogHost = process.env.REACT_APP_POSTHOG_HOST;
+const posthogKey = import.meta.env.PUBLIC_POSTHOG_KEY;
+const posthogHost = import.meta.env.PUBLIC_POSTHOG_HOST;
 
 let posthogLogger;
 
@@ -15,7 +16,7 @@ if (posthogKey && posthogHost) {
     }
   });
   const provider = new LoggerProvider({
-    processors: [new SimpleLogRecordProcessor(exporter)]
+    processors: [new SimpleLogRecordProcessor({ exporter })]
   });
 
   posthogLogger = provider.getLogger('jamesgodwin-site.posthog');
@@ -26,6 +27,6 @@ export function capturePostHogLog(body, attributes) {
     severityNumber: SeverityNumber.INFO,
     severityText: 'INFO',
     body,
-    attributes
+    attributes: { ...attributes, ...verificationProperties }
   });
 }

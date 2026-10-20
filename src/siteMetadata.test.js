@@ -3,15 +3,15 @@ import path from 'path';
 import siteMetadata from './siteMetadata';
 
 describe('shared page metadata', () => {
-  const homeTitle = 'James Godwin | Product, UX and Workflow Clarity';
-  const homeDescription = 'I help founders and teams close UX, accessibility and implementation gaps in products and workflows. Explore my work, writing and Tai Chi practice.';
+  const homeTitle = 'James Godwin | Product Design and Full-Stack Development';
+  const homeDescription = 'I help founders finish fast-built and AI-assisted products, closing UX, accessibility and implementation gaps across design, front-end, back-end and deployment.';
 
   test('leads shared home and About previews with the current positioning', () => {
     expect(siteMetadata.defaultMetadata.title).toBe(homeTitle);
     expect(siteMetadata.defaultMetadata.description).toBe(homeDescription);
     expect(siteMetadata.pageMetadata.about).toMatchObject({
-      title: 'About James Godwin | Products, Practice and Perspective',
-      description: 'Twenty years across UX, product strategy and design systems, shaped by thirty years of Tai Chi practice. Meet James and explore his work.'
+      title: 'About James Godwin | Product Designer and Full-Stack Developer',
+      description: 'Product designer and full-stack developer helping founders connect UX, accessibility and implementation. Based in Sedgefield, South Africa.'
     });
     expect(siteMetadata.pageMetadata.diagnostic.description).toContain('personal Tai Chi and Qigong practice');
     expect(siteMetadata.pageMetadata.workshops.description).toMatch(/practice-led workshops/i);
@@ -19,7 +19,7 @@ describe('shared page metadata', () => {
   });
 
   test('keeps the static home template aligned with runtime defaults', () => {
-    const html = fs.readFileSync(path.join(process.cwd(), 'public', 'index.html'), 'utf8');
+    const html = fs.readFileSync(path.join(process.cwd(), 'dist', 'index.html'), 'utf8');
 
     expect(html).toContain(`<title>${homeTitle}</title>`);
     expect(html).toContain(`content="${homeDescription}"`);

@@ -1,0 +1,6 @@
+---
+import { patternAttributes } from '../../design-system/patterns';
+const { recipe = 'body', href, ...rest } = Astro.props;
+const attrs = patternAttributes('link', recipe, {href,...rest});
+---
+<a {...attrs}><slot /></a>

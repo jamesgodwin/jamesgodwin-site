@@ -12,7 +12,7 @@ const philosophyOutput = `
 <p>For me, clarity in an interface comes from understanding the task, removing avoidable effort and making the next useful action easier to see.</p>
 <hr>
 <h3>Two parts of one life</h3>
-<p>UX and product work are where most of my professional experience and commercial value sit. Tai Chi is the deeper practice that has shaped how I observe, decide and work with people.</p>
-<p>They do not need to become the same service to influence one another.</p>`;
+<p>Designing and building software is my professional work. Tai Chi is a long-standing practice that shapes how I observe, decide and work with people.</p>
+<p>Both reward close attention to what is actually happening.</p>`;
 
 export default philosophyOutput;

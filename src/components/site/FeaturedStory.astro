@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import { plumblineStory } from '../../concept/plumbline.js';
+import { benStory } from '../../concept/ben.js';
+import { tapscribeStory } from '../../concept/tapscribe.js';
+import { qualityStory } from '../../concept/quality.js';
+import CaseVisual from '../concept/CaseVisual.astro';
+import Action from '../ui/Action.astro';
+import { patternAttributes } from '../../design-system/patterns.js';
+const stories=[{...benStory,path:'/work/crew-scores'},{...qualityStory,path:'/work/quality-control'},{...tapscribeStory,path:'/work/tapscribe'},{...plumblineStory,path:'/work/plumbline'}];
+---
+<div data-story-shelf>
+ <nav class="site-story-choices" aria-label="Choose a story" data-story-choices hidden>
+  {stories.map((story,i)=><button {...patternAttributes('choice','story',{'type':'button','data-story-select':story.id,'aria-pressed':i===0?'true':'false','aria-controls':`feature-${story.id}`})}>
+   <Image src={story.image} alt="" width={320} format="webp" /><strong>{story.title}</strong><span>{story.context}</span>
+  </button>)}
+ </nav>
+ {stories.map(story=><section class="case-feature" id={`feature-${story.id}`} data-story-feature={story.id} aria-labelledby={`feature-title-${story.id}`}>
+  <div class="case-feature__copy"><p class="eyebrow">{story.context}</p><h2 id={`feature-title-${story.id}`}>{story.title}</h2><p>{story.summary}</p><Action recipe="primary" href={story.path}>Look closer <span aria-hidden="true">→</span></Action></div>
+  <div class="case-feature__visual"><CaseVisual story={story} kind="overview" compact /></div>
+ </section>)}
+</div>

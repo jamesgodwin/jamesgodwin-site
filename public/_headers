@@ -1,0 +1,7 @@
+# Keep the temporary Pages address and version/branch previews out of search.
+# Custom-domain responses remain indexable.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex

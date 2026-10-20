@@ -8,13 +8,27 @@ Current work status and priority. Detail lives in linked specs or logs.
 
 - Run the combined eight-person visitor exercise on the deployed LinkedIn-aligned site, then record concrete confusion or validated comprehension using [the alignment plan](specs/linkedin-site-alignment.md).
 
+Deferred proposals, including terminal restoration, agent tools, opening question and Notes, are [parked outside active scope](archive/2026-10-20-agent-readiness-proposals.md).
+
 ## In Progress
+
+- Slice 3: hand off the reviewed candidate through GitHub for Cloudflare Pages, verify the hosted build, then perform a separately authorised domain cutover with PostHog verification and Netlify rollback retained ([scope](specs/essays-home-and-agent-readiness.md#slice-3--cloudflare-preview-and-production-cutover), [preparation evidence](logs/2026-10-20-022-cloudflare-pages-github-handoff.md)).
 
 ## Blocked
 
 - Look Up is on hold: Apple’s Screen Time API is too unreliable to pursue now. The landing page lives on branch `lookup` — https://github.com/jamesgodwin/jamesgodwin-site/tree/lookup — and should not be merged to `main` until the app is resumed.
 
 ## Done
+
+- Built and reviewed the main local website with all four static stories, three original illustrated essays, repeatable Source importer and aligned pages; James authorised the GitHub handoff after the final content pass ([scope and review](specs/site-story-writing-build.md#final-content-review-before-hosting-20-october-2026)).
+
+- Built the local Case shelf with four navigable stories, static supporting screens, full-stack positioning, shared recipes and writing boards; demo interpretation corrected after feedback, build checks and 18 tests pass ([evidence](specs/homepage-proof-of-concept.md#implementation-evidence)).
+
+- Consolidated the local design system: 410 → 187 tokens, 32 → 11 type roles, one outlined button, retired CSS/aliases and unused-token enforcement; builds, tests and browser/analytics checks passed ([result](specs/design-system-foundations.md#consolidation-result)).
+
+- Established local design-system foundations with preserved appearance: semantic tokens, shared patterns, opt-in catalogue and enforced drift checks; 30 computed-style cases matched, all automated and browser checks passed ([spec](specs/design-system-foundations.md), [evidence](logs/2026-10-20-004-design-system-foundations.md)).
+
+- Completed the local Astro migration for all 18 routes, current interactions and PostHog pageviews/events/exceptions/logs; 15 Vitest tests and 3 built-route checks passed, browser parity passed, homepage Lighthouse accessibility stayed 100. Obsolete pilot DMG removed at James’s request. No deployment ([evidence](logs/2026-10-20-003-local-astro-migration.md)).
 
 - Released the LinkedIn-aligned site from commit `e50ba01`; Netlify published the reviewed build and live smoke checks passed for home, Product Clarity, Workflow Systems, About, Contact, Now, social images and sitemap. James separately published the verified TapScribe pilot download in commit `2e71d99`.
 - Added a final proof-and-clarity pass: plain service descriptions and a recent delivery example on the homepage, plus explicit commercial and practice groupings on About. Full suite: 33/33 passed; production build: passed.

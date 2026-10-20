@@ -1,0 +1,132 @@
+---
+import { Image } from 'astro:assets';
+const { story, kind, compact = false } = Astro.props;
+const photo = ['inspection-photo','drift'].includes(kind);
+---
+{photo && <figure class:list={['case-art',{'case-art--paper':kind==='paper'}]}>
+ <Image src={story.image} alt={story.alt} widths={[480,800,1200]} sizes="(max-width: 700px) 100vw, 700px" width={1000} format="webp" />
+ {story.id !== 'quality' && <figcaption>{kind === 'drift' ? 'Synthetic component example' : 'Illustrative reconstruction'}</figcaption>}
+</figure>}
+{kind === 'paper' && <div class="paper-flow">
+ <figure class="case-art"><Image src={story.image} alt={story.alt} width={700} format="webp" /><figcaption>Illustrative reconstruction</figcaption></figure>
+ <div class="demo-panel"><h3>A daily score</h3><dl><div><dt>Worker</dt><dd>Worker A</dd></div><div><dt>Quality</dt><dd>4</dd></div><div><dt>Productivity</dt><dd>3</dd></div><div><dt>Compliance</dt><dd>4</dd></div><div><dt>Teamwork</dt><dd>4</dd></div></dl></div>
+ <div class="demo-panel"><h3>What still needed work</h3><p>Multiple staff. Score calculations. Supervisor access. Deployment.</p><p class="demo-meta">The prototype clarified the idea. These pieces still needed to connect.</p></div>
+</div>}
+{kind === 'overview' && (story.id === 'scoring' ?
+ <div class="score-overview">
+  <Image src={story.image} alt={story.alt} width={600} format="webp" />
+  <div class="demo-panel score-overview__daily">
+   <h3>Daily score</h3>
+   <dl><div><dt>Quality</dt><dd>4</dd></div><div><dt>Productivity</dt><dd>3</dd></div><div><dt>Compliance</dt><dd>4</dd></div><div><dt>Teamwork</dt><dd>4</dd></div></dl>
+   <p class="demo-total">15 <span>today</span></p>
+  </div>
+  <div class="demo-panel score-overview__report">
+   <h3>Month-end totals</h3>
+   <dl><div><dt>Previous scores</dt><dd>57</dd></div><div><dt>Today</dt><dd>15</dd></div></dl>
+   <p class="demo-total">72 <span>total</span></p>
+  </div>
+ </div> :
+ <figure class:list={['case-art',{'case-art--product':['local','tapscribe'].includes(story.id)}]}>
+  <Image src={story.image} alt={story.alt} widths={[480,800,1200]} sizes="(max-width: 700px) 100vw, 750px" width={1000} format="webp" />
+ </figure>
+)}
+{kind === 'scores' && <div class="score-flow">
+ <div class="demo-panel">
+  <p class="eyebrow">Daily capture</p><h3>One score, recorded once</h3>
+  <p class="demo-meta">Worker A · Roof 12 · Four categories</p>
+  <dl><div><dt>Quality</dt><dd>4</dd></div><div><dt>Productivity</dt><dd>3</dd></div><div><dt>Compliance</dt><dd>4</dd></div><div><dt>Teamwork</dt><dd>4</dd></div></dl>
+  <p class="demo-total">15 <small>daily total</small></p>
+ </div>
+ <div class="demo-panel">
+  <h3>The right staff, the right access</h3>
+  <dl><div><dt>Worker</dt><dd>Worker A</dd></div><div><dt>Job</dt><dd>Roof 12</dd></div><div><dt>Record</dt><dd>Today</dd></div></dl>
+  <p class="demo-meta">Supervisor sign-in and access to staff records.</p>
+ </div>
+ <div class="demo-panel">
+  <h3>Month-end total</h3>
+  <dl><div><dt>Earlier scores</dt><dd>57</dd></div><div><dt>Today</dt><dd>15</dd></div></dl>
+  <p class="demo-total">72 <small>Worker A</small></p>
+  <p class="demo-meta">Ready for the team to use. Ben uses the totals to review commission separately.</p>
+ </div>
+</div>}
+{kind === 'report' && <div class="result-grid">
+ <blockquote><p>“My supervisors find the app very user-friendly.”</p><cite>Ben · Roofing business owner</cite></blockquote>
+ <div class="demo-panel">
+  <h3>Month-end totals</h3>
+  <table><caption>Illustrative report · Roof 12</caption><thead><tr><th>Worker</th><th>Earlier</th><th>Today</th><th>Total</th></tr></thead><tbody><tr><th>Worker A</th><td>57</td><td>15</td><td>72</td></tr><tr><th>Worker B</th><td>50</td><td>14</td><td>64</td></tr></tbody></table>
+  <p class="demo-meta">Start with scoring → try it with the team → test the next improvement.</p>
+ </div>
+</div>}
+{kind === 'inspection' && <div class="inspection-flow">
+ <figure class="case-art"><Image src={story.image} alt={story.alt} width={800} format="webp" /><figcaption>Example checklist</figcaption></figure>
+ <div class="demo-panel">
+  <p class="eyebrow">A record the office can follow</p><h3>Roof waterproofing</h3>
+  <dl><div><dt>Surface prepared</dt><dd>Yes</dd></div><div><dt>Membrane checked</dt><dd>Unanswered</dd></div><div><dt>Section photo</dt><dd>Attached</dd></div></dl>
+  <p>Unanswered checks stay visible. Supervisors can keep a draft and finish it before submitting.</p>
+ </div>
+</div>}
+{kind === 'inspection-result' && <div class="inspection-flow">
+ <figure class="case-art"><Image src={story.image} alt={story.alt} width={800} format="webp" /><figcaption>Example checklist</figcaption></figure>
+ <div class="demo-panel"><p class="eyebrow">Submitted record</p><h3>Roof waterproofing</h3>
+  <dl><div><dt>Surface prepared</dt><dd>Yes</dd></div><div><dt>Membrane checked</dt><dd>Yes</dd></div><div><dt>Section photos</dt><dd>1 attached</dd></div></dl>
+  <p>Answers and evidence stay together.</p><p class="demo-meta">Ready for office review and sharing.</p>
+ </div>
+</div>}
+{kind === 'missing' && <div class="recovery-flow">
+ <div class="demo-panel"><p class="eyebrow">Before</p><h3>Meeting recording</h3><p class="status-line">Transcribing…</p><p class="demo-meta">Audio recorded. No useful next step.</p></div>
+ <div class="recovery-copy"><h3>A state that explained nothing.</h3><p>The missing model needed to be visible, with a recovery path that kept the recording safe.</p><span class="demo-meta">Reconstructed problem state</span></div>
+</div>}
+{kind === 'recovery' && <div class="recovery-flow">
+ <div class="demo-panel"><p class="eyebrow">Recording retained</p><h3>A clear way to continue</h3>
+  <dl><div><dt>What happened?</dt><dd>Model missing</dd></div><div><dt>Is the recording safe?</dt><dd>Audio saved</dd></div><div><dt>What comes next?</dt><dd>Download, then retry</dd></div></dl>
+ </div>
+ <div class="recovery-copy"><h3>The recording didn’t need to be lost.</h3><p>I made the problem visible and gave people a way to continue with the audio they already had.</p></div>
+</div>}
+{kind === 'transcript' && <figure class="case-art case-art--product"><Image src={story.image} alt={story.alt} widths={[600,1000,1600]} sizes="100vw" width={1400} format="webp" /><figcaption>TapScribe product screenshot · Sample transcript</figcaption></figure>}
+{kind === 'patterns' && <div class="system-flow">
+ <figure class="case-art"><Image src={story.image} alt={story.alt} width={800} format="webp" /><figcaption>Synthetic components, no client material</figcaption></figure>
+ <div class="demo-panel"><p class="eyebrow">A shared contract</p><h3>From design to code</h3><ol class="system-checks"><li>Semantic colours and spacing</li><li>Shared component recipes</li><li>Checks that catch drift</li><li>Human review of the result</li></ol></div>
+</div>}
+{kind === 'system-result' && <div class="system-result"><p class="eyebrow">Plumbline · With IIIMPACT</p><h3>Rules → components → checks → review</h3><p>A working foundation for consistent AI-assisted delivery.</p><p class="status-line">In progress</p><p class="demo-meta">Real-project validation remains ahead. No completed rollout or measured time-saving claim.</p></div>}
+{!compact && <p class="visual-note">{['scores','recovery'].includes(kind) ? 'Illustrative story visual · Sample data' : ''}</p>}
+
+{kind === 'local-workflow' && <div class="score-flow">
+ <div class="demo-panel"><p class="eyebrow">01 · Record</p><h3>QuickTime</h3><p>Record the conversation.</p></div>
+ <div class="demo-panel"><p class="eyebrow">02 · Prepare</p><h3>Audio file</h3><p>Extract and move the audio.</p></div>
+ <div class="demo-panel"><p class="eyebrow">03 · Transcribe</p><h3>Python + Whisper</h3><p>Run transcription locally.</p></div>
+</div>}
+{kind === 'local-recording' && <div class="recovery-flow">
+ <figure class="case-art case-art--product case-art--hud"><Image src={story.recording} alt={story.recordingAlt} width={640} format="webp" /></figure>
+ <div class="tapscribe-pieces">
+  <div class="demo-panel"><p class="eyebrow">01 · Record</p><h3>Both sides of the conversation</h3><p>Microphone + Mac audio</p></div>
+  <div class="demo-panel"><p class="eyebrow">02 · Transcribe</p><h3>On the Mac</h3><p>No cloud transcription</p></div>
+  <div class="demo-panel"><p class="eyebrow">03 · Keep</p><h3>One local Library</h3><p>Recording + transcript</p></div>
+ </div>
+</div>}
+{kind === 'local-library' && <figure class="case-art case-art--product case-art--reading"><Image src={story.image} alt={story.alt} widths={[600,1000,1520]} sizes="100vw" width={1520} format="webp" /></figure>}
+
+{kind === 'system-audit' && <div class="score-flow">
+ <div class="demo-panel"><p class="eyebrow">AI Ching · Initial audit</p><h3>Similar cards, different values</h3><dl><div><dt>Card A</dt><dd><code>1.25rem</code></dd></div><div><dt>Card B</dt><dd><code>1.3rem</code></dd></div><div><dt>Card C</dt><dd><code>1.35rem</code></dd></div></dl><p class="demo-meta">Corner values found in the original code.</p></div>
+ <div class="demo-panel"><p class="eyebrow">The decision</p><h3>One shared token</h3><p><code>rounded-card</code></p><p>Define the card corner once.</p></div>
+ <div class="demo-panel"><p class="eyebrow">The build</p><h3>Reuse the component</h3><p>Consistent appearance across pages.</p><p class="demo-meta">Simplified example from my own website.</p></div>
+</div>}
+{kind === 'system-connect' && <div class="score-flow">
+ <div class="demo-panel"><p class="eyebrow">01 · Agree</p><h3>Design decisions</h3><p>Colours, type, spacing and states.</p><p class="demo-meta">A designer reviews the choices.</p></div>
+ <div class="demo-panel"><p class="eyebrow">02 · Reuse</p><h3>Tokens + components</h3><p>One supported recipe for each pattern.</p><p class="demo-meta">People and AI use the same source.</p></div>
+ <div class="demo-panel"><p class="eyebrow">03 · Check</p><h3>Catch drift in the build</h3><p>Flag values outside the agreed system.</p><p class="demo-meta">Review the result on screen.</p></div>
+</div>}
+{kind === 'system-proof' && <div class="result-grid">
+ <div class="demo-panel"><p class="eyebrow">AI Ching · My own website</p><h3>A shared foundation in code</h3><dl><div><dt>Design values</dt><dd>Named tokens</dd></div><div><dt>Repeated controls</dt><dd>Shared components</dd></div><div><dt>New drift</dt><dd>Build check</dd></div></dl><p class="demo-meta">A concrete test case, not a client rollout.</p></div>
+ <div class="demo-panel"><p class="eyebrow">Plumbline · With IIIMPACT</p><h3>Make the method repeatable</h3><p>Bring the audit, decisions, components and checks to further projects.</p><p class="status-line">In progress</p><p class="demo-meta">Human review and broader validation remain part of the work.</p></div>
+</div>}
+
+{kind === 'system-tools' && <div class="score-flow">
+ <div class="demo-panel"><p class="eyebrow">Design</p><h3>Figma</h3><p>Design components and guidance.</p></div>
+ <div class="demo-panel"><p class="eyebrow">AI mockups</p><h3>Claude Design</h3><p>The tool’s starting components.</p></div>
+ <div class="demo-panel"><p class="eyebrow">The product</p><h3>Client codebase</h3><p>The components people actually use.</p></div>
+</div>}
+{kind === 'system-projections' && <div class="score-flow">
+ <div class="demo-panel"><p class="eyebrow">Source of truth</p><h3>Client codebase</h3><p>Shared tokens + components</p><p class="demo-meta">Design rules live in the client’s code.</p></div>
+ <div class="demo-panel"><p class="eyebrow">Projection → design tools</p><h3>Design from the same rules</h3><p class="status-line">In progress</p><p class="demo-meta">With IIIMPACT</p></div>
+ <div class="demo-panel"><p class="eyebrow">Plugin → developers</p><h3>Build from the same rules</h3><p class="status-line">In progress</p><p class="demo-meta">With IIIMPACT</p></div>
+</div>}

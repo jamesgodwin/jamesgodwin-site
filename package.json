@@ -1,52 +1,39 @@
 {
-  "name": "jamie",
+  "name": "jamesgodwin-site",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev:concept": "SITE_POC=true astro dev --host 127.0.0.1 --port 3002 --ignore-lock",
+    "build:concept": "SITE_POC=true npm run build",
+    "preview:concept": "SITE_POC=true astro preview --host 127.0.0.1 --port 4176 --ignore-lock",
+    "test:concept": "node scripts/check-concept-build.mjs",
+    "start": "astro dev --host 127.0.0.1 --port 3000",
+    "dev": "astro dev --host 127.0.0.1 --port 3000",
+    "build": "npm run check:design && astro build",
+    "preview": "astro preview --host 127.0.0.1 --port 4173",
+    "test": "vitest run",
+    "test:routes": "node --test tests/*.test.cjs",
+    "check:design": "node scripts/check-design-tokens.mjs",
+    "test:design": "node --test scripts/check-design-tokens.test.mjs",
+    "dev:catalogue": "DESIGN_SYSTEM_CATALOG=true astro dev --host 127.0.0.1 --port 3001 --ignore-lock",
+    "build:catalogue": "DESIGN_SYSTEM_CATALOG=true npm run build",
+    "preview:catalogue": "DESIGN_SYSTEM_CATALOG=true astro preview --host 127.0.0.1 --port 4175 --ignore-lock",
+    "test:catalogue": "node scripts/check-catalogue-build.mjs",
+    "import:essays": "node scripts/import-essays.mjs",
+    "test:essays": "node --test scripts/import-essays.test.mjs scripts/essays-build.test.mjs"
+  },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.6.0",
-    "@fortawesome/free-solid-svg-icons": "^6.6.0",
-    "@fortawesome/react-fontawesome": "^0.2.2",
     "@opentelemetry/api-logs": "^0.222.0",
     "@opentelemetry/exporter-logs-otlp-http": "^0.222.0",
     "@opentelemetry/sdk-logs": "^0.222.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "posthog-js": "^1.434.15",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-p5": "^1.4.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && node scripts/prerender-route-metadata.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "engines": {
-    "node": ">=22"
+    "astro": "7.4.1",
+    "posthog-js": "^1.434.15"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.x.x"
+    "postcss": "^8.5.31",
+    "vitest": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=22.22.0"
   }
 }

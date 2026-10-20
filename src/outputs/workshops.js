@@ -1,7 +1,7 @@
 const workshopsOutput = `
 <p><strong>A practice-led workshop</strong></p>
 <p>Stillness Under Pressure brings simple breath, posture and attention practices into a team setting.</p>
-<p>The work comes from more than thirty years of Tai Chi and Qigong practice, alongside my experience working with product, design and engineering teams. I am open to shaping a workshop around a real situation your team is facing.</p>
+<p>I draw on more than thirty years of Tai Chi and Qigong practice and my experience with product, design and engineering teams. We can shape a workshop around a situation your team is facing.</p>
 <hr>
 <h3>What we explore</h3>
 <ul class="legal-list"><li>How pressure shows up in breath, pace and attention</li><li>How to notice a reactive response earlier</li><li>Simple practices that create more room before responding</li><li>How the team can discuss pressure without turning it into blame</li></ul>

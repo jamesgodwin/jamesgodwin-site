@@ -1,0 +1,9 @@
+---
+const { theme } = Astro.props;
+const families = theme === 'case-study'
+ ? 'Inter:wght@400;600&family=Manrope:wght@700'
+ : 'EB+Garamond:wght@400&family=IBM+Plex+Mono:wght@400;500&family=Karla:wght@400;700';
+---
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href={`https://fonts.googleapis.com/css2?family=${families}&display=swap`} rel="stylesheet" />

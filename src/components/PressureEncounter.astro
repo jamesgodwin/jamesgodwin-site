@@ -1,0 +1,43 @@
+---
+import Action from './ui/Action.astro';
+import TextLink from './ui/TextLink.astro';
+import LinkCard from './ui/LinkCard.astro';
+---
+<main class="pressure-encounter">
+      <div class="pressure-encounter__intro">
+        <h1>Products and workflows, working cleanly.</h1>
+        <p class="pressure-encounter__positioning">I help founders and teams close UX, accessibility and implementation gaps in fast-built and AI-assisted products.</p>
+        <p class="pressure-encounter__practice">Twenty years in UX, product strategy and design systems, shaped by thirty years of Tai Chi practice.</p>
+        <nav class="pressure-encounter__work-links" aria-label="Ways to work with James">
+          <LinkCard recipe="primary" href="/uxui" title="Product Clarity" description="UX review and implementation" />
+          <LinkCard recipe="secondary" href="/systems" title="Workflow Systems" description="Operational workflow design and build" />
+        </nav>
+        <aside class="pressure-encounter__proof" aria-label="Recent delivery example">
+          <p class="pressure-encounter__proof-label">Recent delivery</p>
+          <p>In client feedback, the owner said an operational app I built gave supervisors clearer visibility into to-dos, quality control and measurements. <TextLink recipe="proof" href="/systems#client-example">See the example</TextLink>.</p>
+        </aside>
+      </div>
+
+      <div class="pressure-encounter__reflection-intro">
+        <h2>Pressure rarely stays where it begins.</h2>
+        <p>It moves through the person, the room, and the work.</p>
+      </div>
+      <div class="pressure-encounter__prompt">
+        <p>Where is it showing up?</p>
+      </div>
+
+      <div class="pressure-encounter__rings" aria-label="Choose where the pressure is showing up">
+        <img src="/images/pressure-rings.png" alt="" aria-hidden="true" />
+        <button type="button" data-pressure-path="work">In the work</button>
+        <button type="button" data-pressure-path="team">In a team</button>
+        <button type="button" data-pressure-path="self">In me</button>
+      </div>
+
+      <Action recipe="text" data-home-action="explore" data-pressure-path="explore">
+        I am only exploring
+      </Action>
+
+      <Action recipe="quiet" data-home-action="browse" data-browse>
+        Browse without answering
+      </Action>
+    </main>

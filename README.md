@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# James Godwin's website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Astro implementation of jamesgodwin.me, prepared for Cloudflare Pages. The live domain remains on the existing deployment until the hosted build is verified and cutover is authorised.
 
-## Available Scripts
+Read [AGENTS.md](AGENTS.md), [project context](DOCS/PROJECT.md), [backlog](DOCS/BACKLOG.md) and [handoff](DOCS/next-day.md) before making changes.
 
-In the project directory, you can run
+Current build: cream/forest site, four static case stories and three illustrated essays. See the [build brief](DOCS/specs/site-story-writing-build.md), [design-system guide](DOCS/runbooks/use-design-system.md) and [writing import guide](DOCS/runbooks/import-essays.md).
 
-### `npm start`
+## Local development
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Use Node.js 22.22.1 (`.nvmrc`). Install dependencies with `npm ci`, then copy `.env.example` to ignored `.env` and supply the existing PostHog project token and host.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```sh
+npm start
+```
 
-### `npm test`
+Open http://127.0.0.1:3000. Local and `*.pages.dev` PostHog traffic is labelled `traffic_type=verification`; exclude it from production reporting.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Verification
 
-### `npm run build`
+```sh
+npm run build
+npm test
+npm run test:routes
+npm run preview
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The build writes `dist/`; preview serves it at http://127.0.0.1:4173. Browser checks and live PostHog ingestion evidence are recorded in [the migration log](DOCS/logs/2026-10-20-003-local-astro-migration.md). CRA source in `legacy/` is a retained comparison snapshot and is not shipped.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Cloudflare Pages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Use the Astro preset, `main`, repository root, `npm run build`, and output directory `dist`. Set `NODE_VERSION=22.22.1`, `PUBLIC_POSTHOG_KEY` and `PUBLIC_POSTHOG_HOST` in Cloudflare’s build environment. No Wrangler deploy command or SSR adapter is required. Main output uses `route.html` files so Pages serves the existing slashless URLs. `public/_redirects` preserves aliases; top-level `404.html` prevents SPA fallback; host-specific `public/_headers` keeps Pages addresses out of search without blocking the custom domain.
 
-### `npm run eject`
+Follow [deploy to Cloudflare Pages](DOCS/runbooks/deploy-cloudflare-pages.md) for preview verification and the separate domain cutover. Until Netlify auto builds are disabled or a Netlify deploy is intended, use `[skip netlify]` in pushed commit messages. GitHub readiness does not establish a deployed or verified site.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Local design reference
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The [design-system foundations and consolidation](DOCS/specs/design-system-foundations.md) are implemented; [usage and catalogue commands](DOCS/runbooks/use-design-system.md) describe the contracts. The earlier [homepage exploration](DOCS/specs/homepage-visual-exploration.md) is historical reference.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Run `npm run build:catalogue` and `npm run preview:catalogue` to open the opt-in catalogue at http://127.0.0.1:4175/design-system/. For live editing, use `npm run dev:catalogue` at port 3001. Normal builds omit that route.

@@ -1,0 +1,12 @@
+---
+import { Image } from 'astro:assets';
+import { essayPath, displayDate } from '../../essays.js';
+const { essay } = Astro.props;
+const {data}=essay;
+---
+<article class="writing-card">
+ <a href={essayPath(essay)} tabindex="-1" aria-label={`Read ${data.title}`}><Image src={data.cover} alt="" widths={[480,800]} sizes="(max-width:600px) 100vw, 400px" width={800} format="webp" /></a>
+ <p class="eyebrow"><time datetime={data.date.toISOString()}>{displayDate(data.date)}</time> · {data.category}</p>
+ <h3><a href={essayPath(essay)}>{data.title}</a></h3>
+ <a class="writing-read" href={essayPath(essay)} aria-label={`Read ${data.title}`}>Read essay <span aria-hidden="true">→</span></a>
+</article>

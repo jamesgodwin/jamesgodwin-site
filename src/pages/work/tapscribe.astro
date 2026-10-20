@@ -1,0 +1,7 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import StoryReader from '../../components/site/StoryReader.astro';
+import { tapscribeStory } from '../../concept/tapscribe.js';
+import metadata from '../../siteMetadata';
+---
+<SiteLayout metadata={metadata.sectionMetadata.tapscribe} current="work"><StoryReader story={tapscribeStory} /></SiteLayout>

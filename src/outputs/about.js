@@ -1,23 +1,21 @@
 const aboutOutput = `
-<p>I help founders and teams when products or workflows are almost there, but still do not work cleanly.</p>
-<p>The gaps may be in the UX, accessibility, implementation or the way work passes between people. I make those gaps visible and help close them.</p>
-<p>I bring twenty years across UX, product strategy and design systems, alongside experience building products and practical systems of my own.</p>
-<p>One recent <a href="/systems#client-example">operational system</a> gave supervisors a straightforward way to manage to-dos, quality-control progress and measurement sheets. The client described gaining visibility and a stronger sense of control.</p>
+<p>I help founders and teams when products or workflows are almost there, but the pieces do not yet work together.</p>
+<p>I find the gaps in the user experience, accessibility and implementation, then help resolve them. My work covers interface design, front-end and back-end development, authentication and deployment.</p>
+<p>I bring twenty years of experience across UX, product strategy and design systems, alongside building apps and practical systems of my own.</p>
+<p>For a roofing business, that meant helping Ben turn an AI-assisted prototype into an app his supervisors could use. <a href="/work/crew-scores">Read the scoring story</a> or <a href="/systems#client-example">see his feedback</a>.</p>
 <hr>
-<p>Thirty years of Tai Chi practice have shaped how I pay attention to pressure, timing and unnecessary force. That way of noticing carries into my product work and my teaching.</p>
-<p>My training is rooted in the Cheng Man-Ching lineage, where breath, structure and attention are tested through practice rather than held as abstract ideas.</p>
-<p>Sometimes the useful change is in an interface or a handoff. Sometimes it is in the way a person or a team is meeting the work.</p>
+<p>Thirty years of Tai Chi practice have shaped how I notice pressure, timing and unnecessary effort. My training is rooted in the Cheng Man-Ching lineage, and that attention carries into both my product work and my teaching.</p>
 <hr>
-<h3 id="how-i-work">How I Work</h3>
+<h3 id="how-i-work">How I work</h3>
 <h4>Product and workflow work</h4>
-<p><strong><a href="/uxui">Product Clarity</a></strong><br />For founders and small teams who need to close UX, accessibility or implementation gaps in a product that has stalled.</p>
-<p><strong><a href="/systems">Workflow Systems</a></strong><br />For service businesses that need a small internal system to make work visible and get it out of the owner's head.</p>
+<p><strong><a href="/uxui">Product Clarity</a></strong><br />Design and development to resolve UX, accessibility and implementation gaps in stalled products.</p>
+<p><strong><a href="/systems">Workflow Systems</a></strong><br />Small internal systems that help service businesses keep track of work.</p>
 <h4>Practice and workshops</h4>
-<p><strong><a href="/executive-state-diagnostic">Executive State Diagnostic</a></strong><br />A focused private session for noticing how pressure affects judgement, communication and the next decision.</p>
-<p><strong><a href="/workshops">Stillness Under Pressure</a></strong><br />Practical workshops for teams that need steadier judgement and communication when the stakes are high.</p>
+<p><strong><a href="/executive-state-diagnostic">Executive State Diagnostic</a></strong><br />A private introduction to breath, posture and attention through Tai Chi and Qigong.</p>
+<p><strong><a href="/workshops">Stillness Under Pressure</a></strong><br />Team workshops exploring how pressure affects attention and communication.</p>
 <p><strong><a href="https://trueessence.space/" target="_blank" rel="noopener noreferrer">True Essence</a></strong><br />A structured daily practice for returning to steadiness over time.</p>
 <hr>
-<p>You can also explore my <a href="/books">books</a>, <a href="/paintings">paintings</a> and writing about <a href="/taoism">Taoism and Tai Chi</a> for their own value.</p>
+<p>Beyond my product work, I write <a href="/books">books</a>, make <a href="/paintings">digital paintings</a> and share my experience of <a href="/taoism">Taoism and Tai Chi</a>.</p>
 <p>If something here connects with what you are facing, <a href="/contact">start a conversation</a>.</p>`;
 
 export default aboutOutput;

@@ -4,7 +4,7 @@ Purpose, users, stack, and constraints for this repository. Operating rules live
 
 ## Purpose
 
-This repository powers James Godwin's personal portfolio site at the public destination used for his work, writing, Taoist practice, apps, books, workshops, and contact paths. It presents those paths through a terminal-inspired React interface with route-backed pages.
+This repository powers James Godwin's personal portfolio site at the public destination used for his work, writing, Taoist practice, apps, books, workshops, and contact paths. It presents those paths through the selected Case shelf design system with route-backed pages and an Astro writing collection. The local implementation is now Astro; the deployed site remains CRA pending an authorised cutover.
 
 ## Intended User and Problem
 
@@ -20,55 +20,66 @@ James is the author and maintainer. This is a personal site, not a multi-user pr
 
 Enduring signal: a visitor can recognise James, reach a relevant destination, and find a direct contact method without a site rebuild.
 
-Current goal: validate the deployed LinkedIn-aligned site through the combined visitor exercise in [the alignment plan](specs/linkedin-site-alignment.md). UX, product and workflow delivery are its commercial centre; Tai Chi remains visible as practice and a source of judgement. The release and live technical smoke check passed on 7 September 2026.
+Current goal: review the selected site with all four stories, real writing and aligned pages. [Current build scope](specs/site-story-writing-build.md). Astro migration is complete locally. The new main site is implemented locally; release/publication remain separate. The eight-person visitor exercise from [the alignment plan](specs/linkedin-site-alignment.md) remains separate product evidence.
 
 ## Stack
 
-- Create React App, React 18, JavaScript.
-- CSS custom properties and `src/NewSite.css`.
-- Static assets in `public/`, including Netlify-style `_redirects`.
-- Route metadata in `src/siteMetadata.js`, prerendered after build by `scripts/prerender-route-metadata.js`.
-- Themes in `src/themes.js`: CSS-variable light/dark schemes plus image-based themes with mobile variants and fade transitions.
+Local implementation: Astro 7, static output with plain browser JavaScript and no React runtime. Live hosting remains the existing Netlify CRA deployment until an explicitly authorised Cloudflare cutover. [Migration and publishing scope](specs/essays-home-and-agent-readiness.md). The selected design is now the main local implementation, with four stories (two for the same client, TapScribe and Plumbline with IIIMPACT) and three selected published essays.
 
-### Architecture map
+- Design authority: `src/styles/tokens.css` owns preserved values and light/dark mappings; `src/design-system/patterns.js` owns supported recipes; `src/styles/patterns.css` owns their styling. `src/index.css` supplies resets/inheritance, `src/NewSite.css` active page composition/circles. [Usage](runbooks/use-design-system.md).
+- `src/siteMetadata.js` owns route metadata; `src/routes.js` binds commands, headings, presentation and trusted output modules.
+- `src/layouts/SiteLayout.astro` owns shared document metadata, font loading, GA, ConvertKit and navigation.
+- `src/pages/index.astro` presents the four-story selector and writing, defaulting to Ben’s scoring story. `[page].astro` preserves all 17 existing inner routes; Work/story and Essays routes are explicit. Sitemap includes published essays and new sections. `404.astro` is aligned with the shell.
+- `src/site-client.js` owns contact intent/tracking and progressively enhanced chapter navigation. All story chapters are rendered in HTML; app illustrations have no controls. The earlier circle/private-command implementation remains in source as historical reference and is not mounted by the new shell.
+- `src/posthog.js` and `src/posthog-logs.js` preserve the existing project, events, exceptions and browser logs. Local and Pages-hosted verification traffic is labelled; the run label follows navigation within the session.
+- `src/themes.js` supplies image-theme artwork. The [design-system foundations](specs/design-system-foundations.md) are implemented and consolidated locally, preserving the visual language and layout. Action, TextLink, LinkCard, PageHero and ContentProse are shared by product and catalogue; browser reflection actions use the same recipes. Standard outlined actions now share one treatment; public dark-mode controls remain later work.
+- `legacy/` retains the CRA source/manifests and original prerender script for migration comparison. It is not shipped by Astro or a second maintained application.
 
-**Command and page system.** `src/App.js` owns the command parser (`allCommands`, `executeCommand()`, `commandRouteMap`). Each command has a module in `src/outputs/` that exports an HTML string. The app also renders route-backed page views for the same outputs.
+### Adding a route-backed page
 
-**Homepage.** The live homepage uses concentric circles and authored reflections as its primary interaction. Legacy command handling remains for routes and navigation. The homepage does not expose text or voice input.
-
-**Adding a route-backed page.** Update all of:
-
-- `src/App.js` imports, `allCommands`, `commandRouteMap`, `pageHeadingLabels`, navigation where relevant, and `executeCommand()`.
-- `src/outputs/[command].js`.
-- `src/siteMetadata.js`.
-- `public/_redirects` and `public/sitemap.xml`.
-- `src/outputs/help.js` if the command should be discoverable.
-
-Special commands include `breathe` (meditation overlay), theme names (`default`, `dark`, `stillness`, `mountains`, `essence`, `tao`, `zen`, `snow`, `void`), and easter eggs `return` and `unlearn`.
+Keep `siteMetadata.js`, the route/output/presentation mapping, navigation/help where appropriate, redirects and sitemap in sync. Astro must emit readable HTML and route-specific canonical/social metadata. Preserve command-backed content architecture without restoring a public terminal.
 
 ## Key Constraints
 
-- Preserve the terminal-inspired visual language, circle artwork, existing URLs, reflective routes, and service prices unless a spec explicitly changes one of them.
-- New public pages should be represented as commands where appropriate.
-- Command HTML is trusted. Do not introduce user-generated HTML into `src/outputs/`.
-- Keep route metadata, redirects, and sitemap entries synchronized for new or changed routes.
-- Do not run `npm run eject` without explicit approval.
-- Do not merge or resume the parked Look Up work on branch `lookup` unless that hold is lifted.
-- Deployment, LinkedIn profile edits, outbound contact, and spending require explicit authorization. Local implementation is not live completion.
+- Preserve existing public routes, circle artwork, service prices and contact paths. James authorised the Case shelf design as the main local site, beginning with one client story and writing. A public cutover is separate.
+- Trusted HTML only in `src/outputs/`; never interpolate visitor input into `set:html` or reflection HTML.
+- Keep existing Google Analytics and ConvertKit (`data-uid="0da6b662ba"`) working alongside PostHog.
+- The obsolete `public/tapscribe/TapScribe-Pilot.dmg` was removed locally at James's request on 20 October. Do not restore it or add replacement download hosting. Removing it from the live deployment awaits a separately authorised release.
+- Do not merge or resume the parked `lookup` branch without James lifting the hold.
+- James authorised committing and pushing the reviewed Astro site to GitHub on 20 October so he can deploy it through Cloudflare Pages. Domain cutover, Netlify retirement, new essay publication, outbound contact and spending remain separate.
 
 ## Non-Goals
 
-- This project is not a CMS.
-- This project is not a multi-user application.
-- This project does not own the linked external products such as True Essence, AI Ching, or GratefulFor.
-- This pass of site work is not a rebuild, framework migration, case-study platform, or new tracking system.
+No CMS, multi-user product, new tracking system, changed service offers or edits to linked external products. Terminal restoration, agent tools, opening question and Notes are parked. Public dark-mode UI remains deferred, separate from migration parity.
 
 ## Environment
 
-- Local development: `npm start` on `localhost:3000`.
-- Production build: `npm run build` writes `build/` and prerenders route metadata.
-- Tests: `npm test` starts the CRA watch-mode runner. Non-watch runs use `CI=true npm test -- --watchAll=false --runInBand`.
-- Default social metadata is in `src/siteMetadata.js`.
-- ConvertKit email capture uses `data-uid="0da6b662ba"`.
-- Google Analytics uses `G-0TCHNH6DEP`.
-- The public README is the Create React App getting-started file; it is not the internal project brief.
+- `npm start` / `npm run dev`: Astro at `http://127.0.0.1:3000`.
+- `npm run build`: runs `check:design`, then writes static output to `dist/`.
+- `npm run preview`: local built site at `http://127.0.0.1:4173`.
+- `npm test`: Vitest content, metadata, contact-intent, log-export and design-system contract tests. Build first for the static-template metadata assertion.
+- `npm run test:routes`: built HTML/metadata, image-path and retired-download checks; build first.
+- `.env.example` documents `PUBLIC_POSTHOG_KEY` and `PUBLIC_POSTHOG_HOST`; ignored `.env` has the local configuration. These are browser project settings, not management/API credentials. Hosting configuration must be supplied and verified separately.
+- Google Analytics ID: `G-0TCHNH6DEP`.
+- Cloudflare Pages: Astro preset, repository root, `main`, `npm run build`, `dist`; Node 22.22.1. Main HTML output uses file format for slashless canonical URLs; opt-in prototype/catalogue builds retain directory format. `public/_headers` applies noindex only to Pages hosts, `_redirects` owns legacy aliases and `404.html` preserves missing-route status. [Deployment procedure](runbooks/deploy-cloudflare-pages.md).
+- Baseline and browser QA artifacts stay ignored under `output/migration-baseline/`.
+
+### Main story and writing build
+
+- Main review URL: `http://127.0.0.1:4173/`. `/work/crew-scores`, `/work/quality-control`, `/work/tapscribe` and `/work/plumbline` contain the four narratives, selected through the homepage shelf; `/essays` contains the selected three published articles.
+- `npm run import:essays -- <Source posts folder>` reads selected ARTICLE bodies and the publication Log; conflicts preserve local edits. `npm run test:essays` checks importer and built output.
+- Collection: `src/content/essays/`; original covers: `src/assets/writing/`; selection/reconciliation manifest: `scripts/essay-selection.mjs`. Synthetic draft fixture never ships.
+
+### Local Case shelf prototype
+
+- `npm run build:concept` / `npm run preview:concept`: `http://127.0.0.1:4176/concept/`. Development uses `npm run dev:concept` at port 3002.
+- `SITE_POC=true` conditionally injects the route from `src/concept/Page.astro`; output goes to ignored `output/homepage-poc/build/`.
+- Four stories with static supporting screens and chapter navigation, writing mockup review and the scoped component reference are noindex and load no analytics or form integrations. Normal builds omit the routes and their media. `npm run test:concept` checks both outputs.
+- [Brief and handoff](specs/homepage-proof-of-concept.md). The prototype remains a historical reference; main Writing is implemented at `/essays`.
+
+### Local design catalogue
+
+- `npm run dev:catalogue`: opt-in live catalogue at `http://127.0.0.1:3001/design-system/`.
+- `npm run build:catalogue` then `npm run preview:catalogue`: built catalogue at `http://127.0.0.1:4175/design-system/`, written separately to ignored `output/design-system/catalogue-build/`.
+- Default builds omit `/design-system/`; it is noindex, excluded from sitemap/navigation and loads no analytics or form scripts. `npm run test:catalogue` verifies the two built outputs.
+- `npm run check:design` checks tokens and recipe ownership; `npm run test:design` tests the guard, including planted violations. Commands and maintenance contracts: [use the design system](runbooks/use-design-system.md).

@@ -1,0 +1,7 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import StoryReader from '../../components/site/StoryReader.astro';
+import { plumblineStory } from '../../concept/plumbline.js';
+import metadata from '../../siteMetadata';
+---
+<SiteLayout metadata={metadata.sectionMetadata.plumbline} current="work"><StoryReader story={plumblineStory} /></SiteLayout>

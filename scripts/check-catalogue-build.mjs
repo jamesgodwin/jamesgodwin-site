@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import { patternRecipes } from '../src/design-system/patterns.js';
+const file='output/design-system/catalogue-build/design-system/index.html';
+assert.ok(fs.existsSync(file),'Run npm run build:catalogue before this check');
+assert.equal(fs.existsSync('dist/design-system/index.html'),false,'Normal build must omit the catalogue');
+assert.equal(fs.existsSync('dist/design-system.html'),false,'Normal build must omit the catalogue');
+const html=fs.readFileSync(file,'utf8');
+assert.match(html, /name="robots" content="noindex,nofollow"/);
+assert.doesNotMatch(html,/posthog|googletagmanager|data-uid|aiching\.kit/);
+assert.doesNotMatch(fs.readFileSync('dist/sitemap.xml','utf8'),/<loc>https:\/\/jamesgodwin\.me\/design-system(?:\/|<)/);
+for(const recipes of Object.values(patternRecipes))for(const name of Object.keys(recipes))assert.ok(html.includes(`data-recipe="${name}"`),`Catalogue omits ${name}`);
+console.log('Catalogue build checks passed: all recipes, no analytics/forms, noindex, normal-build exclusion.');

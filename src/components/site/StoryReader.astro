@@ -1,0 +1,22 @@
+---
+import { benStory } from '../../concept/ben.js';
+import { stepNames } from '../../concept/state.js';
+import CaseVisual from '../concept/CaseVisual.astro';
+import Action from '../ui/Action.astro';
+import { patternAttributes } from '../../design-system/patterns.js';
+const { story = benStory } = Astro.props;
+const ids=['the-situation','how-i-helped','what-changed'];
+---
+<article class="site-story" data-story-reader>
+ <div class="reader-top"><Action recipe="back" href="/work">← All work</Action><p class="eyebrow">{story.context}</p></div>
+ {story.steps.map((step,i)=><section id={ids[i]} data-story-stage aria-labelledby={`heading-${ids[i]}`}>
+  <header class="reader-heading"><p class="eyebrow">{stepNames[i]}</p><h1 id={`heading-${ids[i]}`} tabindex="-1">{step.title}{step.accent && <><br /><span>{step.accent}</span></>}</h1><p class="concept-lead">{step.body}</p></header>
+  <div class="reader-stage"><CaseVisual story={story} kind={step.visual} /></div>
+  <p class="contribution">{story.contribution}</p>
+  <nav class="story-progress" aria-label="Story chapters">
+   {i>0 ? <Action recipe="outline" href={`#${ids[i-1]}`} data-story-link>← Previous</Action> : <Action recipe="outline" disabled>← Previous</Action>}
+   <div class="story-progress__steps"><span>Chapter {i+1} of 3</span>{stepNames.map((name,j)=><a {...patternAttributes('choice','step',{href:`#${ids[j]}`,'data-story-link':'','aria-current':i===j?'step':undefined})}>{name}</a>)}</div>
+   {i<2 ? <Action recipe="primary" href={`#${ids[i+1]}`} data-story-link>Next: {stepNames[i+1]} →</Action> : <Action recipe="primary" href="/contact?about=product-clarity" data-contact-cta={story.id}>Talk about your product →</Action>}
+  </nav>
+ </section>)}
+</article>

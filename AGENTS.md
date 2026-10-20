@@ -1,16 +1,18 @@
 # AGENTS.md
 
-James Godwin's personal portfolio site is a Create React App site with a terminal-inspired interactive interface and route-backed content pages. Read `DOCS/PROJECT.md` for purpose, users, stack, constraints, and environment. Active status lives in `DOCS/BACKLOG.md`; resumption context lives in `DOCS/next-day.md`.
+James Godwin's personal portfolio site has a local Astro implementation (the deployed site remains Create React App until an authorised cutover) with a terminal-inspired interactive interface and route-backed content pages. Read `DOCS/PROJECT.md` for purpose, users, stack, constraints, and environment. Active status lives in `DOCS/BACKLOG.md`; resumption context lives in `DOCS/next-day.md`.
 
 This file is the repository operating contract. Product details, commands, and implementation maps belong in the files named below. Include each operating rule once; do not copy the startup sequence under later headings.
 
 Project-specific limits:
 
-- Preserve the terminal-inspired visual language and the command/page architecture.
-- Command content in `src/outputs/` is trusted HTML rendered through `dangerouslySetInnerHTML`. Do not inject user-generated HTML there.
+- Use the selected Case shelf design system for the current site build; preserve the route/output architecture and existing destinations. The earlier terminal/circle presentation remains historical reference.
+- Command content in `src/outputs/` is trusted HTML rendered through Astro `set:html` (the retained CRA snapshot used `dangerouslySetInnerHTML`). Do not inject user-generated HTML there.
 - When adding or changing a route-backed page, keep routing, output modules, metadata, redirects, sitemap, and help in sync. The checklist lives in `DOCS/PROJECT.md`.
+- Design values belong in `src/styles/tokens.css` and shared recipe options in `src/design-system/patterns.js`; reuse them rather than overriding component appearance. Keep the catalogue opt-in and run `npm run check:design` before build claims. See `DOCS/runbooks/use-design-system.md` for contracts and commands.
 - Do not run `npm run eject` without explicit approval.
 - A backlog item, suggested next step, or programme date does not authorize deployment, publication, spending, contacting people, or merging the parked `lookup` branch.
+- Until Netlify auto builds are disabled or a Netlify deployment is authorised, include `[skip netlify]` in commits pushed for Cloudflare preparation so the existing live deployment is preserved.
 
 ## A. Authority and placement
 

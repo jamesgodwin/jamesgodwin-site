@@ -1,0 +1,7 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import StoryReader from '../../components/site/StoryReader.astro';
+import { qualityStory } from '../../concept/quality.js';
+import metadata from '../../siteMetadata';
+---
+<SiteLayout metadata={metadata.sectionMetadata.qualityControl} current="work"><StoryReader story={qualityStory} /></SiteLayout>

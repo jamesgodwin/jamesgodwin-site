@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import FeaturedStory from '../../components/site/FeaturedStory.astro';
+import Action from '../../components/ui/Action.astro';
+import metadata from '../../siteMetadata';
+---
+<SiteLayout metadata={metadata.sectionMetadata.work} current="work">
+ <header class="review-intro site-work-intro"><p class="eyebrow">Product design &amp; full-stack development</p><h1>When the build<br /><span>gets stuck.</span></h1><p class="concept-lead">From client workflows to my own apps, these stories show how I connect design and development to make products people can use.</p></header>
+ <FeaturedStory />
+ <section class="site-work-links" aria-label="Ways I can help">
+  <div><h2>Products that need finishing.</h2><p>Resolve UX, accessibility and implementation gaps, from the interface to the back end.</p><Action recipe="text" href="/uxui">Product design &amp; development →</Action></div>
+  <div><h2>Work that needs a system.</h2><p>Bring scattered records, checks and handovers into one workflow your team can follow.</p><Action recipe="text" href="/systems">Workflow systems →</Action></div>
+ </section>
+</SiteLayout>

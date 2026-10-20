@@ -1,0 +1,23 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ContactPage from '../components/ContactPage.astro';
+import Action from '../components/ui/Action.astro';
+import PageHero from '../components/ui/PageHero.astro';
+import ContentProse from '../components/ui/ContentProse.astro';
+import pagePresentation from '../pagePresentation';
+import { routes } from '../routes';
+export function getStaticPaths() { return routes.map(route => ({params:{page:route.meta.path.slice(1)},props:{route}})); }
+const { route } = Astro.props;
+const { command, meta, heading } = route;
+const p = command === 'workshop-enquiry' ? pagePresentation.contact : route.presentation;
+const body = route.content.replace(/(<img[^>]+src=")(?!(?:https?:)?\/)([^"]+)/g, '$1/$2').replace(/<hr><p class="commands-text">[\s\S]*$/, '').replace(/<h3(\b[^>]*)>/g, '<h2$1>').replace(/<\/h3>/g,'</h2>').replace(/^\s*<p><strong>[\s\S]*?<\/strong><\/p>/,'');
+---
+<SiteLayout metadata={meta} current={command==='about'?'about':command==='contact'||command==='workshop-enquiry'?'contact':['uxui','systems','apps'].includes(command)?'work':''}>
+<article class:list={['site-page',p?.bodyClassName]} data-command={command}>
+  <Action recipe="back" href="/">← Home</Action>
+  <PageHero title={heading} presentation={p} command={command} />
+  <ContentProse>
+    {command==='contact' || command==='workshop-enquiry' ? <ContactPage workshop={command==='workshop-enquiry'} /> : command==='sanctuary' ? <p><a href="https://trueessence.space/" target="_blank" rel="noopener noreferrer">Continue to True Essence</a></p> : <Fragment set:html={body} />}
+  </ContentProse>
+</article>
+</SiteLayout>

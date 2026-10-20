@@ -1,0 +1,22 @@
+---
+import Action from '../ui/Action.astro';
+import StoryChoice from './StoryChoice.astro';
+import { stories } from '../../concept/stories.js';
+import { stepNames } from '../../concept/state.js';
+import { patternAttributes } from '../../design-system/patterns.js';
+---
+<header class="review-intro"><p class="eyebrow">Local component reference</p><h1>One system.<br /><span>Across the journey.</span></h1><p class="concept-lead">The same tokens, actions and story controls used in the proof of concept.</p></header>
+<section class="system-section"><h2>Colour roles</h2><div class="system-swatches"><div class="system-swatch system-swatch--canvas">Canvas</div><div class="system-swatch system-swatch--surface">Surface</div><div class="system-swatch system-swatch--ink">Ink</div><div class="system-swatch system-swatch--action">Action</div></div></section>
+<section class="system-section"><h2>Typography</h2><h3>Manrope 700 · Headings</h3><p>Inter 400 · Body text and interface labels.</p><p><strong>Inter 600 · Emphasis and selected states.</strong></p><p class="demo-meta">Core spacing 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64. Controls 4px corners, surfaces 8px.</p></section>
+<section class="system-section"><h2>Actions</h2><div class="demo-actions"><Action recipe="primary" href="/concept/#/scoring/1">Look closer →</Action><Action recipe="outline" href="/concept/">All stories</Action><Action recipe="outline" disabled>Unavailable</Action></div></section>
+<section class="system-section"><h2>Story selection</h2><div class="case-shelf" data-system-choices>{stories.map((story,i)=><StoryChoice story={story} selected={i===0} />)}</div></section>
+<section class="system-section"><h2>Named progress</h2><div class="demo-actions" data-system-steps>{stepNames.map((name,i)=><button {...patternAttributes('choice','step',{type:'button','aria-current':i===1?'step':undefined})}>{name}</button>)}</div></section>
+<script>
+ document.querySelectorAll('[data-system-choices] button').forEach(button=>button.addEventListener('click',()=>{
+  document.querySelectorAll('[data-system-choices] button').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+ }));
+ document.querySelectorAll('[data-system-steps] button').forEach(button=>button.addEventListener('click',()=>{
+  document.querySelectorAll('[data-system-steps] button').forEach(item=>item.removeAttribute('aria-current'));
+  button.setAttribute('aria-current','step');
+ }));
+</script>

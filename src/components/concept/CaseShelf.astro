@@ -1,0 +1,42 @@
+---
+import { stories } from '../../concept/stories.js';
+import { stepNames } from '../../concept/state.js';
+import { patternAttributes } from '../../design-system/patterns.js';
+import StoryChoice from './StoryChoice.astro';
+import CaseVisual from './CaseVisual.astro';
+import Action from '../ui/Action.astro';
+---
+<div data-case-app>
+ <section data-shelf>
+  <div class="concept-intro">
+   <h1>You have a build.<br /><span>Let’s get it over the line.</span></h1>
+   <p class="concept-lead">I help founders turn stalled, AI-assisted builds into working products.</p>
+   <p class="concept-capabilities">UX, accessibility, front-end, back-end and deployment.</p>
+  </div>
+  <div class="case-shelf" role="group" aria-label="Choose a story">
+   {stories.map((story,i)=><StoryChoice story={story} selected={i===0} />)}
+  </div>
+  {stories.map((story,i)=><section class="case-feature" data-feature={story.id} hidden={i!==0} aria-label={story.title}>
+   <div class="case-feature__copy"><p class="eyebrow">Story {i+1} of 4</p><h2>{story.title}</h2><p>{story.summary}</p><Action recipe="primary" data-look-closer={story.id}>Look closer <span aria-hidden="true">→</span></Action></div>
+   <div class="case-feature__visual"><CaseVisual story={story} kind="overview" compact /></div>
+  </section>)}
+  <div class="concept-invitation"><span>Something in your build isn’t coming together?</span><a href="/contact?about=product-clarity">Talk about your build <span aria-hidden="true">→</span></a></div>
+ </section>
+ <section data-reader hidden aria-label="Case study walkthrough"></section>
+ {stories.map(story=>story.steps.map((step,i)=><template data-story-template={`${story.id}-${i+1}`}>
+  <div class="reader-top"><Action recipe="back" data-all-stories>← All stories</Action><p class="eyebrow">{story.context}</p></div>
+  <header class="reader-heading"><h1 tabindex="-1" data-reader-heading>{step.title}{step.accent && <><br /><span>{step.accent}</span></>}</h1><p class="concept-lead">{step.body}</p></header>
+  <div class="reader-stage"><CaseVisual story={story} kind={step.visual} /></div>
+  <p class="contribution">{story.contribution}</p>
+  <nav class="story-progress" aria-label="Story steps">
+   <Action recipe="outline" data-previous disabled={i===0}>← Previous</Action>
+   <div class="story-progress__steps"><span>Step {i+1} of 3</span>{stepNames.map((name,j)=><button {...patternAttributes('choice','step',{'type':'button','data-step':j+1,'aria-current':i===j ? 'step' : undefined})}>{name}</button>)}</div>
+   {i<2 ? <Action recipe="primary" data-next>Next: {stepNames[i+1]} →</Action> : <Action recipe="primary" href="/contact?about=product-clarity">Talk about your build →</Action>}
+  </nav>
+  {i===2 && <section class="more-stories"><h2>Explore another story</h2><div class="case-shelf case-shelf--three">{stories.filter(other=>other.id!==story.id).map(other=><StoryChoice story={other} open />)}</div></section>}
+ </template>))}
+</div>
+<noscript><p>The chapter navigation needs JavaScript. You can still <a href="/contact">contact James</a> or <a href="/about">read about his work</a>.</p></noscript>
+<script>
+ import '../../concept/controller.js';
+</script>

@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import FeaturedStory from '../components/site/FeaturedStory.astro';
+import WritingList from '../components/site/WritingList.astro';
+import { publishedEssays } from '../essays.js';
+import metadata from '../siteMetadata';
+const essays=await publishedEssays();
+---
+<SiteLayout metadata={metadata.defaultMetadata} current="work">
+ <header class="concept-intro"><h1>You have a build.<br /><span>Let’s get it over the line.</span></h1><p class="concept-lead">I help founders get fast-built and AI-assisted products ready for real use.</p><p class="concept-capabilities">Product design, accessibility and full-stack development, through to deployment.</p></header>
+ <FeaturedStory />
+ <div class="concept-invitation"><span>Where is your product getting stuck?</span><a href="/contact?about=product-clarity" data-contact-cta="home">Talk about your product →</a></div>
+ <section class="site-section" aria-labelledby="home-writing"><div class="site-section-heading"><h2 id="home-writing">Writing.</h2><a href="/essays">All writing →</a></div><WritingList essays={essays.slice(0,3)} /></section>
+</SiteLayout>

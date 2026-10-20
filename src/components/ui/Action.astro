@@ -1,0 +1,7 @@
+---
+import { patternAttributes } from '../../design-system/patterns';
+const { recipe = 'outline', href, ...rest } = Astro.props;
+const external = href?.startsWith('https://') || href?.startsWith('http://');
+const attrs = patternAttributes('action', recipe, { ...rest, ...(href ? {href} : {type:rest.type || 'button'}), ...(external ? {target:'_blank', rel:'noopener noreferrer'} : {}) });
+---
+{href ? <a {...attrs}><slot /></a> : <button {...attrs}><slot /></button>}

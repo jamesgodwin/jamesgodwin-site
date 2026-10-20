@@ -9,9 +9,9 @@ const legalOutput = `
 <p>If you contact me by email, WhatsApp, telephone, or LinkedIn, I receive the information you choose to send. I use it to respond to your enquiry, discuss requested work, and keep appropriate business records.</p>
 <p>If you subscribe through an embedded Kit form, Kit processes the details you submit for email delivery and subscriber management under its own privacy terms.</p>
 <h3>Analytics and technical data</h3>
-<p>This site uses Google Analytics to understand aggregate site usage. Google may process technical information such as device, browser, approximate location, referral source, and pages visited. This information is used to understand and improve the website, not to sell personal profiles.</p>
+<p>This site uses Google Analytics and PostHog to understand site usage and diagnose technical problems. These tools may process information such as device, browser, approximate location, referral source, pages visited, interactions and error reports. This information is used to understand and improve the website, not to sell personal profiles.</p>
 <h3>External products and services</h3>
-<p>This site links to independently operated products and third-party destinations, including True Essence, AI Ching, GratefulFor, Amazon, Apple, LinkedIn, WhatsApp, Kit, and Google. Information entered on those services is handled under their own privacy policies and terms.</p>
+<p>This site links to other products and third-party destinations, including True Essence, AI Ching, GratefulFor, Amazon, Apple, LinkedIn, WhatsApp, Kit and Google. Information entered on those services is handled under their own privacy policies and terms.</p>
 <h3>Storage, sharing, and retention</h3>
 <p>I do not sell or rent personal information. Information may be processed by service providers that support communication, analytics, hosting, or agreed client work. Enquiry and business records are retained only for as long as reasonably needed for communication, delivery, accounting, legal, or security purposes.</p>
 <h3>Your choices</h3>
@@ -38,7 +38,9 @@ const legalOutput = `
 <p>The content and experiences presented here are educational, reflective, and experiential. They are not medical, psychological, psychiatric, therapeutic, financial, or legal services, and they do not replace qualified professional care or advice.</p>
 <p>Breath, Tai Chi, Qigong, and reflective practices affect people differently. Participate within your own limits and seek appropriate professional guidance if you have a health concern or are experiencing significant distress.</p>
 <p>Descriptions of previous work and client experiences illustrate particular engagements; they are not guarantees that every person, team, or business will achieve the same outcome.</p>
-<p>Last updated: 11 July 2026.</p>
+<h3 id="image-credits">Image credits</h3>
+<p>The quality-control story uses <a href="https://commons.wikimedia.org/wiki/File:Roof_waterproofing_with_polyurethane_liquid_membrane_in_Egaleo_Athens.webp">Roof waterproofing with polyurethane liquid membrane in Egaleo Athens</a> by Μάριος-Μητσόγλου, licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. The photo is resized and cropped for display; derivatives retain that licence. It is a reference photograph, not a photograph of the client’s work.</p>
+<p>Last updated: 20 October 2026.</p>
 <hr><p class="commands-text"><span class="commands">Available commands:</span> help, about, diagnostic, systems, workshops, apps, books, sanctuary, contact, taoism, now, paintings, philosophy, uxui, legal, themes (default, dark, stillness, mountains, essence, tao, zen, snow, void)</p>`;
 
 export default legalOutput;

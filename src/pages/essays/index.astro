@@ -1,0 +1,11 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import WritingList from '../../components/site/WritingList.astro';
+import { publishedEssays } from '../../essays.js';
+import metadata from '../../siteMetadata';
+const essays=await publishedEssays();
+---
+<SiteLayout metadata={metadata.sectionMetadata.essays} current="writing">
+ <header class="review-intro"><h1>Writing.</h1><p class="concept-lead">On building software, working with AI, and the things I keep coming back to.</p></header>
+ <section class="site-section writing-index" aria-label="Essays"><WritingList essays={essays} featured /></section>
+</SiteLayout>

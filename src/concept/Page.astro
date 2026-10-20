@@ -1,0 +1,15 @@
+---
+import ConceptLayout from '../layouts/ConceptLayout.astro';
+import CaseShelf from '../components/concept/CaseShelf.astro';
+import WritingReview from '../components/concept/WritingReview.astro';
+import ConceptSystem from '../components/concept/ConceptSystem.astro';
+export function getStaticPaths() {
+ return process.env.SITE_POC === 'true' ? [
+  {params:{page:undefined}}, {params:{page:'writing'}}, {params:{page:'system'}}
+ ] : [];
+}
+const { page } = Astro.params;
+---
+<ConceptLayout current={page==='writing'?'writing':'work'}>
+ {page==='writing' ? <WritingReview /> : page==='system' ? <ConceptSystem /> : <CaseShelf />}
+</ConceptLayout>

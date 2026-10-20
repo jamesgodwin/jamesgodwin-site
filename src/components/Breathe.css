@@ -1,11 +1,10 @@
-
 .breathe-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--color-breathe-scrim);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,17 +14,17 @@
 }
 
 .breathe-circle {
-  width: 100px;
-  height: 100px;
+  width: var(--size-100);
+  height: var(--size-100);
   background-color: transparent;
-  border: 5px solid #a7c4b5;
-  border-radius: 50%;
-  transition: transform 4s ease-in-out;
+  border: 5px solid var(--color-text);
+  border-radius: var(--radius-circle);
+  transition: transform var(--motion-4s) ease-in-out;
 }
 
 .breathe-circle.in {
   transform: scale(2);
-  transition-duration: 4s;
+  transition-duration: var(--motion-4s);
 }
 
 .breathe-circle.hold1 {
@@ -34,7 +33,7 @@
 
 .breathe-circle.out {
   transform: scale(1);
-  transition-duration: 6s;
+  transition-duration: var(--motion-6s);
 }
 
 .breathe-circle.hold2 {
@@ -42,8 +41,8 @@
 }
 
 .breathe-text {
-  color: white;
-  font-size: 24px;
-  margin-top: 60px; /* Increased margin */
-  font-family: 'Courier New', Courier, monospace;
+  color: var(--color-on-scrim);
+  font-size: var(--type-breath-size);
+  margin-top: var(--space-60); /* Increased margin */
+  font-family: var(--type-breath-family);
 }

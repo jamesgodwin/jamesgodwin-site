@@ -16,8 +16,10 @@ output/
 
 # Ignore environment variables
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+.dev.vars*
+.wrangler/
 
 # Ignore local agent and PostHog wizard files
 .claude/
@@ -32,3 +34,7 @@ output/
 
 # Ignore other system-specific files
 .vscode/
+
+# Astro output
+dist/
+.astro/

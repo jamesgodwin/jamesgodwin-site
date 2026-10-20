@@ -12,7 +12,7 @@ describe('conversion route outputs', () => {
     expect(diagnosticOutput).toContain('/contact?about=diagnostic');
     expect(pagePresentation.diagnostic.facts).not.toContain('$350 USD');
     expect(pagePresentation.diagnostic.facts).toContain('One-to-one practice');
-    expect(diagnosticOutput).toContain('Request a diagnostic through the contact page');
+    expect(diagnosticOutput).toContain('Request a private session');
     expect(diagnosticOutput).not.toContain('contact form');
     expect(diagnosticOutput).not.toContain('form-name" value="executive-state-diagnostic"');
   });
@@ -31,7 +31,7 @@ describe('conversion route outputs', () => {
   });
 
   test('product page explains the work and leads to a labelled product enquiry', () => {
-    expect(pagePresentation.uxui.title).toBe('Get your product working cleanly.');
+    expect(pagePresentation.uxui.title).toBe('Get your product ready for real use.');
     expect(pagePresentation.uxui.primaryAction).toEqual({
       label: 'Talk about your product',
       href: '/contact?about=product-clarity'

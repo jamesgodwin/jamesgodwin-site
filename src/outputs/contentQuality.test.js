@@ -27,13 +27,13 @@ describe('public content quality', () => {
     expect(aboutOutput).not.toContain('Available commands:');
     expect(aboutOutput).not.toContain('strategy problems often begin as state problems');
 
-    expect(nowOutput).toContain('Updated September 7, 2026');
+    expect(nowOutput).toContain('Updated 20 October 2026');
     expect(nowOutput).toContain('href="/uxui"');
     expect(nowOutput).toContain('href="/systems"');
     expect(nowOutput).toContain('TapScribe');
-    expect(nowOutput).toContain('private pilot');
-    expect(nowOutput).toContain('AI Ching');
-    expect(nowOutput).toContain('Grateful For');
+    expect(nowOutput).not.toContain('private pilot');
+    expect(nowOutput).toContain('Plumbline with IIIMPACT');
+    expect(nowOutput).toContain('in progress');
     expect(nowOutput).toContain('Tai Chi and dantian breathing practice');
     expect(nowOutput).not.toContain('weekly LinkedIn leadership series');
     expect(nowOutput).not.toContain('Available commands:');
@@ -60,6 +60,7 @@ describe('public content quality', () => {
     expect(paintingsOutput).not.toContain('an awesome painting app');
 
     expect(legalOutput).toContain('Google Analytics');
+    expect(legalOutput).toContain('PostHog');
     expect(legalOutput).toContain('Kit');
     expect(legalOutput).toContain('External products and services');
     expect(legalOutput).not.toContain('Services page');

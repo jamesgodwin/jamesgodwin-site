@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets';
+import { patternAttributes } from '../../design-system/patterns.js';
+const { story, selected = false, open = false } = Astro.props;
+---
+<button {...patternAttributes('choice','story',{
+ type:'button', 'data-case':story.id, 'data-open-story':open ? '' : undefined,
+ 'aria-pressed':open ? undefined : String(selected)
+})}>
+ <Image src={story.image} alt="" widths={[240,480]} sizes="(max-width: 600px) 45vw, 280px" width={480} format="webp" />
+ <strong>{story.title}</strong>
+ <span>{story.context}</span>
+</button>

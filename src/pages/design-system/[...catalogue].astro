@@ -1,0 +1,72 @@
+---
+import '../../styles/tokens.css';
+import '../../index.css';
+import '../../NewSite.css';
+import '../../styles/patterns.css';
+import '../../styles/catalogue.css';
+import Fonts from '../../components/Fonts.astro';
+import Action from '../../components/ui/Action.astro';
+import TextLink from '../../components/ui/TextLink.astro';
+import LinkCard from '../../components/ui/LinkCard.astro';
+import PageHero from '../../components/ui/PageHero.astro';
+import ContentProse from '../../components/ui/ContentProse.astro';
+import { actionRecipes, linkRecipes, cardRecipes, choiceRecipes, patternAttributes } from '../../design-system/patterns';
+import tokenSource from '../../styles/tokens.css?raw';
+import { tokenCatalogue } from '../../design-system/catalogue';
+export function getStaticPaths() {
+ return process.env.DESIGN_SYSTEM_CATALOG === 'true' ? [{params:{catalogue:undefined}}] : [];
+}
+const {tokens,typeRoles,responsive} = tokenCatalogue(tokenSource);
+const compatibilityColours=tokens.filter(t=>t.name.startsWith('--color-') && /breathe-ring/.test(t.name));
+const colours=tokens.filter(t=>t.name.startsWith('--color-') && !compatibilityColours.includes(t));
+const firstColours=['--color-canvas','--color-text','--color-text-muted','--color-line'];
+colours.sort((a,b)=>(firstColours.includes(a.name)?firstColours.indexOf(a.name):firstColours.length)-(firstColours.includes(b.name)?firstColours.indexOf(b.name):firstColours.length));
+const remaining=tokens.filter(t=>!t.name.startsWith('--color-')&&!t.name.startsWith('--type-'));
+const stateNames=['default','hover','focus'];
+const radii=tokens.filter(t=>t.name.startsWith('--radius-'));
+const shadows=tokens.filter(t=>t.name.startsWith('--shadow-'));
+const spaces=tokens.filter(t=>[4,8,12,16,24,32,48,64].includes(parseFloat(t.light)) && t.name.startsWith('--space-'));
+---
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Design system | James Godwin | Local catalogue</title>
+ <meta name="robots" content="noindex,nofollow" />
+ <Fonts /><link rel="icon" href="/favicon-96x96.png" />
+</head>
+<body class="default content-visible">
+<main class="catalogue">
+ <header class="catalogue-header">
+  <p class="catalogue-eyebrow">Local working reference</p>
+  <h1>James Godwin design system</h1>
+  <p>Real tokens and components. A small set of shared treatments, with explicit roles for typography and layout. This page is omitted from normal builds.</p>
+  <fieldset class="catalogue-theme"><legend>Preview colour mode</legend><label><input type="radio" name="catalogue-theme" value="default" checked /> Light</label><label><input type="radio" name="catalogue-theme" value="dark" /> Dark</label></fieldset>
+  <nav aria-label="Catalogue sections"><a href="#colours">Colours</a><a href="#typography">Typography</a><a href="#patterns">Patterns</a><a href="#foundations">Scales and layout</a></nav>
+ </header>
+ <section id="colours"><h2>Semantic colours</h2><p>Theme mappings and aliases come directly from tokens.css. Link colours intentionally retain the current browser palette; public dark-mode polish remains later work.</p>
+  <div class="catalogue-colours">{colours.map(token=><article class="catalogue-token"><div class="catalogue-swatch" style={`background-color:var(${token.name})`}></div><h3><code>{token.name}</code></h3><p>Light <code>{token.light}</code><br />Dark <code>{token.dark}</code></p><small>{token.value}</small></article>)}</div>
+ </section>
+ <details><summary>Special-purpose colour mappings</summary><ul>{compatibilityColours.map(token=><li><code>{token.name}</code>: light {token.light}, dark {token.dark}</li>)}</ul></details>
+ <section id="typography"><h2>Typography roles</h2><p>The three intentional families remain. Responsive role values come from the same token file as the product.</p>
+  {typeRoles.map(role=><article class="catalogue-type" data-type-role={role}><code>type-{role}</code><p style={['family','size','weight','leading','tracking'].map(field=>({family:'font-family',size:'font-size',weight:'font-weight',leading:'line-height',tracking:'letter-spacing'}[field])+':'+(tokens.some(t=>t.name===`--type-${role}-${field}`)?`var(--type-${role}-${field})`:{family:'inherit',size:'inherit',weight:'normal',leading:'normal',tracking:'normal'}[field])).join(';')}>Products and workflows, working cleanly.</p><small>{tokens.filter(t=>t.name.startsWith(`--type-${role}-`)).map(t=>`${t.name.split('-').at(-1)}: ${t.light}`).join(' · ')}</small></article>)}
+  <details><summary>Responsive mappings</summary><ul>{responsive.map(entry=><li><code>{entry.condition}</code>: {entry.tokens.join(', ')}</li>)}</ul></details>
+ </section>
+ <section id="patterns"><h2>Shared patterns</h2><p>Callers supply content and native attributes. The recipe owns appearance. Hover/focus samples use the same selectors as actual interaction; keyboard navigation remains available.</p>
+  <h3>Actions</h3>
+  {Object.entries(actionRecipes).map(([recipe,definition])=><article class="catalogue-pattern"><h4><code>Action / {recipe}</code></h4><p>{definition.description}</p><div class="catalogue-states">
+   {stateNames.map(state=><div class="catalogue-state"><small>{state}</small><Action recipe={recipe} data-preview-state={state} aria-label={recipe==='menuToggle'?'Open navigation':undefined}>{recipe==='menuToggle'?<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 5h20v2H2zm0 6h20v2H2zm0 6h20v2H2z" /></svg>:definition.label}</Action></div>)}
+  </div></article>)}
+  <h3>Prototype choices</h3><div class="catalogue-states">{Object.entries(choiceRecipes).map(([recipe,definition])=><div><h4>{recipe}</h4><button {...patternAttributes('choice',recipe,{type:'button'})}>{definition.label}</button><p>{definition.description}</p></div>)}</div>
+  <h3>Text links</h3><div class="catalogue-states">{Object.entries(linkRecipes).map(([recipe,definition])=><div><h4><code>{recipe}</code></h4><TextLink recipe={recipe} href="#patterns">{definition.label}</TextLink></div>)}</div>
+  <h3>Work-link cards</h3><div class="catalogue-cards">{Object.entries(cardRecipes).map(([recipe,definition])=><div><h4>{recipe}</h4>{stateNames.map(state=><div class="catalogue-state"><small>{state}</small><LinkCard recipe={recipe} href="#patterns" title={definition.label} description={definition.description} data-preview-state={state} /></div>)}</div>)}</div>
+  <h3>Page hero and prose</h3><div class="route-page"><PageHero command="catalogue" title="Get your product working cleanly." presentation={{pathLabel:'IN THE WORK',lede:'I help founders and small product teams close UX, accessibility and implementation gaps when fast-built or AI-assisted products stall.',facts:['One flow','Clear next steps'],primaryAction:{href:'#patterns',label:'Talk about your product'}}} /><ContentProse><h2>Start with one flow</h2><p>A product can technically work while people still struggle to use it. The prose recipe styles authored HTML and future Markdown through the same heading, paragraph and link rules.</p><p><TextLink href="#patterns">Explore the work</TextLink></p><ul><li>Keep the content readable.</li><li>Preserve clear contact paths.</li></ul></ContentProse></div>
+ </section>
+ <section><h2>Reading prose</h2><ContentProse reading><p>The article reading role uses Georgia, a comfortable measure and shared prose spacing. Headings, controls and navigation retain the interface families.</p></ContentProse></section>
+ <section id="foundations"><h2>Scales and layout</h2><p>Spacing and dimensions retain the current page geometry. Main actions share one outlined button; text actions, quiet navigation and menu controls have distinct interaction roles. The circle artwork and breathing practice remain bespoke.</p><h3>Corner geometry</h3><div class="catalogue-colours">{radii.map(token=><div><div class="catalogue-shape" style={`border-radius:var(${token.name})`}></div><code>{token.name}</code><p>{token.light}</p></div>)}</div><h3>Elevation</h3><div class="catalogue-colours">{shadows.map(token=><div class="catalogue-token" style={`box-shadow:var(${token.name})`}><code>{token.name}</code></div>)}</div><h3>Core spacing scale</h3><p>Use these steps for new composition. Other retained measurements support existing layout fit and appear in the technical table below.</p><div class="catalogue-spaces">{spaces.map(token=><div><code>{token.name}</code><div class="catalogue-ruler" style={`width:var(${token.name})`}></div><small>{token.light}</small></div>)}</div><details><summary>All {remaining.length} remaining tokens</summary><div class="catalogue-table"><table><thead><tr><th>Token</th><th>Declaration</th><th>Light</th><th>Dark</th></tr></thead><tbody>{remaining.map(token=><tr><th><code>{token.name}</code></th><td><code>{token.value}</code></td><td>{token.light}</td><td>{token.dark}</td></tr>)}</tbody></table></div></details></section>
+</main>
+<script>
+ document.querySelectorAll('input[name="catalogue-theme"]').forEach(input=>input.addEventListener('change',event=>{document.body.classList.toggle('dark',event.currentTarget.value==='dark');}));
+</script>
+</body>
+</html>

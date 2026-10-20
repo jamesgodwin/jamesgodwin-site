@@ -1,0 +1,5 @@
+---
+import { proseVariants } from '../../design-system/patterns.js';
+const { reading = false } = Astro.props;
+---
+<div class={proseVariants[reading?'reading':'body']} data-ui="content-prose"><div><slot /></div></div>

@@ -1,0 +1,11 @@
+---
+import Action from './Action.astro';
+const { title, presentation: p, command } = Astro.props;
+---
+<header class="route-page__hero" data-ui="page-hero">
+  {p?.pathLabel && <p class="route-page__path">{p.pathLabel}</p>}
+  <h1>{p?.title || title}</h1>
+  {p?.lede && <p class="route-page__lede">{p.lede}</p>}
+  {p?.facts?.length > 0 && <ul class="route-page__facts" aria-label="Offer details">{p.facts.map(fact => <li>{fact}</li>)}</ul>}
+  {(p?.primaryAction || p?.secondaryAction) && <div class="route-page__actions">{[p.primaryAction,p.secondaryAction].map(action => action && <Action recipe="outline" href={action.href} data-contact-cta={action.href.startsWith('/contact') ? command : undefined}>{action.label}</Action>)}</div>}
+</header>

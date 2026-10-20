@@ -1,0 +1,40 @@
+---
+import Fonts from '../components/Fonts.astro';
+import '../styles/tokens.css';
+import '../styles/patterns.css';
+import '../styles/concept.css';
+const { title = 'James Godwin · Product design & full-stack development', current = 'work' } = Astro.props;
+---
+<!doctype html>
+<html lang="en" data-design="case-study">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>{title}</title>
+  <meta name="description" content="A local proof of concept for James Godwin's work and writing." />
+  <Fonts theme="case-study" />
+ </head>
+ <body class="concept">
+  <a class="concept-skip" href="#main">Skip to content</a>
+  <div class="concept-shell">
+   <header class="concept-header">
+    <a class="concept-identity" href="/concept/">
+     <strong>James Godwin</strong>
+     <span>Product design &amp; full-stack development</span>
+    </a>
+    <nav aria-label="Main navigation">
+     <a href="/concept/" aria-current={current === 'work' ? 'page' : undefined}>Work</a>
+     <a href="/concept/writing/" aria-current={current === 'writing' ? 'page' : undefined}>Writing</a>
+     <a href="/about">About</a>
+     <a href="/contact?about=product-clarity">Contact</a>
+    </nav>
+   </header>
+   <main id="main" tabindex="-1"><slot /></main>
+   <footer class="concept-footer">
+    <span>Local design preview · 20 October 2026</span>
+    <a href="/concept/system/">Design system</a>
+   </footer>
+  </div>
+ </body>
+</html>

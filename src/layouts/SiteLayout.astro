@@ -1,0 +1,52 @@
+---
+import '../styles/tokens.css';
+import '../index.css';
+import '../NewSite.css';
+import '../styles/patterns.css';
+import '../styles/concept.css';
+import '../styles/site.css';
+import Fonts from '../components/Fonts.astro';
+import SiteHeader from '../components/site/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+const { metadata, current = '', article = false } = Astro.props;
+---
+<!doctype html>
+<html lang="en" data-design="case-study">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{metadata.title}</title>
+  <meta name="description" content={metadata.description} />
+  <link rel="canonical" href={metadata.url} />
+  <meta property="og:type" content={article ? "article" : "website"} />
+  <meta property="og:title" content={metadata.title} />
+  <meta property="og:description" content={metadata.description} />
+  <meta property="og:image" content={metadata.image} />
+  <meta property="og:url" content={metadata.url} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={metadata.title} />
+  <meta name="twitter:description" content={metadata.description} />
+  <meta name="twitter:image" content={metadata.twitterImage || metadata.image} />
+  <meta name="twitter:url" content={metadata.url} />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <Fonts theme="case-study" />
+  <slot name="head" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TCHNH6DEP" is:inline></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0TCHNH6DEP');
+  </script>
+  <script async data-uid="0da6b662ba" src="https://aiching.kit.com/0da6b662ba/index.js" is:inline></script>
+</head>
+<body class="concept">
+ <a class="concept-skip" href="#main">Skip to content</a>
+ <div class="concept-shell">
+  <SiteHeader current={current} />
+  <main id="main" tabindex="-1"><slot /></main>
+  <SiteFooter />
+ </div>
+ <script src="../site-client.js"></script>
+</body>
+</html>

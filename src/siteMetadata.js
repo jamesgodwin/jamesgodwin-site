@@ -1,8 +1,8 @@
 const siteUrl = 'https://jamesgodwin.me';
 
 const defaultMetadata = {
-  title: 'James Godwin | Product, UX and Workflow Clarity',
-  description: 'I help founders and teams close UX, accessibility and implementation gaps in products and workflows. Explore my work, writing and Tai Chi practice.',
+  title: 'James Godwin | Product Design and Full-Stack Development',
+  description: 'I help founders finish fast-built and AI-assisted products, closing UX, accessibility and implementation gaps across design, front-end, back-end and deployment.',
   image: `${siteUrl}/og.webp`,
   twitterImage: `${siteUrl}/twitter.webp`,
   path: '/'
@@ -10,8 +10,8 @@ const defaultMetadata = {
 
 const pageMetadata = {
   about: {
-    title: 'About James Godwin | Products, Practice and Perspective',
-    description: 'Twenty years across UX, product strategy and design systems, shaped by thirty years of Tai Chi practice. Meet James and explore his work.',
+    title: 'About James Godwin | Product Designer and Full-Stack Developer',
+    description: 'Product designer and full-stack developer helping founders connect UX, accessibility and implementation. Based in Sedgefield, South Africa.',
     path: '/about'
   },
   diagnostic: {
@@ -21,7 +21,7 @@ const pageMetadata = {
   },
   systems: {
     title: 'Simple Workflow Systems for Service Businesses | James Godwin',
-    description: 'Fixed-price workflow audits and small internal systems for service businesses, trades, and field teams. Get the business out of the owner\'s head.',
+    description: 'Fixed-price workflow audits and internal apps for service businesses and field teams. Bring jobs, records and handovers into one place.',
     path: '/systems'
   },
   workshops: {
@@ -36,12 +36,12 @@ const pageMetadata = {
   },
   apps: {
     title: 'Apps | James Godwin',
-    description: 'Digital tools for regulation, reflection, breath, gratitude, and clearer decision-making, including AI Ching, GratefulFor, Taoist Breath, and Harmonic Echo.',
+    description: 'Apps designed and built by James Godwin, from TapScribe for local recording and transcription to AI Ching, True Essence and GratefulFor.',
     path: '/apps'
   },
   books: {
     title: 'Books | James Godwin',
-    description: 'Books and visual editions exploring Taoist philosophy, regulation, the I Ching, daily reflection, and decision-making through practical and contemplative lenses.',
+    description: 'Stories, poetry and visual editions exploring Taoist philosophy, the I Ching and everyday reflection.',
     path: '/books'
   },
   'little-panda': {
@@ -57,12 +57,12 @@ const pageMetadata = {
   },
   taoism: {
     title: 'Taoism & Tai Chi | James Godwin',
-    description: 'Three decades of Tai Chi and Taoist practice translated into practical regulation, steadiness under load, and clearer leadership under pressure.',
+    description: 'James Godwin’s experience of Tai Chi and Taoist practice, the Cheng Man-Ching lineage, and working with breath, posture and attention.',
     path: '/taoism'
   },
   now: {
     title: 'Now | James Godwin',
-    description: 'A current snapshot of what James Godwin is working on, reading, building, and exploring now.',
+    description: 'What James Godwin is working on now, from client apps and Plumbline with IIIMPACT to TapScribe, TypeScoop, writing and Tai Chi.',
     path: '/now'
   },
   paintings: {
@@ -77,17 +77,17 @@ const pageMetadata = {
   },
   uxui: {
     title: 'Product Clarity | James Godwin',
-    description: 'Help for founders and small product teams whose fast-built or AI-assisted products have stalled. Close UX, accessibility and implementation gaps.',
+    description: 'Product design and full-stack development for stalled, AI-assisted products. Help with UX, accessibility, data, authentication and deployment.',
     path: '/uxui'
   },
   sanctuary: {
     title: 'True Essence Sanctuary | James Godwin',
-    description: 'A digital sanctuary for founders, leaders, and creators who want a daily structure for regulation, reflection, and returning to steadiness.',
+    description: 'True Essence offers a quiet space for daily practice, reflection and exploring your own experience.',
     path: '/sanctuary'
   },
   legal: {
     title: 'Legal | James Godwin',
-    description: 'Privacy policy, terms and conditions, refund policy, and disclaimer for the website, digital services, workshops, and True Essence Sanctuary.',
+    description: 'Privacy, terms, refunds and image credits for James Godwin’s website and services arranged directly with him.',
     path: '/legal'
   },
   'thank-you': {
@@ -109,12 +109,22 @@ const getMetadataForCommand = (commandName) => {
   };
 };
 
-module.exports = {
+const sectionMetadata=Object.fromEntries(Object.entries({
+ work:{title:'Work | Product Design and Development | James Godwin',description:'Stories of helping people turn stalled products and scattered workflows into working apps, across design, development and deployment.',path:'/work'},
+ crewScores:{title:'Daily scores. Clear totals. | A client story | James Godwin',description:'Ben had started an app with AI and needed help connecting daily scores, useful totals and deployment. A story of getting the pieces working together.',path:'/work/crew-scores'},
+ qualityControl:{title:'Proof of a job done. | A client story | James Godwin',description:'How Ben’s roofing team brought paper checks and site photos into editable procedure templates and a shared quality-control record.',path:'/work/quality-control'},
+ tapscribe:{title:'Private conversations. Fewer steps. | TapScribe | James Godwin',description:'How a coach’s disconnected local recording and transcription workflow became TapScribe, a native Mac app.',path:'/work/tapscribe'},
+ plumbline:{title:'One design system. Across the tools. | Plumbline with IIIMPACT | James Godwin',description:'Design systems rooted in client code, with AI Ching as a test case. Plumbline with IIIMPACT; design-tool projections and developer plugins in progress.',path:'/work/plumbline'},
+ essays:{title:'Writing | James Godwin',description:'Essays on building software, working with AI, design systems and the things I keep coming back to.',path:'/essays'}
+}).map(([key,value])=>[key,{...defaultMetadata,...value,url:siteUrl+value.path}]));
+
+export default {
   siteUrl,
   defaultMetadata: {
     ...defaultMetadata,
     url: siteUrl
   },
   pageMetadata,
+  sectionMetadata,
   getMetadataForCommand
 };
