@@ -21,7 +21,7 @@ Cloudflare Pages builds the root Astro project directly. There is no Wrangler de
 
 ## Prepare a GitHub candidate
 
-1. Run `npm ci` on a clean exported candidate, then `npm run build`, `npm test`, `npm run test:routes`, `npm run test:essays` and `npm run test:design`. The build includes the design guard. Check normal output excludes catalogue/prototype routes, drafts and the retired pilot DMG.
+1. Run `npm ci` on a clean exported candidate, then `npm run build`, `npm test`, `npm run test:routes`, `npm run test:essays`, `npm run test:notes` and `npm run test:design`. The build includes the design guard. Check normal output excludes catalogue/prototype routes, drafts and the retired pilot DMG.
 2. Inspect the staged file list and diff. Exclude `.env*` values, `.dev.vars*`, `.wrangler/`, `node_modules/`, build output, browser artifacts and project MCP credentials. `.env.example` contains placeholders only. The retained `legacy/` source is comparison material and does not enter `dist`.
 3. With publication authority, commit the reviewed candidate and push normally to `origin/main`. Do not force push. The retired Netlify account no longer requires a skip marker. Main pushes trigger the connected Cloudflare Pages build.
 4. Verify the remote `main` SHA matches the local candidate. Record the SHA and checks in the current session log/handoff. Confirm the Git-triggered Pages build succeeds for that SHA before checking the hosted output.
@@ -34,7 +34,7 @@ Main output uses `build.format: 'file'`, for example `about.html`. Pages serves 
 
 Check the exact hosted candidate:
 
-- All original routes, `/work`, four stories and `/essays` plus all selected published articles and generated archive pagination pages render, with production-domain canonicals and loaded assets.
+- All original routes, `/work`, four stories and `/essays`, `/notes` plus all selected published essays and notes and generated archive pagination pages render, with production-domain canonicals and loaded assets.
 - Verify `/robots.txt`, `/sitemap.xml` and `/llms.txt` return the expected text/XML rather than HTML fallbacks. Compare hosted sitemap URL sets with the candidate, check `/og-case-shelf.png` and its metadata, plus all three image compatibility redirects. Search Console indexing/submission is a separate account check.
 - Both legacy aliases redirect correctly; missing URLs and `/tapscribe/TapScribe-Pilot.dmg` return 404. Check slash variants for loops.
 - Confirm noindex on Pages URLs, sitemap content and original article social images. Drafts, private editorial content, local reference routes and mockup assets stay absent.

@@ -26,7 +26,7 @@ Implement a built-output behavior check first, then content and presentation, th
 
 Implemented locally on 20 October 2026. Final build/design guard and all 40 automated tests pass. All five original image hashes match; reading-page WebP defaults are 38–82 KB. Desktop archive/reading navigation, all five loaded covers, source hrefs and no horizontal overflow were verified. The archive and builder note were visually reviewed in a 390px iframe; native phone testing and cross-frame programmatic measurement are not claimed. [Full evidence](../logs/2026-10-20-035-selected-linkedin-notes.md).
 
-The edited pages are ready for James’s local review at `http://127.0.0.1:4173/notes`. No commit, push or production deployment performed.
+The first five passed local review; James then approved the expansion below. The complete twelve-note archive is now published at `https://jamesgodwin.me/notes` under the subsequent release authority.
 
 ## Accepted expansion — 20 October 2026
 
@@ -47,3 +47,7 @@ Selection favours grounded experience, distinctness, voice and a verified publis
 Confirm each addition’s live body/author and original image, retain its original date and source URL, lightly edit relative time/feed phrasing, and show the new twelve-card archive through the same Notes components. Use the existing built-output check for all twelve and verify the seven image hashes, draft exclusion, discovery and essay-count preservation. The seven additions are an editorial selection, not a claim of the highest measured LinkedIn engagement.
 
 Expansion implemented locally. Build/design guard and 33 relevant automated tests pass (1 Notes, 5 essay/import, 8 route/SEO, 19 Vitest). All twelve source image hashes match, every default Notes card/reading image is below 150,000 bytes (largest 139,048), and the seven new reading pages plus twelve-card archive were reviewed in the browser. Two textured covers use per-note WebP quality overrides (55 and 25), leaving originals unchanged; the lower-quality illustration was inspected at its served reading size. [Evidence](../logs/2026-10-20-036-notes-editorial-expansion.md). No GitHub push or deployment was performed.
+
+## Published release
+
+James explicitly authorised the GitHub push and live verification after reviewing the complete collection. Source `54fde0049742ff7c55740f024ed91002b7361e99` deployed successfully through Cloudflare Pages. Clean export/build and all 40 tests pass. Live verification covers 78 URLs, 213 assets, 51 sitemap URLs, exact HTML for all 30 Notes/Essays documents and browser navigation/narrow layout. This subsequent release supersedes earlier no-push boundaries for the approved batch. [Release record](../logs/2026-10-20-037-notes-release.md).

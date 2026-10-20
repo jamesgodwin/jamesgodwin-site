@@ -20,7 +20,7 @@ The local archive paginates at 12 essays per page, counting the featured entry w
 
 ## Selected short notes
 
-The twelve selected LinkedIn posts (the first five plus seven later editorial picks) are maintained separately in `src/content/notes/`, with their unchanged originals in `src/assets/notes/` and provenance/image hashes in `scripts/note-selection.mjs`. They are intentional website adaptations, not ARTICLE imports. Do not run the essay importer over Notes or overwrite their edited bodies from the Source originals. Source remains untouched.
+The twelve selected LinkedIn posts (the first five plus seven later editorial picks) are published and maintained separately in `src/content/notes/`, with their unchanged originals in `src/assets/notes/` and provenance/image hashes in `scripts/note-selection.mjs`. They are intentional website adaptations, not ARTICLE imports. Do not run the essay importer over Notes or overwrite their edited bodies from the Source originals. Source remains untouched.
 
 Keep the original publication date, a separate website revision date, original post URL, post ID, source hash and edited-body hash. A new note defaults to draft. Only non-draft Notes render at `/notes` and `/notes/<slug>` and enter sitemap/llms output. Keep short pieces out of the essay pagination. Review further selections with James before adding them.
 
