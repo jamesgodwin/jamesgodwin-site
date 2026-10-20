@@ -6,7 +6,7 @@ Current work status and priority. Detail lives in linked specs or logs.
 
 ## Backlog
 
-- Verify Google Search Console ownership, sitemap status and indexing for the live Cloudflare site ([procedure](runbooks/deploy-cloudflare-pages.md#post-launch-search-and-analytics-checks)).
+- Check Google Search Console sitemap processing and indexing after James’s reported submission on 20 October; independently confirm property/ownership status when access is available ([procedure](runbooks/deploy-cloudflare-pages.md#post-launch-search-and-analytics-checks)).
 
 - Run the combined eight-person visitor exercise on the deployed LinkedIn-aligned site, then record concrete confusion or validated comprehension using [the alignment plan](specs/linkedin-site-alignment.md).
 

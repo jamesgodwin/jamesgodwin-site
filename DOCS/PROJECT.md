@@ -20,7 +20,7 @@ James is the author and maintainer. This is a personal site, not a multi-user pr
 
 Enduring signal: a visitor can recognise James, reach a relevant destination, and find a direct contact method without a site rebuild.
 
-Current goal: verify Search Console ownership, sitemap status and indexing. Hosted analytics acceptance is complete, including the controlled automatic exception ([evidence](logs/2026-10-20-028-hosted-posthog-verification.md)). The selected site has all four stories, real writing and aligned pages; primary live checks pass. [Build scope](specs/site-story-writing-build.md), [live verification](logs/2026-10-20-023-live-cloudflare-verification.md). The eight-person visitor exercise from [the alignment plan](specs/linkedin-site-alignment.md) remains separate product evidence.
+Current goal: check Search Console processing and indexing after James reported submitting the new sitemap on 20 October; independently confirm property status when access is available. Hosted analytics acceptance is complete, including the controlled automatic exception ([evidence](logs/2026-10-20-028-hosted-posthog-verification.md)). The selected site has all four stories, real writing and aligned pages; primary live checks pass. [Build scope](specs/site-story-writing-build.md), [live verification](logs/2026-10-20-023-live-cloudflare-verification.md). The eight-person visitor exercise from [the alignment plan](specs/linkedin-site-alignment.md) remains separate product evidence.
 
 ## Stack
 
