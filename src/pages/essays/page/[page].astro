@@ -1,0 +1,10 @@
+---
+import EssayArchive from '../../../components/site/EssayArchive.astro';
+import { publishedEssays } from '../../../essays.js';
+import { essayArchivePages } from '../../../essay-pagination.js';
+export async function getStaticPaths(){
+ return essayArchivePages(await publishedEssays()).slice(1).map(page=>({params:{page:String(page.number)},props:{page}}));
+}
+const {page}=Astro.props;
+---
+<EssayArchive page={page} />

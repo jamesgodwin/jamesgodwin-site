@@ -22,9 +22,10 @@ export async function importEssays({sourceDir,outDir,logPath,selections}){
  await fs.mkdir(outDir,{recursive:true});
  const result={written:0,unchanged:0,conflicts:[],warnings:[]};
  for(const selection of selections){
-  const {articleId,slug,replacements=[],...metadata}=selection;
+  const {articleId,slug,sourceFile,replacements=[],...metadata}=selection;
   if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))throw new Error('Unsafe essay slug');
-  const matches=files.filter(file=>file.endsWith('.md')&&file.includes(articleId)&&!/announcement/i.test(file));
+  if(sourceFile && (path.basename(sourceFile)!==sourceFile || sourceFile.includes('\\') || !sourceFile.endsWith('.md')))throw new Error('Unsafe source filename');
+  const matches=files.filter(file=>file.endsWith('.md')&&(sourceFile?file===sourceFile:file.includes(articleId))&&!/announcement/i.test(file));
   if(matches.length!==1)throw new Error(`Expected one source for ${articleId}`);
   const source=await fs.readFile(path.join(sourceDir,matches[0]),'utf8');
   let body=articleBody(source);

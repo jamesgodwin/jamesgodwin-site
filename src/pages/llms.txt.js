@@ -25,9 +25,9 @@ export async function GET() {
    return `- [${page.title.split(' | ')[0]}](${page.url}): ${page.description}`;
   }),
   '',
-  '## Writing',
+  '## Essays',
   '',
-  `- [All writing](${metadata.siteUrl}/essays): Published essays with original illustrations and links to their LinkedIn publication.`,
+  `- [All essays](${metadata.siteUrl}/essays): Published essays with original illustrations and links to their LinkedIn publication.`,
   ...(await publishedEssays()).map(essay=>`- [${essay.data.title}](${metadata.siteUrl}${essayPath(essay)}): ${essay.data.lead}`),
   '',
   '## Optional',

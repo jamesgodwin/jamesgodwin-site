@@ -34,7 +34,7 @@ Main output uses `build.format: 'file'`, for example `about.html`. Pages serves 
 
 Check the exact hosted candidate:
 
-- All original routes, `/work`, four stories and `/essays` plus its three published articles render, with production-domain canonicals and loaded assets.
+- All original routes, `/work`, four stories and `/essays` plus all selected published articles and generated archive pagination pages render, with production-domain canonicals and loaded assets.
 - Verify `/robots.txt`, `/sitemap.xml` and `/llms.txt` return the expected text/XML rather than HTML fallbacks. Compare hosted sitemap URL sets with the candidate, check `/og-case-shelf.png` and its metadata, plus all three image compatibility redirects. Search Console indexing/submission is a separate account check.
 - Both legacy aliases redirect correctly; missing URLs and `/tapscribe/TapScribe-Pilot.dmg` return 404. Check slash variants for loops.
 - Confirm noindex on Pages URLs, sitemap content and original article social images. Drafts, private editorial content, local reference routes and mockup assets stay absent.

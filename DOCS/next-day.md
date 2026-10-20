@@ -2,39 +2,36 @@
 
 ## Current Focus
 
-The portfolio and image/SEO release are live on Cloudflare, including the repaired www redirect. Next, verify Search Console ownership, sitemap status and indexing. Hosted analytics acceptance is also complete. [Release](logs/2026-10-20-025-image-seo-deployment.md), [www repair](logs/2026-10-20-026-www-redirect-repair.md).
+Publish and verify the authorised full published-article backfill: 12 new local essays, 15 total, paginated 12/3 with consistent Essays navigation. [Scope](specs/essays-home-and-agent-readiness.md#full-published-article-backfill--20-october-2026), [evidence](logs/2026-10-20-030-full-article-backfill.md).
 
 ## Where Work Stopped
 
-20 October 2026: app revision `83b1155` was published and Cloudflare succeeded. Documentation follow-up `5a1cefe` also deployed successfully. The documentation publication commit packages the subsequent repair, retirement and hosted analytics evidence; no application code changed. See log 028 and Git history for the documentation handoff.
+20 October 2026: local import is complete on main, uncommitted. All 12 bodies were compared with live LinkedIn text; original covers, titles, dates and source links are retained. Source files are untouched. Three unpublished drafts remain excluded. The importer supports the legacy May 31 filename and preserves conflict/draft safeguards. Two per-cover WebP quality settings meet the existing image budget.
 
-James opened Cloudflare DNS. Recorded www’s old target `jamesgodwin.netlify.app` as historical pre-repair evidence; deployed `Redirect www to jamesgodwin.me` with exact www hostname match, dynamic apex HTTPS + original path, 301 and query preservation. Updated www CNAME to `jamesgodwin.me`, Proxied/Auto. Apex/mail/TXT unchanged. Keep www; James’s question about deleting it was answered explicitly.
+Build/design guard, 19 unit tests, five essay/import checks and eight built-route/SEO checks pass. All 12 local reading pages load their covers and canonicals without desktop overflow. Review screenshots and live-text provenance are ignored under `output/article-review/`. Dedicated mobile testing was not repeated. Pagination at `/essays/page/2` works via real Next/Previous links, has its own title/canonical/sitemap entry and returns to `/essays`; nonexistent page three returns 404. [Evidence](logs/2026-10-20-031-essay-pagination.md). Local preview: `http://127.0.0.1:4173/essays`.
 
-All 11 redirect checks pass, including one-hop HTTP/HTTPS, paths/queries and actual apex 404s. Repeated full release check: 46 URLs/91 assets pass; sitemap has 25 indexable canonicals. Browser www → apex path/query/canonical check passes. Artifacts/screenshots under `output/www-redirect-repair/` and `output/seo-live-verification/`. Previous clean build/37 automated checks and twelve-route mobile qualification remain valid. Three negligible generated WebP encoder variations are documented, with no broken assets.
-
-James confirmed deleting the Netlify account on 20 October 2026. Treat Netlify as retired and unavailable for rollback; recover through a previous successful Cloudflare Pages production deployment. Account deletion is owner-reported, not independently audited. Keep the corrected proxied www CNAME and edge rule. The 11 redirect checks were re-run after his report and still pass.
-
-Hosted automatic uncaught-error receipt is confirmed on the Pages build after James turned off Brave Shields for testing. Custom-domain pageviews, both contact events and interaction logs were also received; slice 3 is complete. Test events are synthetic and must be excluded from reporting. [Evidence](logs/2026-10-20-028-hosted-posthog-verification.md).
+The existing site, four stories, original three essays, image/SEO update, www redirect and PostHog acceptance are live and previously verified. Documentation publication commit `b66b375` was pushed before this article work. Netlify is owner-reported deleted; recovery uses prior successful Cloudflare production deployments. The 12 new essays have not been pushed or deployed.
 
 ## Next Recommended Step
 
-Open the existing Google Search Console property for jamesgodwin.me, verify ownership and check/submit `https://jamesgodwin.me/sitemap.xml`; inspect the homepage, a story and an essay. Record observed status rather than assuming indexing. See the deployment runbook.
+James approved commit/push and hosted verification. Qualify the exact candidate, push normally to main, confirm Cloudflare succeeds, then verify all 15 essays and pagination live. [Release record](logs/2026-10-20-032-article-pagination-release.md).
 
 ## Blockers
 
-None for the website or www routing. Search Console needs account access; no inspection or submission has occurred in this task.
+No authority blocker. Exact-source Cloudflare completion and hosted verification are pending.
 
 ## Parallel Threads
 
-- Source authoring remains paused; site deployment does not publish new essays.
+- Verify Search Console ownership, sitemap status and indexing ([procedure](runbooks/deploy-cloudflare-pages.md#post-launch-search-and-analytics-checks)); no account submission established.
+- Source authoring cycle remains paused; importing published history does not restart it.
 - Eight-person visitor exercise remains outstanding ([alignment plan](specs/linkedin-site-alignment.md)).
 
 ## Needs Decisions
 
-None for the completed release/redirect repair.
+None; James authorised this release.
 
 ## Read These First
 
-- `DOCS/logs/2026-10-20-028-hosted-posthog-verification.md` — final analytics evidence and documentation handoff
-- `DOCS/specs/essays-home-and-agent-readiness.md` — remaining acceptance scope
-- `DOCS/runbooks/deploy-cloudflare-pages.md` — hosting procedure
+- `DOCS/logs/2026-10-20-031-essay-pagination.md` — current pagination and naming checks
+- `DOCS/runbooks/import-essays.md` — import/reconciliation rules
+- `DOCS/runbooks/deploy-cloudflare-pages.md` — release checks

@@ -140,3 +140,20 @@ James reports deleting the Netlify account after the verified Cloudflare release
 ### Hosted analytics receipt — 20 October 2026
 
 Actual Pages and custom-domain browser sessions produced received pageviews, both contact events and interaction logs in website PostHog project 631540. Pages verification labels were confirmed; production synthetic traffic must be excluded by the recorded URL/session/time window. No source change was needed. Automatic hosted uncaught-error receipt is also verified on the Pages build after James disabled Brave Shields for testing. The exact labelled error arrived as an unhandled `$exception`; no manual capture API was used. Slice 3 is complete against the existing release checks; Search Console remains separate. [Evidence and limits](../logs/2026-10-20-028-hosted-posthog-verification.md).
+
+
+### Full published-article backfill — 20 October 2026
+
+After reviewing the 12 additional articles and original covers, James authorised bringing all 12 across. Local scope: 15 total published essays, original published titles/dates/links/covers and live-text fidelity; the three unpublished drafts remain excluded. Preserve the current design and chronological ordering, canonical/schema/sitemap/llms behaviour, conflict protection and repeat-import stability. This does not restart Source authoring or publish the unpublished drafts. The 12-article candidate is locally qualified; GitHub push and hosted acceptance remain separate. [Implementation and checks](../logs/2026-10-20-030-full-article-backfill.md).
+
+
+### Essay pagination and naming — 20 October 2026
+
+James requested 12 essays per archive page to support future imports and proposed Work · Essays · About · Contact for the header. The accepted local implementation uses that naming consistently across navigation, homepage section, archive, reading links, metadata, footer and public help/llms labels. Existing `/writing` remains a redirect to `/essays`.
+
+Acceptance: the newest 12 entries appear at `/essays`, including the featured essay; remaining entries appear at static `/essays/page/2` and later pages as needed. Every published essay appears exactly once across the archive pages in chronological order; drafts remain excluded. Ordinary Previous/Next links work without JavaScript, include current page/range context, and omit unavailable directions. Page one has no duplicate `/page/1` route; ungenerated pages return 404. Each generated page has a unique title, self canonical and sitemap entry. Reuse the selected tokens and existing Action recipe. The local 15-essay candidate splits 12/3. [Checks and evidence](../logs/2026-10-20-031-essay-pagination.md).
+
+
+### Article release authorised — 20 October 2026
+
+James approved the local articles/pagination candidate and explicitly requested commit/push to GitHub and live verification after Cloudflare deploys. This lifts the local-only release boundary for the 12-article backfill, 12-per-page pagination and consistent Essays naming. [Release evidence](../logs/2026-10-20-032-article-pagination-release.md).

@@ -10,5 +10,5 @@ const rest=featured?essays.slice(1):essays;
  <a href={essayPath(first)} tabindex="-1" aria-label={`Read ${first.data.title}`}><Image src={first.data.cover} alt="" widths={[600,1000,1280]} sizes="(max-width:768px) 100vw, 650px" width={1000} format="webp" /></a>
  <div><p class="eyebrow"><time datetime={first.data.date.toISOString()}>{displayDate(first.data.date)}</time> · {first.data.category}</p><h2><a href={essayPath(first)}>{first.data.title}</a></h2><p>{first.data.lead}</p><a class="writing-read" href={essayPath(first)}>Read essay <span aria-hidden="true">→</span></a></div>
 </article>}
-{featured && <div class="site-section-heading"><h2>More writing</h2></div>}
+{featured && <div class="site-section-heading"><h2>More essays</h2></div>}
 <div class:list={['writing-grid',{'writing-grid--two':featured}]}>{rest.map(essay=><EssayCard essay={essay} />)}</div>

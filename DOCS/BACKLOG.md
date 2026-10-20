@@ -14,13 +14,15 @@ Deferred proposals, including terminal restoration, agent tools, opening questio
 
 ## In Progress
 
-None.
+- Publish the approved 15-essay archive and pagination; GitHub push and exact-source Cloudflare/live verification authorised and in progress ([release](logs/2026-10-20-032-article-pagination-release.md)).
 
 ## Blocked
 
 - Look Up is on hold: Apple’s Screen Time API is too unreliable to pursue now. The landing page lives on branch `lookup` — https://github.com/jamesgodwin/jamesgodwin-site/tree/lookup — and should not be merged to `main` until the app is resumed.
 
 ## Done
+
+- Imported all 12 reviewed published articles locally with original covers, verified live wording and repeat-import protection; 15-essay archive/build/browser/SEO checks pass, with subsequent static pagination and Essays naming verified ([pagination](logs/2026-10-20-031-essay-pagination.md)). Release remains separate ([evidence](logs/2026-10-20-030-full-article-backfill.md)).
 
 - Slice 3: Cloudflare deployment and www repair pass all current routing/image/SEO/browser checks; James confirmed deleting Netlify. Hosted pageviews, both contact events and interaction logs are now verified on Pages and the custom domain; automatic hosted uncaught-error receipt is also verified after James disabled Brave Shields for testing ([release](logs/2026-10-20-025-image-seo-deployment.md), [www repair](logs/2026-10-20-026-www-redirect-repair.md), [scope](specs/essays-home-and-agent-readiness.md), [analytics evidence](logs/2026-10-20-028-hosted-posthog-verification.md)).
 

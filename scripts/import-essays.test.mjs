@@ -33,3 +33,16 @@ test('a source change cannot overwrite a locally edited body, and unconfirmed en
  const edited=value.replace('Original words.\n','My local revision.\n');await fs.writeFile(file,edited);await fs.writeFile(source,'## Article\n\nChanged source words.');
  const result=await importEssays({sourceDir,outDir,logPath,selections});assert.equal(result.conflicts.length,1);assert.equal(await fs.readFile(file,'utf8'),edited);
 });
+
+test('a published legacy article can select an explicit source filename without exposing it in frontmatter', async t=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'essay-legacy-'));
+ t.after(()=>fs.rm(root,{recursive:true,force:true}));
+ const sourceDir=path.join(root,'source'),outDir=path.join(root,'out');await fs.mkdir(sourceDir);
+ await fs.writeFile(path.join(sourceDir,'2026-05-31 - ARTICLE - Legacy.md'),'## Article\n\nOriginal published words.');
+ const logPath=path.join(root,'Log.md');await fs.writeFile(logPath,'| ARTICLE-LEGACY | posted |');
+ const selections=[{articleId:'ARTICLE-LEGACY',sourceFile:'2026-05-31 - ARTICLE - Legacy.md',slug:'legacy',title:'Legacy',date:'2026-05-31'}];
+ const first=await importEssays({sourceDir,outDir,logPath,selections});assert.equal(first.written,1);
+ const value=await fs.readFile(path.join(outDir,'legacy.md'),'utf8');assert.match(value,/draft: false/);assert.match(value,/Original published words/);assert.doesNotMatch(value,/sourceFile:/);
+ assert.equal((await importEssays({sourceDir,outDir,logPath,selections})).unchanged,1);
+ await assert.rejects(importEssays({sourceDir,outDir,logPath,selections:[{...selections[0],sourceFile:'../outside.md'}]}),/Unsafe source filename/);
+});

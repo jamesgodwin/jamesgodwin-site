@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { selections } from './essay-selection.mjs';
 test('selected essays render images, canonical metadata, article schema and original body only',()=>{
- const index=fs.readFileSync('dist/essays.html','utf8');
+ const index=Array.from({length:Math.ceil(selections.length/12)},(_,i)=>fs.readFileSync(i===0?'dist/essays.html':`dist/essays/page/${i+1}.html`,'utf8')).join('');
  const sitemap=fs.readFileSync('dist/sitemap.xml','utf8');
  let previous=-1;
  for(const item of selections){
@@ -15,4 +15,32 @@ test('selected essays render images, canonical metadata, article schema and orig
   assert.doesNotMatch(html,/Private editorial notes|## Image Prompt|Primary overlay|sourceHash|importedBodyHash|SECRET_DRAFT_FIXTURE/);
  }
  assert.equal(fs.existsSync('dist/essays/draft-check.html'),false);assert.doesNotMatch(sitemap,/draft-check/);assert.doesNotMatch(index,/Draft privacy check|SECRET_DRAFT_FIXTURE/);
+});
+
+test('essay archive paginates without omissions or duplicates and provides real navigation',()=>{
+ const totalPages=Math.ceil(selections.length/12);
+ let position=0;
+ for(let number=1;number<=totalPages;number++){
+  const file=number===1?'dist/essays.html':`dist/essays/page/${number}.html`;
+  const html=fs.readFileSync(file,'utf8');
+  const expected=selections.slice((number-1)*12,number*12);
+  const hasLink=(href,rel)=>[...html.matchAll(/<a\b[^>]*>/g)].some(([tag])=>tag.includes(`href="${href}"`)&&tag.includes(`rel="${rel}"`));
+  assert.equal((html.match(/<article class="writing-(?:feature|card)"/g)||[]).length,expected.length);
+  const path=number===1?'/essays':`/essays/page/${number}`;
+  assert.ok(html.includes(`rel="canonical" href="https://jamesgodwin.me${path}"`));
+  assert.ok(fs.readFileSync('dist/sitemap.xml','utf8').includes(`https://jamesgodwin.me${path}`));
+  if(number>1){
+   const prev=number===2?'/essays':`/essays/page/${number-1}`;
+   assert.ok(hasLink(prev,'prev'));
+  }else assert.doesNotMatch(html,/rel="prev"/);
+  if(number<totalPages)assert.ok(hasLink(`/essays/page/${number+1}`,'next'));
+  else assert.doesNotMatch(html,/rel="next"/);
+  for(const item of selections)assert.equal(html.includes(`/essays/${item.slug}`),expected.includes(item));
+  for(const item of expected)assert.equal(item,selections[position++]);
+  assert.match(html,/>Essays\.<\/h1>/);
+  assert.match(html,/aria-current="page"[^>]*>Essays<\/a>/);
+ }
+ assert.equal(position,selections.length);
+ assert.equal(fs.existsSync('dist/essays/page/1.html'),false);
+ assert.equal(fs.existsSync(`dist/essays/page/${totalPages+1}.html`),false);
 });
