@@ -1,0 +1,10 @@
+---
+import Action from '../ui/Action.astro';
+const {page,format}=Astro.props;
+const count=format==='notes'?page.totalNotes:page.totalEssays;
+---
+{page.totalPages>1 && <nav class="essay-pagination" aria-label={format==='notes'?'Note pages':'Essay pages'}>
+ {page.previous && <Action href={page.previous} rel="prev">← Previous</Action>}
+ <p>Page {page.number} of {page.totalPages}<span>{page.start}–{page.end} of {count} {format}</span></p>
+ {page.next && <Action href={page.next} rel="next">Next →</Action>}
+</nav>}

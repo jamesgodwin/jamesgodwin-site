@@ -16,13 +16,15 @@ Deferred proposals, including terminal restoration, agent tools, the opening que
 
 ## In Progress
 
-None.
+- Release the approved twenty-note collection and Notes pagination to Cloudflare and verify live output ([release](logs/2026-10-20-039-notes-pagination-release.md)).
 
 ## Blocked
 
 - Look Up is on hold: Apple’s Screen Time API is too unreliable to pursue now. The landing page lives on branch `lookup` — https://github.com/jamesgodwin/jamesgodwin-site/tree/lookup — and should not be merged to `main` until the app is resumed.
 
 ## Done
+
+- Completed eight further curated Notes locally (twenty total), original artwork and twelve-per-page navigation; design/build and 41 tests pass, desktop reading/navigation and narrow visual layout checked ([evidence](logs/2026-10-20-038-notes-completion-pagination.md)).
 
 - Published twelve curated Notes and accumulated documentation (`54fde00`); Cloudflare succeeds, clean build/design and 40 tests pass, live routes/assets/SEO/exact HTML and browser navigation/narrow layout verified ([release evidence](logs/2026-10-20-037-notes-release.md)).
 

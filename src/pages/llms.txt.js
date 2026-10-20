@@ -1,8 +1,10 @@
 import metadata from '../siteMetadata';
+import { noteArchivePages } from '../note-pagination.js';
 import { publishedEssays, essayPath } from '../essays.js';
 import { publishedNotes, notePath } from '../notes.js';
 
 export async function GET() {
+ const notes=await publishedNotes();
  const lines = [
   '# James Godwin',
   '',
@@ -34,7 +36,8 @@ export async function GET() {
   '## Notes',
   '',
   `- [All notes](${metadata.siteUrl}/notes): Short pieces adapted from published LinkedIn posts, with original artwork and source links.`,
-  ...(await publishedNotes()).map(note=>`- [${note.data.title}](${metadata.siteUrl}${notePath(note)}): ${note.data.lead}`),
+  ...noteArchivePages(notes).slice(1).map(page=>`- [Notes · Page ${page.number}](${metadata.siteUrl}${page.path}): Older notes, twelve per page.`),
+  ...notes.map(note=>`- [${note.data.title}](${metadata.siteUrl}${notePath(note)}): ${note.data.lead}`),
   '',
   '## Optional',
   '',

@@ -51,3 +51,33 @@ Expansion implemented locally. Build/design guard and 33 relevant automated test
 ## Published release
 
 James explicitly authorised the GitHub push and live verification after reviewing the complete collection. Source `54fde0049742ff7c55740f024ed91002b7361e99` deployed successfully through Cloudflare Pages. Clean export/build and all 40 tests pass. Live verification covers 78 URLs, 213 assets, 51 sitemap URLs, exact HTML for all 30 Notes/Essays documents and browser navigation/narrow layout. This subsequent release supersedes earlier no-push boundaries for the approved batch. [Release record](../logs/2026-10-20-037-notes-release.md).
+
+## Accepted completion and pagination — 20 October 2026
+
+James asked Codex to select the strongest remaining posts, complete their Notes adaptations, and paginate at twelve per page like Essays. Add eight selected published pieces for a twenty-note collection, keeping the existing twelve intact. This supersedes earlier fixed-count and preselection-review requirements for these eight. GitHub publication remains a separate action.
+
+| Addition | Distinct contribution |
+|---|---|
+| The App Is Only the Surface | A friend's marketplace idea reveals the operational decisions behind a convincing demo. |
+| Most Businesses Don't Have an AI Problem | Uses the client's reported outcome to examine workflow rules and responsibility, beyond the builder/handoff angle. |
+| Dashboards Can Make People Defensive | Connects visual treatment, rankings and missing context to the way teams interpret performance. |
+| Calm Is Not Minimalism | Separates sparse presentation from orientation, feedback and confidence in the next step. |
+| The Product Felt Rushed Because the Team Was | Looks upstream at delivery pressure and the edge cases/copy that inherit it. |
+| The Moment Softness Became Information | A specific push-hands observation about sensing force, rather than another general pause/reactivity piece. |
+| The Smallest Boundary That Saved My Week | A concrete evening boundary with personal observations; distinct from recognising work tension. |
+| What Distance Allows Us to See | A visual perception example about changing perspective, using the original post image. |
+
+Acceptance and verification:
+
+1. All twenty selected Notes retain original dates, artwork, attribution and links; eight new bodies preserve James's observations without invented outcomes or universal physiology claims. Check published originals, provenance hashes and rendered pages. Held/unpublished pieces and essay duplicates remain excluded.
+2. `/notes` shows the newest twelve; `/notes/page/2` shows the remaining eight, with matching shared action styling, counts, Previous/Next links and unique metadata. No duplicate page-one or out-of-range output. Test page boundaries (0, 1, 12, 13, 20, 24, 25), then built HTML coverage, ordering and navigation.
+3. All new reading URLs and paginated archives enter sitemap and llms.txt. Drafts remain excluded. Existing fifteen essays and 12+3 navigation remain intact. Built-output integration and route checks establish this.
+4. Served covers remain responsive WebP with unchanged original downloads. Check image hashes, byte sizes, and browser archive/pager/reading flow on desktop and a narrow view. Original file hashes do not establish visual quality alone.
+
+Implementation approach: reuse the existing archive navigation composition and design values; add a small Notes pagination helper and shared Notes archive component, then explicit numbered routes. Keep static pre-rendered navigation with no client-side pagination dependency.
+
+Completion implemented locally. All eight originals were opened and checked on LinkedIn against James's published text and the Source publication Log; original media was downloaded from each post. The first twelve local Notes remain unchanged. All twenty original image hashes match the selection manifest. The eight edits retain their original scene/meaning, remove feed prompts and qualify general physiology claims. No measured business result was added. Selection is editorial, not an engagement ranking.
+
+Design guard/build and all 41 tests pass (19 Vitest, 8 routes/SEO, 5 essays/import, 2 Notes, 7 design guard). Pagination boundaries were confirmed red before implementation, then green; the built check also failed on the missing page-two output before routes were added. The built archive contains exactly twenty unique Notes in descending date order, twelve plus eight, with page metadata/discovery and draft exclusion intact. All default Notes card/reading images remain below 150,000 bytes (largest 139,934).
+
+Desktop browser checks cover Notes Next/Previous, all eight loaded reading covers/source hrefs, reading return and Essays 12+3 navigation. A 390px iframe was visually inspected for archive and pager layout. Embedded click control failed and the viewport override did not change the reported width; narrow navigation/physical-phone acceptance is not claimed. No application changes after the successful build. Implementation is ready locally; commit/push/deployment remain pending. [Session evidence](../logs/2026-10-20-038-notes-completion-pagination.md).

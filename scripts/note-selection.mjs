@@ -1,4 +1,4 @@
-// Selected published posts approved for local Notes: initial five, then seven further editorial picks on 20 October 2026.
+// Curated published posts approved for Notes on 20 October 2026; original five, seven additions, then eight completion picks.
 export const noteSelections = [
   {
     "postId": "LI-00102",
@@ -71,5 +71,53 @@ export const noteSelections = [
     "slug": "holy-shit-this-is-fun",
     "sourceUrl": "https://www.linkedin.com/posts/jamiegodwin_i-opened-hey-in-the-terminal-today-and-it-share-7501341819205562368-unQA/",
     "originalImageSha256": "f3c816e1362d48c54b67a9344015dd8bda2a5e316d80a800ce05a224dad4e8b4"
+  },
+  {
+    "postId": "LI-00040",
+    "slug": "calm-is-not-minimalism",
+    "sourceUrl": "https://www.linkedin.com/posts/jamiegodwin_calm-is-not-minimalism-some-products-look-share-7455988664561545217-Sx4H",
+    "originalImageSha256": "23b9c29fe5b7c8b249002fc5f294ed034951895af9b86f9166145050a6db2309"
+  },
+  {
+    "postId": "LI-00043",
+    "slug": "the-smallest-boundary-that-saved-my-week",
+    "sourceUrl": "https://www.linkedin.com/posts/jamiegodwin_the-smallest-boundary-that-saved-my-week-share-7457788501464469504-vYPe",
+    "originalImageSha256": "f57e388a3449f4e39abfa920ee827b7c71ed0f6b4e613fef76bc42ba4d8354fb"
+  },
+  {
+    "postId": "LI-00071",
+    "slug": "dashboards-can-make-people-defensive",
+    "sourceUrl": "https://www.linkedin.com/posts/jamiegodwin_dashboards-can-make-people-defensive-a-dashboard-share-7481310423607070720-0N9B/",
+    "originalImageSha256": "ecdcf87b437643972696cde5d26b637c76f19b5d73cce6335c826aaaebd44548"
+  },
+  {
+    "postId": "LI-00107",
+    "slug": "most-businesses-dont-have-an-ai-problem",
+    "sourceUrl": "https://lnkd.in/p/daNDiuw2",
+    "originalImageSha256": "3079c52bbfc31f72dbb8f46f0c206d538c3ff7fd0e13ba9d847667742176f640"
+  },
+  {
+    "postId": "LI-00089",
+    "slug": "what-distance-allows-us-to-see",
+    "sourceUrl": "https://lnkd.in/p/dQ6XH6-Z",
+    "originalImageSha256": "031d46c624471cc123196cc81e03bddade629890fb05c217f74a8d806224e86b"
+  },
+  {
+    "postId": "LI-00068",
+    "slug": "the-moment-softness-became-information",
+    "sourceUrl": "https://www.linkedin.com/posts/jamiegodwin_the-moment-softness-became-information-some-share-7473694395343486976-DpVb/",
+    "originalImageSha256": "f279a5faac5c888c39e57d9ae08a44f2511e392aa7710b095065ddd63333852e"
+  },
+  {
+    "postId": "LI-00060",
+    "slug": "the-product-felt-rushed-because-the-team-was",
+    "sourceUrl": "https://www.linkedin.com/posts/jamiegodwin_the-product-felt-rushed-because-the-team-share-7467563306514272256-YiAB/",
+    "originalImageSha256": "edf39bc216c13cc1dec101327bb1e86d003028943b4382709ce07644cce88928"
+  },
+  {
+    "postId": "ADHOC-2026-05-29-02",
+    "slug": "the-app-is-only-the-surface",
+    "sourceUrl": "https://www.linkedin.com/posts/jamiegodwin_ai-makes-it-easy-to-mistake-the-app-for-the-share-7466191455041171456-wNu5/",
+    "originalImageSha256": "9ad3011dd21857f97ab9b8cd9f127fa0db5fab466d4e7bb2687e3861af944c39"
   }
 ];

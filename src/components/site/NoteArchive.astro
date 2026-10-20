@@ -1,0 +1,17 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import WritingNav from './WritingNav.astro';
+import WritingPagination from './WritingPagination.astro';
+import NoteCard from './NoteCard.astro';
+import siteMetadata from '../../siteMetadata';
+const {page}=Astro.props;
+const base=siteMetadata.sectionMetadata.notes;
+const metadata={...base,path:page.path,url:siteMetadata.siteUrl+page.path,
+ title:page.number===1?base.title:`Notes · Page ${page.number} | James Godwin`,
+ description:page.number===1?base.description:`Page ${page.number} of James Godwin’s short pieces from work and practice.`};
+---
+<SiteLayout metadata={metadata} current="notes">
+ <header class="review-intro"><h1>Notes.</h1><p class="concept-lead">Short pieces from work and practice.</p><WritingNav current="notes" /></header>
+ <section class="site-section writing-index" aria-label="Notes"><div class="writing-grid">{page.notes.map(note=><NoteCard note={note} />)}</div></section>
+ <WritingPagination page={page} format="notes" />
+</SiteLayout>
