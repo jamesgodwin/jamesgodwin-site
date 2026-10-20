@@ -24,7 +24,7 @@ Current goal: verify Search Console ownership, sitemap status and indexing. Host
 
 ## Stack
 
-Implementation: Astro 7, static output with plain browser JavaScript and no React runtime, live on Cloudflare Pages. James performed the custom-domain cutover. James confirmed deleting the Netlify account on 20 October 2026. It is retired and is not an available rollback target; use a previous successful Cloudflare Pages production deployment for recovery. [Migration and publishing scope](specs/essays-home-and-agent-readiness.md). The selected design has four stories (two for the same client, TapScribe and Plumbline with IIIMPACT) and 15 published essays plus 12 live Notes. Eight further Notes and twelve-per-page Notes navigation are complete locally (twenty total) awaiting release.
+Implementation: Astro 7, static output with plain browser JavaScript and no React runtime, live on Cloudflare Pages. James performed the custom-domain cutover. James confirmed deleting the Netlify account on 20 October 2026. It is retired and is not an available rollback target; use a previous successful Cloudflare Pages production deployment for recovery. [Migration and publishing scope](specs/essays-home-and-agent-readiness.md). The selected design has four stories (two for the same client, TapScribe and Plumbline with IIIMPACT) and 15 published essays plus 20 published Notes, each archive paginated twelve per page.
 
 - Design authority: `src/styles/tokens.css` owns preserved values and light/dark mappings; `src/design-system/patterns.js` owns supported recipes; `src/styles/patterns.css` owns their styling. `src/index.css` supplies resets/inheritance, `src/NewSite.css` inherited layout and retained historical circle composition. [Usage](runbooks/use-design-system.md).
 - `src/siteMetadata.js` owns route/social/indexability metadata; `src/routes.js` binds commands, headings, presentation and trusted output modules. `src/pages/sitemap.xml.js` lists indexable canonical URLs; `src/pages/llms.txt.js` generates the public context guide from metadata and published essays. `public/robots.txt` references the sitemap. [Image/SEO publication](logs/2026-10-20-025-image-seo-deployment.md) is live; [www routing](logs/2026-10-20-026-www-redirect-repair.md) is repaired and verified.
@@ -52,7 +52,7 @@ Keep `siteMetadata.js`, the route/output/presentation mapping, navigation/help w
 
 ## Non-Goals
 
-No CMS, multi-user product, new tracking system, changed service offers or edits to linked external products. Terminal restoration, agent tools and the opening question are parked. Twelve selected LinkedIn Notes have a separate published archive; general feed import remains outside scope. Public dark-mode UI remains deferred, separate from migration parity.
+No CMS, multi-user product, new tracking system, changed service offers or edits to linked external products. Terminal restoration, agent tools and the opening question are parked. Twenty selected LinkedIn Notes have a separate published archive; general feed import remains outside scope. Public dark-mode UI remains deferred, separate from migration parity.
 
 ## Environment
 
@@ -71,7 +71,7 @@ No CMS, multi-user product, new tracking system, changed service offers or edits
 - Main review URL: `http://127.0.0.1:4173/`. `/work/crew-scores`, `/work/quality-control`, `/work/tapscribe` and `/work/plumbline` contain the four narratives, selected through the homepage shelf; `/essays` contains 15 selected published articles, paginated 12 per page.
 - `npm run import:essays -- <Source posts folder>` reads selected ARTICLE bodies and the publication Log; conflicts preserve local edits. `npm run test:essays` checks importer and built output.
 - Collection: `src/content/essays/`; original covers: `src/assets/writing/`; selection/reconciliation manifest: `scripts/essay-selection.mjs`. Synthetic draft fixture never ships.
-- Notes follow-up: twenty edited short pieces maintained locally at `/notes`, `/notes/page/<number>` (twelve per page) and `/notes/<slug>`; the first twelve are live. The pieces are separate from the 15 essays, with original artwork and adaptation/source attribution. `src/content/notes/`, `src/assets/notes/`, `scripts/note-selection.mjs`; `npm run test:notes` checks built discovery, metadata and draft exclusion. [Scope and evidence](specs/selected-linkedin-notes.md). Source `54fde00` is deployed and verified ([release](logs/2026-10-20-037-notes-release.md)); the eight additions and pagination are locally verified ([completion](logs/2026-10-20-038-notes-completion-pagination.md)).
+- Notes follow-up: twenty published edited short pieces at `/notes`, `/notes/page/<number>` (twelve per page) and `/notes/<slug>`; separate from the 15 essays, with original artwork and adaptation/source attribution. `src/content/notes/`, `src/assets/notes/`, `scripts/note-selection.mjs`; `npm run test:notes` checks built discovery, metadata and draft exclusion. [Scope and evidence](specs/selected-linkedin-notes.md). Source `3e71ea7` is deployed and verified with all twenty Notes and pagination ([release](logs/2026-10-20-039-notes-pagination-release.md)).
 
 ### Local Case shelf prototype
 
