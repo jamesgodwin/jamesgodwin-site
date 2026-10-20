@@ -17,3 +17,11 @@ Selections contain explicit replacements where the Source draft differs from the
 After an import, inspect the Markdown diff, publication date/source link, original cover and complete reading page. Run `npm run check:design`, `npm run build`, `npm run test:essays` and relevant route checks. Preview locally with `npm run preview`. Approval of a new unpublished essay and production publication remain separate actions.
 
 The local archive paginates at 12 essays per page, counting the featured entry within the first 12. `/essays` is page one; subsequent pages use `/essays/page/<number>` with unique metadata and sitemap entries. Additional selected articles create further pages at build time. Check boundary navigation and article coverage with `npm run test:essays` after a backfill.
+
+## Selected short notes
+
+The twelve selected LinkedIn posts (the first five plus seven later editorial picks) are maintained separately in `src/content/notes/`, with their unchanged originals in `src/assets/notes/` and provenance/image hashes in `scripts/note-selection.mjs`. They are intentional website adaptations, not ARTICLE imports. Do not run the essay importer over Notes or overwrite their edited bodies from the Source originals. Source remains untouched.
+
+Keep the original publication date, a separate website revision date, original post URL, post ID, source hash and edited-body hash. A new note defaults to draft. Only non-draft Notes render at `/notes` and `/notes/<slug>` and enter sitemap/llms output. Keep short pieces out of the essay pagination. Review further selections with James before adding them.
+
+The NoteCard and note reading composition retain the whole portrait artwork; Astro serves responsive WebP. Use the shared WritingNav to browse between formats and keep the homepage/footer discovery links. Build, run `npm run test:notes`, the existing essay and route suites, then inspect the local archive and reading pages before any separately authorised release. [Accepted first batch](../specs/selected-linkedin-notes.md).

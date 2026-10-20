@@ -20,6 +20,7 @@
     "preview:catalogue": "DESIGN_SYSTEM_CATALOG=true astro preview --host 127.0.0.1 --port 4175 --ignore-lock",
     "test:catalogue": "node scripts/check-catalogue-build.mjs",
     "import:essays": "node scripts/import-essays.mjs",
+    "test:notes": "node --test scripts/notes-build.test.mjs",
     "test:essays": "node --test scripts/import-essays.test.mjs scripts/essays-build.test.mjs"
   },
   "dependencies": {

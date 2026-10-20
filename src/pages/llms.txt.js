@@ -1,5 +1,6 @@
 import metadata from '../siteMetadata';
 import { publishedEssays, essayPath } from '../essays.js';
+import { publishedNotes, notePath } from '../notes.js';
 
 export async function GET() {
  const lines = [
@@ -29,6 +30,11 @@ export async function GET() {
   '',
   `- [All essays](${metadata.siteUrl}/essays): Published essays with original illustrations and links to their LinkedIn publication.`,
   ...(await publishedEssays()).map(essay=>`- [${essay.data.title}](${metadata.siteUrl}${essayPath(essay)}): ${essay.data.lead}`),
+  '',
+  '## Notes',
+  '',
+  `- [All notes](${metadata.siteUrl}/notes): Short pieces adapted from published LinkedIn posts, with original artwork and source links.`,
+  ...(await publishedNotes()).map(note=>`- [${note.data.title}](${metadata.siteUrl}${notePath(note)}): ${note.data.lead}`),
   '',
   '## Optional',
   '',

@@ -122,7 +122,8 @@ const sectionMetadata=Object.fromEntries(Object.entries({
  qualityControl:{title:'Proof of a job done. | A client story | James Godwin',description:'How Ben’s roofing team brought paper checks and site photos into editable procedure templates and a shared quality-control record.',path:'/work/quality-control'},
  tapscribe:{title:'Private conversations. Fewer steps. | TapScribe | James Godwin',description:'How a coach’s disconnected local recording and transcription workflow became TapScribe, a native Mac app.',path:'/work/tapscribe'},
  plumbline:{title:'One design system. Across the tools. | Plumbline with IIIMPACT | James Godwin',description:'Design systems rooted in client code, with AI Ching as a test case. Plumbline with IIIMPACT; design-tool projections and developer plugins in progress.',path:'/work/plumbline'},
- essays:{title:'Essays | James Godwin',description:'Essays on building software, working with AI, design systems and the things I keep coming back to.',path:'/essays'}
+ essays:{title:'Essays | James Godwin',description:'Essays on building software, working with AI, design systems and the things I keep coming back to.',path:'/essays'},
+ notes:{title:'Notes | James Godwin',description:'Short pieces from product work, working with AI, accessibility and Tai Chi practice, adapted from my LinkedIn posts.',path:'/notes'}
 }).map(([key,value])=>[key,{...defaultMetadata,...value,url:siteUrl+value.path}]));
 
 export default {

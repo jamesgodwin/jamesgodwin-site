@@ -66,7 +66,7 @@ Browser-created reflection buttons call `patternAttributes('action', recipe)` fr
 
 Callers own content, destinations, events, accessible native attributes and outer composition. Recipes own colour, typography, borders, corners, internal padding and states. `class`, `class:list`, `style` and recipe identity attributes are rejected by the shared attribute helper; source checks also reject direct appearance props. Targeted CSS overrides of action/link/card recipes outside `patterns.css` fail even when they use valid tokens. PageHero and ContentProse expose semantic content/slots, not styling overrides.
 
-For future prose/Essays, use PageHero within the route composition and ContentProse for the body. Its selectors style trusted output HTML and future rendered Markdown directly; no prose plugin is required. Book/media rows stay their existing compositions. The circles remain bespoke; no general Card wrapper is required for every block.
+For prose/Essays/Notes, use PageHero within the route composition and ContentProse for the body. Its selectors style trusted output HTML and future rendered Markdown directly; no prose plugin is required. Book/media rows stay their existing compositions. The circles remain bespoke; no general Card wrapper is required for every block.
 
 ## Consume tokens
 
@@ -89,6 +89,8 @@ For the prototype, `Action / primary` is the forest filled action; `choice / sto
 | Action `menuItem` / `menuToggle` | Menu rows need full-width hit areas and hover surfaces; the icon toggle has its own fixed hit target. |
 | LinkCard `primary` / `secondary` | One shared card structure, with filled/outlined emphasis for the existing work hierarchy. |
 | TextLink `body` / `proof` | Existing prose-link palette versus monochrome homepage proof; preserve the current look pending public dark-mode review. |
+
+Notes reuse the writing-card composition and ContentProse reading variant. Their portrait covers remain whole through `object-fit: contain`; the reading hero pairs the cover and title at wide sizes and stacks at narrow sizes. WritingNav uses the existing Action quiet recipe. No Notes-specific appearance tokens or action variants are introduced.
 
 The native TapScribe HUD capture uses a dedicated proportional `--radius-app-capture` mask to match the rounded corners already present in the bitmap; it is not a control/card variant. General interface corners remain: 4px controls, 8px menus/covers, and 50% circles. The previous 6px reflection-only corner and dormant pill/12px/20px values are retired. The circle artwork and breathing practice are intentional bespoke experiences, not extra button variants.
 

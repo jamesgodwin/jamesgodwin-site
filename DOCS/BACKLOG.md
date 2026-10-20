@@ -10,17 +10,21 @@ Current work status and priority. Detail lives in linked specs or logs.
 
 - Run the combined eight-person visitor exercise on the deployed LinkedIn-aligned site, then record concrete confusion or validated comprehension using [the alignment plan](specs/linkedin-site-alignment.md).
 
-Deferred proposals, including terminal restoration, agent tools, opening question and Notes, are [parked outside active scope](archive/2026-10-20-agent-readiness-proposals.md).
+- Explore HEY as an additional essay/newsletter channel: selected republication plus a website subscription link; confirm the public URL and workflow before implementation ([idea and boundaries](logs/2026-10-20-033-hey-newsletter-backlog.md)).
+
+Deferred proposals, including terminal restoration, agent tools, the opening question and general feed-import automation, are [parked outside active scope](archive/2026-10-20-agent-readiness-proposals.md).
 
 ## In Progress
 
-None.
+- Publish the approved twelve Notes and documentation via GitHub/Cloudflare, then verify the exact hosted revision ([release evidence](logs/2026-10-20-037-notes-release.md)).
 
 ## Blocked
 
 - Look Up is on hold: Apple’s Screen Time API is too unreliable to pursue now. The landing page lives on branch `lookup` — https://github.com/jamesgodwin/jamesgodwin-site/tree/lookup — and should not be merged to `main` until the app is resumed.
 
 ## Done
+
+- Implemented twelve curated Notes locally, including seven further published pieces with original images and edited copy; build/design and 33 relevant tests pass, all new reading pages reviewed. Not deployed ([scope](specs/selected-linkedin-notes.md), [expansion evidence](logs/2026-10-20-036-notes-editorial-expansion.md)).
 
 - Published and verified the 15-essay archive, 12-per-page pagination and consistent Essays navigation (`399e7e7`); Cloudflare succeeds, 39 automated checks and live route/asset/SEO/desktop checks pass. Phone-width repeat remains unverified ([release evidence](logs/2026-10-20-032-article-pagination-release.md)).
 

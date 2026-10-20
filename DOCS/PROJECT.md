@@ -52,7 +52,7 @@ Keep `siteMetadata.js`, the route/output/presentation mapping, navigation/help w
 
 ## Non-Goals
 
-No CMS, multi-user product, new tracking system, changed service offers or edits to linked external products. Terminal restoration, agent tools, opening question and Notes are parked. Public dark-mode UI remains deferred, separate from migration parity.
+No CMS, multi-user product, new tracking system, changed service offers or edits to linked external products. Terminal restoration, agent tools and the opening question are parked. Twelve selected LinkedIn Notes have a separate local implementation; general feed import remains outside scope. Public dark-mode UI remains deferred, separate from migration parity.
 
 ## Environment
 
@@ -71,6 +71,7 @@ No CMS, multi-user product, new tracking system, changed service offers or edits
 - Main review URL: `http://127.0.0.1:4173/`. `/work/crew-scores`, `/work/quality-control`, `/work/tapscribe` and `/work/plumbline` contain the four narratives, selected through the homepage shelf; `/essays` contains 15 selected published articles, paginated 12 per page.
 - `npm run import:essays -- <Source posts folder>` reads selected ARTICLE bodies and the publication Log; conflicts preserve local edits. `npm run test:essays` checks importer and built output.
 - Collection: `src/content/essays/`; original covers: `src/assets/writing/`; selection/reconciliation manifest: `scripts/essay-selection.mjs`. Synthetic draft fixture never ships.
+- Local follow-up: twelve edited short pieces at `/notes` and `/notes/<slug>`, separate from the 15 essays, with original artwork and adaptation/source attribution. `src/content/notes/`, `src/assets/notes/`, `scripts/note-selection.mjs`; `npm run test:notes` checks built discovery, metadata and draft exclusion. [Scope and evidence](specs/selected-linkedin-notes.md). This follow-up is not deployed yet.
 
 ### Local Case shelf prototype
 

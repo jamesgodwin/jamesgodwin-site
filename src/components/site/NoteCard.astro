@@ -1,0 +1,14 @@
+---
+import { Image } from 'astro:assets';
+import { notePath } from '../../notes.js';
+import { displayDate, readingMinutes } from '../../essays.js';
+const {note}=Astro.props;
+const {data}=note;
+---
+<article class="writing-card note-card">
+ <a href={notePath(note)} tabindex="-1" aria-label={`Read ${data.title}`}><Image src={data.cover} alt="" widths={[400,640,800]} sizes="(max-width:600px) 100vw, 400px" width={800} format="webp" quality={data.coverQuality} /></a>
+ <p class="eyebrow">Note · <time datetime={data.date.toISOString()}>{displayDate(data.date)}</time> · {readingMinutes(note)} min</p>
+ <h2><a href={notePath(note)}>{data.title}</a></h2>
+ <p>{data.lead}</p>
+ <a class="writing-read" href={notePath(note)} aria-label={`Read ${data.title}`}>Read note <span aria-hidden="true">→</span></a>
+</article>

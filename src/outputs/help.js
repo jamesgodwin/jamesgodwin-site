@@ -1,6 +1,7 @@
 const helpOutput = `
 > work       — read the roofing, TapScribe and design-system stories
 > essays     — browse my essays
+> notes      — short pieces from work and practice
 > about      — learn about my work and background
 > workshops  — explore Stillness Under Pressure
 > systems    — explore workflow systems for service businesses

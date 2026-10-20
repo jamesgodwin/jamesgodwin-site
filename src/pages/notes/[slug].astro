@@ -1,0 +1,32 @@
+---
+import { Image, getImage } from 'astro:assets';
+import { render } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ContentProse from '../../components/ui/ContentProse.astro';
+import WritingNav from '../../components/site/WritingNav.astro';
+import { publishedNotes, notePath } from '../../notes.js';
+import { readingMinutes, displayDate } from '../../essays.js';
+import siteMetadata from '../../siteMetadata';
+export async function getStaticPaths(){return (await publishedNotes()).map(note=>({params:{slug:note.id},props:{note}}));}
+const {note}=Astro.props;
+const {Content}=await render(note);
+const data=note.data;
+const image=await getImage({src:data.cover,width:1080,format:'webp',quality:data.coverQuality});
+const path=notePath(note),url=siteMetadata.siteUrl+path;
+const metadata={title:`${data.title} | Notes | James Godwin`,description:data.lead,url,path,image:siteMetadata.siteUrl+image.src,imageWidth:image.attributes.width,imageHeight:image.attributes.height,imageAlt:data.coverAlt};
+const schema={'@context':'https://schema.org','@type':'BlogPosting',headline:data.title,description:data.lead,datePublished:data.date.toISOString(),dateModified:data.updated.toISOString(),image:[metadata.image],mainEntityOfPage:url,author:{'@type':'Person',name:'James Godwin',url:siteMetadata.siteUrl+'/about'},isBasedOn:data.sourceUrl};
+---
+<SiteLayout metadata={metadata} current="notes" article>
+ <script type="application/ld+json" slot="head" set:html={JSON.stringify(schema).replace(/</g,'\\u003c')} />
+ <article class="essay note">
+  <a class="writing-read" href="/notes">← All notes</a>
+  <div class="note-intro">
+   <header class="essay-header"><p class="eyebrow">Note · <time datetime={data.date.toISOString()}>{displayDate(data.date)}</time> · {readingMinutes(note)} min read</p><h1>{data.title}</h1><p>{data.lead}</p><div class="essay-byline"><span>James Godwin</span><a href={data.sourceUrl} target="_blank" rel="noopener noreferrer">Adapted from a LinkedIn post ↗</a></div></header>
+   <figure class="note-cover"><Image src={data.cover} alt={data.coverAlt} widths={[400,640,1080]} sizes="(max-width:600px) 100vw, 400px" width={640} format="webp" quality={data.coverQuality} /></figure>
+  </div>
+  <div class="essay-body"><ContentProse reading><Content /></ContentProse>
+   {data.relatedWork && <p class="note-work"><a class="writing-read" href={data.relatedWork.href}>{data.relatedWork.label} →</a></p>}
+   <WritingNav current="notes" />
+  </div>
+ </article>
+</SiteLayout>
