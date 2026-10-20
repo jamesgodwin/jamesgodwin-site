@@ -1,6 +1,6 @@
 # James Godwin's website
 
-Astro implementation of jamesgodwin.me, prepared for Cloudflare Pages. The live domain remains on the existing deployment until the hosted build is verified and cutover is authorised.
+Astro implementation of jamesgodwin.me, hosted on Cloudflare Pages. James connected the custom domain on 20 October 2026; the reviewed site is live and primary production checks pass. [Verification](DOCS/logs/2026-10-20-023-live-cloudflare-verification.md). Netlify retirement remains separate.
 
 Read [AGENTS.md](AGENTS.md), [project context](DOCS/PROJECT.md), [backlog](DOCS/BACKLOG.md) and [handoff](DOCS/next-day.md) before making changes.
 

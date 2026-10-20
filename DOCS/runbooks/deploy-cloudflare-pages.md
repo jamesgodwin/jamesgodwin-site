@@ -30,11 +30,12 @@ Cloudflare Pages builds the root Astro project directly. There is no Wrangler de
 
 Main output uses `build.format: 'file'`, for example `about.html`. Pages serves this at `/about` and redirects `/about/` to the slashless URL, keeping existing canonicals consistent. Directory output introduced an extra trailing-slash redirect in the local Pages emulator, so it is retained only for the opt-in local reference builds. [Astro output formats](https://docs.astro.build/en/reference/configuration-reference/#buildformat).
 
-`public/_redirects` preserves `/writing` → `/essays` and `/workshop-enquiry` → `/contact?about=workshop`, including slash variants. Top-level `404.html` keeps unknown routes as real 404s rather than a SPA fallback. `public/_headers` sets `X-Robots-Tag: noindex` for the temporary project address and branch/version Pages addresses, with no such rule on the custom domain. [Pages headers](https://developers.cloudflare.com/pages/configuration/headers/).
+`public/_redirects` preserves `/writing` → `/essays` and `/workshop-enquiry` → `/contact?about=workshop`, including slash variants. It also preserves the old AI Ching PNG, GratefulFor SVG and pressure-rings PNG addresses with redirects to optimised WebP files. Top-level `404.html` keeps unknown routes as real 404s rather than a SPA fallback. `public/_headers` sets `X-Robots-Tag: noindex` for the temporary project address and branch/version Pages addresses, with no such rule on the custom domain. [Pages headers](https://developers.cloudflare.com/pages/configuration/headers/).
 
 Check the exact hosted candidate:
 
 - All original routes, `/work`, four stories and `/essays` plus its three published articles render, with production-domain canonicals and loaded assets.
+- Verify `/robots.txt`, `/sitemap.xml` and `/llms.txt` return the expected text/XML rather than HTML fallbacks. Compare hosted sitemap URL sets with the candidate, check `/og-case-shelf.png` and its metadata, plus all three image compatibility redirects. Search Console indexing/submission is a separate account check.
 - Both legacy aliases redirect correctly; missing URLs and `/tapscribe/TapScribe-Pilot.dmg` return 404. Check slash variants for loops.
 - Confirm noindex on Pages URLs, sitemap content and original article social images. Drafts, private editorial content, local reference routes and mockup assets stay absent.
 - Exercise homepage selection, all chapters, Back/Forward, writing → article, contact intent and email/WhatsApp links on desktop/mobile. No app controls inside story screens.

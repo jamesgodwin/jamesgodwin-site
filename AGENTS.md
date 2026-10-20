@@ -1,6 +1,6 @@
 # AGENTS.md
 
-James Godwin's personal portfolio site has a local Astro implementation (the deployed site remains Create React App until an authorised cutover) with a terminal-inspired interactive interface and route-backed content pages. Read `DOCS/PROJECT.md` for purpose, users, stack, constraints, and environment. Active status lives in `DOCS/BACKLOG.md`; resumption context lives in `DOCS/next-day.md`.
+James Godwin's personal portfolio site uses Astro and the selected Case shelf design system, hosted on Cloudflare Pages. The earlier CRA terminal/circle implementation remains historical reference. Read `DOCS/PROJECT.md` for purpose, users, stack, constraints, and environment. Active status lives in `DOCS/BACKLOG.md`; resumption context lives in `DOCS/next-day.md`.
 
 This file is the repository operating contract. Product details, commands, and implementation maps belong in the files named below. Include each operating rule once; do not copy the startup sequence under later headings.
 

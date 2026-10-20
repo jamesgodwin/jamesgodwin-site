@@ -12,7 +12,7 @@ const {Content}=await render(essay);
 const data=essay.data;
 const image=await getImage({src:data.cover,width:1200,format:'webp'});
 const url=siteMetadata.siteUrl+essayPath(essay);
-const metadata={title:`${data.title} | James Godwin`,description:data.lead,url,path:essayPath(essay),image:siteMetadata.siteUrl+image.src};
+const metadata={title:`${data.title} | James Godwin`,description:data.lead,url,path:essayPath(essay),image:siteMetadata.siteUrl+image.src,imageWidth:image.attributes.width,imageHeight:image.attributes.height,imageAlt:data.coverAlt};
 const schema={'@context':'https://schema.org','@type':'Article',headline:data.title,description:data.lead,datePublished:data.date.toISOString(),image:[metadata.image],mainEntityOfPage:url,author:{'@type':'Person',name:'James Godwin',url:siteMetadata.siteUrl+'/about'},isBasedOn:data.sourceUrl};
 const related=(await publishedEssays()).filter(item=>item.id!==essay.id).slice(0,2);
 ---

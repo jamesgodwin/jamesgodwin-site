@@ -4,7 +4,7 @@ Purpose, users, stack, and constraints for this repository. Operating rules live
 
 ## Purpose
 
-This repository powers James Godwin's personal portfolio site at the public destination used for his work, writing, Taoist practice, apps, books, workshops, and contact paths. It presents those paths through the selected Case shelf design system with route-backed pages and an Astro writing collection. The local implementation is now Astro; the deployed site remains CRA pending an authorised cutover.
+This repository powers James Godwin's personal portfolio site at the public destination used for his work, writing, Taoist practice, apps, books, workshops, and contact paths. It presents those paths through the selected Case shelf design system with route-backed pages and an Astro writing collection. The Astro site is live on Cloudflare Pages at jamesgodwin.me after James’s domain cutover on 20 October 2026.
 
 ## Intended User and Problem
 
@@ -20,14 +20,14 @@ James is the author and maintainer. This is a personal site, not a multi-user pr
 
 Enduring signal: a visitor can recognise James, reach a relevant destination, and find a direct contact method without a site rebuild.
 
-Current goal: review the selected site with all four stories, real writing and aligned pages. [Current build scope](specs/site-story-writing-build.md). Astro migration is complete locally. The new main site is implemented locally; release/publication remain separate. The eight-person visitor exercise from [the alignment plan](specs/linkedin-site-alignment.md) remains separate product evidence.
+Current goal: finish the remaining hosting follow-ups after the live cutover. The selected site has all four stories, real writing and aligned pages; primary live checks pass. [Build scope](specs/site-story-writing-build.md), [live verification](logs/2026-10-20-023-live-cloudflare-verification.md). The eight-person visitor exercise from [the alignment plan](specs/linkedin-site-alignment.md) remains separate product evidence.
 
 ## Stack
 
-Local implementation: Astro 7, static output with plain browser JavaScript and no React runtime. Live hosting remains the existing Netlify CRA deployment until an explicitly authorised Cloudflare cutover. [Migration and publishing scope](specs/essays-home-and-agent-readiness.md). The selected design is now the main local implementation, with four stories (two for the same client, TapScribe and Plumbline with IIIMPACT) and three selected published essays.
+Implementation: Astro 7, static output with plain browser JavaScript and no React runtime, live on Cloudflare Pages. James performed the custom-domain cutover. The prior Netlify deployment has not been retired by this task; its rollback destination remains to be confirmed. [Migration and publishing scope](specs/essays-home-and-agent-readiness.md). The selected design has four stories (two for the same client, TapScribe and Plumbline with IIIMPACT) and three selected published essays.
 
 - Design authority: `src/styles/tokens.css` owns preserved values and light/dark mappings; `src/design-system/patterns.js` owns supported recipes; `src/styles/patterns.css` owns their styling. `src/index.css` supplies resets/inheritance, `src/NewSite.css` active page composition/circles. [Usage](runbooks/use-design-system.md).
-- `src/siteMetadata.js` owns route metadata; `src/routes.js` binds commands, headings, presentation and trusted output modules.
+- `src/siteMetadata.js` owns route/social/indexability metadata; `src/routes.js` binds commands, headings, presentation and trusted output modules. `src/pages/sitemap.xml.js` lists indexable canonical URLs; `src/pages/llms.txt.js` generates the public context guide from metadata and published essays. `public/robots.txt` references the sitemap. [Image/SEO qualification](logs/2026-10-20-024-images-social-seo.md) is local and unpushed.
 - `src/layouts/SiteLayout.astro` owns shared document metadata, font loading, GA, ConvertKit and navigation.
 - `src/pages/index.astro` presents the four-story selector and writing, defaulting to Ben’s scoring story. `[page].astro` preserves all 17 existing inner routes; Work/story and Essays routes are explicit. Sitemap includes published essays and new sections. `404.astro` is aligned with the shell.
 - `src/site-client.js` owns contact intent/tracking and progressively enhanced chapter navigation. All story chapters are rendered in HTML; app illustrations have no controls. The earlier circle/private-command implementation remains in source as historical reference and is not mounted by the new shell.
@@ -44,9 +44,9 @@ Keep `siteMetadata.js`, the route/output/presentation mapping, navigation/help w
 - Preserve existing public routes, circle artwork, service prices and contact paths. James authorised the Case shelf design as the main local site, beginning with one client story and writing. A public cutover is separate.
 - Trusted HTML only in `src/outputs/`; never interpolate visitor input into `set:html` or reflection HTML.
 - Keep existing Google Analytics and ConvertKit (`data-uid="0da6b662ba"`) working alongside PostHog.
-- The obsolete `public/tapscribe/TapScribe-Pilot.dmg` was removed locally at James's request on 20 October. Do not restore it or add replacement download hosting. Removing it from the live deployment awaits a separately authorised release.
+- The obsolete `public/tapscribe/TapScribe-Pilot.dmg` was removed at James's request on 20 October and now returns 404 on the live Cloudflare site. Do not restore it or add replacement download hosting.
 - Do not merge or resume the parked `lookup` branch without James lifting the hold.
-- James authorised committing and pushing the reviewed Astro site to GitHub on 20 October so he can deploy it through Cloudflare Pages. Domain cutover, Netlify retirement, new essay publication, outbound contact and spending remain separate.
+- James authorised the GitHub push and performed the Pages deployment/domain cutover on 20 October. Netlify retirement, unpublished essay publication, outbound contact and spending remain separate.
 
 ## Non-Goals
 

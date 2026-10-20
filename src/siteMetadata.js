@@ -3,8 +3,10 @@ const siteUrl = 'https://jamesgodwin.me';
 const defaultMetadata = {
   title: 'James Godwin | Product Design and Full-Stack Development',
   description: 'I help founders finish fast-built and AI-assisted products, closing UX, accessibility and implementation gaps across design, front-end, back-end and deployment.',
-  image: `${siteUrl}/og.webp`,
-  twitterImage: `${siteUrl}/twitter.webp`,
+  image: `${siteUrl}/og-case-shelf.png`,
+  imageWidth: 1200,
+  imageHeight: 630,
+  imageAlt: 'James Godwin. You have a build. Let’s get it over the line. Product design and full-stack development.',
   path: '/'
 };
 
@@ -30,6 +32,7 @@ const pageMetadata = {
     path: '/workshops'
   },
   'workshop-enquiry': {
+    noindex: true,
     title: 'Workshop Enquiry | Stillness Under Pressure',
     description: 'Enquire about a Stillness Under Pressure workshop shaped around the specific pressures your leadership team or organisation is facing.',
     path: '/workshop-enquiry'
@@ -48,6 +51,9 @@ const pageMetadata = {
     title: 'Little Panda Tao Stories | James Godwin',
     description: 'Gentle children\'s picture books inspired by the Tao Te Ching, including Little Panda and the Empty Cup and Little Panda Learns the Tao.',
     image: `${siteUrl}/little-panda-and-empty-cup-book.webp`,
+    imageWidth: 584,
+    imageHeight: 724,
+    imageAlt: 'Little Panda and the Empty Cup book cover',
     path: '/little-panda'
   },
   contact: {
@@ -91,6 +97,7 @@ const pageMetadata = {
     path: '/legal'
   },
   'thank-you': {
+    noindex: true,
     title: 'Thank You | James Godwin',
     description: 'Thank you for getting in touch. James Godwin will respond personally to your enquiry.',
     path: '/thank-you'

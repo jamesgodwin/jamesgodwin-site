@@ -8,7 +8,15 @@ import '../styles/site.css';
 import Fonts from '../components/Fonts.astro';
 import SiteHeader from '../components/site/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import siteMetadata from '../siteMetadata';
 const { metadata, current = '', article = false } = Astro.props;
+const structuredData = {
+ '@context':'https://schema.org',
+ '@graph':[
+  {'@type':'WebSite','@id':siteMetadata.siteUrl+'/#website',url:siteMetadata.siteUrl,name:'James Godwin',inLanguage:'en',publisher:{'@id':siteMetadata.siteUrl+'/#person'}},
+  {'@type':'Person','@id':siteMetadata.siteUrl+'/#person',name:'James Godwin',url:siteMetadata.siteUrl+'/about',jobTitle:'Product designer and full-stack developer',sameAs:['https://www.linkedin.com/in/jamiegodwin/']}
+ ]
+};
 ---
 <!doctype html>
 <html lang="en" data-design="case-study">
@@ -17,19 +25,28 @@ const { metadata, current = '', article = false } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{metadata.title}</title>
   <meta name="description" content={metadata.description} />
+  <meta name="robots" content={metadata.noindex ? 'noindex, follow' : 'max-image-preview:large'} />
   <link rel="canonical" href={metadata.url} />
+  <link rel="describedby" href="/llms.txt" type="text/plain" />
   <meta property="og:type" content={article ? "article" : "website"} />
   <meta property="og:title" content={metadata.title} />
   <meta property="og:description" content={metadata.description} />
   <meta property="og:image" content={metadata.image} />
+  {metadata.imageWidth && <meta property="og:image:width" content={metadata.imageWidth} />}
+  {metadata.imageHeight && <meta property="og:image:height" content={metadata.imageHeight} />}
+  {metadata.imageAlt && <meta property="og:image:alt" content={metadata.imageAlt} />}
+  <meta property="og:site_name" content="James Godwin" />
+  <meta property="og:locale" content="en_ZA" />
   <meta property="og:url" content={metadata.url} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={metadata.title} />
   <meta name="twitter:description" content={metadata.description} />
   <meta name="twitter:image" content={metadata.twitterImage || metadata.image} />
+  {metadata.imageAlt && <meta name="twitter:image:alt" content={metadata.imageAlt} />}
   <meta name="twitter:url" content={metadata.url} />
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
   <Fonts theme="case-study" />
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g,'\\u003c')} />
   <slot name="head" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TCHNH6DEP" is:inline></script>
   <script is:inline>

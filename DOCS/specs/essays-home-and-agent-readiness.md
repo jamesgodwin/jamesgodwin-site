@@ -97,3 +97,23 @@ Preview qualification still needs all public routes, original aliases, real 404s
 ### Pages GitHub handoff, 20 October 2026
 
 James confirmed adding the Cloudflare variables and authorised preparing, committing and pushing the reviewed site so he can deploy it. This extends the previous local-only boundary to the GitHub handoff, not the domain cutover. The [deployment runbook](../runbooks/deploy-cloudflare-pages.md) owns exact setup and verification steps. Use `[skip netlify]` in pushed preparation commits to preserve the existing deployment. Hosted acceptance remains open even after all local checks and GitHub push succeed.
+
+### Owner deployment and live verification, 20 October 2026
+
+James deployed and connected the domain himself. The reviewed Astro HTML/client now match live bytes at https://jamesgodwin.me/. Live route, asset, canonical, alias, TLS, www, indexability and desktop/mobile smoke checks pass. PostHog has received an actual custom-domain Astro pageview without preview labels, and a Pages-address pageview with verification labels. [Detailed evidence and limits](../logs/2026-10-20-023-live-cloudflare-verification.md).
+
+This supersedes earlier pending-deployment/cutover descriptions. Exact old-host rollback information and deeper hosted contact-event/log/exception checks remain outstanding; no Netlify retirement was performed. No new code or infrastructure change was made during this verification.
+
+### Image and SEO preparation before Netlify retirement, 20 October 2026
+
+James requested image optimisation, a Case shelf social image, sitemap/robots checks and an LLM guide before deleting Netlify. This explicitly brings `llms.txt` into scope, superseding its earlier deferral. James subsequently said he will remove the account himself; no account deletion is delegated to the agent.
+
+Acceptance for this local slice: rendered raster content uses appropriately sized WebP, small vector icons remain SVG, image dimensions/alt attributes are present, the new 1200×630 social card matches the current design, and canonical metadata/social assets resolve. The sitemap must list exactly the indexable canonical pages, omit redirects/utility pages and parse as XML. `robots.txt` must permit the public site and reference that sitemap; `llms.txt` must contain accurate public context and working links. Existing article wording/covers, static stories and painting layout remain intact.
+
+Implemented and locally qualified. The generic card uses the existing site headline, Manrope/Inter and token palette. PNG is the crawler-facing social image, with a WebP sibling; the PNG favicon and small SVGs are intentional format exceptions. The sitemap has 25 unique canonical pages. Thank-you, redirect output and the real 404 are noindex; the existing Pages-host noindex rules remain. WebSite/Person schema complements existing Article schema. No rankings, Google indexing, Search Console submission or account-wide Netlify safety are established by local tests.
+
+Source changes remain uncommitted/unpushed. Production still has the earlier assets and no llms.txt (live 404 observed). Netlify CLI listSites returned Unauthorized. Current source has no Netlify services/forms endpoints, and public NS/MX use Cloudflare, but other Netlify sites, domain registrations, saved form submissions and rollback details remain uninspected. [Checks and asset evidence](../logs/2026-10-20-024-images-social-seo.md).
+
+### Image/SEO publication authorised, 20 October 2026
+
+James approved the new social image and explicitly requested pushing the image/SEO candidate to GitHub for Cloudflare deployment, followed by live verification. This lifts the local-only publication boundary for this candidate. Netlify account deletion remains James’s own action. Live acceptance must compare hosted sitemap/llms/assets/metadata with the candidate, check aliases/404/noindex and exercise the rendered site. [Publication evidence](../logs/2026-10-20-025-image-seo-deployment.md).
