@@ -24,12 +24,12 @@ Current goal: verify Search Console ownership, sitemap status and indexing. Host
 
 ## Stack
 
-Implementation: Astro 7, static output with plain browser JavaScript and no React runtime, live on Cloudflare Pages. James performed the custom-domain cutover. James confirmed deleting the Netlify account on 20 October 2026. It is retired and is not an available rollback target; use a previous successful Cloudflare Pages production deployment for recovery. [Migration and publishing scope](specs/essays-home-and-agent-readiness.md). The selected design has four stories (two for the same client, TapScribe and Plumbline with IIIMPACT) and three selected published essays.
+Implementation: Astro 7, static output with plain browser JavaScript and no React runtime, live on Cloudflare Pages. James performed the custom-domain cutover. James confirmed deleting the Netlify account on 20 October 2026. It is retired and is not an available rollback target; use a previous successful Cloudflare Pages production deployment for recovery. [Migration and publishing scope](specs/essays-home-and-agent-readiness.md). The selected design has four stories (two for the same client, TapScribe and Plumbline with IIIMPACT) and 15 published essays.
 
 - Design authority: `src/styles/tokens.css` owns preserved values and light/dark mappings; `src/design-system/patterns.js` owns supported recipes; `src/styles/patterns.css` owns their styling. `src/index.css` supplies resets/inheritance, `src/NewSite.css` inherited layout and retained historical circle composition. [Usage](runbooks/use-design-system.md).
 - `src/siteMetadata.js` owns route/social/indexability metadata; `src/routes.js` binds commands, headings, presentation and trusted output modules. `src/pages/sitemap.xml.js` lists indexable canonical URLs; `src/pages/llms.txt.js` generates the public context guide from metadata and published essays. `public/robots.txt` references the sitemap. [Image/SEO publication](logs/2026-10-20-025-image-seo-deployment.md) is live; [www routing](logs/2026-10-20-026-www-redirect-repair.md) is repaired and verified.
 - `src/layouts/SiteLayout.astro` owns shared document metadata, font loading, GA, ConvertKit and navigation.
-- Local candidate: 15 essays with static 12-per-page pagination at `/essays` and `/essays/page/<number>`; visible navigation uses Essays. The deployed archive still has the original three pending release of this candidate. [Pagination evidence](logs/2026-10-20-031-essay-pagination.md).
+- Deployed archive: 15 essays with static 12-per-page pagination at `/essays` and `/essays/page/<number>`; visible navigation uses Essays. The 12-article backfill is published and verified ([release](logs/2026-10-20-032-article-pagination-release.md)). [Pagination evidence](logs/2026-10-20-031-essay-pagination.md).
 
 - `src/pages/index.astro` presents the four-story selector and writing, defaulting to Ben’s scoring story. `[page].astro` preserves all 17 existing inner routes; Work/story and Essays routes are explicit. Sitemap includes published essays and new sections. `404.astro` is aligned with the shell.
 - `src/site-client.js` owns contact intent/tracking and progressively enhanced chapter navigation. All story chapters are rendered in HTML; app illustrations have no controls. The earlier circle/private-command implementation remains in source as historical reference and is not mounted by the new shell.
@@ -43,7 +43,7 @@ Keep `siteMetadata.js`, the route/output/presentation mapping, navigation/help w
 
 ## Key Constraints
 
-- Preserve existing public routes, service prices, contact paths and the selected Case shelf design. Four static stories and three original illustrated essays are live; earlier circle/terminal artwork is historical reference.
+- Preserve existing public routes, service prices, contact paths and the selected Case shelf design. Four static stories and 15 original illustrated essays are live; earlier circle/terminal artwork is historical reference.
 - Trusted HTML only in `src/outputs/`; never interpolate visitor input into `set:html` or reflection HTML.
 - Keep existing Google Analytics and ConvertKit (`data-uid="0da6b662ba"`) working alongside PostHog.
 - The obsolete `public/tapscribe/TapScribe-Pilot.dmg` was removed at James's request on 20 October and now returns 404 on the live Cloudflare site. Do not restore it or add replacement download hosting.
@@ -68,7 +68,7 @@ No CMS, multi-user product, new tracking system, changed service offers or edits
 
 ### Main story and writing build
 
-- Main review URL: `http://127.0.0.1:4173/`. `/work/crew-scores`, `/work/quality-control`, `/work/tapscribe` and `/work/plumbline` contain the four narratives, selected through the homepage shelf; `/essays` contains the selected three published articles.
+- Main review URL: `http://127.0.0.1:4173/`. `/work/crew-scores`, `/work/quality-control`, `/work/tapscribe` and `/work/plumbline` contain the four narratives, selected through the homepage shelf; `/essays` contains 15 selected published articles, paginated 12 per page.
 - `npm run import:essays -- <Source posts folder>` reads selected ARTICLE bodies and the publication Log; conflicts preserve local edits. `npm run test:essays` checks importer and built output.
 - Collection: `src/content/essays/`; original covers: `src/assets/writing/`; selection/reconciliation manifest: `scripts/essay-selection.mjs`. Synthetic draft fixture never ships.
 

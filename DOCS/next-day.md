@@ -2,36 +2,38 @@
 
 ## Current Focus
 
-Publish and verify the authorised full published-article backfill: 12 new local essays, 15 total, paginated 12/3 with consistent Essays navigation. [Scope](specs/essays-home-and-agent-readiness.md#full-published-article-backfill--20-october-2026), [evidence](logs/2026-10-20-030-full-article-backfill.md).
+The 15-essay archive and pagination are live. Next, verify Search Console ownership, sitemap status and indexing. [Release evidence](logs/2026-10-20-032-article-pagination-release.md).
 
 ## Where Work Stopped
 
-20 October 2026: local import is complete on main, uncommitted. All 12 bodies were compared with live LinkedIn text; original covers, titles, dates and source links are retained. Source files are untouched. Three unpublished drafts remain excluded. The importer supports the legacy May 31 filename and preserves conflict/draft safeguards. Two per-cover WebP quality settings meet the existing image budget.
+20 October 2026: source commit `399e7e750a9af81a3800412ff01eb6389166c887` pushed to main; Cloudflare deployment `855e8d52-9454-481f-ba67-0166ebe602a9` succeeded. The 12 reviewed articles/covers are published, bringing the archive to 15. Page one contains 12 (including the feature), page two three; visible navigation uses Essays consistently.
 
-Build/design guard, 19 unit tests, five essay/import checks and eight built-route/SEO checks pass. All 12 local reading pages load their covers and canonicals without desktop overflow. Review screenshots and live-text provenance are ignored under `output/article-review/`. Dedicated mobile testing was not repeated. Pagination at `/essays/page/2` works via real Next/Previous links, has its own title/canonical/sitemap entry and returns to `/essays`; nonexistent page three returns 404. [Evidence](logs/2026-10-20-031-essay-pagination.md). Local preview: `http://127.0.0.1:4173/essays`.
+Clean staged export: npm ci/build/design guard and all 39 automated tests pass. Live: 62 URL checks, 165 assets, 38 indexable sitemap URLs and 11 www redirects pass. All 15 article documents plus both archive documents match candidate HTML byte-for-byte. Desktop Next/Previous, article opening/source link/loaded WebP and All essays navigation pass with no console errors or horizontal overflow. Three previously qualified negligible TapScribe encoder variations are unchanged. Evidence is ignored under `output/article-release/`.
 
-The existing site, four stories, original three essays, image/SEO update, www redirect and PostHog acceptance are live and previously verified. Documentation publication commit `b66b375` was pushed before this article work. Netlify is owner-reported deleted; recovery uses prior successful Cloudflare production deployments. The 12 new essays have not been pushed or deployed.
+Phone-width repeat was attempted in a temporary Chrome Guest window but could not complete when the window became unavailable. Previous shared-shell mobile evidence remains historical, not new acceptance. No app changes were made after the source release; current follow-up publishes documentation only.
+
+Netlify remains owner-reported deleted; recover through prior successful Cloudflare production deployments. Keep the proxied www record and edge redirect. Source authoring and the three unpublished article drafts were not changed.
 
 ## Next Recommended Step
 
-James approved commit/push and hosted verification. Qualify the exact candidate, push normally to main, confirm Cloudflare succeeds, then verify all 15 essays and pagination live. [Release record](logs/2026-10-20-032-article-pagination-release.md).
+Open the existing Google Search Console property, verify ownership, check/submit `https://jamesgodwin.me/sitemap.xml` and inspect the homepage, an essay and archive page two. Record actual status.
 
 ## Blockers
 
-No authority blocker. Exact-source Cloudflare completion and hosted verification are pending.
+No observed live routing/content blocker. Search Console needs account access; no submission or indexing status is established.
 
 ## Parallel Threads
 
-- Verify Search Console ownership, sitemap status and indexing ([procedure](runbooks/deploy-cloudflare-pages.md#post-launch-search-and-analytics-checks)); no account submission established.
+- Repeat phone-width archive/pager and article checks when native browser control is available.
 - Source authoring cycle remains paused; importing published history does not restart it.
 - Eight-person visitor exercise remains outstanding ([alignment plan](specs/linkedin-site-alignment.md)).
 
 ## Needs Decisions
 
-None; James authorised this release.
+None for the completed article publication.
 
 ## Read These First
 
-- `DOCS/logs/2026-10-20-031-essay-pagination.md` — current pagination and naming checks
-- `DOCS/runbooks/import-essays.md` — import/reconciliation rules
-- `DOCS/runbooks/deploy-cloudflare-pages.md` — release checks
+- `DOCS/logs/2026-10-20-032-article-pagination-release.md` — exact release evidence and limits
+- `DOCS/runbooks/deploy-cloudflare-pages.md` — Search Console and hosting procedure
+- `DOCS/runbooks/import-essays.md` — future import/reconciliation rules

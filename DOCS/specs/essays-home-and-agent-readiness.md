@@ -2,7 +2,7 @@
 
 ## Current applicability, 20 October 2026
 
-Astro, all four Case shelf stories, three original essays and the image/SEO update are live on Cloudflare Pages. www is repaired; James reports the Netlify account deleted. Search Console remains open; hosted pageviews, both contact events, interaction logs and automatic uncaught-error receipt are confirmed. The initial preservation/single-story/local-only phases and completed hosting amendments below are chronological history; they do not supersede this state. See the [documentation index](README.md) for current authority and release evidence.
+Astro, all four Case shelf stories, 15 original essays and the image/SEO update are live on Cloudflare Pages. www is repaired; James reports the Netlify account deleted. Search Console remains open; hosted pageviews, both contact events, interaction logs and automatic uncaught-error receipt are confirmed. The initial preservation/single-story/local-only phases and completed hosting amendments below are chronological history; they do not supersede this state. See the [documentation index](README.md) for current authority and release evidence.
 
 ## Original scope and chronological amendments
 
@@ -157,3 +157,8 @@ Acceptance: the newest 12 entries appear at `/essays`, including the featured es
 ### Article release authorised — 20 October 2026
 
 James approved the local articles/pagination candidate and explicitly requested commit/push to GitHub and live verification after Cloudflare deploys. This lifts the local-only release boundary for the 12-article backfill, 12-per-page pagination and consistent Essays naming. [Release evidence](../logs/2026-10-20-032-article-pagination-release.md).
+
+
+### Article release verified — 20 October 2026
+
+Commit `399e7e7` is pushed and Cloudflare succeeded. All 15 article pages and both 12/3 archive pages match the candidate HTML exactly. The 62-URL/165-asset/38-canonical checks and 11 www redirect checks pass, alongside desktop navigation/reading checks. This supersedes local-only/pending-release statements in the backfill and pagination checkpoints above. A phone-width repeat was attempted but remains unverified; Search Console remains separate. [Exact evidence and limits](../logs/2026-10-20-032-article-pagination-release.md).

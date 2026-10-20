@@ -4,7 +4,7 @@ Astro implementation of jamesgodwin.me, hosted on Cloudflare Pages. James connec
 
 Read [AGENTS.md](AGENTS.md), [project context](DOCS/PROJECT.md), [backlog](DOCS/BACKLOG.md) and [handoff](DOCS/next-day.md) before making changes.
 
-Current build: cream/forest site, four static case stories and three illustrated essays. See the [build brief](DOCS/specs/site-story-writing-build.md), [design-system guide](DOCS/runbooks/use-design-system.md) and [writing import guide](DOCS/runbooks/import-essays.md).
+Current build: cream/forest site, four static case stories and 15 illustrated essays, paginated 12 per page. See the [build brief](DOCS/specs/site-story-writing-build.md), [design-system guide](DOCS/runbooks/use-design-system.md) and [writing import guide](DOCS/runbooks/import-essays.md).
 
 ## Local development
 

@@ -6,7 +6,7 @@ The site reads portable Markdown in `src/content/essays/`. Source remains the au
 npm run import:essays -- '/Users/nitro/Library/CloudStorage/Dropbox/Source/Runbooks/LinkedIn Posts/Output/Posts'
 ```
 
-An optional second argument supplies a publication Log path. The default is `../../Log.md` relative to the posts folder. `scripts/essay-selection.mjs` explicitly selects the 15 confirmed published articles and their verified title, date, original URL and cover. The original three are deployed; the further 12 are locally imported and qualified, pending release. Add further selections deliberately after confirming publication/permission and copying the original approved cover into `src/assets/writing/`.
+An optional second argument supplies a publication Log path. The default is `../../Log.md` relative to the posts folder. `scripts/essay-selection.mjs` explicitly selects the 15 confirmed published articles and their verified title, date, original URL and cover. All 15 are deployed with 12-per-page archive navigation. Add further selections deliberately after confirming publication/permission and copying the original approved cover into `src/assets/writing/`.
 
 The importer finds one matching ARTICLE file, excludes announcements and extracts only `## Article`, stopping before editorial/announcement/preflight/image-hook material. Confirmed posted/published Log entries take precedence over stale draft Status in source. Without confirmed publication it writes a draft. Drafts are excluded from index, article routes, related writing and sitemap. `draft-check.md` is a synthetic fixture for this boundary.
 
