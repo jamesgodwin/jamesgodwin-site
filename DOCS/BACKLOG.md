@@ -12,13 +12,15 @@ Deferred proposals, including terminal restoration, agent tools, opening questio
 
 ## In Progress
 
-- Slice 3: James’s Cloudflare domain cutover is live; primary routing/assets/mobile/pageview checks pass. Image/social/SEO improvements are qualified locally but unpushed ([evidence](logs/2026-10-20-024-images-social-seo.md)). Reconcile publication, the retained Netlify rollback destination and remaining hosted analytics checks before completing hosting acceptance ([scope](specs/essays-home-and-agent-readiness.md#slice-3--cloudflare-preview-and-production-cutover), [live evidence](logs/2026-10-20-023-live-cloudflare-verification.md)).
+- Slice 3: the image/SEO release is live and primary checks pass, but `www.jamesgodwin.me` still reaches Netlify and returns 404. Repair its Cloudflare DNS/301 redirect, then reconcile remaining hosted analytics acceptance ([deployment evidence](logs/2026-10-20-025-image-seo-deployment.md), [scope](specs/essays-home-and-agent-readiness.md)).
 
 ## Blocked
 
 - Look Up is on hold: Apple’s Screen Time API is too unreliable to pursue now. The landing page lives on branch `lookup` — https://github.com/jamesgodwin/jamesgodwin-site/tree/lookup — and should not be merged to `main` until the app is resumed.
 
 ## Done
+
+- Published the reviewed image/social/SEO update (`83b1155`) to Cloudflare: optimised WebP content, new Case shelf social card, canonical-only sitemap, llms guide and structured data. Main-domain/browser/asset checks pass; separate www hosting failure remains tracked above ([evidence](logs/2026-10-20-025-image-seo-deployment.md)).
 
 - Built and reviewed the main local website with all four static stories, three original illustrated essays, repeatable Source importer and aligned pages; James authorised the GitHub handoff after the final content pass ([scope and review](specs/site-story-writing-build.md#final-content-review-before-hosting-20-october-2026)).
 

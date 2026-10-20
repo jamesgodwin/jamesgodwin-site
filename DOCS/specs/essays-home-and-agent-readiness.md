@@ -117,3 +117,7 @@ Source changes remain uncommitted/unpushed. Production still has the earlier ass
 ### Image/SEO publication authorised, 20 October 2026
 
 James approved the new social image and explicitly requested pushing the image/SEO candidate to GitHub for Cloudflare deployment, followed by live verification. This lifts the local-only publication boundary for this candidate. Netlify account deletion remains James’s own action. Live acceptance must compare hosted sitemap/llms/assets/metadata with the candidate, check aliases/404/noindex and exercise the rendered site. [Publication evidence](../logs/2026-10-20-025-image-seo-deployment.md).
+
+### Image/SEO release result, 20 October 2026
+
+App revision `83b1155` is pushed and Cloudflare reports success. Primary production metadata/assets/sitemap/llms/browser checks pass. `www.jamesgodwin.me` separately returns Netlify 404; it remains a hosting blocker rather than an image/SEO implementation gap. No DNS/account changes were made. [Full checks, exact revision and access limitation](../logs/2026-10-20-025-image-seo-deployment.md).

@@ -2,39 +2,38 @@
 
 ## Current Focus
 
-The reviewed site is live on Cloudflare Pages at https://jamesgodwin.me/. Primary production checks pass. James has authorised pushing the reviewed image/social/SEO candidate and verifying its Cloudflare deployment; James intends to remove Netlify himself. Finish the remaining hosting acceptance details. [Live evidence](logs/2026-10-20-023-live-cloudflare-verification.md), [hosting scope](specs/essays-home-and-agent-readiness.md#owner-deployment-and-live-verification-20-october-2026).
+Repair `www.jamesgodwin.me` in Cloudflare. The reviewed image/social/SEO update is published and working on the apex domain; www still returns a Netlify 404. [Evidence and reproduction](logs/2026-10-20-025-image-seo-deployment.md).
 
 ## Where Work Stopped
 
-20 October 2026: James deployed GitHub main and connected the domain himself. App source is c1dce04, latest pushed handoff is 06d827b. Live homepage HTML and client JavaScript are byte-identical to the reviewed local build. That live verification changed documentation only. The image/SEO candidate is now authorised for push; publication and exact live checks are in progress (log 025).
+20 October 2026: app commit `83b1155ba9dc6a9e10fbf31e45d612c964bdea02` pushed to GitHub main; remote matched. Cloudflare deployment `baf5f00c-ec98-42b6-815e-93b153a7f151` completed successfully. This docs-only follow-up records qualification.
 
-All main pages, four static stories and three published essays are live. Original wording/covers, current app logos, Now, paintings layout and shared design system are preserved. Plumbline is with IIIMPACT/in progress; TapScribe contains fictional sample transcript content. No Source authoring changes.
+Clean exported candidate: npm ci/build, 19 unit + 8 built-route/SEO + 3 essay + 7 design-guard checks passed. Live: 45/46 URL checks pass (www fails), 91 asset URLs return 200; homepage HTML matches local configured output. New OG, optimised logos, 25-page sitemap, robots, llms, schema, metadata, redirects, real 404s and Pages noindex pass. Three generated WebP thumbnails show negligible cross-platform encoder differences, qualified by decoded-pixel comparison.
 
-Live evidence: 39 HTTP URL checks and 86 rendered assets pass; all six distinct social images load. Aliases, slash redirects, real 404s, TLS, HTTP → HTTPS and www → apex work. The temporary Pages address is noindex, while the custom domain is indexable. Draft, prototype, catalogue and retired pilot remain absent.
+Browser checked all shelf choices, chapter/history navigation, writing → article, contact intent, and twelve routes at 390px without overflow/broken loaded images/console errors. Artifacts and screenshot: `output/seo-live-verification/`. QA marker `seo-release-83b1155` is synthetic traffic.
 
-Browser checked four selectors, Plumbline’s chapters/history, product contact intent and an article. Twelve routes at 390px have no overflow or broken images; console checks are clear. PostHog project 631540 received an actual custom-domain Astro pageview without preview labels and a Pages-address pageview with verification labels. New hosted contact-event/log/exception delivery was not established by this check. QA URLs include release-2026-10-20-06d827b; do not treat QA as visitor evidence.
-
-Ignored artifacts: `output/live-verification/`. Previous clean-build/test qualification remains in log 022. Local review still uses port 4173. The new Case shelf social card, optimised logos, image dimensions, 25-page sitemap, noindex utility pages, WebSite/Person schema and generated llms.txt are qualified locally. Build/design checks, 19 unit tests, 8 built-route/SEO tests, 3 essay tests and 7 design-guard tests pass; 13 Pages-emulator HTTP checks and mobile Apps/Books/Paintings checks pass. See log 024; artifacts are in `output/seo-review/`.
+www returns x-nf-request-id/404 from the old origin. Dashboard initially listed only the apex custom domain. Wrangler is unauthenticated; the existing Brave dashboard stopped rendering content after account-home navigation/reload. Asked James to open Cloudflare DNS. No DNS, domains, redirect rules or account settings changed. James handles Netlify deletion himself; other account contents/rollback remain uninspected.
 
 ## Next Recommended Step
 
-Push the qualified image/SEO candidate, then compare hosted sitemap/llms/assets and metadata with the exact candidate.
+Inspect the current www DNS target and redirect rules in the opened Cloudflare DNS page; record rollback values, repair routing and host-specific 301 to the apex while preserving paths/queries, then rerun the live www checks.
 
 ## Blockers
 
-None for using the live site. Netlify CLI account read returned Unauthorized. Other projects, registrations, saved submissions and rollback destination remain uninspected. James says he will remove the account himself.
+Need an operable Cloudflare dashboard session or authenticated account access for the www repair. The main website is working.
 
 ## Parallel Threads
 
-- Source authoring remains paused; site launch does not resume publication.
+- Deeper hosted contact-event/log/exception delivery and Search Console indexing/submission remain unverified.
+- Source authoring remains paused; no new essay publication.
 - Eight-person visitor exercise remains outstanding ([alignment plan](specs/linkedin-site-alignment.md)).
 
 ## Needs Decisions
 
-None for the image/SEO publication; James explicitly authorised it.
+None for the approved image/SEO publication. Netlify account deletion remains James’s action.
 
 ## Read These First
 
-- `DOCS/logs/2026-10-20-024-images-social-seo.md` — local image/SEO changes, verification and limits
-- `DOCS/runbooks/deploy-cloudflare-pages.md` — hosting/rollback procedure
+- `DOCS/logs/2026-10-20-025-image-seo-deployment.md` — exact release, observed failure and access limits
+- `DOCS/runbooks/deploy-cloudflare-pages.md` — hosting procedure
 - `DOCS/specs/essays-home-and-agent-readiness.md` — acceptance authority
