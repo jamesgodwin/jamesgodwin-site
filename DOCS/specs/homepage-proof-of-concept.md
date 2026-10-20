@@ -1,6 +1,12 @@
 # Case shelf proof of concept
 
-Current main-site implementation and qualification: [first story, writing and aligned site](site-story-writing-build.md). Earlier prototype checkpoints below are historical. The main site now includes Ben only and three full illustrated essays.
+## Current applicability, 20 October 2026
+
+Historical local prototype. The selected Case shelf is now the live main site with four static stories and three original illustrated essays. Prototype/demo interpretation and single-story checkpoints below are historical; keep app screens static. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
+Current main-site implementation and qualification: [first story, writing and aligned site](site-story-writing-build.md). Earlier prototype checkpoints below are historical. The main site now includes all four static stories and three full illustrated essays.
 
 20 October 2026. James selected the first Case shelf design and authorised a local build. His latest correction is the governing direction: **tell the story of helping someone; do not make the illustrated app screens interactive.** The earlier app-demo interpretation was rejected.
 

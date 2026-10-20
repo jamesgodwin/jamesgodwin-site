@@ -1,5 +1,11 @@
 # Interactive Terminal Homepage
 
+## Current applicability, 20 October 2026
+
+Historical terminal/circle implementation, superseded by the deployed Case shelf. Do not restore it or treat the old public replacement gate as blocking the current live release. The visitor comprehension exercise remains separate evidence. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
 Status: Built and locally approved by James on 2026-07-10. Public replacement remains gated by the eight-person validation test below.
 
 ## Problem

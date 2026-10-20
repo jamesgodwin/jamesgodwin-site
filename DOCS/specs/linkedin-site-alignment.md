@@ -1,5 +1,11 @@
 # LinkedIn and website alignment plan
 
+## Current applicability, 20 October 2026
+
+The website changes have since shipped on the Cloudflare Case shelf, with live route/browser checks recorded. The visitor exercise and unverified LinkedIn profile adoption remain separate. Earlier local-tree and pending-release descriptions below are dated implementation history. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
 Prepared 6 September 2026. James requested a full local plan and authorised local implementation on 7 September. This document defines the agreed work; `DOCS/BACKLOG.md` owns implementation status. Publication, profile edits and deployment remain separate.
 
 ## Implementation Status

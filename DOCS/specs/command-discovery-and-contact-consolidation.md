@@ -1,5 +1,11 @@
 # Command Discovery And Contact Consolidation
 
+## Current applicability, 20 October 2026
+
+Implemented historical consolidation. Current contact paths are direct email/WhatsApp/telephone/LinkedIn; no Netlify forms or public terminal are mounted. Retained command/output architecture does not imply the older terminal UI remains public. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
 Status: Implemented on 2026-07-11.
 
 ## Problem

@@ -1,5 +1,11 @@
 # Product proof and enquiry
 
+## Current applicability, 20 October 2026
+
+Product/service routes and direct contact paths are live in the Case shelf site. Four static case stories add current proof. Original service scope and evidence limits remain relevant; earlier layout/local release wording is historical. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
 Part of [LinkedIn and website alignment](linkedin-site-alignment.md). Proposed implementation copy and acceptance criteria, prepared 6 September 2026. Backlog owns status.
 
 Local status 7 September 2026: P1 and P2 implemented and verified. Release remains governed by the parent plan.

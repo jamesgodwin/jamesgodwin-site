@@ -12,7 +12,6 @@ Project-specific limits:
 - Design values belong in `src/styles/tokens.css` and shared recipe options in `src/design-system/patterns.js`; reuse them rather than overriding component appearance. Keep the catalogue opt-in and run `npm run check:design` before build claims. See `DOCS/runbooks/use-design-system.md` for contracts and commands.
 - Do not run `npm run eject` without explicit approval.
 - A backlog item, suggested next step, or programme date does not authorize deployment, publication, spending, contacting people, or merging the parked `lookup` branch.
-- Until Netlify auto builds are disabled or a Netlify deployment is authorised, include `[skip netlify]` in commits pushed for Cloudflare preparation so the existing live deployment is preserved.
 
 ## A. Authority and placement
 

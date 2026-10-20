@@ -1,5 +1,11 @@
 # Homepage visual exploration
 
+## Current applicability, 20 October 2026
+
+Historical design exploration. James selected and deployed the Case shelf with four stories and the real writing archive. Earlier unselected-layout, pending-mockup-review and local-only statements below describe previous exploration stages. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
 Date: 2026-10-20.
 Status: James chose **The case shelf**, the first of the latest three refinements, and authorised a local proof of concept. [Implementation brief](homepage-proof-of-concept.md) now owns build scope. The earlier rounds below are historical, including their superseded approval/status language.
 

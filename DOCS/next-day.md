@@ -2,38 +2,39 @@
 
 ## Current Focus
 
-Repair `www.jamesgodwin.me` in Cloudflare. The reviewed image/social/SEO update is published and working on the apex domain; www still returns a Netlify 404. [Evidence and reproduction](logs/2026-10-20-025-image-seo-deployment.md).
+The portfolio and image/SEO release are live on Cloudflare, including the repaired www redirect. Next, verify Search Console ownership, sitemap status and indexing. Hosted analytics acceptance is also complete. [Release](logs/2026-10-20-025-image-seo-deployment.md), [www repair](logs/2026-10-20-026-www-redirect-repair.md).
 
 ## Where Work Stopped
 
-20 October 2026: app commit `83b1155ba9dc6a9e10fbf31e45d612c964bdea02` pushed to GitHub main; remote matched. Cloudflare deployment `baf5f00c-ec98-42b6-815e-93b153a7f151` completed successfully. This docs-only follow-up records qualification.
+20 October 2026: app revision `83b1155` was published and Cloudflare succeeded. Documentation follow-up `5a1cefe` also deployed successfully. The documentation publication commit packages the subsequent repair, retirement and hosted analytics evidence; no application code changed. See log 028 and Git history for the documentation handoff.
 
-Clean exported candidate: npm ci/build, 19 unit + 8 built-route/SEO + 3 essay + 7 design-guard checks passed. Live: 45/46 URL checks pass (www fails), 91 asset URLs return 200; homepage HTML matches local configured output. New OG, optimised logos, 25-page sitemap, robots, llms, schema, metadata, redirects, real 404s and Pages noindex pass. Three generated WebP thumbnails show negligible cross-platform encoder differences, qualified by decoded-pixel comparison.
+James opened Cloudflare DNS. Recorded www’s old target `jamesgodwin.netlify.app` as historical pre-repair evidence; deployed `Redirect www to jamesgodwin.me` with exact www hostname match, dynamic apex HTTPS + original path, 301 and query preservation. Updated www CNAME to `jamesgodwin.me`, Proxied/Auto. Apex/mail/TXT unchanged. Keep www; James’s question about deleting it was answered explicitly.
 
-Browser checked all shelf choices, chapter/history navigation, writing → article, contact intent, and twelve routes at 390px without overflow/broken loaded images/console errors. Artifacts and screenshot: `output/seo-live-verification/`. QA marker `seo-release-83b1155` is synthetic traffic.
+All 11 redirect checks pass, including one-hop HTTP/HTTPS, paths/queries and actual apex 404s. Repeated full release check: 46 URLs/91 assets pass; sitemap has 25 indexable canonicals. Browser www → apex path/query/canonical check passes. Artifacts/screenshots under `output/www-redirect-repair/` and `output/seo-live-verification/`. Previous clean build/37 automated checks and twelve-route mobile qualification remain valid. Three negligible generated WebP encoder variations are documented, with no broken assets.
 
-www returns x-nf-request-id/404 from the old origin. Dashboard initially listed only the apex custom domain. Wrangler is unauthenticated; the existing Brave dashboard stopped rendering content after account-home navigation/reload. Asked James to open Cloudflare DNS. No DNS, domains, redirect rules or account settings changed. James handles Netlify deletion himself; other account contents/rollback remain uninspected.
+James confirmed deleting the Netlify account on 20 October 2026. Treat Netlify as retired and unavailable for rollback; recover through a previous successful Cloudflare Pages production deployment. Account deletion is owner-reported, not independently audited. Keep the corrected proxied www CNAME and edge rule. The 11 redirect checks were re-run after his report and still pass.
+
+Hosted automatic uncaught-error receipt is confirmed on the Pages build after James turned off Brave Shields for testing. Custom-domain pageviews, both contact events and interaction logs were also received; slice 3 is complete. Test events are synthetic and must be excluded from reporting. [Evidence](logs/2026-10-20-028-hosted-posthog-verification.md).
 
 ## Next Recommended Step
 
-Inspect the current www DNS target and redirect rules in the opened Cloudflare DNS page; record rollback values, repair routing and host-specific 301 to the apex while preserving paths/queries, then rerun the live www checks.
+Open the existing Google Search Console property for jamesgodwin.me, verify ownership and check/submit `https://jamesgodwin.me/sitemap.xml`; inspect the homepage, a story and an essay. Record observed status rather than assuming indexing. See the deployment runbook.
 
 ## Blockers
 
-Need an operable Cloudflare dashboard session or authenticated account access for the www repair. The main website is working.
+None for the website or www routing. Search Console needs account access; no inspection or submission has occurred in this task.
 
 ## Parallel Threads
 
-- Deeper hosted contact-event/log/exception delivery and Search Console indexing/submission remain unverified.
-- Source authoring remains paused; no new essay publication.
+- Source authoring remains paused; site deployment does not publish new essays.
 - Eight-person visitor exercise remains outstanding ([alignment plan](specs/linkedin-site-alignment.md)).
 
 ## Needs Decisions
 
-None for the approved image/SEO publication. Netlify account deletion remains James’s action.
+None for the completed release/redirect repair.
 
 ## Read These First
 
-- `DOCS/logs/2026-10-20-025-image-seo-deployment.md` — exact release, observed failure and access limits
+- `DOCS/logs/2026-10-20-028-hosted-posthog-verification.md` — final analytics evidence and documentation handoff
+- `DOCS/specs/essays-home-and-agent-readiness.md` — remaining acceptance scope
 - `DOCS/runbooks/deploy-cloudflare-pages.md` — hosting procedure
-- `DOCS/specs/essays-home-and-agent-readiness.md` — acceptance authority

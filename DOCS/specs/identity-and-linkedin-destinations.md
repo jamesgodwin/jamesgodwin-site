@@ -1,5 +1,11 @@
 # Identity and LinkedIn destinations
 
+## Current applicability, 20 October 2026
+
+About, Now, apps and service destinations are updated and deployed. The September Featured handoff below is a dated historical recommendation; LinkedIn profile adoption is not established by website deployment. Use the current stories/essays and verify any profile change separately. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
 Part of [LinkedIn and website alignment](linkedin-site-alignment.md). Backlog owns status. This spec proposes supporting copy and a LinkedIn handoff; external profile changes remain separate.
 
 Local status 7 September 2026: I1 and the website portion of I2 are implemented. A subsequent hierarchy refinement groups Product Clarity and Workflow Systems under “Product and workflow work”, with the diagnostic, workshop and True Essence under “Practice and workshops”. External LinkedIn adoption remains in the Week 2 review.

@@ -29,3 +29,7 @@ Use main and a normal push with `[skip netlify]`; preserve retired download and 
 ## Follow-ups
 
 Image/SEO publication and primary live verification are complete. Repair www using Cloudflare account access: inspect and record current DNS/rollback first, replace the stale Netlify routing and configure a host-specific 301 to https://jamesgodwin.me preserving path/query. Verify HTTPS/HTTP www root and a nested query URL. The live HTTP check must pass before calling all hosting checks complete. Owner handles any Netlify deletion.
+
+### Follow-up correction, 20 October 2026
+
+The www failure recorded above is now repaired in Cloudflare. The complete 46-URL/91-asset live check passes, with 11 additional www redirect checks and browser confirmation. Preserve the original failure evidence above as history. [Repair and exact configuration](2026-10-20-026-www-redirect-repair.md).

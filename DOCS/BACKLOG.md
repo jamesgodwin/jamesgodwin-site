@@ -6,13 +6,15 @@ Current work status and priority. Detail lives in linked specs or logs.
 
 ## Backlog
 
+- Verify Google Search Console ownership, sitemap status and indexing for the live Cloudflare site ([procedure](runbooks/deploy-cloudflare-pages.md#post-launch-search-and-analytics-checks)).
+
 - Run the combined eight-person visitor exercise on the deployed LinkedIn-aligned site, then record concrete confusion or validated comprehension using [the alignment plan](specs/linkedin-site-alignment.md).
 
 Deferred proposals, including terminal restoration, agent tools, opening question and Notes, are [parked outside active scope](archive/2026-10-20-agent-readiness-proposals.md).
 
 ## In Progress
 
-- Slice 3: the image/SEO release is live and primary checks pass, but `www.jamesgodwin.me` still reaches Netlify and returns 404. Repair its Cloudflare DNS/301 redirect, then reconcile remaining hosted analytics acceptance ([deployment evidence](logs/2026-10-20-025-image-seo-deployment.md), [scope](specs/essays-home-and-agent-readiness.md)).
+None.
 
 ## Blocked
 
@@ -20,7 +22,9 @@ Deferred proposals, including terminal restoration, agent tools, opening questio
 
 ## Done
 
-- Published the reviewed image/social/SEO update (`83b1155`) to Cloudflare: optimised WebP content, new Case shelf social card, canonical-only sitemap, llms guide and structured data. Main-domain/browser/asset checks pass; separate www hosting failure remains tracked above ([evidence](logs/2026-10-20-025-image-seo-deployment.md)).
+- Slice 3: Cloudflare deployment and www repair pass all current routing/image/SEO/browser checks; James confirmed deleting Netlify. Hosted pageviews, both contact events and interaction logs are now verified on Pages and the custom domain; automatic hosted uncaught-error receipt is also verified after James disabled Brave Shields for testing ([release](logs/2026-10-20-025-image-seo-deployment.md), [www repair](logs/2026-10-20-026-www-redirect-repair.md), [scope](specs/essays-home-and-agent-readiness.md), [analytics evidence](logs/2026-10-20-028-hosted-posthog-verification.md)).
+
+- Published the reviewed image/social/SEO update (`83b1155`) to Cloudflare: optimised WebP content, new Case shelf social card, canonical-only sitemap, llms guide and structured data. Main-domain/browser/asset checks pass; www routing is also repaired and verified ([evidence](logs/2026-10-20-025-image-seo-deployment.md)).
 
 - Built and reviewed the main local website with all four static stories, three original illustrated essays, repeatable Source importer and aligned pages; James authorised the GitHub handoff after the final content pass ([scope and review](specs/site-story-writing-build.md#final-content-review-before-hosting-20-october-2026)).
 

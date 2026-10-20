@@ -1,5 +1,11 @@
 # Design-system foundations
 
+## Current applicability, 20 October 2026
+
+Foundations and consolidation power the deployed cream/forest Case shelf. Token/recipe authority and opt-in catalogue contracts remain current. Original preservation-only exploration and pre-deployment observations below are historical; public dark-mode controls remain deferred. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
 Date: 2026-10-20.
 Status: Foundations and authorised consolidation implemented and verified locally on 20 October 2026. Current contracts are in the runbook; the consolidation result at the end supersedes the initial preservation-only vocabulary. No deployment, public dark-mode control or homepage redesign implemented. James subsequently authorised [two homepage concepts](homepage-visual-exploration.md) before Essays. The observations below are historical baselines.
 

@@ -1,5 +1,11 @@
 # Homepage and work discovery
 
+## Current applicability, 20 October 2026
+
+The deployed Case shelf replaces the earlier circle-based homepage composition described below. Discovery intent and the outstanding visitor exercise remain relevant; use the current main-site build for implementation. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
 Part of [LinkedIn and website alignment](linkedin-site-alignment.md). Backlog owns status. This spec supersedes conflicting product-discovery and one-screen-fit details in the earlier interactive homepage brief; its circle concept and validation thresholds remain relevant.
 
 Local status 7 September 2026: H1 and H2 implemented. Automated focus/navigation checks pass; key responsive captures are recorded under `output/playwright/`. The combined visitor exercise remains pending.

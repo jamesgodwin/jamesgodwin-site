@@ -1,5 +1,11 @@
 # Astro, Cloudflare and Essays with PostHog
 
+## Current applicability, 20 October 2026
+
+Astro, all four Case shelf stories, three original essays and the image/SEO update are live on Cloudflare Pages. www is repaired; James reports the Netlify account deleted. Search Console remains open; hosted pageviews, both contact events, interaction logs and automatic uncaught-error receipt are confirmed. The initial preservation/single-story/local-only phases and completed hosting amendments below are chronological history; they do not supersede this state. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
 Date: 2026-10-15. Scope revised by James on 2026-10-20.
 Status: Slice 1 complete locally. James has now authorised the selected Case shelf as the main site, Ben's first story, writing and aligned pages. Slice 2 is implemented locally for the three explicitly selected published essays and a reusable importer; final qualification is recorded in [current build scope](site-story-writing-build.md). Earlier exploration/preservation language below is historical where it conflicts with this later direction. Cloudflare cutover and public publication remain separate.
 Decision: [essays canonical home and Astro migration](../decisions/2026-10-15-essays-canonical-home-and-astro-migration.md).
@@ -71,7 +77,7 @@ Source owns drafting, queue and confirmed publication state. James approves each
 
 ## Next action
 
-Review the completed [main-site build](site-story-writing-build.md) with James. The selected direction, Ben’s first story, three essays and importer are implemented and locally qualified. The migration and exploration checkpoints below describe earlier states. Public cutover remains separate.
+Verify Search Console property access, sitemap status and indexing for the live site. Hosted PostHog acceptance is complete. The build, publication, www repair and Netlify retirement are already recorded; do not restart the cutover. Current priorities are in [the backlog](../BACKLOG.md).
 
 ## 20 October local implementation checkpoint
 
@@ -121,3 +127,16 @@ James approved the new social image and explicitly requested pushing the image/S
 ### Image/SEO release result, 20 October 2026
 
 App revision `83b1155` is pushed and Cloudflare reports success. Primary production metadata/assets/sitemap/llms/browser checks pass. `www.jamesgodwin.me` separately returns Netlify 404; it remains a hosting blocker rather than an image/SEO implementation gap. No DNS/account changes were made. [Full checks, exact revision and access limitation](../logs/2026-10-20-025-image-seo-deployment.md).
+
+### www repair completed, 20 October 2026
+
+James opened Cloudflare DNS for the repair. The stale Netlify CNAME is replaced by proxied `www` → `jamesgodwin.me`, with an enabled host-specific edge 301 preserving path/query. All 46 live URL checks, 91 assets and 11 additional redirect checks pass. This supersedes the www blocker above. Keep the www record; no further DNS deletion is required. [Exact configuration, rollback and evidence](../logs/2026-10-20-026-www-redirect-repair.md).
+
+### Netlify retirement confirmed, 20 October 2026
+
+James reports deleting the Netlify account after the verified Cloudflare release and www repair. Treat Netlify as retired and unavailable for rollback. The old skip-marker/retain-Netlify instructions above are historical. Future recovery uses a previous successful Cloudflare Pages production deployment and the current Cloudflare DNS/redirect configuration. Search Console indexing/submission and deeper hosted PostHog delivery remain unverified. [Documentation reconciliation](../logs/2026-10-20-027-hosting-documentation-reconciliation.md).
+
+
+### Hosted analytics receipt — 20 October 2026
+
+Actual Pages and custom-domain browser sessions produced received pageviews, both contact events and interaction logs in website PostHog project 631540. Pages verification labels were confirmed; production synthetic traffic must be excluded by the recorded URL/session/time window. No source change was needed. Automatic hosted uncaught-error receipt is also verified on the Pages build after James disabled Brave Shields for testing. The exact labelled error arrived as an unhandled `$exception`; no manual capture API was used. Slice 3 is complete against the existing release checks; Search Console remains separate. [Evidence and limits](../logs/2026-10-20-028-hosted-posthog-verification.md).

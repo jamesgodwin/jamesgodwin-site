@@ -1,5 +1,11 @@
 # First story, writing and aligned site
 
+## Current applicability, 20 October 2026
+
+The build expanded by James’s subsequent instructions to four static stories and three original illustrated essays, and is deployed on Cloudflare Pages. Shared design, routes, image/SEO work and www redirects are verified. The Ben-only/local-only wording below records the original slice, superseded by its later amendments and the live release. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
 20 October 2026. James explicitly asked to build the website from the documented direction, ship the first story into the working site, complete writing and align/create the other pages. This authorises replacing the local homepage and extending the selected theme across local routes. Public hosting/cutover remains a separate release action.
 
 ## Outcome and boundaries

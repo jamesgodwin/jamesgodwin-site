@@ -1,5 +1,11 @@
 # Homepage case-story drafts
 
+## Current applicability, 20 October 2026
+
+The four source-backed stories are approved and live: scoring and QC for the same roofing client, TapScribe as James’s product, and Plumbline with IIIMPACT still in progress. Their factual limits remain current; earlier draft/publication-pending labels below are historical. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
 Date: 20 October 2026.
 Status: source-backed draft copy for the selected Case shelf local proof of concept. [Implementation scope](homepage-proof-of-concept.md) is authorised; public publication copy is not yet signed off.
 

@@ -1,6 +1,6 @@
 # Use the design system
 
-The main local website uses the selected cream/forest Case shelf system. Reuse supported components and recipes before introducing a variation. Existing legacy compositions remain only where needed for retained content.
+The main deployed website and local implementation use the selected cream/forest Case shelf system. Reuse supported components and recipes before introducing a variation. Existing legacy compositions remain only where needed for retained content.
 
 ## Authority
 
@@ -12,11 +12,11 @@ The main site and selected Case shelf prototype use a scoped theme in this same 
 | `src/design-system/patterns.js` | Supported recipes, classes, examples and native-attribute contract shared by Astro, browser code and catalogue. |
 | `src/styles/patterns.css` | Appearance and responsive states of the shared patterns. |
 | `src/components/ui/` | Action, TextLink, LinkCard, PageHero and ContentProse markup. |
-| `src/NewSite.css` | Active page composition and the bespoke circle experience. Retired terminal, overlay and offer styles have been removed. |
+| `src/NewSite.css` | Inherited layout styles and retained historical circle composition; the public shell uses the Case shelf theme. Retired terminal, overlay and offer styles have been removed. |
 | `src/styles/site.css` | Main site composition only; design values and appearance belong to tokens/recipes. |
 | `src/components/site/` | Shared header, story and writing compositions. ContentProse `reading` uses the supported serif reading variant. |
-| `src/styles/concept.css` | Composition for opt-in prototype pages; values and recipe treatments remain in the authorities above. |
-| `src/components/Fonts.astro` | Default font loading for product/catalogue; explicit `theme="case-study"` loads the selected prototype families. |
+| `src/styles/concept.css` | Case shelf composition shared by the main site and opt-in prototype; values and recipe treatments remain in the authorities above. |
+| `src/components/Fonts.astro` | Default font loading for product/catalogue; explicit `theme="case-study"` loads the selected main-site and prototype families. |
 | `src/pages/design-system/[...catalogue].astro` | Opt-in catalogue using the real sources; no independent token or recipe inventory. |
 
 ## Open the local catalogue

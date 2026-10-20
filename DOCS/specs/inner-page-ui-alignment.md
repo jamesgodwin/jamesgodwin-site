@@ -1,5 +1,11 @@
 # Inner Page UI Alignment
 
+## Current applicability, 20 October 2026
+
+Historical layout plan, implemented and later superseded visually by the deployed Case shelf shell. Its old terminal/circle/form descriptions do not define current UI. Route/service/contact preservation remains relevant. See the [documentation index](README.md) for current authority and release evidence.
+
+## Original scope and chronological amendments
+
 Status: Ready for implementation. James approved the new homepage as the visual source of truth on 2026-07-10. This spec plans the next bounded stage; it does not authorise a wider site rewrite.
 
 ## Problem

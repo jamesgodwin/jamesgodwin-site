@@ -1,7 +1,9 @@
 # Runbooks
 
-Use this folder for repeatable operational workflows.
+Repeatable procedures, named by verb and noun.
 
-Name runbooks as verb-noun. Example: `deploy-site.md`.
+- [Deploy to Cloudflare Pages](deploy-cloudflare-pages.md): release checks, current DNS/www redirect, recovery through a previous successful production deployment, and Search Console/PostHog follow-ups. Netlify is retired.
+- [Use the design system](use-design-system.md): shared tokens/recipes, drift guard and opt-in catalogue.
+- [Import published essays](import-essays.md): preserve original bodies/covers, protect local edits and keep unapproved work out of production.
 
-Runbooks should describe commands, checks, and stop conditions for workflows that will be repeated.
+[Project](../PROJECT.md) owns environment/context; [backlog](../BACKLOG.md) owns status; [handoff](../next-day.md) owns resumption.

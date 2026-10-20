@@ -20,19 +20,19 @@ James is the author and maintainer. This is a personal site, not a multi-user pr
 
 Enduring signal: a visitor can recognise James, reach a relevant destination, and find a direct contact method without a site rebuild.
 
-Current goal: finish the remaining hosting follow-ups after the live cutover. The selected site has all four stories, real writing and aligned pages; primary live checks pass. [Build scope](specs/site-story-writing-build.md), [live verification](logs/2026-10-20-023-live-cloudflare-verification.md). The eight-person visitor exercise from [the alignment plan](specs/linkedin-site-alignment.md) remains separate product evidence.
+Current goal: verify Search Console ownership, sitemap status and indexing. Hosted analytics acceptance is complete, including the controlled automatic exception ([evidence](logs/2026-10-20-028-hosted-posthog-verification.md)). The selected site has all four stories, real writing and aligned pages; primary live checks pass. [Build scope](specs/site-story-writing-build.md), [live verification](logs/2026-10-20-023-live-cloudflare-verification.md). The eight-person visitor exercise from [the alignment plan](specs/linkedin-site-alignment.md) remains separate product evidence.
 
 ## Stack
 
-Implementation: Astro 7, static output with plain browser JavaScript and no React runtime, live on Cloudflare Pages. James performed the custom-domain cutover. The prior Netlify deployment has not been retired by this task; its rollback destination remains to be confirmed. [Migration and publishing scope](specs/essays-home-and-agent-readiness.md). The selected design has four stories (two for the same client, TapScribe and Plumbline with IIIMPACT) and three selected published essays.
+Implementation: Astro 7, static output with plain browser JavaScript and no React runtime, live on Cloudflare Pages. James performed the custom-domain cutover. James confirmed deleting the Netlify account on 20 October 2026. It is retired and is not an available rollback target; use a previous successful Cloudflare Pages production deployment for recovery. [Migration and publishing scope](specs/essays-home-and-agent-readiness.md). The selected design has four stories (two for the same client, TapScribe and Plumbline with IIIMPACT) and three selected published essays.
 
-- Design authority: `src/styles/tokens.css` owns preserved values and light/dark mappings; `src/design-system/patterns.js` owns supported recipes; `src/styles/patterns.css` owns their styling. `src/index.css` supplies resets/inheritance, `src/NewSite.css` active page composition/circles. [Usage](runbooks/use-design-system.md).
-- `src/siteMetadata.js` owns route/social/indexability metadata; `src/routes.js` binds commands, headings, presentation and trusted output modules. `src/pages/sitemap.xml.js` lists indexable canonical URLs; `src/pages/llms.txt.js` generates the public context guide from metadata and published essays. `public/robots.txt` references the sitemap. [Image/SEO publication](logs/2026-10-20-025-image-seo-deployment.md) is live; www still needs a Cloudflare routing repair.
+- Design authority: `src/styles/tokens.css` owns preserved values and light/dark mappings; `src/design-system/patterns.js` owns supported recipes; `src/styles/patterns.css` owns their styling. `src/index.css` supplies resets/inheritance, `src/NewSite.css` inherited layout and retained historical circle composition. [Usage](runbooks/use-design-system.md).
+- `src/siteMetadata.js` owns route/social/indexability metadata; `src/routes.js` binds commands, headings, presentation and trusted output modules. `src/pages/sitemap.xml.js` lists indexable canonical URLs; `src/pages/llms.txt.js` generates the public context guide from metadata and published essays. `public/robots.txt` references the sitemap. [Image/SEO publication](logs/2026-10-20-025-image-seo-deployment.md) is live; [www routing](logs/2026-10-20-026-www-redirect-repair.md) is repaired and verified.
 - `src/layouts/SiteLayout.astro` owns shared document metadata, font loading, GA, ConvertKit and navigation.
 - `src/pages/index.astro` presents the four-story selector and writing, defaulting to Ben’s scoring story. `[page].astro` preserves all 17 existing inner routes; Work/story and Essays routes are explicit. Sitemap includes published essays and new sections. `404.astro` is aligned with the shell.
 - `src/site-client.js` owns contact intent/tracking and progressively enhanced chapter navigation. All story chapters are rendered in HTML; app illustrations have no controls. The earlier circle/private-command implementation remains in source as historical reference and is not mounted by the new shell.
 - `src/posthog.js` and `src/posthog-logs.js` preserve the existing project, events, exceptions and browser logs. Local and Pages-hosted verification traffic is labelled; the run label follows navigation within the session.
-- `src/themes.js` supplies image-theme artwork. The [design-system foundations](specs/design-system-foundations.md) are implemented and consolidated locally, preserving the visual language and layout. Action, TextLink, LinkCard, PageHero and ContentProse are shared by product and catalogue; browser reflection actions use the same recipes. Standard outlined actions now share one treatment; public dark-mode controls remain later work.
+- `src/themes.js` supplies image-theme artwork. The [design-system foundations](specs/design-system-foundations.md) are implemented, consolidated and deployed, preserving the selected visual language and layout. Action, TextLink, LinkCard, PageHero and ContentProse are shared by product and catalogue; retained historical browser reflection actions use the same recipes but are not mounted in the public Case shelf. Standard outlined actions now share one treatment; public dark-mode controls remain later work.
 - `legacy/` retains the CRA source/manifests and original prerender script for migration comparison. It is not shipped by Astro or a second maintained application.
 
 ### Adding a route-backed page
@@ -41,12 +41,12 @@ Keep `siteMetadata.js`, the route/output/presentation mapping, navigation/help w
 
 ## Key Constraints
 
-- Preserve existing public routes, circle artwork, service prices and contact paths. James authorised the Case shelf design as the main local site, beginning with one client story and writing. A public cutover is separate.
+- Preserve existing public routes, service prices, contact paths and the selected Case shelf design. Four static stories and three original illustrated essays are live; earlier circle/terminal artwork is historical reference.
 - Trusted HTML only in `src/outputs/`; never interpolate visitor input into `set:html` or reflection HTML.
 - Keep existing Google Analytics and ConvertKit (`data-uid="0da6b662ba"`) working alongside PostHog.
 - The obsolete `public/tapscribe/TapScribe-Pilot.dmg` was removed at James's request on 20 October and now returns 404 on the live Cloudflare site. Do not restore it or add replacement download hosting.
 - Do not merge or resume the parked `lookup` branch without James lifting the hold.
-- James authorised the GitHub push and performed the Pages deployment/domain cutover on 20 October. Netlify retirement, unpublished essay publication, outbound contact and spending remain separate.
+- James authorised the GitHub push and performed the Pages deployment/domain cutover on 20 October. James subsequently confirmed deleting the Netlify account. Unpublished essay publication, outbound contact and spending remain separate.
 
 ## Non-Goals
 
