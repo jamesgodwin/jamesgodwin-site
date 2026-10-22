@@ -18,12 +18,13 @@ test('selected essays render images, canonical metadata, article schema and orig
 });
 
 test('essay archive paginates without omissions or duplicates and provides real navigation',()=>{
- const totalPages=Math.ceil(selections.length/12);
+ const published=fs.readdirSync('src/content/essays').filter(name=>/^draft: false$/m.test(fs.readFileSync(`src/content/essays/${name}`,'utf8'))).map(name=>({slug:name.replace(/\.md$/,''),date:fs.readFileSync(`src/content/essays/${name}`,'utf8').match(/^date: "([^"]+)"/m)[1]})).sort((a,b)=>b.date.localeCompare(a.date));
+ const totalPages=Math.ceil(published.length/12);
  let position=0;
  for(let number=1;number<=totalPages;number++){
   const file=number===1?'dist/essays.html':`dist/essays/page/${number}.html`;
   const html=fs.readFileSync(file,'utf8');
-  const expected=selections.slice((number-1)*12,number*12);
+  const expected=published.slice((number-1)*12,number*12);
   const hasLink=(href,rel)=>[...html.matchAll(/<a\b[^>]*>/g)].some(([tag])=>tag.includes(`href="${href}"`)&&tag.includes(`rel="${rel}"`));
   assert.equal((html.match(/<article class="writing-(?:feature|card)"/g)||[]).length,expected.length);
   const path=number===1?'/essays':`/essays/page/${number}`;
@@ -35,12 +36,12 @@ test('essay archive paginates without omissions or duplicates and provides real 
   }else assert.doesNotMatch(html,/rel="prev"/);
   if(number<totalPages)assert.ok(hasLink(`/essays/page/${number+1}`,'next'));
   else assert.doesNotMatch(html,/rel="next"/);
-  for(const item of selections)assert.equal(html.includes(`/essays/${item.slug}`),expected.includes(item));
-  for(const item of expected)assert.equal(item,selections[position++]);
+  for(const item of published)assert.equal(html.includes(`/essays/${item.slug}`),expected.includes(item));
+  for(const item of expected)assert.equal(item,published[position++]);
   assert.match(html,/>Essays\.<\/h1>/);
   assert.match(html,/aria-current="page"[^>]*>Essays<\/a>/);
  }
- assert.equal(position,selections.length);
+ assert.equal(position,published.length);
  assert.equal(fs.existsSync('dist/essays/page/1.html'),false);
  assert.equal(fs.existsSync(`dist/essays/page/${totalPages+1}.html`),false);
 });

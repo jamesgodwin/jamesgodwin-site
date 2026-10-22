@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {noteSelections} from './note-selection.mjs';
 const slugs=noteSelections.map(note=>note.slug);
-test('visitors discover exactly the selected notes alongside an unchanged essay archive',()=>{
+test('visitors discover exactly the selected notes without mixing Notes into the essay archive',()=>{
  const pageCount=Math.ceil(slugs.length/12);
  const archives=Array.from({length:pageCount},(_,i)=>fs.readFileSync(i===0?'dist/notes.html':`dist/notes/page/${i+1}.html`,'utf8'));
  const [first,second]=archives;
@@ -48,6 +48,6 @@ test('visitors discover exactly the selected notes alongside an unchanged essay 
  assert.doesNotMatch(notes+sitemap+guide,/PRIVATE_NOTE_DRAFT|private-note-check/);
  assert.equal(fs.existsSync('dist/notes/private-note-check.html'),false);
  const archive=fs.readFileSync('dist/essays.html','utf8')+fs.readFileSync('dist/essays/page/2.html','utf8');
- assert.equal((archive.match(/<article class="writing-(?:feature|card)"/g)||[]).length,15);
+ assert.equal((archive.match(/<article class="writing-(?:feature|card)"/g)||[]).length,fs.readdirSync('src/content/essays').filter(name=>/^draft: false$/m.test(fs.readFileSync(`src/content/essays/${name}`,'utf8'))).length);
  for(const slug of slugs)assert.ok(!archive.includes(`/essays/${slug}`));
 });

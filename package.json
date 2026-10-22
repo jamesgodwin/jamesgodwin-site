@@ -21,7 +21,7 @@
     "test:catalogue": "node scripts/check-catalogue-build.mjs",
     "import:essays": "node scripts/import-essays.mjs",
     "test:notes": "node --test scripts/note-pagination.test.mjs scripts/notes-build.test.mjs",
-    "test:essays": "node --test scripts/import-essays.test.mjs scripts/essays-build.test.mjs"
+    "test:essays": "node --test scripts/import-essays.test.mjs scripts/essays-build.test.mjs scripts/original-essay.test.mjs"
   },
   "dependencies": {
     "@opentelemetry/api-logs": "^0.222.0",
