@@ -67,3 +67,15 @@ test('llms guide links only to existing public pages and keeps in-progress work 
  }
  assert.match(read('index.html'),/rel="describedby" href="\/llms.txt"/);
 });
+
+// These comments must survive Astro's production HTML compression: Cloudflare
+// otherwise rewrites mailto links to a crawlable /cdn-cgi/l/email-protection 404.
+test('public email links opt out of Cloudflare rewriting in built HTML',()=>{
+ for(const [file,count] of [['contact.html',1],['legal.html',2]]){
+  const html=read(file);
+  const protectedLinks=[...html.matchAll(/<!--email_off-->([\s\S]*?)<!--\/email_off-->/g)];
+  assert.equal(protectedLinks.length,count,file);
+  for(const [,link] of protectedLinks)assert.match(link,/href="mailto:james@jamesgodwin.me"/);
+  assert.doesNotMatch(html,/\/cdn-cgi\/l\/email-protection/);
+ }
+});

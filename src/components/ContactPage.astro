@@ -5,7 +5,7 @@ const { workshop = false } = Astro.props;
 <div data-contact data-workshop={workshop}>
 <p data-contact-intro>Email or WhatsApp me about your product, workflow or practice enquiry. A short description of where you need help is enough to start.</p>
 <p><strong>Current enquiry:</strong> <span data-contact-label>General Enquiry</span></p>
-<p class="app-item"><img width="16" height="16" src="/images/email.svg" alt="" class="app-icon" /><span><strong>Email</strong><br /><TextLink href="mailto:james@jamesgodwin.me" data-contact-method="email">james@jamesgodwin.me</TextLink></span></p>
+<p class="app-item"><img width="16" height="16" src="/images/email.svg" alt="" class="app-icon" /><span><strong>Email</strong><br /><Fragment set:html={'<!--email_off-->'} /><TextLink href="mailto:james@jamesgodwin.me" data-contact-method="email">james@jamesgodwin.me</TextLink><Fragment set:html={'<!--/email_off-->'} /></span></p>
 <p class="app-item"><img width="16" height="16" src="/images/phone.svg" alt="" class="app-icon" /><span><strong>WhatsApp</strong><br /><TextLink href="https://wa.me/27686038834" target="_blank" rel="noopener noreferrer" data-contact-method="whatsapp">WhatsApp James</TextLink></span></p>
 <p><strong>Other ways to connect</strong></p>
 <p class="app-item"><img width="16" height="16" src="/images/phone.svg" alt="" class="app-icon" /><span><strong>Telephone</strong><br /><TextLink href="tel:+27686038834" data-contact-method="telephone">+27 68 603 8834</TextLink></span></p>

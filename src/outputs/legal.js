@@ -16,7 +16,7 @@ const legalOutput = `
 <p>I do not sell or rent personal information. Information may be processed by service providers that support communication, analytics, hosting, or agreed client work. Enquiry and business records are retained only for as long as reasonably needed for communication, delivery, accounting, legal, or security purposes.</p>
 <h3>Your choices</h3>
 <p>You may ask what personal information I hold about you, request a correction, or request deletion where there is no legal reason to retain it. You can also unsubscribe from marketing email using the link in the message.</p>
-<p>Contact: <a href="mailto:james@jamesgodwin.me">james@jamesgodwin.me</a> or <a href="tel:+27686038834">+27 68 603 8834</a>.</p>
+<p>Contact: <!--email_off--><a href="mailto:james@jamesgodwin.me">james@jamesgodwin.me</a><!--/email_off--> or <a href="tel:+27686038834">+27 68 603 8834</a>.</p>
 <hr>
 <h3 id="terms">Terms &amp; Conditions</h3>
 <p>You may use this website for lawful personal and business research. The writing, images, books, artwork, interface, and other original material on this site remain the intellectual property of James Godwin or their stated owners. They may not be copied, republished, sold, or redistributed without permission.</p>
@@ -32,7 +32,7 @@ const legalOutput = `
 <p>Refund and cancellation terms for diagnostics, workshops, systems work, advisory work, and other services are stated in the written proposal or booking confirmation for that engagement.</p>
 <ul class="legal-list"><li>If I cancel a paid session and cannot offer a suitable alternative, the amount paid for that session will be refunded.</li><li>If you need to cancel or reschedule, contact me as early as possible. The terms agreed for that booking will apply.</li><li>Deposits, completed work, reserved workshop dates, and delivered digital materials may be non-refundable where this was stated before payment.</li></ul>
 <p>Purchases completed on external platforms, including Amazon, Apple, or separately operated products, are governed by the refund policy shown by that platform or product at purchase.</p>
-<p>Questions can be sent to <a href="mailto:james@jamesgodwin.me">james@jamesgodwin.me</a>.</p>
+<p>Questions can be sent to <!--email_off--><a href="mailto:james@jamesgodwin.me">james@jamesgodwin.me</a><!--/email_off-->.</p>
 <hr>
 <h3 id="disclaimer">Disclaimer</h3>
 <p>The content and experiences presented here are educational, reflective, and experiential. They are not medical, psychological, psychiatric, therapeutic, financial, or legal services, and they do not replace qualified professional care or advice.</p>
