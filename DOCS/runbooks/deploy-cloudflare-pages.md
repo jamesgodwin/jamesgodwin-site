@@ -13,7 +13,7 @@ The static Astro site is live on Cloudflare Pages. A GitHub push, successful Pag
 | Root directory | Blank, meaning repository root |
 | Build command | `npm run build` |
 | Build output | `dist` |
-| Build environment | `NODE_VERSION=22.22.1`, `PUBLIC_POSTHOG_KEY`, `PUBLIC_POSTHOG_HOST` |
+| Build environment | `NODE_VERSION=22.23.4`, `PUBLIC_POSTHOG_KEY`, `PUBLIC_POSTHOG_HOST` |
 
 Use the existing website’s public PostHog project token, not a personal API key. The current ingestion host is `https://us.i.posthog.com`. Configure variables for Production and Preview builds. Keep actual tokens in Cloudflare/ignored local environment files. GA and Kit are already configured in the layout. Do not set the opt-in `SITE_POC` or `DESIGN_SYSTEM_CATALOG` flags in hosting.
 

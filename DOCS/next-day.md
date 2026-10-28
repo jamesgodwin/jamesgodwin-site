@@ -2,42 +2,37 @@
 
 ## Current Focus
 
-Twenty curated Notes and twelve-per-page navigation are live and verified. Notes migration is complete. James reports submitting the new sitemap to Google Search Console on 20 October. Next session, check processing and indexing status. [Release evidence](logs/2026-10-20-039-notes-pagination-release.md).
+Search Console review and targeted email-link repair completed on 26 October 2026. Google crawl/index refresh remains pending. [All six reasons and release evidence](logs/2026-10-26-001-search-console-review.md).
 
 ## Where Work Stopped
 
-20 October 2026: source `3e71ea756ed69eaf68e9ec1c79d23a8ac4c16999` pushed to origin/main; Cloudflare deployment `5cf9d728-d4f8-449a-8b5d-c769e72e1a2b` succeeded for that exact SHA. Notes now has twenty original illustrated pieces, 12+8 pagination, and shared writing controls. Fifteen essays retain 12+3 pagination. Release documentation commit `503bdfd044d8205dd425b0b2553277c483391759` is pushed; its Cloudflare deployment `c30331b8-be73-4243-8ad6-c0e639300a65` succeeded. Final main and hosted Notes/Essays/discovery output match the candidate; application source remains the verified source SHA.
+26 October: authenticated Messages drawer inspected, including today's alert and the previous August alert; all six current exclusion categories and all 15 examples reviewed. Current sitemap Success, 61 discovered. Removed two defunct sitemap submissions from 2010. All-known report (23 October): 68 indexed, 15 excluded; sitemap-filtered report: 58 indexed, 2 excluded. Different snapshots are not immediate post-fix outcomes.
 
-Clean exported candidate npm ci/build/design guard and all 41 tests pass. Twenty original image hashes match. Live verification passes 90 URLs, 246 assets, 60 sitemap URLs, nine www redirects, and exact HTML for all 39 Notes/Essays documents. Three pre-existing TapScribe encoder variations were freshly compared and remain within qualified bounds. Browser Notes Next/Previous, reading/loaded image/source href/return, format switching and Essays pagination pass. Evidence and live screenshots are ignored in `output/notes-production/`.
+Source `8fb6610e0205559e5979f0d401c526bba608a044` deployed successfully through Cloudflare `7d59c6e7-7bb9-4028-b3dd-ce1bc20b8f91`. Live contact/legal links retain direct mailto hrefs rather than Cloudflare's email-protection 404. All 61 sitemap URLs return 200 with matching canonicals, no noindex and no email-protection links. Clean Node 22.23.4 candidate passes build/design and 43 tests. Screenshots and live checks are ignored under `output/search-console/`.
 
-Narrow archive/pager visual evidence is the earlier local 390px iframe check. Embedded clicks failed and viewport override did not apply, so narrow interaction and physical-phone acceptance remain unverified. Earlier essay phone-width repeat also remains outstanding.
+`/about` and `/little-panda` indexing requests accepted. `/little-panda` is live with a self-canonical; Google's redirect record dates to 4 August, before migration. See the review log for request outcomes and remaining historical URLs. Current contact query canonicals, HTTP/www and slash redirects are intentional.
 
-At evening closeout, James reported submitting the new sitemap to Search Console. Submission is owner-reported; no Search Console dashboard, processing result or indexing status was independently inspected. [Closeout](logs/2026-10-20-040-evening-closeout.md).
-
-James authorised the closeout/documentation push with `[CF-Pages-Skip]`. Documentation-only commits skip Cloudflare builds; public website copy/content changes still deploy normally. Production intentionally stays on the last successful application-equivalent revision.
-
-The collection stops at twenty distinct pieces. Held LI-00109, essay duplicates and repeated arguments stay excluded. Source files/unpublished drafts remain untouched; Source authoring is paused. Netlify is owner-reported deleted; recover through prior successful Cloudflare deployments. Keep proxied www and edge redirect.
+Twenty Notes and sixteen essays are live, with twelve-per-page archives. Publishing boundaries remain in the runbook. Netlify is owner-reported deleted; recover through previous successful Cloudflare deployments. Keep proxied www and its edge redirect. Documentation-only commits use `[CF-Pages-Skip]`. Pre-existing uncommitted documentation was preserved separately from the targeted code release.
 
 ## Next Recommended Step
 
-In the next session, open the existing Search Console property and check the submitted `https://jamesgodwin.me/sitemap.xml` for fetch/parse status and discovered URLs. Inspect the homepage, one essay and one Note, then record Google’s reported index/canonical status. Do not resubmit routinely just because indexing is pending.
+At the next requested Search Console review, check whether `/about` and `/little-panda` have been recrawled/indexed and whether historical exclusions refreshed. Do not repeatedly submit the successful sitemap. No recurring monitor was requested.
 
 ## Blockers
 
-No observed release blocker. Search Console inspection needs account access. Submission is owner-reported; property verification, processing and indexing remain independently unverified.
+No site-release blocker. Google controls crawl/index timing. The retired grand-master article is absent from current content and returns 404; no equivalent replacement was found.
 
 ## Parallel Threads
 
+- Original essay live on website and HEY as `2ac2751`; authorised subscriber email awaits HEY browser sign-in and verified send. Do not republish ([checkpoint](logs/2026-10-22-002-kept-step-publication.md)).
 - Eight-person visitor exercise remains outstanding ([alignment plan](specs/linkedin-site-alignment.md)).
-- HEY newsletter remains backlog only.
-- Narrow interaction and earlier essay phone-width archive/pager repeat remain unverified.
+- Narrow archive/pager interaction and physical-phone acceptance remain unverified ([earlier release](logs/2026-10-20-039-notes-pagination-release.md)).
 
 ## Needs Decisions
 
-None for the completed Notes release.
+None for the deployed Search Console link repair.
 
 ## Read These First
 
-- `DOCS/logs/2026-10-20-039-notes-pagination-release.md` — deployed source and live evidence
-- `DOCS/runbooks/deploy-cloudflare-pages.md` — Search Console, verification and recovery
-- `DOCS/runbooks/import-essays.md` — essay/Notes maintenance boundaries
+- `DOCS/logs/2026-10-26-001-search-console-review.md` — current findings and release evidence
+- `DOCS/runbooks/deploy-cloudflare-pages.md` — checks and recovery

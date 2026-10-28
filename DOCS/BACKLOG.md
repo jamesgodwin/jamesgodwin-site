@@ -6,23 +6,26 @@ Current work status and priority. Detail lives in linked specs or logs.
 
 ## Backlog
 
-- Check Google Search Console sitemap processing and indexing after James’s reported submission on 20 October; independently confirm property/ownership status when access is available ([procedure](runbooks/deploy-cloudflare-pages.md#post-launch-search-and-analytics-checks)).
+- Before the next website-original Note, extend the implemented essay original-versus-imported provenance support to Notes schemas, bylines and metadata ([publishing procedure and current gap](runbooks/publish-writing.md#1-website-first)).
+
+- Recheck Google’s crawl/index refresh for `/about`, `/little-panda` and historical exclusions after the 26 October review; current sitemap succeeds and the email-link fix is deployed ([evidence](logs/2026-10-26-001-search-console-review.md)).
 
 - Run the combined eight-person visitor exercise on the deployed LinkedIn-aligned site, then record concrete confusion or validated comprehension using [the alignment plan](specs/linkedin-site-alignment.md).
-
-- Explore HEY as an additional essay/newsletter channel: selected republication plus a website subscription link; confirm the public URL and workflow before implementation ([idea and boundaries](logs/2026-10-20-033-hey-newsletter-backlog.md)).
 
 Deferred proposals, including terminal restoration, agent tools, the opening question and general feed-import automation, are [parked outside active scope](archive/2026-10-20-agent-readiness-proposals.md).
 
 ## In Progress
 
-None.
+- “Why I Kept a Step I Could Have Removed” is live on website and HEY; authorised subscriber email pending HEY browser sign-in and verified send ([checkpoint](logs/2026-10-22-002-kept-step-publication.md)).
 
 ## Blocked
+
 
 - Look Up is on hold: Apple’s Screen Time API is too unreliable to pursue now. The landing page lives on branch `lookup` — https://github.com/jamesgodwin/jamesgodwin-site/tree/lookup — and should not be merged to `main` until the app is resumed.
 
 ## Done
+
+- Published HEY subscription links on all 39 writing pages (`9b87551`, successful Cloudflare deployment); all 15 essays and 20 Notes republished to HEY with full text, cover URLs, original dates and source links verified. No subscriber-notification action taken ([evidence](logs/2026-10-22-001-hey-world-test.md)).
 
 - Published and verified the complete twenty-note collection and 12+8 pagination (`3e71ea7`); clean build/41 tests, 90 live URL checks, 246 assets, 60 sitemap URLs and exact HTML for 39 Notes/Essays pages pass ([release](logs/2026-10-20-039-notes-pagination-release.md)).
 
@@ -33,3 +36,5 @@ None.
 - Published and verified the 15-essay archive, 12-per-page pagination and consistent Essays navigation (`399e7e7`); Cloudflare succeeds, 39 automated checks and live route/asset/SEO/desktop checks pass. Phone-width repeat remains unverified ([release evidence](logs/2026-10-20-032-article-pagination-release.md)).
 
 Earlier completed work is preserved in the [October archive](archive/2026-10-backlog.md).
+
+- Completed 21 October 2026: patched Node build runtime published and verified in Cloudflare production, with final live routes passing ([evidence](logs/2026-10-21-001-node-security-update.md)).

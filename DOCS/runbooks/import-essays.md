@@ -1,5 +1,7 @@
 # Import selected published essays
 
+For new website-original essays and Notes, follow [Publish writing](publish-writing.md). This runbook covers the historical LinkedIn import path.
+
 The site reads portable Markdown in `src/content/essays/`. Source remains the authoring/publication record. This command prepares local website files; it does not publish, deploy or change Source.
 
 ```sh

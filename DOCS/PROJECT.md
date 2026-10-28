@@ -20,7 +20,7 @@ James is the author and maintainer. This is a personal site, not a multi-user pr
 
 Enduring signal: a visitor can recognise James, reach a relevant destination, and find a direct contact method without a site rebuild.
 
-Current goal: check Search Console processing and indexing after James reported submitting the new sitemap on 20 October; independently confirm property status when access is available. Hosted analytics acceptance is complete, including the controlled automatic exception ([evidence](logs/2026-10-20-028-hosted-posthog-verification.md)). The selected site has all four stories, real writing and aligned pages; primary live checks pass. [Build scope](specs/site-story-writing-build.md), [live verification](logs/2026-10-20-023-live-cloudflare-verification.md). The eight-person visitor exercise from [the alignment plan](specs/linkedin-site-alignment.md) remains separate product evidence.
+Search Console was independently inspected on 26 October: current sitemap Success with 61 discovered URLs; all-known report shows 68 indexed and 15 excluded URLs as of 23 October. Historical exclusions and pending crawl requests remain separate from the deployed email-link repair ([review](logs/2026-10-26-001-search-console-review.md)). Hosted analytics acceptance is complete, including the controlled automatic exception ([evidence](logs/2026-10-20-028-hosted-posthog-verification.md)). The selected site has all four stories, real writing and aligned pages; primary live checks pass. [Build scope](specs/site-story-writing-build.md), [live verification](logs/2026-10-20-023-live-cloudflare-verification.md). The eight-person visitor exercise from [the alignment plan](specs/linkedin-site-alignment.md) remains separate product evidence.
 
 ## Stack
 
@@ -54,6 +54,10 @@ Keep `siteMetadata.js`, the route/output/presentation mapping, navigation/help w
 
 No CMS, multi-user product, new tracking system, changed service offers or edits to linked external products. Terminal restoration, agent tools and the opening question are parked. Twenty selected LinkedIn Notes have a separate published archive; general feed import remains outside scope. Public dark-mode UI remains deferred, separate from migration parity.
 
+## Publishing new writing
+
+The agreed sequence is website publication, HEY republication and authorised subscriber email, then a LinkedIn announcement draft pointing to the website. [Publishing runbook](runbooks/publish-writing.md) owns the procedure, delivery evidence and the current website-original provenance gap.
+
 ## Environment
 
 - `npm start` / `npm run dev`: Astro at `http://127.0.0.1:3000`.
@@ -63,7 +67,7 @@ No CMS, multi-user product, new tracking system, changed service offers or edits
 - `npm run test:routes`: built HTML/metadata, image-path and retired-download checks; build first.
 - `.env.example` documents `PUBLIC_POSTHOG_KEY` and `PUBLIC_POSTHOG_HOST`; ignored `.env` has the local configuration. These are browser project settings, not management/API credentials. Hosting configuration must be supplied and verified separately.
 - Google Analytics ID: `G-0TCHNH6DEP`.
-- Cloudflare Pages: Astro preset, repository root, `main`, `npm run build`, `dist`; Node 22.22.1. Main HTML output uses file format for slashless canonical URLs; opt-in prototype/catalogue builds retain directory format. `public/_headers` applies noindex only to Pages hosts, `_redirects` owns legacy aliases and `404.html` preserves missing-route status. [Deployment procedure](runbooks/deploy-cloudflare-pages.md).
+- Cloudflare Pages: Astro preset, repository root, `main`, `npm run build`, `dist`; Node 22.23.4. Main HTML output uses file format for slashless canonical URLs; opt-in prototype/catalogue builds retain directory format. `public/_headers` applies noindex only to Pages hosts, `_redirects` owns legacy aliases and `404.html` preserves missing-route status. [Deployment procedure](runbooks/deploy-cloudflare-pages.md).
 - Baseline and browser QA artifacts stay ignored under `output/migration-baseline/`.
 
 ### Main story and writing build
