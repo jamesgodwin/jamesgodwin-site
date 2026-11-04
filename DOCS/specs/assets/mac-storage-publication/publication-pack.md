@@ -1,6 +1,6 @@
-# My Mac Was Hiding 81 GB in Plain Sight — publication preparation
+# My Mac Was Hiding 81 GB in Plain Sight — completed publication record
 
-Status: website and full HEY article published and verified on 4 November 2026. Subscriber email awaits James’s “Email to subscribers” click. LinkedIn and X drafts plus social cover ready; manual posting and subsequent HEY Paper Trail filing remain pending.
+Status: completed on 4 November 2026. Website/HEY publication independently verified. James confirms subscriber email and LinkedIn/X publication. Exact HEY World post moved to Paper Trail and absence from Imbox independently verified.
 
 ## Source and website
 
@@ -34,9 +34,9 @@ Complete published payload: [hey-body.draft.html](hey-body.draft.html), includin
 
 Verified HEY URL: https://world.hey.com/jrsg/my-mac-was-hiding-81-gb-in-plain-sight-62f04abc
 
-James clicks “Email to subscribers” after HEY publication; confirmation remains pending. File this exact World post to Paper Trail after James confirms LinkedIn publication, following the publishing runbook.
+James confirms he clicked Email to subscribers and published on LinkedIn/X. HEY item 1275913292, app URL https://app.hey.com/world/posts/62f04abc, is verified in Paper Trail 1625722 and absent from Imbox 1625718.
 
-## LinkedIn draft
+## LinkedIn posted copy
 
 My Mac was reporting 348 GB used, and I couldn’t explain where it had all gone.
 
@@ -50,7 +50,7 @@ I’ve written up the process, including the read-only prompt I started with:
 
 https://jamesgodwin.me/essays/my-mac-was-hiding-81-gb-in-plain-sight
 
-## X draft
+## X posted copy
 
 My Mac was hiding 81 GB in plain sight.
 
@@ -58,10 +58,10 @@ I asked Codex for a read-only audit before deleting anything. The useful part wa
 
 https://jamesgodwin.me/essays/my-mac-was-hiding-81-gb-in-plain-sight
 
-X weighted length: 202/280 (website URL counted as 23 characters). Use the supplied cover image. Both social drafts are for James’s review/manual posting; the article link is live. Copy-ready files: [LinkedIn](linkedin.txt), [X](x.txt). Social upload image: [JPEG cover](my-mac-was-hiding-81-gb-in-plain-sight-social.jpg).
+X weighted length: 202/280 (website URL counted as 23 characters). Use the supplied cover image. James confirms both social posts are published; these are the prepared copy records. The public social URLs were not supplied. Copy-ready files: [LinkedIn](linkedin.txt), [X](x.txt). Social upload image: [JPEG cover](my-mac-was-hiding-81-gb-in-plain-sight-social.jpg).
 
 ## Release evidence
 
-Approved source `1207ae5fe7b466f270e88b077bf1401d0b9ed40e` deployed successfully as Cloudflare `5fd2a2ed-13fd-4325-84ef-6fb863803ca7`. Clean Node22.23.4 npm ci/build/design and all43 tests pass (Vitest19/routes9/essays6/Notes2/design7). Canonical, complete article, no false LinkedIn attribution, cover, archive discovery, sitemap and llms links verified live. Social image1200×673 rendered105,850 bytes; its Linux/Mac encoder variation is16 bytes with mean absolute channel difference0.147/255, dimensions correct and browser-loaded HEY image verified. This is qualified visual parity, not a byte-identical image claim.
+Approved source `1207ae5fe7b466f270e88b077bf1401d0b9ed40e` deployed successfully as Cloudflare `5fd2a2ed-13fd-4325-84ef-6fb863803ca7`. Clean Node 22.23.4 npm ci/build/design and all 43 tests pass (Vitest 19 / routes 9 / essays 6 / Notes 2 / design 7). Canonical, complete article, no false LinkedIn attribution, cover, archive discovery, sitemap and llms links verified live. Social image 1200×673 rendered 105,850 bytes; its Linux/Mac encoder variation is 16 bytes with mean absolute channel difference 0.147/255, dimensions correct and browser-loaded HEY image verified. This is qualified visual parity, not a byte-identical image claim.
 
-Subscriber email, LinkedIn posting, X posting and HEY Paper Trail filing remain pending. User requested the social posts ready, not published. Follow `DOCS/runbooks/publish-writing.md` for the remaining steps.
+Subscriber email and LinkedIn/X posting are completed by James’s report. Final Paper Trail filing is verified through the HEY CLI. No remaining action for this article; do not resend or republish.

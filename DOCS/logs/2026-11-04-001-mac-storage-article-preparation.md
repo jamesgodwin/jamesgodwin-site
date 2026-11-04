@@ -45,3 +45,13 @@ Website: https://jamesgodwin.me/essays/my-mac-was-hiding-81-gb-in-plain-sight
 Used the HEY skill and stored auth. No title duplicate on public index beforehand. Draft2314731061 read back fromjrsg@hey.com toworld@hey.com only; full-body normalized match, image, date and canonical verified. Send returned406 Not Acceptable, but the draft disappeared and public index/post prove publication. Did not resend. Browser verifies complete text and loaded1200×673 cover. HEY: https://world.hey.com/jrsg/my-mac-was-hiding-81-gb-in-plain-sight-62f04abc . Screenshot: ignored output/mac-storage-publication/hey-published.png.
 
 Prepared copy-ready linkedin.txt, x.txt (202 weighted characters), full HEY HTML payload and social JPEG under the publication assets folder. Subscriber email remains James-owned: explicitly reminded him to click Email to subscribers. LinkedIn/X not posted; Paper Trail filing awaits LinkedIn confirmation. No Source authoring file edited. Pre-existing publish-writing.md edit preserved separately.
+
+
+### Distribution and filing completed
+
+James confirmed LinkedIn and X publication and that he emailed HEY subscribers (owner-reported; no independent social/send verification claimed). Under his explicit request and the HEY skill, moved exact HEY World box item1275913292 (`https://app.hey.com/world/posts/62f04abc`) from Imbox1625718 to Paper Trail1625722. CLI reports one thread moved. Full Paper Trail listing verifies the same item/title/app URL with box_id1625722; full Imbox listing confirms its absence. The initial default Paper Trail page omitted this older-dated item, so all pages were inspected; no second move or deletion performed. Article distribution and final filing complete.
+
+
+### Documentation closeout
+
+At James’s request, reconciled the backlog, project summary, handoff, publication pack and publishing runbook to completed article distribution. Retained the distinction between verified website/HEY/filing and owner-confirmed subscriber email/social publication. Current source contains 18 published essays; updated current collection counts without changing historical release evidence. Documentation-only verification: checked diff formatting and local Markdown links; application checks were not rerun because no application source or assets changed. Documentation is committed with `[CF-Pages-Skip]` so the verified article deployment remains in production.

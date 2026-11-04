@@ -16,8 +16,6 @@ Deferred proposals, including terminal restoration, agent tools, the opening que
 
 ## In Progress
 
-- “My Mac Was Hiding 81 GB in Plain Sight”: website and full HEY article published/verified; subscriber-email confirmation, manual LinkedIn/X posting and HEY Paper Trail filing pending ([pack](specs/assets/mac-storage-publication/publication-pack.md)).
-
 - “Why I Kept a Step I Could Have Removed” is live on website and HEY; authorised subscriber email pending HEY browser sign-in and verified send ([checkpoint](logs/2026-10-22-002-kept-step-publication.md)).
 
 ## Blocked
@@ -26,6 +24,8 @@ Deferred proposals, including terminal restoration, agent tools, the opening que
 - Look Up is on hold: Apple’s Screen Time API is too unreliable to pursue now. The landing page lives on branch `lookup` — https://github.com/jamesgodwin/jamesgodwin-site/tree/lookup — and should not be merged to `main` until the app is resumed.
 
 ## Done
+
+- “My Mac Was Hiding 81 GB in Plain Sight” published on website/HEY; James confirms subscriber email and LinkedIn/X posts. Exact HEY World post moved to Paper Trail and absence from Imbox verified ([evidence](logs/2026-11-04-001-mac-storage-article-preparation.md)).
 
 - Published HEY subscription links on all 39 writing pages (`9b87551`, successful Cloudflare deployment); all 15 essays and 20 Notes republished to HEY with full text, cover URLs, original dates and source links verified. No subscriber-notification action taken ([evidence](logs/2026-10-22-001-hey-world-test.md)).
 

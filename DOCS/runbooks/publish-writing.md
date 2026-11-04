@@ -41,6 +41,10 @@ After both public pages are verified and James confirms the subscriber-email ste
 
 Provide the complete draft and proposed image for James to review and publish. Do not automatically create a native LinkedIn article, post the announcement or contact anyone.
 
+## X announcement — added 4 November 2026
+
+James now also has an X account and wants X included in the article distribution flow. Prepare a separate short announcement in his voice with the canonical website article URL alongside the LinkedIn copy. James reviews and posts unless he explicitly authorises publication. Adding X does not change the existing HEY subscriber-email or Paper Trail steps. Record X draft/publication state with the piece’s existing publication evidence.
+
 ## 4. File the HEY post after LinkedIn
 
 After James confirms LinkedIn publication, find the exact HEY World posting in Imbox by title and its `/world/posts/<id>` app URL. Use its box-item ID with `hey move <id> --to <Paper Trail box ID> --json`; resolve the destination with `hey box list`. Do not confuse Paper Trail with The Feed, change sender-wide routing, or delete the post. Check the move result and absence from Imbox. Record filing completion alongside the publication evidence.
