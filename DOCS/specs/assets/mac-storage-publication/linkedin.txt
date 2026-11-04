@@ -1,0 +1,11 @@
+My Mac was reporting 348 GB used, and I couldn’t explain where it had all gone.
+
+I gave Codex one instruction: investigate, but don’t delete or modify anything.
+
+It found temporary caches, old development tools, a local virtual machine and Docker storage. Some could be regenerated. Others needed a closer look before I touched them.
+
+I eventually removed about 81 GB. The useful part was understanding what was there before deciding what could go.
+
+I’ve written up the process, including the read-only prompt I started with:
+
+https://jamesgodwin.me/essays/my-mac-was-hiding-81-gb-in-plain-sight

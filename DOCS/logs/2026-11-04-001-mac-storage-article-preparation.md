@@ -34,3 +34,14 @@ Main build/design passes and excludes the draft route/sitemap entry. Exported an
 ### Publication authorised
 
 James approved the complete website preview and explicitly requested deployment, HEY publication and LinkedIn/X drafts. Set the collection essay draft false. Clean exported candidate passes npm ci, build/design and all release suites on Node22.23.4; no publication outcome is inferred until hosted verification. HEY sender `jrsg@hey.com` available; public HEY index does not contain this title before publication.
+
+
+### Website and HEY publication verified
+
+Approved source1207ae5fe7b466f270e88b077bf1401d0b9ed40e pushed to main; exact-SHA Cloudflare deployment5fd2a2ed-13fd-4325-84ef-6fb863803ca7 completed successfully. Clean Node22.23.4 npm ci/build/design and43 tests pass (19+9+6+2+7). Live article200, canonical, original provenance, full ending, subscription, archive, sitemap and llms discovery verified. Cover dimensions1200×673; hosted encoder differs from local by16 bytes, mean pixel channel difference0.147/255. No byte-identity claim; image is correct and loaded.
+
+Website: https://jamesgodwin.me/essays/my-mac-was-hiding-81-gb-in-plain-sight
+
+Used the HEY skill and stored auth. No title duplicate on public index beforehand. Draft2314731061 read back fromjrsg@hey.com toworld@hey.com only; full-body normalized match, image, date and canonical verified. Send returned406 Not Acceptable, but the draft disappeared and public index/post prove publication. Did not resend. Browser verifies complete text and loaded1200×673 cover. HEY: https://world.hey.com/jrsg/my-mac-was-hiding-81-gb-in-plain-sight-62f04abc . Screenshot: ignored output/mac-storage-publication/hey-published.png.
+
+Prepared copy-ready linkedin.txt, x.txt (202 weighted characters), full HEY HTML payload and social JPEG under the publication assets folder. Subscriber email remains James-owned: explicitly reminded him to click Email to subscribers. LinkedIn/X not posted; Paper Trail filing awaits LinkedIn confirmation. No Source authoring file edited. Pre-existing publish-writing.md edit preserved separately.

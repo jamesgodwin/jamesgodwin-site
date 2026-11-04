@@ -1,0 +1,5 @@
+My Mac was hiding 81 GB in plain sight.
+
+I asked Codex for a read-only audit before deleting anything. The useful part was finding out what the large folders actually contained.
+
+https://jamesgodwin.me/essays/my-mac-was-hiding-81-gb-in-plain-sight

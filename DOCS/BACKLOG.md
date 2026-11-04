@@ -16,6 +16,8 @@ Deferred proposals, including terminal restoration, agent tools, the opening que
 
 ## In Progress
 
+- “My Mac Was Hiding 81 GB in Plain Sight”: website and full HEY article published/verified; subscriber-email confirmation, manual LinkedIn/X posting and HEY Paper Trail filing pending ([pack](specs/assets/mac-storage-publication/publication-pack.md)).
+
 - “Why I Kept a Step I Could Have Removed” is live on website and HEY; authorised subscriber email pending HEY browser sign-in and verified send ([checkpoint](logs/2026-10-22-002-kept-step-publication.md)).
 
 ## Blocked
