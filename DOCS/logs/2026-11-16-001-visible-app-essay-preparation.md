@@ -40,3 +40,11 @@ HEY: https://world.hey.com/jrsg/the-app-is-the-visible-part-9ea9e152
 Used HEY skill/stored auth; public index had no title duplicate and draft listing was empty. Draft2327239087 senderjrsg@hey.com, sole recipientworld@hey.com, complete body, public image and footer were read back and verified before send. Send returned406; public index and complete public post independently confirm successful publication. No resend. Browser confirms correct title/date/full body, canonical footer and loaded1200×673 cover; screenshot output/visible-app-publication/hey-published.jpg.
 
 Prepared LinkedIn113-word and X229-weighted-character summaries plus social JPEG. No social posting, subscriber email or Paper Trail filing claimed. James explicitly owns Search Console submission for this article and subscriber email; both await his report. Final filing follows LinkedIn confirmation. Pre-existing4November log/runbook edits remain separate from this article release.
+
+### Paper Trail filing checkpoint
+
+At James’s explicit request, used HEY CLI to move exact World post 1282743224 (`https://app.hey.com/world/posts/9ea9e152`) from Imbox to Paper Trail 1625722. CLI returned success. Full Paper Trail listing independently confirms the exact URL and destination box; full Imbox listing confirms absence. This request overrides the usual filing-after-LinkedIn sequence. Social posting, subscriber email and Search Console outcomes remain unconfirmed; supplied copy for James to post manually.
+
+### Social publication confirmation
+
+On 16 November 2026, James confirmed he posted the article on LinkedIn and X and authorised committing/pushing the documentation. Updated the publication record, backlog and handoff, including the verified Paper Trail checkpoint. Social publication is owner-confirmed; no post URLs or independent social checks were supplied. Search Console submission and subscriber email remain unconfirmed. Documentation-only verification: reviewed the focused diff and ran `git diff --check`; application tests were not repeated because no runtime files changed. Unrelated earlier Mac-storage log and publishing-runbook edits remain outside this commit.

@@ -2,7 +2,7 @@
 
 ## Current Focus
 
-Finish distribution of “The app is the visible part”. Website and complete HEY article are live; LinkedIn/X copy and social JPEG are ready. [Publication record](specs/assets/app-visible-part-publication/publication-pack.md).
+Finish distribution of “The app is the visible part”. Website and complete HEY article are live; James has confirmed LinkedIn and X publication. Search Console submission and subscriber email remain unconfirmed. [Publication record](specs/assets/app-visible-part-publication/publication-pack.md).
 
 ## Where Work Stopped
 
@@ -11,11 +11,11 @@ Finish distribution of “The app is the visible part”. Website and complete H
 Website: https://jamesgodwin.me/essays/the-app-is-the-visible-part
 HEY: https://world.hey.com/jrsg/the-app-is-the-visible-part-9ea9e152
 
-HEY draft2327239087 sent fromjrsg@hey.com toworld@hey.com. CLI returned406 but public index/post prove successful publication; browser confirms full body/date/footer and loaded cover. Do not resend. Social payloads and image are in DOCS/specs/assets/app-visible-part-publication/. No social posts, subscriber email or Paper Trail filing yet.
+HEY draft2327239087 sent fromjrsg@hey.com toworld@hey.com. CLI returned406 but public index/post prove successful publication; browser confirms full body/date/footer and loaded cover. Do not resend. Social payloads and image are in DOCS/specs/assets/app-visible-part-publication/. James confirmed LinkedIn and X publication on 16 November 2026; post URLs were not independently verified. Subscriber email remains unconfirmed. At James’s explicit request, exact HEY post 1282743224 was moved to Paper Trail (1625722); full destination listing and absence from Imbox verified.
 
 ## Next Recommended Step
 
-James handles Search Console URL Inspection / Request indexing using the live website URL and clicks Email to subscribers on the HEY post. He then posts the prepared LinkedIn/X copy. After LinkedIn confirmation, file the exact HEY World post to Paper Trail and verify absence from Imbox. Record owner confirmations distinctly from independent checks.
+James handles Search Console URL Inspection / Request indexing using the live website URL and clicks Email to subscribers on the HEY post. Paper Trail filing is already complete; do not repeat it. Record owner confirmations distinctly from independent checks.
 
 ## Blockers
 

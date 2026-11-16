@@ -16,7 +16,7 @@ Deferred proposals, including terminal restoration, agent tools, the opening que
 
 ## In Progress
 
-- “The app is the visible part”: website and full HEY article live/verified; James to handle Search Console, subscriber email and LinkedIn/X posts, then final HEY Paper Trail filing ([pack](specs/assets/app-visible-part-publication/publication-pack.md)).
+- “The app is the visible part”: website and full HEY article live/verified; Paper Trail filing verified; James confirms LinkedIn/X publication; Search Console submission and subscriber email await confirmation ([pack](specs/assets/app-visible-part-publication/publication-pack.md)).
 
 - “Why I Kept a Step I Could Have Removed” is live on website and HEY; authorised subscriber email pending HEY browser sign-in and verified send ([checkpoint](logs/2026-10-22-002-kept-step-publication.md)).
 

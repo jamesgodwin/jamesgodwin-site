@@ -1,6 +1,6 @@
 # The app is the visible part — publication record
 
-Status: website and complete HEY article published and verified on 16 November 2026. James owns Search Console submission for this piece and the subscriber-email click. LinkedIn/X copy and social JPEG are ready; posting and final HEY Paper Trail filing remain pending.
+Status: website and complete HEY article published and verified on 16 November 2026. James owns Search Console submission for this piece and the subscriber-email click. James confirmed publication on LinkedIn and X on 16 November 2026; this is owner confirmation, without independent post-URL verification. HEY Paper Trail filing is complete and verified.
 
 ## Authoritative text and edit scope
 
@@ -23,14 +23,14 @@ Approved local preview: http://127.0.0.1:4184/essays/the-app-is-the-visible-part
 ## Channel payloads and remaining steps
 
 - [Full HEY article HTML](hey-body.draft.html): complete published body, verified public cover, date and canonical footer. Draft2327239087 read back fromjrsg@hey.com toworld@hey.com only. Send returned406 but public index and full post confirm success; no resend.
-- [LinkedIn draft](linkedin.txt):113 words, ready for James to post manually with the cover.
-- [X draft](x.txt):229/280 weighted characters (URL counted as23), ready for James to post manually.
+- [LinkedIn draft](linkedin.txt):113 words; James confirmed LinkedIn publication on 16 November 2026.
+- [X draft](x.txt):229/280 weighted characters (URL counted as23); James confirmed X publication on 16 November 2026.
 - Search Console: James explicitly said he will handle submission/indexing for this piece. No agent submission or successful indexing claimed. Use the exact live canonical above.
 - Subscriber email: James clicks Email to subscribers in HEY. Confirmation pending; HEY publication alone is not subscriber delivery.
-- After LinkedIn confirmation, move this exact HEY World post to Paper Trail and verify absence from Imbox. No filing yet.
+- At James’s explicit request on 16 November, moved exact HEY World post 1282743224 to Paper Trail (box 1625722). CLI confirmed success; full Paper Trail listing confirms the exact post and box, and full Imbox listing confirms absence. Filing completed before social posting at his request.
 
 ## Release evidence
 
 Source `f0cba67267e35d0d3cbd8c610e7f9cb3b45d3b6a` deployed successfully through Cloudflare `de1d68a3-1026-4cfd-851d-0455903c1abf`. Clean Node22.23.4 npm ci/build/design and43 tests pass (Vitest19/routes9/essays6/Notes2/design7). Live HTTP200 article, canonical, entire body, no false LinkedIn attribution, reachable WebP1200×673 and archive/sitemap/llms discovery verified. HEY public post shows complete text, correct date/footer/canonical and browser-loaded1200×673 cover. Screenshot: ignored output/visible-app-publication/hey-published.jpg.
 
-Do not republish the website or resend the HEY article. Follow the existing publishing runbook for owner confirmations and final filing. Any indexability/Google request outcome remains separate from channel publication.
+Do not republish the website or resend the HEY article. Paper Trail filing is complete. Remaining owner confirmations are Search Console submission and subscriber email. Any indexability/Google request outcome remains separate from channel publication.
