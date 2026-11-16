@@ -28,3 +28,15 @@ Receive final image, inspect/optimise it and set accurate alt text; install the 
 James supplied the maze/app image. Renamed/converted to `src/assets/writing/the-app-is-the-visible-part.webp`, retaining available AI-source XMP: original PNG2,683,558 bytes, WebP323,324 bytes. Set descriptive alt and coverQuality60; 1280px output approximately114KB. Social JPEG prepared locally. Added draft collection entry. An isolated Node22.23.4 preview build and43 tests passed (19+9+6+2+7); browser verified the complete article and loaded image at http://127.0.0.1:4184/essays/the-app-is-the-visible-part . Preview workspace `/var/folders/l8/1rvkj_p15y3_zj3x24wsnzb00000gn/T/visible-app-preview-hi8ute1q`, server session17511; screenshot ignored at output/visible-app-preview/article.jpg.
 
 James then said “Perfect, let’s continue”, authorising the approved release. He explicitly owns Search Console submission for this piece and the HEY Email to subscribers click. Set the release essay draft false and exported clean candidate for final checks. No HEY send before website verification.
+
+
+### Website and HEY release verified
+
+Clean exported candidate on Node22.23.4: npm ci, public build/design guard and all43 tests pass (19+9+6+2+7). Sourcef0cba67267e35d0d3cbd8c610e7f9cb3b45d3b6a pushed to main; exact-SHA Cloudflare deploymentde1d68a3-1026-4cfd-851d-0455903c1abf completed successfully. Live article200, full source-body normalized match, self-canonical, original provenance, WebP image1200×673 and archive/sitemap/llms discovery verified.
+
+Website: https://jamesgodwin.me/essays/the-app-is-the-visible-part
+HEY: https://world.hey.com/jrsg/the-app-is-the-visible-part-9ea9e152
+
+Used HEY skill/stored auth; public index had no title duplicate and draft listing was empty. Draft2327239087 senderjrsg@hey.com, sole recipientworld@hey.com, complete body, public image and footer were read back and verified before send. Send returned406; public index and complete public post independently confirm successful publication. No resend. Browser confirms correct title/date/full body, canonical footer and loaded1200×673 cover; screenshot output/visible-app-publication/hey-published.jpg.
+
+Prepared LinkedIn113-word and X229-weighted-character summaries plus social JPEG. No social posting, subscriber email or Paper Trail filing claimed. James explicitly owns Search Console submission for this article and subscriber email; both await his report. Final filing follows LinkedIn confirmation. Pre-existing4November log/runbook edits remain separate from this article release.

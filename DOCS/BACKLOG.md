@@ -8,13 +8,15 @@ Current work status and priority. Detail lives in linked specs or logs.
 
 - Before the next website-original Note, extend the implemented essay original-versus-imported provenance support to Notes schemas, bylines and metadata ([publishing procedure and current gap](runbooks/publish-writing.md#1-website-first)).
 
-- Recheck Google’s crawl/index refresh for `/about`, `/little-panda` and historical exclusions after the 26 October review; current sitemap succeeds and the email-link fix is deployed ([evidence](logs/2026-10-26-001-search-console-review.md)).
+- Request Google indexing for the newly published Mac-storage essay under the updated publishing workflow, and recheck crawl/index refresh for `/about`, `/little-panda` and historical exclusions after the 26 October review; current sitemap succeeds and the email-link fix is deployed ([evidence](logs/2026-10-26-001-search-console-review.md)).
 
 - Run the combined eight-person visitor exercise on the deployed LinkedIn-aligned site, then record concrete confusion or validated comprehension using [the alignment plan](specs/linkedin-site-alignment.md).
 
 Deferred proposals, including terminal restoration, agent tools, the opening question and general feed-import automation, are [parked outside active scope](archive/2026-10-20-agent-readiness-proposals.md).
 
 ## In Progress
+
+- “The app is the visible part”: website and full HEY article live/verified; James to handle Search Console, subscriber email and LinkedIn/X posts, then final HEY Paper Trail filing ([pack](specs/assets/app-visible-part-publication/publication-pack.md)).
 
 - “Why I Kept a Step I Could Have Removed” is live on website and HEY; authorised subscriber email pending HEY browser sign-in and verified send ([checkpoint](logs/2026-10-22-002-kept-step-publication.md)).
 

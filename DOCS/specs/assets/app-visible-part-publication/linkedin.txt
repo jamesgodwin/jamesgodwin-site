@@ -1,0 +1,11 @@
+A friend once told me he wanted to vibe-code the next Airbnb.
+
+He’d watched a tutorial with listings, a booking screen, a map and a working checkout. You really can build that part quickly now.
+
+What I kept thinking about was everything the screens don’t show. Who holds the money? What happens when a payment is disputed after the host has been paid? Who manages the listings, handles a refund or helps when a stay goes wrong?
+
+The demo is a useful beginning. The question I find interesting comes next: what does this product need before a stranger can trust it?
+
+I’ve written a short piece about the system behind the screens:
+
+https://jamesgodwin.me/essays/the-app-is-the-visible-part
