@@ -48,3 +48,7 @@ At James’s explicit request, used HEY CLI to move exact World post 1282743224 
 ### Social publication confirmation
 
 On 16 November 2026, James confirmed he posted the article on LinkedIn and X and authorised committing/pushing the documentation. Updated the publication record, backlog and handoff, including the verified Paper Trail checkpoint. Social publication is owner-confirmed; no post URLs or independent social checks were supplied. Search Console submission and subscriber email remain unconfirmed. Documentation-only verification: reviewed the focused diff and ran `git diff --check`; application tests were not repeated because no runtime files changed. Unrelated earlier Mac-storage log and publishing-runbook edits remain outside this commit.
+
+### Publication workflow complete
+
+On 16 November 2026, James confirmed emailing his subscribers and submitting the article to Google Search Console, and authorised this documentation commit and push. All required publication actions are now complete, combining these owner confirmations with the earlier LinkedIn/X confirmation and independently verified website, HEY and Paper Trail filing. Moved the article to Done and reconciled the publication record and handoff. Search Console submission does not establish successful Google indexing; subscriber delivery was not independently checked. Reviewed the documentation diff and ran `git diff --check`; no runtime files changed, so application tests were not repeated. Unrelated Mac-storage log and publishing-runbook edits are excluded.

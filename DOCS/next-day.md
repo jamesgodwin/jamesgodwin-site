@@ -2,7 +2,7 @@
 
 ## Current Focus
 
-Finish distribution of “The app is the visible part”. Website and complete HEY article are live; James has confirmed LinkedIn and X publication. Search Console submission and subscriber email remain unconfirmed. [Publication record](specs/assets/app-visible-part-publication/publication-pack.md).
+Publication of “The app is the visible part” is complete. Website/HEY and Paper Trail filing are verified; James confirms LinkedIn/X posts, subscriber email and Search Console submission. [Publication record](specs/assets/app-visible-part-publication/publication-pack.md).
 
 ## Where Work Stopped
 
@@ -11,15 +11,15 @@ Finish distribution of “The app is the visible part”. Website and complete H
 Website: https://jamesgodwin.me/essays/the-app-is-the-visible-part
 HEY: https://world.hey.com/jrsg/the-app-is-the-visible-part-9ea9e152
 
-HEY draft2327239087 sent fromjrsg@hey.com toworld@hey.com. CLI returned406 but public index/post prove successful publication; browser confirms full body/date/footer and loaded cover. Do not resend. Social payloads and image are in DOCS/specs/assets/app-visible-part-publication/. James confirmed LinkedIn and X publication on 16 November 2026; post URLs were not independently verified. Subscriber email remains unconfirmed. At James’s explicit request, exact HEY post 1282743224 was moved to Paper Trail (1625722); full destination listing and absence from Imbox verified.
+HEY draft2327239087 sent fromjrsg@hey.com toworld@hey.com. CLI returned406 but public index/post prove successful publication; browser confirms full body/date/footer and loaded cover. Do not resend. Social payloads and image are in DOCS/specs/assets/app-visible-part-publication/. James confirmed LinkedIn and X publication on 16 November 2026; post URLs were not independently verified. James also confirmed emailing subscribers and submitting the article to Google Search Console on 16 November 2026. At James’s explicit request, exact HEY post 1282743224 was moved to Paper Trail (1625722); full destination listing and absence from Imbox verified.
 
 ## Next Recommended Step
 
-James handles Search Console URL Inspection / Request indexing using the live website URL and clicks Email to subscribers on the HEY post. Paper Trail filing is already complete; do not repeat it. Record owner confirmations distinctly from independent checks.
+No further action is required for this article’s publication. Resume the first actionable Backlog item when requested, extending original-versus-imported provenance support to Notes before the next website-original Note.
 
 ## Blockers
 
-No release blocker. Remaining owner actions await confirmation. Search Console submission was explicitly assigned to James for this piece; do not assume it has happened or that Google has indexed it.
+None for this publication. Search Console submission is owner-confirmed; Google indexing itself has not been verified.
 
 ## Parallel Threads
 
@@ -29,9 +29,9 @@ No release blocker. Remaining owner actions await confirmation. Search Console s
 
 ## Needs Decisions
 
-None blocking the completed website/HEY publication.
+None for the completed publication.
 
 ## Read These First
 
-- DOCS/specs/assets/app-visible-part-publication/publication-pack.md — published URLs, channel payloads and remaining owner steps
+- DOCS/specs/assets/app-visible-part-publication/publication-pack.md — published URLs, channel payloads and completion evidence
 - DOCS/runbooks/publish-writing.md — complete publishing/discovery sequence

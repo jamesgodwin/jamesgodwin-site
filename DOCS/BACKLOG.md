@@ -16,8 +16,6 @@ Deferred proposals, including terminal restoration, agent tools, the opening que
 
 ## In Progress
 
-- “The app is the visible part”: website and full HEY article live/verified; Paper Trail filing verified; James confirms LinkedIn/X publication; Search Console submission and subscriber email await confirmation ([pack](specs/assets/app-visible-part-publication/publication-pack.md)).
-
 - “Why I Kept a Step I Could Have Removed” is live on website and HEY; authorised subscriber email pending HEY browser sign-in and verified send ([checkpoint](logs/2026-10-22-002-kept-step-publication.md)).
 
 ## Blocked
@@ -26,6 +24,8 @@ Deferred proposals, including terminal restoration, agent tools, the opening que
 - Look Up is on hold: Apple’s Screen Time API is too unreliable to pursue now. The landing page lives on branch `lookup` — https://github.com/jamesgodwin/jamesgodwin-site/tree/lookup — and should not be merged to `main` until the app is resumed.
 
 ## Done
+
+- “The app is the visible part”: publication workflow complete on 16 November 2026; website/HEY and Paper Trail filing verified; James confirms LinkedIn/X posts, subscriber email and Search Console submission. Google indexing outcome is separate ([pack](specs/assets/app-visible-part-publication/publication-pack.md)).
 
 - “My Mac Was Hiding 81 GB in Plain Sight” published on website/HEY; James confirms subscriber email and LinkedIn/X posts. Exact HEY World post moved to Paper Trail and absence from Imbox verified ([evidence](logs/2026-11-04-001-mac-storage-article-preparation.md)).
 
