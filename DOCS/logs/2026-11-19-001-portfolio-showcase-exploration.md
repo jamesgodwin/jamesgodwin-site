@@ -295,3 +295,7 @@ James reported StraTech and Star120 thumbnail artwork was taller. CompanyLogoArt
 ## Final evening release
 
 James authorised deploying all pending copy, Plumbline removal, Launchpad recognition/logo sizing and uniform thumbnail corrections. Clean staged-index export at /tmp/jamesgodwin-final-release-20261119 passed npm ci, design/build76pages plus redirects,19unit tests,9route/SEO checks,6essay checks,2Notes checks and7design tests. Previously recorded viewport tests cover the affected layouts. Sitemap still uses19November for changed routes, and now excludes Plumbline. Unrelated older article log and publishing runbook edits remain excluded. Production verification follows.
+
+Evening production verification complete. Cloudflare release6c5739f succeeded (fb568774-8777-484a-98f2-cc998ee47785). Live homepage/Apps show revised copy, two logo/link recognitions and uniform thumbnail styles; exact sitemap matches candidate and excludes Plumbline. Old URL was edge-cached200, so redirect release65f7068 deployed successfully; live /work/plumbline now301tohttps://jamesgodwin.me/#work.
+
+James then requested a preview of a subtle small Launchpad logo beneath the homepage credibility paragraph. Added120px original logo between credibility and capability copy; desktop1440andmobile390screenshots reviewed, no overflow, build/design passed. Evidence output/playwright/hero-launchpad-*.png. This additional hero logo is local only for review, separate from the deployed evening changes.

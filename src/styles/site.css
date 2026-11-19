@@ -282,3 +282,5 @@
 }
 
 .company-logo-artwork--thumbnail {height:auto;aspect-ratio:3/2;}
+
+.hero-launchpad-logo {display:block;width:var(--size-120);height:auto;margin-block:var(--space-8) var(--space-16);}

@@ -478,3 +478,7 @@ The first screenshot batch stopped on Plumbline’s distinct template, then the 
 ### Production release, 19 November
 
 James authorised deployment. Release `05cc31b` passed clean candidate checks and Cloudflare deployment. Live73canonical routes, redirects and updated sitemap were verified. [Release evidence](../logs/2026-11-19-001-portfolio-showcase-exploration.md).
+
+### Evening refinements release
+
+Release `6c5739f` publishes shorter homepage copy, removes Plumbline, adds compact shared Launchpad logos/bold selection links to SwiftVEE/JUMO, preserves440px desktop shelf height, and makes StraTech/Star120thumbnail frames match the3:2standard. Clean candidate checks passed. Retired Plumbline URL needs redirect release `65f7068` because edge cache continued serving the old page.

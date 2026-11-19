@@ -2,7 +2,7 @@
 
 ## Current Focus
 
-Refine the portfolio showcase and individual case studies with James, one project at a time. [Current scope and review corrections](specs/portfolio-showcase.md). Published on 19 November as `05cc31b`; Cloudflare and public URL verification passed.
+Refine the portfolio showcase and individual case studies with James, one project at a time. [Current scope and review corrections](specs/portfolio-showcase.md). Published on 19 November; evening release `6c5739f` includes shorter copy, Plumbline retirement, Google Launchpad recognition and uniform thumbnails.
 
 ## Where Work Stopped
 
@@ -14,7 +14,7 @@ Hero painting is beside the text; underlay concepts are superseded. All24 origin
 
 ## Next Recommended Step
 
-Review the published portfolio with James and address any feedback.
+Review the local subtle homepage Launchpad logo preview with James. Previous evening release and Plumbline redirect are live and verified.
 
 ## Blockers
 
