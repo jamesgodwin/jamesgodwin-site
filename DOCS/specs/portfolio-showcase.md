@@ -474,3 +474,7 @@ Verification passed design/build, 19 Vitest and nine route/SEO checks. A generat
 Playwright CLI reviewed 32 routes at 390px and 320px, including the homepage, Apps, every current case study, main content/service pages and representative writing routes. All 64 layout checks had no page overflow or broken loaded images. Offscreen thumbnail images belong to the intentionally scrollable showcase rail. All 22 showcase selections passed; TapScribe stays first, painting swapping works, and mobile navigation through Dantian, both practice pages, Taoism and the workshop contact intent succeeds. Desktop and phone screenshots confirm the moved credibility line and shorter caption. Evidence is in local output/playwright/final-mobile-review/. This is Chromium viewport verification, not physical iPhone/Safari verification.
 
 The first screenshot batch stopped on Plumbline’s distinct template, then the layout and flow checks were rerun without assuming a shared hero. The local development server was restarted to clear stale Vite optimised dependency responses. No commit, push or deployment.
+
+### Production release, 19 November
+
+James authorised deployment. Release `05cc31b` passed clean candidate checks and Cloudflare deployment. Live73canonical routes, redirects and updated sitemap were verified. [Release evidence](../logs/2026-11-19-001-portfolio-showcase-exploration.md).

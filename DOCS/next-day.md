@@ -2,7 +2,7 @@
 
 ## Current Focus
 
-Refine the portfolio showcase and individual case studies with James, one project at a time. [Current scope and review corrections](specs/portfolio-showcase.md). Local implementation is in progress; publication is separate.
+Refine the portfolio showcase and individual case studies with James, one project at a time. [Current scope and review corrections](specs/portfolio-showcase.md). Published on 19 November as `05cc31b`; Cloudflare and public URL verification passed.
 
 ## Where Work Stopped
 
@@ -10,15 +10,15 @@ Refine the portfolio showcase and individual case studies with James, one projec
 
 Use genuine supplied screenshots, WebP optimisation, equal phone sizes, shared shadows and spaced centered captions. Ownership labels removed. TypeScoop leads with capture/Command–Shift–2, followed by HUD, piping and CLI; its capture video is embedded and playback checked. Between Breaths source confirms local reminders and global active presence, not breathing-phase synchronisation. AI Ching website has translations and a sourced +51% March–October Google-click chart, including its dip.
 
-Hero painting is beside the text; underlay concepts are superseded. All24 originals retained. Two file margins cropped; CSS letterboxing fixed by intrinsic dimensions. Latest content review complete: stale wording/repetition cleaned up, Work collection link and AI Ching cross-links added. Build/design passes77pages plus5redirects;19 component/content,9 built-route/SEO and6 essay/import checks pass. Browser refresh confirms TapScribe stays first; no project shuffle. Desktop slices reviewed. Mobile browser review complete at320/390px across homepage, Apps and all16 case studies, including22carousel selections and legacy chapters. Spacing, shortcut keys, product links and two-phone sizing refined; no page overflow. Physical-device/Safari review remains unverified. About now uses James’s complete supplied revision, including the new hero introduction, own products and Tai Chi/JUMO/Just Being connection; metadata and all supplied links are aligned. Old Work redirects to homepage #work; duplicate scoring/QC redirect to Roof Ops, with navigation and discovery updated. Return to Stillness replaces Executive State Diagnostic (/return-to-stillness; old URL redirects). James corrected his JUMO programme name to Just Being. Return to Stillness and Stillness Under Pressure now display James’s complete supplied drafts. He explicitly authorised the workshop replacement, resolving the earlier wait. The private session is one hour and the workshop offers 90 minutes, half/full day or a short series. Both pages are linked from About, Dantian, Taoism and Philosophy. Now links the George class; Paintings links Procreate. The hero uses Painted by me and the Google Launchpad line beneath its introduction. Final navigation audit has no broken internal links; Playwright checks passed32routes at320/390px plus all22showcase selections and the practice/contact journey. All authored site copy has been reviewed for colons and long dashes, including essay text and accessible labels. Old /work/dan-tian redirects to /dantian. Source review confirms Tan’s6competencies/4emotional, with learnedEQ framing; research limits in spec assets/emotional-intelligence-research.md. Contact intent UI loads independently of analytics; renamed label runtime verified. No commit, push or deployment. [Session evidence](logs/2026-11-19-001-portfolio-showcase-exploration.md).
+Hero painting is beside the text; underlay concepts are superseded. All24 originals retained. Two file margins cropped; CSS letterboxing fixed by intrinsic dimensions. Latest content review complete: stale wording/repetition cleaned up, Work collection link and AI Ching cross-links added. Build/design passes77pages plus5redirects;19 component/content,9 built-route/SEO and6 essay/import checks pass. Browser refresh confirms TapScribe stays first; no project shuffle. Desktop slices reviewed. Mobile browser review complete at320/390px across homepage, Apps and all16 case studies, including22carousel selections and legacy chapters. Spacing, shortcut keys, product links and two-phone sizing refined; no page overflow. Physical-device/Safari review remains unverified. About now uses James’s complete supplied revision, including the new hero introduction, own products and Tai Chi/JUMO/Just Being connection; metadata and all supplied links are aligned. Old Work redirects to homepage #work; duplicate scoring/QC redirect to Roof Ops, with navigation and discovery updated. Return to Stillness replaces Executive State Diagnostic (/return-to-stillness; old URL redirects). James corrected his JUMO programme name to Just Being. Return to Stillness and Stillness Under Pressure now display James’s complete supplied drafts. He explicitly authorised the workshop replacement, resolving the earlier wait. The private session is one hour and the workshop offers 90 minutes, half/full day or a short series. Both pages are linked from About, Dantian, Taoism and Philosophy. Now links the George class; Paintings links Procreate. The hero uses Painted by me and the Google Launchpad line beneath its introduction. Final navigation audit has no broken internal links; Playwright checks passed32routes at320/390px plus all22showcase selections and the practice/contact journey. All authored site copy has been reviewed for colons and long dashes, including essay text and accessible labels. Old /work/dan-tian redirects to /dantian. Source review confirms Tan’s6competencies/4emotional, with learnedEQ framing; research limits in spec assets/emotional-intelligence-research.md. Contact intent UI loads independently of analytics; renamed label runtime verified. Release `05cc31b` is published. Cloudflare succeeded; all73canonical URLs, retired redirects, updated copy and exact sitemap match verified. Sitemap includes stable revision dates. [Session evidence](logs/2026-11-19-001-portfolio-showcase-exploration.md).
 
 ## Next Recommended Step
 
-Continue James’s review of the local portfolio, About and the two practice pages, now using his supplied copy. Publication remains separate.
+Review the published portfolio with James and address any feedback.
 
 ## Blockers
 
-None for the initial index/story work. Owner review of artwork/copy and client identities/screens remains before publication. Fictional client illustrations are labelled and use no patient data. TypeScoop remains in development; do not claim unfinished native-sync or rendering upgrades as released.
+None for the published portfolio. James authorised release after review. Fictional client illustrations are labelled and use no patient data. TypeScoop remains in development; do not claim unfinished native-sync or rendering upgrades as released.
 
 ## Parallel Threads
 
@@ -28,7 +28,7 @@ None for the initial index/story work. Owner review of artwork/copy and client i
 
 ## Needs Decisions
 
-- Review client names/screens and copy before publication. FROM Digital entry is implemented, with work contracted through IIIMPACT. Refresh-randomised project ordering is superseded by the fixed career order; painting rotation remains; Another painting swaps image/caption in place without reloading or resetting the selected project.
+- None for the completed release.
 
 ## Read These First
 
