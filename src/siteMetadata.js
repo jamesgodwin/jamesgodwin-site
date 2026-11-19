@@ -68,7 +68,7 @@ const pageMetadata = {
   },
   now: {
     title: 'Now | James Godwin',
-    description: 'What James Godwin is working on in November 2026, including client products, Plumbline with IIIMPACT, Mac apps, AI Ching, writing and Tai Chi teaching.',
+    description: 'What James Godwin is working on in November 2026, including client products, Mac apps, AI Ching, writing and Tai Chi teaching.',
     path: '/now'
   },
   paintings: {
@@ -118,7 +118,6 @@ const getMetadataForCommand = (commandName) => {
 
 const sectionMetadata=Object.fromEntries(Object.entries({
  tapscribe:{title:'Private conversations. Fewer steps. | TapScribe | James Godwin',description:'How a coach’s disconnected local recording and transcription workflow became TapScribe, a native Mac app.',path:'/work/tapscribe'},
- plumbline:{title:'One design system. Across the tools. | Plumbline with IIIMPACT | James Godwin',description:'Design systems rooted in client code, with AI Ching as a test case. Plumbline with IIIMPACT; design-tool projections and developer plugins in progress.',path:'/work/plumbline'},
  essays:{title:'Essays | James Godwin',description:'Essays on building software, working with AI, design systems and the things I keep coming back to.',path:'/essays'},
  notes:{title:'Notes | James Godwin',description:'Short pieces from product work, working with AI, accessibility and Tai Chi practice, adapted from my LinkedIn posts.',path:'/notes'}
 }).map(([key,value])=>[key,{...defaultMetadata,...value,url:siteUrl+value.path}]));

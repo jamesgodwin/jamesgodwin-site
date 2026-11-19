@@ -272,3 +272,13 @@
 .iiimpact-artwork--teaching > strong {background:var(--color-text);padding:var(--space-16) var(--space-24);font-size:var(--type-page-title-size);line-height:var(--type-page-title-leading);box-shadow:var(--shadow-painting-caption);}
 .iiimpact-artwork--teaching > strong small {display:block;font-size:var(--type-control-size);line-height:var(--leading-1_5);margin-bottom:var(--space-4);}
 .iiimpact-artwork--teaching.iiimpact-artwork--thumbnail > strong {font-size:var(--type-lead-size);padding:var(--space-8) var(--space-12);}
+
+.launchpad-recognition a {display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-8);font-size:var(--type-control-size);}
+.launchpad-recognition img {width:var(--size-120);max-width:100%;height:auto;}
+
+@media(min-width:701px) and (max-width:1100px) {
+ [data-app-shelf] .case-feature__copy:has(.launchpad-recognition) {gap:var(--space-8);padding:var(--space-16);}
+ [data-app-shelf] .case-feature__copy:has(.launchpad-recognition) > p:not(.eyebrow) {font-size:var(--type-control-size);}
+}
+
+.company-logo-artwork--thumbnail {height:auto;aspect-ratio:3/2;}

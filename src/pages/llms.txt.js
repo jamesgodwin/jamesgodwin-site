@@ -15,12 +15,12 @@ export async function GET() {
   '',
   '## Work',
   '',
-  ...['tapscribe','plumbline'].map(key=>{
+  ...['tapscribe'].map(key=>{
    const page=metadata.sectionMetadata[key];
    return `- [${page.title.split(' | ')[0]}](${page.url}): ${page.description}`;
   }),
   '',
-  'The Roof Ops story brings scoring and quality control together for the same roofing client. TapScribe was developed from a coach’s need for private local recording and transcription. Plumbline is work with IIIMPACT and remains in progress; its design-tool projections and developer plugins are not presented as completed products. AI Ching is my own codebase used as a design-system test case.',
+  'The Roof Ops story brings scoring and quality control together for the same roofing client. TapScribe was developed from a coach’s need for private local recording and transcription.',
   '',
   ...projects.filter(project=>project.url.startsWith('/')).map(project=>`- [${project.name}](${metadata.siteUrl}${project.url}): ${project.story}`),
   '',

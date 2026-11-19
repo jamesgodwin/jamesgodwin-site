@@ -32,8 +32,8 @@ describe('public content quality', () => {
     expect(nowOutput).toContain('href="/systems"');
     expect(nowOutput).toContain('TapScribe');
     expect(nowOutput).not.toContain('private pilot');
-    expect(nowOutput).toContain('Plumbline with IIIMPACT');
-    expect(nowOutput).toContain('in progress');
+    expect(nowOutput).not.toContain('Plumbline');
+    expect(nowOutput).toContain('still in development');
     expect(nowOutput).toContain('Tai Chi and Taoist breathing practice');
     expect(nowOutput).not.toContain('weekly LinkedIn leadership series');
     expect(nowOutput).not.toContain('Available commands:');

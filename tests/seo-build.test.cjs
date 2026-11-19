@@ -61,7 +61,7 @@ test('rendered content imagery uses WebP or small vector icons, with alt text an
 });
 
 test('llms guide links only to existing public pages and keeps in-progress work explicit',()=>{
- const guide=read('llms.txt');assert.match(guide,/^# James Godwin\n/);assert.match(guide,/IIIMPACT/);assert.match(guide,/remains in progress/);
+ const guide=read('llms.txt');assert.match(guide,/^# James Godwin\n/);assert.doesNotMatch(guide,/Plumbline|work\/plumbline/);
  for(const [,url] of guide.matchAll(/\]\((https:\/\/jamesgodwin.me[^)]+)\)/g)){
   const pathname=new URL(url).pathname;assert.ok(fs.existsSync('dist'+pathname+'.html')||fs.existsSync('dist'+pathname+'/index.html'),url);
  }

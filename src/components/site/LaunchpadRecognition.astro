@@ -1,0 +1,5 @@
+---
+const {slug}=Astro.props;
+const recognition=slug==='swiftvee' ? {url:'https://blog.google/intl/en-africa/company-news/inside-google/launchpad-accelerator-africa-growing/',text:'Selected for Google’s first Launchpad Accelerator Africa cohort in 2018.'} : slug==='jumo' ? {url:'https://developers.googleblog.com/announcing-the-fourth-class-of-launchpad-accelerator-featuring-new-countries/',text:'JUMO was selected for Google’s Launchpad Accelerator in 2017.'} : null;
+---
+{recognition && <p class="launchpad-recognition"><a href={recognition.url}><img src="/portfolio/google-launchpad.webp" alt="Google Developers Launchpad" width="1233" height="317" loading="lazy"/><strong>{recognition.text} ↗</strong></a></p>}

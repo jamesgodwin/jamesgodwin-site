@@ -1,13 +1,12 @@
 ---
 import { Image } from 'astro:assets';
-import { plumblineStory } from '../../concept/plumbline.js';
 import { benStory } from '../../concept/ben.js';
 import { tapscribeStory } from '../../concept/tapscribe.js';
 import { qualityStory } from '../../concept/quality.js';
 import CaseVisual from '../concept/CaseVisual.astro';
 import Action from '../ui/Action.astro';
 import { patternAttributes } from '../../design-system/patterns.js';
-const stories=[{...benStory,path:'/work/crew-scores'},{...qualityStory,path:'/work/quality-control'},{...tapscribeStory,path:'/work/tapscribe'},{...plumblineStory,path:'/work/plumbline'}];
+const stories=[{...benStory,path:'/work/crew-scores'},{...qualityStory,path:'/work/quality-control'},{...tapscribeStory,path:'/work/tapscribe'}];
 ---
 <div data-story-shelf>
  <nav class="site-story-choices" aria-label="Choose a story" data-story-choices hidden>

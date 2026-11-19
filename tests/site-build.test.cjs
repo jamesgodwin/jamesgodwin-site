@@ -17,16 +17,14 @@ test('the portfolio exposes project stories, preserves legacy stories and uses t
  const appNames=[...home.matchAll(/<button[^>]*data-app-select="\d+"[^>]*>([\s\S]*?)<\/button>/g)].map(m=>[...m[1].matchAll(/<strong>([^<]+)<\/strong>/g)].at(-1)?.[1]);
  assert.equal(appNames[0],'TapScribe');
  assert.deepEqual(appNames.slice(-9),['IIIMPACT','FROM Digital / Algoworks','SwiftVEE','PrivySeal','StraTech','JUMO','Lobster Ink','IMB','Star120']);
- const plumbline=fs.readFileSync('dist/work/plumbline.html','utf8');
- assert.match(plumbline,/With IIIMPACT/);assert.match(plumbline,/In progress/);assert.match(plumbline,/I Ching/);
- assert.doesNotMatch(plumbline,/<input\b|<form\b/);
- for(const chapter of ['the-situation','how-i-helped','what-changed'])assert.ok(plumbline.includes(`id="${chapter}"`));
+ assert.equal(fs.existsSync('dist/work/plumbline.html'),false);
+ assert.doesNotMatch(fs.readFileSync('dist/sitemap.xml','utf8'),/plumbline/);
  for(const [route,destination] of [['work.html','/#work'],['work/crew-scores.html','/work/roof-ops'],['work/quality-control.html','/work/roof-ops'],['work/dan-tian.html','/dantian']]){
   const redirect=fs.readFileSync('dist/'+route,'utf8');
   assert.match(redirect,/name="robots" content="noindex"/);
   assert.ok(redirect.includes('0;url='+destination),route);
  }
- assert.match(home,/id="work"/);assert.match(home,/href="\/#work"/);assert.match(home,/href="\/work\/plumbline"/);
+ assert.match(home,/id="work"/);assert.match(home,/href="\/#work"/);assert.doesNotMatch(home,/plumbline/i);
  assert.match(home,/href="\/dantian"/);
  assert.match(fs.readFileSync('dist/dantian.html','utf8'),/rel="canonical" href="https:\/\/jamesgodwin.me\/dantian"/);
  for(const route of ['index','apps','taoism','philosophy','now','workshops'])assert.doesNotMatch(fs.readFileSync(`dist/${route}.html`,'utf8'),/href="\/work\/dan-tian"/);
