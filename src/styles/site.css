@@ -87,9 +87,9 @@
 
 /* Portfolio composition; values reuse the shared design system. */
 .portfolio-hero { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:var(--space-48); align-items:stretch; padding-block:var(--space-32); }
-.portfolio-hero figure { position:relative; grid-column:2; grid-row:1; margin:0; min-width:0; display:grid; grid-template-rows:minmax(0,1fr); justify-items:center; align-items:end; }
+.portfolio-hero figure { position:relative; grid-column:2; grid-row:1; margin:0; min-width:0; display:flex; flex-direction:column; align-items:center; align-self:center; gap:var(--space-12); }
 .portfolio-hero figure img { display:block; width:auto; height:auto; max-height:40vh; max-width:100%; border-radius:var(--radius-painting); box-shadow:var(--shadow-painting); }
-.portfolio-hero figcaption { position:absolute; top:100%; margin-top:var(--space-12); width:max-content; max-width:100%; display:flex; align-items:center; justify-content:center; gap:var(--space-8); text-align:center; font-size:var(--type-control-size); color:var(--color-text); }
+.portfolio-hero figcaption { position:static; margin:0; width:max-content; max-width:100%; display:flex; align-items:center; justify-content:center; gap:var(--space-8); text-align:center; font-size:var(--type-control-size); color:var(--color-text); }
 .painting-caption-pill,.portfolio-hero #painting-refresh {padding:var(--space-8) var(--space-12);border-radius:var(--radius-painting);background:var(--color-canvas);box-shadow:var(--shadow-painting-caption);}
 .portfolio-hero figcaption a {color:var(--color-action);white-space:nowrap;}
 .portfolio-hero figcaption #painting-title {font-weight:var(--weight-bold);}
