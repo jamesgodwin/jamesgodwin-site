@@ -1,7 +1,34 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
-import StoryReader from '../../components/site/StoryReader.astro';
-import { tapscribeStory } from '../../concept/tapscribe.js';
+import ProjectCaseStudy from '../../components/site/ProjectCaseStudy.astro';
 import metadata from '../../siteMetadata';
+const project={
+ name:'TapScribe',logo:'/tapscribe-icon.webp',
+ title:'A meeting record I can return to.',
+ summary:'A native Mac app for recording conversations and transcribing them locally. Built from a need in my own working day, with care for the whole journey from pressing Record to finding a detail afterwards.',
+ role:'Product design · Native Mac development · Audio capture · Local transcription',website:'https://tapscribe.app/',
+ hero:'/portfolio/tap2.webp',heroAlt:'TapScribe Library with a short test recording and transcript',heroCaption:'The Library keeps a recording and its transcript together. This screenshot uses a test recording.',
+ sections:[
+ {label:'The starting point',title:'I wasn’t always the host.',paragraphs:[
+ 'I’m often in meetings where I’m not the host, so I can’t get the transcript. I wanted my own record to return to afterwards, something I could reference for my work, check the details against and use to catch things I might otherwise miss.',
+ 'I also wanted transcription to happen on my Mac, without sending the recording to a cloud transcription service. A coaching friend was interested in something he could run on his Mac too. That gave me another reason to turn the idea into an app.'
+ ]},
+ {label:'The design challenge',title:'Make recording the easy part.',paragraphs:[
+ 'The hardest part was getting the feel right. Quick access, starting a recording and viewing the transcript needed to feel like one simple journey. A tool I use around meetings has to be ready when I need it.',
+ 'The recording HUD shows the recording state, elapsed time, microphone and meeting-audio levels, with a way back to the Library. The fuller transcript experience has its own space.'
+ ],image:'/portfolio/tap1.webp',alt:'TapScribe recording HUD showing a ten-second test recording',width:347,height:339,caption:'A compact recording HUD, with the essentials visible at a glance.'},
+ {label:'The working experience',title:'Keep the conversation and the words together.',paragraphs:[
+ 'The Library brings recordings and transcripts into the same place. I can return to a meeting, listen back and read the text, rather than reconstructing what happened from memory.',
+ 'The details matter here, from the relationship between playback and text to finding a recording again or copying its transcript into the next piece of work. My aim was to reduce the friction around those everyday steps.'
+ ]},
+ {label:'A deliberate choice',title:'Transcription stays on the Mac.',paragraphs:[
+ 'Local transcription was part of the original reason for building TapScribe. Recording and transcription happen on the Mac. What someone chooses to do with a transcript afterwards, including sharing it with another service, is a separate step.',
+ 'That constraint shaped the product alongside the interface. The portfolio story is about carrying a practical need through product design and development into something I use in my own work.'
+ ]},
+ {label:'Today',title:'A working product, still shaped by use.',paragraphs:[
+ 'TapScribe is available as a Mac app. The screenshots here show its recording HUD and Library with a short test recording. They make the actual interface visible, rather than presenting a speculative design.',
+ 'I keep asking how quickly I can start recording and how easily I can return to the details when the meeting is over.'
+ ]}
+ ]};
 ---
-<SiteLayout metadata={metadata.sectionMetadata.tapscribe} current="work"><StoryReader story={tapscribeStory} /></SiteLayout>
+<SiteLayout metadata={metadata.sectionMetadata.tapscribe} current="work"><ProjectCaseStudy project={project}/></SiteLayout>

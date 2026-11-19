@@ -1,7 +1,7 @@
 import library from '../assets/concept/tapscribe-native-library.webp';
 import recording from '../assets/concept/tapscribe-recording.webp';
 export const tapscribeStory = {
- id:'tapscribe',title:'Private conversations. Fewer steps.',context:'TapScribe · My own product',
+ id:'tapscribe',title:'Private conversations. Fewer steps.',context:'TapScribe',
  summary:'A coach needed a simpler way to record and transcribe client sessions locally. I built TapScribe to bring the steps together.',
  image:library,alt:'TapScribe’s native Library displaying a fictional sample conversation and its local transcript.',
  recording,recordingAlt:'TapScribe’s recording window showing microphone and Mac audio levels.',

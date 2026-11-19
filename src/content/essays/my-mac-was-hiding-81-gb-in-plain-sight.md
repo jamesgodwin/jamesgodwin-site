@@ -1,6 +1,7 @@
 ---
 title: "My Mac Was Hiding 81 GB in Plain Sight"
 date: "2026-11-04"
+updated: "2026-11-19"
 category: "Design & development"
 lead: "A read-only storage audit helped me understand what was filling my Mac before deciding what was safe to remove."
 cover: "../../assets/writing/my-mac-was-hiding-81-gb-in-plain-sight.webp"
@@ -15,7 +16,7 @@ In September, I opened a disk utility because my Mac had reached the point where
 
 The utility gave me the broad shape of the problem, but not enough confidence to act. There were large folders with names such as `Containers`, `Application Support`, `Developer`, `.gradle` and `.cache`. Some were clearly technical. Others contained a mixture of disposable files, application state and data that would be painful to lose. A folder being large does not make it safe to delete.
 
-So I gave Codex permission to perform a read-only scan of the drive. The instruction was deliberately narrow: find the large caches and other storage consumers, tell me what they are, and do not delete or modify anything. Claude or another coding agent with controlled access to the local machine could be used in the same way.
+So I gave Codex permission to perform a read-only scan of the drive. I asked it to find the large caches and other storage consumers and tell me what they were, without deleting or modifying anything. Claude or another coding agent with controlled access to the local machine could be used in the same way.
 
 That distinction mattered. I was not asking an AI agent to “clean my Mac”. I was asking it to investigate my Mac and explain the evidence so that I could decide what should happen next.
 
@@ -39,11 +40,11 @@ In total, I removed about 81 GB of data and gained roughly 86 GB of immediately 
 
 There are obvious privacy and safety considerations here. A local agent needs permission to inspect the relevant parts of the drive, and some macOS locations may require Full Disk Access. That permission should be temporary and intentional, not something granted casually. The first scan should also be read-only. Ask for sizes and explanations before asking for deletion commands, and never paste a destructive command unless you have read the complete path and understand what it targets.
 
-A useful starting prompt could be:
+You could start with a prompt like this.
 
 > Perform a read-only storage audit of my Mac. Focus on caches, temporary files, logs, developer build data, old SDKs, application containers and unusually large files. Do not delete, move or modify anything. Show me the largest locations, explain what created them, separate likely-regenerable data from personal or application data, and flag anything that must be cleaned through its own application. Ask me before suggesting any destructive command.
 
-I would add one more instruction if the agent has access to development projects: search those projects for references before calling an SDK, runtime or toolchain version unused. That simple check prevented me from deleting the Android NDK version my current Flutter installation expects.
+If the agent has access to development projects, I would also ask it to search those projects for references before calling an SDK, runtime or toolchain version unused. That simple check prevented me from deleting the Android NDK version my current Flutter installation expects.
 
 This process also changed how I think about storage tools. The visual scanner found the neighbourhood. The agent helped me understand the occupants. Neither should be given unchecked authority to demolish the building.
 

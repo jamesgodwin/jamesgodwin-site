@@ -16,6 +16,8 @@ Deferred proposals, including terminal restoration, agent tools, the opening que
 
 ## In Progress
 
+- Portfolio homepage: side-by-side painting hero and 22-entry showcase implemented locally; 320/390px homepage, Apps and all16 case-study review plus carousel/chapter checks complete; both supplied practice-page drafts are implemented; owner review and publication remain ([scope, slices and acceptance](specs/portfolio-showcase.md#implementation-slices)).
+
 - “Why I Kept a Step I Could Have Removed” is live on website and HEY; authorised subscriber email pending HEY browser sign-in and verified send ([checkpoint](logs/2026-10-22-002-kept-step-publication.md)).
 
 ## Blocked
@@ -24,6 +26,8 @@ Deferred proposals, including terminal restoration, agent tools, the opening que
 - Look Up is on hold: Apple’s Screen Time API is too unreliable to pursue now. The landing page lives on branch `lookup` — https://github.com/jamesgodwin/jamesgodwin-site/tree/lookup — and should not be merged to `main` until the app is resumed.
 
 ## Done
+
+- Apps index thumbnail rows implemented locally for all 22 projects, sharing homepage artwork with title/text/actions alongside and stacked phone layout; fixed career ordering, desktop/mobile review, build/design and19tests pass ([scope and evidence](specs/portfolio-showcase.md#apps-index-thumbnails-follow-up)).
 
 - “The app is the visible part”: publication workflow complete on 16 November 2026; website/HEY and Paper Trail filing verified; James confirms LinkedIn/X posts, subscriber email and Search Console submission. Google indexing outcome is separate ([pack](specs/assets/app-visible-part-publication/publication-pack.md)).
 

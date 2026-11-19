@@ -31,7 +31,7 @@ Implementation: Astro 7, static output with plain browser JavaScript and no Reac
 - `src/layouts/SiteLayout.astro` owns shared document metadata, font loading, GA, ConvertKit and navigation.
 - Deployed archive: 15 essays with static 12-per-page pagination at `/essays` and `/essays/page/<number>`; visible navigation uses Essays. The 12-article backfill is published and verified ([release](logs/2026-10-20-032-article-pagination-release.md)). [Pagination evidence](logs/2026-10-20-031-essay-pagination.md).
 
-- `src/pages/index.astro` presents the four-story selector and writing, defaulting to Ben’s scoring story. `[page].astro` preserves all 17 existing inner routes; Work/story and Essays routes are explicit. Sitemap includes published essays and new sections. `404.astro` is aligned with the shell.
+- Local portfolio update (19 November, not yet deployed): `src/pages/index.astro` presents the22-entry showcase and writing, defaulting to TapScribe. `/work` redirects to `/#work`; duplicate scoring and quality-control URLs redirect to `/work/roof-ops`. The Dantian story is now `/dantian`, with `/work/dan-tian` redirecting to it. The private practice page is now `/return-to-stillness`, with `/executive-state-diagnostic` redirecting to it. `[page].astro` preserves all 17 existing inner routes; Work/story and Essays routes are explicit. Sitemap includes published essays and new sections. `404.astro` is aligned with the shell.
 - `src/site-client.js` owns contact intent/tracking and progressively enhanced chapter navigation. All story chapters are rendered in HTML; app illustrations have no controls. The earlier circle/private-command implementation remains in source as historical reference and is not mounted by the new shell.
 - `src/posthog.js` and `src/posthog-logs.js` preserve the existing project, events, exceptions and browser logs. Local and Pages-hosted verification traffic is labelled; the run label follows navigation within the session.
 - `src/themes.js` supplies image-theme artwork. The [design-system foundations](specs/design-system-foundations.md) are implemented, consolidated and deployed, preserving the selected visual language and layout. Action, TextLink, LinkCard, PageHero and ContentProse are shared by product and catalogue; retained historical browser reflection actions use the same recipes but are not mounted in the public Case shelf. Standard outlined actions now share one treatment; public dark-mode controls remain later work.
@@ -43,7 +43,7 @@ Keep `siteMetadata.js`, the route/output/presentation mapping, navigation/help w
 
 ## Key Constraints
 
-- Preserve existing public routes, service prices, contact paths and the selected Case shelf design. Four static stories and 15 original illustrated essays are live; earlier circle/terminal artwork is historical reference.
+- Preserve existing public routes and contact paths and the selected Case shelf design. Four static stories and 15 original illustrated essays are live; earlier circle/terminal artwork is historical reference.
 - Trusted HTML only in `src/outputs/`; never interpolate visitor input into `set:html` or reflection HTML.
 - Keep existing Google Analytics and ConvertKit (`data-uid="0da6b662ba"`) working alongside PostHog.
 - The obsolete `public/tapscribe/TapScribe-Pilot.dmg` was removed at James's request on 20 October and now returns 404 on the live Cloudflare site. Do not restore it or add replacement download hosting.

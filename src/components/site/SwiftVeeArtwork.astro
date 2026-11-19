@@ -1,0 +1,4 @@
+---
+const {thumbnail=false}=Astro.props;
+---
+<div class:list={["swiftvee-artwork",{"swiftvee-artwork--thumbnail":thumbnail}]} aria-hidden={thumbnail ? 'true' : undefined}><img class="swiftvee-artwork__logo" src="/portfolio/swiftvee-logo.svg" alt={thumbnail ? '' : 'SwiftVEE'} width="180" height="80" loading="lazy"/><img class="swiftvee-artwork__platform" src="/portfolio/swiftvee-platform.webp" alt={thumbnail ? '' : 'SwiftVEE website artwork showing livestock and game auctions on desktop and mobile'} width="800" height="600" loading="lazy"/></div>

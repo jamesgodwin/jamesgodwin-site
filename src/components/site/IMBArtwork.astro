@@ -1,0 +1,4 @@
+---
+const {thumbnail=false}=Astro.props;
+---
+<div class:list={["imb-artwork",{"imb-artwork--thumbnail":thumbnail}]} aria-hidden={thumbnail ? 'true' : undefined}>{!thumbnail && <img class="imb-artwork__scene" src="/portfolio/imb-website-art.webp" alt="Current IMB website brand artwork" width="1190" height="728" loading="lazy"/>}<img class="imb-artwork__logo" src="/portfolio/imb-logo.webp" alt={thumbnail ? '' : 'IMB'} width="296" height="296" loading="lazy"/></div>

@@ -1,8 +1,8 @@
 # LinkedIn and website alignment plan
 
-## Current applicability, 20 October 2026
+## Current applicability, 19 November 2026
 
-The website changes have since shipped on the Cloudflare Case shelf, with live route/browser checks recorded. The visitor exercise and unverified LinkedIn profile adoption remain separate. Earlier local-tree and pending-release descriptions below are dated implementation history. See the [documentation index](README.md) for current authority and release evidence.
+The website changes have since shipped on the Cloudflare Case shelf, with live route/browser checks recorded. James's live LinkedIn headline and About were independently inspected on 19 November: they retain the founder/stalled-product positioning, name UX/accessibility/implementation gaps, and describe his own products as places where he tests his recommendations. Profile adoption is therefore no longer unverified. No LinkedIn edits were made. James explicitly retained this service message while selecting a richer app slider for the homepage; [current portfolio plan](portfolio-showcase.md) owns that refinement. The visitor exercise remains separate. Earlier local-tree and pending-release descriptions below are dated implementation history. See the [documentation index](README.md) for current authority and release evidence.
 
 ## Original scope and chronological amendments
 

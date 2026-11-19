@@ -1,0 +1,6 @@
+---
+import {projects} from '../../portfolio.js';
+import Action from '../ui/Action.astro';
+import PortfolioThumbnail from './PortfolioThumbnail.astro';
+---
+<div class="project-index"><p>Apps, client systems and startup work, built around practical needs and personal interests.</p>{projects.map(app=><section class="project-index__row" aria-labelledby={'project-'+app.slug}><div class="project-index__image" aria-hidden="true"><PortfolioThumbnail app={app}/></div><div class="project-index__copy"><h2 id={'project-'+app.slug}>{app.name}</h2><p>{app.story}</p><div class="project-index__action"><Action recipe="primary" href={app.url}>{app.cta || `Explore ${app.name} →`}</Action></div></div></section>)}</div>

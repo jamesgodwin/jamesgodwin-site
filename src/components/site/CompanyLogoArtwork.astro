@@ -1,0 +1,4 @@
+---
+const {src,alt,thumbnail=false}=Astro.props;
+---
+<div class="company-logo-artwork" aria-hidden={thumbnail ? 'true' : undefined}><img src={src} alt={thumbnail ? '' : alt} width="800" height="500" loading="lazy"/></div>

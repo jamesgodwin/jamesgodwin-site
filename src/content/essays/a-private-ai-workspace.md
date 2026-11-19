@@ -1,6 +1,7 @@
 ---
 title: "A Private AI Workspace The Simplest Starting Point for Sensitive Work"
 date: "2026-07-14"
+updated: "2026-11-19"
 category: "AI & work"
 lead: "Start with one recurring task and a clear, approved route."
 cover: "../../assets/writing/a-private-ai-workspace-cover.png"
@@ -38,7 +39,7 @@ That is a much more honest way to introduce AI into sensitive work. It lets a bu
 
 It can also reveal a problem that existed before AI. A pilot often exposes scattered files, weak naming conventions, unclear ownership, or templates that no longer match how the work is actually done. That is not a failure of the experiment. It is useful evidence. If a workflow is too messy for a bounded assistant to work with safely, it may also be too messy for people to work with consistently under pressure.
 
-This is why I prefer the idea of a workspace to the language of an AI rollout. A rollout makes the conversation sound like a technology adoption exercise. A workspace makes it sound like what it is: a small piece of operating design. The business is deciding what material belongs there, what task is allowed, who can use it, where the output goes, and where human judgement must take over.
+This is why I prefer the idea of a workspace to the language of an AI rollout. A rollout makes the conversation sound like a technology adoption exercise. A workspace makes it sound like the small piece of operating design it is. The business is deciding what material belongs there, what task is allowed, who can use it, where the output goes, and where human judgement must take over.
 
 That design work is more important than choosing a fashionable model. Model choice matters, but it is only one layer. The real question is how the workflow behaves when someone is busy, uncertain, and trying to finish a piece of work. Is the approved route clearer than the unofficial shortcut? Can a person tell what the system has seen and what it has not? Can they check the output before it affects a client, colleague, or decision? Does the process leave a trail that makes sense afterwards?
 

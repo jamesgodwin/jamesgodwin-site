@@ -1,0 +1,147 @@
+{
+  "review_date": "2026-11-19",
+  "items": [
+    {
+      "file": "current-homepage.jpg",
+      "source": "https://jamesgodwin.me/",
+      "kind": "Live browser screenshot"
+    },
+    {
+      "file": "gratefulfor-live.jpg",
+      "source": "https://gratefulfor.com/",
+      "kind": "Live browser screenshot; public gratitude shown; use a dedicated fictional sample before portfolio publication"
+    },
+    {
+      "file": "true-essence-live.jpg",
+      "source": "https://trueessence.space/",
+      "kind": "Live public landing page screenshot; not an authenticated practice screenshot"
+    },
+    {
+      "file": "taoist-breath-live.jpg",
+      "source": "https://taoistbreath.com/",
+      "kind": "Live browser screenshot of idle practice; no session started"
+    },
+    {
+      "file": "aiching-web-live.jpg",
+      "source": "https://aiching.app/",
+      "kind": "Live browser screenshot; visible readership metric has not been independently validated for portfolio use"
+    },
+    {
+      "file": "tapscribe-website-live.jpg",
+      "source": "https://tapscribe.app/",
+      "kind": "Live public landing-page screenshot"
+    },
+    {
+      "file": "tapscribe-library.webp",
+      "source": "/Users/nitro/code/tapscribe-launch/public/images/product/tapscribe-library-example.webp",
+      "kind": "Genuine isolated Debug Library capture with fictional sample audio; not exact current release evidence; provenance in source product README"
+    },
+    {
+      "file": "aiching-reading-golden.png",
+      "source": "/Users/nitro/code/aiching-app/test/features/goldens/reading_preview_light_393x852.png",
+      "kind": "Real Flutter renderer golden-test image using fixture data; not device capture"
+    },
+    {
+      "file": "typescoop-illustration.webp",
+      "source": "/Users/nitro/code/typescoop-launch/public/images/capture-poster.webp",
+      "kind": "Existing marketing illustration of text capture; not runtime or current command-workflow evidence"
+    },
+    {
+      "file": "between-breaths-store.jpg",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b3/fd/cd/b3fdcdfa-9567-9c3a-0f3d-5e55d0419725/6.7_image_1.png/320x480bb.jpg",
+      "kind": "Official App Store marketing screenshot; lookup API confirmed Between Breaths 1.0.0"
+    },
+    {
+      "file": "harmonic-echo-store.jpg",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/c6/c3/8ec6c38e-5c29-33f9-5c57-387115d44fbf/6.7_image_5.png/320x480bb.jpg",
+      "kind": "Official App Store marketing screenshot; lookup API confirmed Harmonic Echo 1.0.1; separate from unreleased native upgrade"
+    },
+    {
+      "file": "01-featured-shelf.png",
+      "kind": "AI-generated layout concept grounded in attached source screenshots. First generated concept shown. Not a live page or exact product screenshot."
+    },
+    {
+      "file": "02-product-gallery.png",
+      "kind": "AI-generated layout concept grounded in attached source screenshots. Second generated concept shown. Not a live page or exact product screenshot."
+    },
+    {
+      "file": "03-slider-service-led.png",
+      "kind": "AI-generated revision of the first selected slider concept, with current service hero and eight selectable app names. Based on live LinkedIn headline/About review and PDF project shortlist. Static concept, not a running page or exact app screenshot."
+    },
+    {
+      "file": "04-slider-thumbnail-cards.png",
+      "kind": "Selected AI-generated app-section composition: existing service hero and featured app preserved, text-only selectors replaced by user-requested sliding image cards; selected TapScribe thumbnail has subtle forest outline. Static concept, no working interaction."
+    },
+    {
+      "file": "user-thumbnail-reference.png",
+      "source": "/Users/nitro/Desktop/_screenshots/Screenshot 2026-11-19 at 12.44.41.png",
+      "kind": "User-supplied crop defining preferred thumbnail-card navigation and subtle selected state."
+    },
+    {
+      "file": "art-swartvlei-beach.jpg",
+      "kind": "Actual observed painting media downloaded from the public page; 828×1003. Public title and attribution verified.",
+      "source": "https://www.deviantart.com/jamesgodwin/art/Swartvlei-Beach-1097635403"
+    },
+    {
+      "file": "art-bearded-man.jpg",
+      "kind": "Actual observed painting media downloaded from the public page; 750×1334. Public title and attribution verified. Painted subject is not assumed to be James.",
+      "source": "https://www.deviantart.com/jamesgodwin/art/Bearded-man-799588256"
+    },
+    {
+      "file": "art-portfolio-landscape.jpg",
+      "kind": "Original embedded 1695×1408 landscape JPEG extracted from user portfolio; also matches an existing local painting thumbnail. Painting title not confirmed.",
+      "source": "/Users/nitro/Desktop/james-godwin-portfolio.pdf, page 1"
+    },
+    {
+      "file": "05-art-band.png",
+      "kind": "Generated alternative using reference landscape; not selected."
+    },
+    {
+      "file": "06-art-framed.png",
+      "kind": "Generated alternative using Swartvlei Beach reference; not selected."
+    },
+    {
+      "file": "07-art-underlay.png",
+      "kind": "Selected AI-generated hero underlay composition. Painting pixels are interpretive; implement using original artwork."
+    },
+    {
+      "file": "08-underlay-beach-desktop.png",
+      "kind": "Generated desktop study of selected underlay with Swartvlei Beach reference; not a live webpage."
+    },
+    {
+      "file": "09-underlay-portrait-desktop.png",
+      "kind": "Generated desktop study with Bearded man reference; portrait has been redrawn by image generation and is not an original painting asset."
+    },
+    {
+      "file": "10-underlay-beach-mobile.png",
+      "kind": "Corrected generated mobile study: beach above hero, featured TapScribe and real-named image-card rail. Not browser or touch verification."
+    },
+    {
+      "file": "11-underlay-portrait-mobile.png",
+      "kind": "Corrected generated mobile study: portrait above hero and thumbnail rail. Not browser or touch verification."
+    },
+    {
+      "file": "artwork-overview.jpg",
+      "source": "/Users/nitro/Desktop/artwork",
+      "kind": "Contact sheet of 24 user-supplied original paintings, created only to review the collection. Individual originals are unchanged and inventoried in artwork-manifest.json."
+    }
+  ],
+  "reference_documents": [
+    {
+      "path": "/Users/nitro/Desktop/james-godwin-portfolio.pdf",
+      "kind": "User-supplied 32-page historical portfolio; PDF metadata dates it to 3 October 2024. Read-only source; selected pages visually reviewed. Not published or copied into site assets."
+    },
+    {
+      "url": "https://www.linkedin.com/in/jamiegodwin/",
+      "kind": "Live headline and About inspected on 19 November 2026 through signed-in in-app browser; no changes. Evidence screenshot stays in ignored output/portfolio-review."
+    },
+    {
+      "url": "https://www.deviantart.com/jamesgodwin",
+      "kind": "Public gallery and two artwork detail pages inspected; no gallery changes or login. Generated mockups must not replace original art assets."
+    },
+    {
+      "path": "/Users/nitro/Desktop/artwork",
+      "kind": "24 JPEG paintings explicitly supplied by James for the site, copied byte-for-byte into the planning asset folder and listed in artwork-manifest.json. Supersedes reliance on lower-resolution gallery downloads/PDF extraction for matching pieces."
+    }
+  ]
+}

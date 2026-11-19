@@ -1,0 +1,51 @@
+{
+  "sources": [
+    "/Users/nitro/code/ai_ching_web/PLAN/stats/Search-first Set/Chart.csv",
+    "/Users/nitro/code/ai_ching_web/PLAN/stats/Search-2026-07-02/Chart.csv",
+    "/Users/nitro/code/ai_ching_web/PLAN/stats/Search-2026-07-08/Chart.csv",
+    "/Users/nitro/code/ai_ching_web/PLAN/stats/Search-2026-08-10/Chart.csv",
+    "/Users/nitro/code/ai_ching_web/PLAN/stats/Search-2026-09-04/Chart.csv",
+    "/Users/nitro/code/ai_ching_web/PLAN/stats/Search-2026-09-25/Chart.csv",
+    "/Users/nitro/code/ai_ching_web/PLAN/stats/Search-2026-11-10/Chart.csv",
+    "/Users/nitro/code/ai_ching_web/PLAN/stats/Search-2026-11-16/Chart.csv"
+  ],
+  "method": "Overlapping daily exports deduplicated by date, later dated export wins. Complete calendar months March\u2013October; arithmetic mean daily clicks.",
+  "coverage": [
+    "2026-02-12",
+    "2026-11-14"
+  ],
+  "monthly": [
+    {
+      "month": "2026-03",
+      "average_daily_clicks": 228.6451612903226
+    },
+    {
+      "month": "2026-04",
+      "average_daily_clicks": 192.93333333333334
+    },
+    {
+      "month": "2026-05",
+      "average_daily_clicks": 202.3548387096774
+    },
+    {
+      "month": "2026-06",
+      "average_daily_clicks": 230.33333333333334
+    },
+    {
+      "month": "2026-07",
+      "average_daily_clicks": 229.25806451612902
+    },
+    {
+      "month": "2026-08",
+      "average_daily_clicks": 295.2258064516129
+    },
+    {
+      "month": "2026-09",
+      "average_daily_clicks": 393.43333333333334
+    },
+    {
+      "month": "2026-10",
+      "average_daily_clicks": 346.03225806451616
+    }
+  ]
+}

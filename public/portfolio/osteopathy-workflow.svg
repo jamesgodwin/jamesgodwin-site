@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650" role="img" aria-labelledby="title desc">
+<title id="title">From appointment to invoice</title><desc id="desc">Fictional illustration of an osteopathy appointment leading to an invoice with example medical-aid references, then email to the client. No real patient details or billing codes.</desc>
+<defs><filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#17251F" flood-opacity=".16"/></filter></defs>
+<g font-family="Arial, sans-serif" fill="#17251F">
+<rect x="24" y="24" width="952" height="602" rx="24" fill="#E9EDE5"/>
+<text x="64" y="73" font-size="15" letter-spacing="2" fill="#56675E">OSTEOPATHY · THE WORK AFTER THE APPOINTMENT</text>
+<g filter="url(#shadow)"><rect x="64" y="160" width="268" height="255" rx="16" fill="#FBFAF6"/>
+<text x="86" y="196" font-size="20" font-weight="700">Appointment</text><path d="M64 216h268" stroke="#CDD4CC"/>
+<text x="86" y="252" font-size="24" font-weight="700">Alex Taylor</text><text x="86" y="280" font-size="15" fill="#56675E">Fictional client</text>
+<text x="86" y="319" font-size="19">Tuesday · 11:00</text><rect x="86" y="349" width="148" height="37" rx="8" fill="#E0E8DC"/><text x="160" y="373" text-anchor="middle" font-size="16">Visit completed</text></g>
+<path d="M334 294h29m-9-8 9 8-9 8" fill="none" stroke="#214E40" stroke-width="3"/>
+<g filter="url(#shadow)"><rect x="378" y="112" width="289" height="368" rx="13" fill="#FBFAF6"/>
+<rect x="378" y="112" width="289" height="12" rx="6" fill="#214E40"/>
+<text x="404" y="162" font-size="26" font-weight="700">INVOICE</text><text x="404" y="190" font-size="14" fill="#56675E">DEMO-001 · Illustrative only</text>
+<path d="M404 211h237" stroke="#CDD4CC"/><text x="404" y="240" font-size="19">Alex Taylor</text><text x="404" y="270" font-size="17">Osteopathy appointment</text>
+<rect x="401" y="294" width="242" height="106" rx="8" fill="#E9EDE5"/>
+<text x="415" y="321" font-size="15" font-weight="700">Medical-aid references</text><text x="415" y="350" font-size="15" fill="#56675E">Member DEMO-MEMBER</text><text x="415" y="377" font-size="15" fill="#56675E">Reference EXAMPLE-ONLY</text>
+<text x="404" y="442" font-size="14" fill="#56675E">No real billing or patient details</text></g>
+<path d="M672 294h29m-9-8 9 8-9 8" fill="none" stroke="#214E40" stroke-width="3"/>
+<g filter="url(#shadow)"><rect x="718" y="181" width="218" height="231" rx="16" fill="#FBFAF6"/>
+<rect x="745" y="205" width="44" height="30" rx="4" fill="none" stroke="#214E40" stroke-width="2"/><path d="m746 207 21 16 21-16" fill="none" stroke="#214E40" stroke-width="2"/>
+<text x="741" y="270" font-size="21" font-weight="700">Email to client</text><text x="741" y="301" font-size="15" fill="#56675E">Your appointment invoice</text>
+<rect x="738" y="324" width="177" height="45" rx="8" fill="#E9EDE5"/><text x="752" y="352" font-size="16">Invoice attached</text></g>
+<g font-size="18" font-weight="700"><text x="84" y="537">Book the visit</text><text x="389" y="537">Prepare the invoice</text><text x="751" y="537">Email the client</text></g>
+<text x="500" y="589" text-anchor="middle" font-size="15" fill="#56675E">Illustrated workflow · fictional information · not the client interface</text>
+</g></svg>

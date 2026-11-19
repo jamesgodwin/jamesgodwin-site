@@ -1,0 +1,488 @@
+{
+  "supplied_on": "2026-11-19",
+  "source_folder": "/Users/nitro/Desktop/artwork",
+  "authority": "James supplied these 24 pictures for the site; selection dependency is resolved. Individual crop/display treatment is implementation review, not a new artwork permission request.",
+  "status": "Planning assets only, not public runtime files.",
+  "paintings": [
+    {
+      "id": "an-african-smile",
+      "file": "artwork/an-african-smile.jpg",
+      "source": "/Users/nitro/Desktop/artwork/An_African_smile.jpg",
+      "source_sha256": "b2bf39e1c657a2b2821be84c3e0f5e38b954bd21205209dc7a8ba0946e967665",
+      "width": 750,
+      "height": 1334,
+      "label_from_filename": "An African smile",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "andrew",
+      "file": "artwork/andrew.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Andrew.jpg",
+      "source_sha256": "bb4bac8e39c6566de372e5bc83680f2062130bbd943b1a4a9a1f708dc7c12a65",
+      "width": 750,
+      "height": 1334,
+      "label_from_filename": "Andrew",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "arthurs-son",
+      "file": "artwork/arthurs-son.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Arthurs_son.jpg",
+      "source_sha256": "78881d4d36f75a1f46c554f3cb03e90b033114d5ae67fd28dff27f34fb0143e4",
+      "width": 750,
+      "height": 1334,
+      "label_from_filename": "Arthurs son",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "autumn-leaves-in-koi-pond",
+      "file": "artwork/autumn-leaves-in-koi-pond.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Autumn Leaves In Koi Pond.jpg",
+      "source_sha256": "bd2746938ae54957eb2960d6bd42daa6b0a7cac3fdb96a43ddc3464baed97c52",
+      "width": 1920,
+      "height": 1408,
+      "label_from_filename": "Autumn Leaves In Koi Pond",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "baboon-came-to-visit",
+      "file": "artwork/baboon-came-to-visit.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Baboon_came_to_visit.jpg",
+      "source_sha256": "8fa6c4e16a914a528a3fd27e61c777ea485eaf7c74f273a16e0677d91ddb8621",
+      "width": 750,
+      "height": 1334,
+      "label_from_filename": "Baboon came to visit",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "bearded-man",
+      "file": "artwork/bearded-man.jpg",
+      "source": "/Users/nitro/Desktop/artwork/bearded-man.jpg",
+      "source_sha256": "775499e9ab2d17500c14d0af4eba59522df8ded4a8221bf611b56fdc5f60bd0f",
+      "width": 750,
+      "height": 1334,
+      "label_from_filename": "bearded man",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "bee-buzzing",
+      "file": "artwork/bee-buzzing.jpg",
+      "source": "/Users/nitro/Desktop/artwork/bee-buzzing.jpg",
+      "source_sha256": "f9b4895fe8ba7cc67fd28801d69403f80684fa74ca7bb8684b5e4c8c9502ad50",
+      "width": 1291,
+      "height": 714,
+      "label_from_filename": "bee buzzing",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "brown-eagle",
+      "file": "artwork/brown-eagle.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Brown Eagle.jpg",
+      "source_sha256": "3985ee1e45f4df10eecf6fa2ebc7e3eca657d336172cee157ffee08227a3f624",
+      "width": 995,
+      "height": 744,
+      "label_from_filename": "Brown Eagle",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "cheeta-cub",
+      "file": "artwork/cheeta-cub.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Cheeta_cub.jpg",
+      "source_sha256": "9c5f05766b9209c83b5d24aebbf58e7063f08dfc2958cfd4d1035254e4f1c6a6",
+      "width": 382,
+      "height": 425,
+      "label_from_filename": "Cheeta cub",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Small source. Use a modest inset; do not enlarge to fill the hero."
+    },
+    {
+      "id": "county-view-piece-of-heaven",
+      "file": "artwork/county-view-piece-of-heaven.jpg",
+      "source": "/Users/nitro/Desktop/artwork/county_view_piece_of_heaven.jpg",
+      "source_sha256": "d3f0c6a27e3fb878bd1bd16b0bc973cc7a58d5d511f877fb3148871f9c381587",
+      "width": 2048,
+      "height": 1152,
+      "label_from_filename": "county view piece of heaven",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "crab",
+      "file": "artwork/crab.jpg",
+      "source": "/Users/nitro/Desktop/artwork/crab.jpg",
+      "source_sha256": "102cdb38536b5d1b66d779d46fc5d65f57886a55f1da883aa52bbc877d2c7788",
+      "width": 943,
+      "height": 633,
+      "label_from_filename": "crab",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "egret",
+      "file": "artwork/egret.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Egret.jpg",
+      "source_sha256": "94f5138ed727ce39399b84c9af5b6c2b2363b7379e243893a6eb0407f849a7fc",
+      "width": 940,
+      "height": 615,
+      "label_from_filename": "Egret",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "egyptian-goose-female",
+      "file": "artwork/egyptian-goose-female.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Egyptian Goose Female.jpg",
+      "source_sha256": "37e90e0a0b446e9c653614cfddd5b9d0520052df959427822d8e7d35d9fddc4f",
+      "width": 1060,
+      "height": 920,
+      "label_from_filename": "Egyptian Goose Female",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "francois",
+      "file": "artwork/francois.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Francois.jpg",
+      "source_sha256": "2bd1023ec3377f1f194b695881fafe8289990a9d5c926067a318da443504394e",
+      "width": 968,
+      "height": 926,
+      "label_from_filename": "Francois",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "frog-on-lilly",
+      "file": "artwork/frog-on-lilly.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Frog on Lilly.jpg",
+      "source_sha256": "e5a78956518e31065ea033e2c98b98f6a57c55cfb9303cb53c5fc51a3810af4a",
+      "width": 890,
+      "height": 626,
+      "label_from_filename": "Frog on Lilly",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "hoopoe-our-morning-visitor",
+      "file": "artwork/hoopoe-our-morning-visitor.jpg",
+      "source": "/Users/nitro/Desktop/artwork/hoopoe-our-morning-visitor.jpg",
+      "source_sha256": "3ad8e7c36aca400de3cf4c7182cb8081eea5d4892e75f42b95b2f51be5a9ffcb",
+      "width": 2048,
+      "height": 2048,
+      "label_from_filename": "hoopoe our morning visitor",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "kenyan-elephant",
+      "file": "artwork/kenyan-elephant.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Kenyan-elephant.jpg",
+      "source_sha256": "1bcbfa5d01a953b8eba222aea0088071754bec32e8850b7f248c724e24d72475",
+      "width": 743,
+      "height": 1257,
+      "label_from_filename": "Kenyan elephant",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "kevin",
+      "file": "artwork/kevin.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Kevin.jpg",
+      "source_sha256": "58322d47a95c02c4a0596af0ae68a1bb297bbc6bbb595fc22a5ee667f583e9b5",
+      "width": 551,
+      "height": 779,
+      "label_from_filename": "Kevin",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "malachite-kingfisher",
+      "file": "artwork/malachite-kingfisher.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Malachite_Kingfisher.jpg",
+      "source_sha256": "af874260f66ae9bcfbe9e5a1eef043dcd3060bd2103e0a2965cba668252724b3",
+      "width": 2048,
+      "height": 2048,
+      "label_from_filename": "Malachite Kingfisher",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "namibian-kokerboom",
+      "file": "artwork/namibian-kokerboom.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Namibian_Kokerboom.jpg",
+      "source_sha256": "92ecbba3a9d5484addfce007c4974482a2d728bda1df94fedd1deb1f61b3e16a",
+      "width": 3024,
+      "height": 4032,
+      "label_from_filename": "Namibian Kokerboom",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "off-the-grid-cederberg",
+      "file": "artwork/off-the-grid-cederberg.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Off_the_grid_Cederberg.jpg",
+      "source_sha256": "8c9363b2e0bef4410f9ef9718cb5838fde112f1c2ea0f1155f90f685a0b34b97",
+      "width": 991,
+      "height": 750,
+      "label_from_filename": "Off the grid Cederberg",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "river-view-cederberg",
+      "file": "artwork/river-view-cederberg.jpg",
+      "source": "/Users/nitro/Desktop/artwork/River_view_Cederberg.jpg",
+      "source_sha256": "865347c402d48027abddfa704adcb3c005f54b310d01743058266ecb859b0459",
+      "width": 750,
+      "height": 921,
+      "label_from_filename": "River view Cederberg",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "swartvlei-beach",
+      "file": "artwork/swartvlei-beach.jpg",
+      "source": "/Users/nitro/Desktop/artwork/Swartvlei_Beach_.jpg",
+      "source_sha256": "198d1eea9f8a115d9514c809b6a649b926c671fea0967182e1531c2a553223a9",
+      "width": 2027,
+      "height": 2457,
+      "label_from_filename": "Swartvlei Beach",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    },
+    {
+      "id": "tortoise",
+      "file": "artwork/tortoise.jpg",
+      "source": "/Users/nitro/Desktop/artwork/tortoise.jpg",
+      "source_sha256": "00c8201022c9aba7fc530b1a1b2694ed7ca7df090cebe0f68d1fe0c070b966b5",
+      "width": 939,
+      "height": 629,
+      "label_from_filename": "tortoise",
+      "credit": "Painted by James Godwin",
+      "credit_url": "https://www.deviantart.com/jamesgodwin",
+      "title_status": "Filename label for planning; public caption may use artist credit alone.",
+      "supplied_for_site_use": true,
+      "layout_intent": {
+        "desktop": "Preserve whole painting in right artwork area; fade outside subject into cream.",
+        "mobile": "Fit whole painting above copy; use a compact reserved area.",
+        "fallback_fit": "contain",
+        "crop_status": "Set focal point/crop only after exact responsive preview."
+      },
+      "notes": "Create optimised derivatives at implementation; keep this source unchanged."
+    }
+  ]
+}

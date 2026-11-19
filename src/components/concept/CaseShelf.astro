@@ -31,7 +31,7 @@ import Action from '../ui/Action.astro';
   <nav class="story-progress" aria-label="Story steps">
    <Action recipe="outline" data-previous disabled={i===0}>← Previous</Action>
    <div class="story-progress__steps"><span>Step {i+1} of 3</span>{stepNames.map((name,j)=><button {...patternAttributes('choice','step',{'type':'button','data-step':j+1,'aria-current':i===j ? 'step' : undefined})}>{name}</button>)}</div>
-   {i<2 ? <Action recipe="primary" data-next>Next: {stepNames[i+1]} →</Action> : <Action recipe="primary" href="/contact?about=product-clarity">Talk about your build →</Action>}
+   {i<2 ? <Action recipe="primary" data-next>Next · {stepNames[i+1]} →</Action> : <Action recipe="primary" href="/contact?about=product-clarity">Talk about your build →</Action>}
   </nav>
   {i===2 && <section class="more-stories"><h2>Explore another story</h2><div class="case-shelf case-shelf--three">{stories.filter(other=>other.id!==story.id).map(other=><StoryChoice story={other} open />)}</div></section>}
  </template>))}

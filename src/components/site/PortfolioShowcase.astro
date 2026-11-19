@@ -1,0 +1,62 @@
+---
+import { projects, paintings } from '../../portfolio.js';
+import Action from '../ui/Action.astro';
+import PhoneScreens from './PhoneScreens.astro';
+import IIImpactArtwork from './IIImpactArtwork.astro';
+import IMBArtwork from './IMBArtwork.astro';
+import SwiftVeeArtwork from './SwiftVeeArtwork.astro';
+import CompanyLogoArtwork from './CompanyLogoArtwork.astro';
+import PortfolioThumbnail from './PortfolioThumbnail.astro';
+const roofScreens=[{src:'/portfolio/roof-ops-worker.webp',alt:'Roof Ops mobile PWA worker and project selection'},{src:'/portfolio/roof-ops-scoring.webp',alt:'Roof Ops quality, productivity, compliance and teamwork scores'}];
+const pauseScreens=[{src:'/portfolio/between-breaths-begin.webp',alt:'Between Breaths Begin screen'},{src:'/portfolio/between-breaths-session.webp',alt:'Between Breaths quiet timed session'}];
+const breathScreens=[{src:'/portfolio/taoist-breath-4001.webp',alt:'Taoist Breath start screen and session duration'},{src:'/portfolio/taoist-breath-4002.webp',alt:'Taoist Breath breathing circle showing Inhale'},{src:'/portfolio/taoist-breath-4003.webp',alt:'Taoist Breath practice selection'}];
+import { patternAttributes } from '../../design-system/patterns.js';
+---
+<div class="portfolio-hero">
+ <figure><img id="hero-painting" src="/portfolio/county-view-piece-of-heaven.webp" alt="Mountain landscape painted by James Godwin" width="800" height="600" /><figcaption><span class="painting-caption-pill"><span id="painting-title">County view piece of heaven</span><span aria-hidden="true"> · </span><a href="/paintings" aria-label="View my paintings">Painted by me ↗</a></span><button type="button" id="painting-refresh" aria-label="Another painting" title="Another painting" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 11-1l3 6M4 12l3 6a7 7 0 0 0 11-1"/></svg></button></figcaption></figure>
+ <header class="concept-intro"><h1>Shape the idea.<br/><span>Bring it into use.</span></h1><p class="concept-lead">I help founders and teams shape ideas and bring them to fruition. If you already have a prototype or a build that’s stuck, I help get it over the line.</p><p class="portfolio-startup-proof">My startup background includes <a href="https://developers.googleblog.com/announcing-the-fourth-class-of-launchpad-accelerator-featuring-new-countries/">JUMO</a> and <a href="https://africa.googleblog.com/2018/03/">SwiftVEE</a>, both selected for Google Launchpad programmes.</p><p class="concept-capabilities">Product direction, UX and hands-on development, from the first concept to a working product.</p><Action recipe="primary" href="/contact?about=product-clarity">Talk about your product →</Action></header>
+</div>
+<section id="work" class="site-section" data-app-shelf><h2>Apps and systems I’ve built.</h2><p>Independent products and client systems, from the first idea to everyday use.</p>
+ {projects.map((app,i)=><article class:list={["case-feature", {"harmonic-echo-feature":app.slug === "harmonic-echo"}]} data-app-feature={i}><div class="case-feature__copy"><p class="eyebrow">{app.name}{app.kind && <> · {app.kind}</>}</p><h3>{app.title}</h3><p>{app.story}</p><Action recipe="primary" href={app.url}>{app.cta || 'Explore the project →'}</Action>{app.name === 'IIIMPACT' && <p><a href="/work/plumbline">Read the Plumbline design-system story →</a></p>}</div><div class="case-feature__visual">{app.slug === 'dantian' ? <IIImpactArtwork src="/portfolio/dantian-teaching.webp" labelLead="Teaching" label="Tai Chi" alt="James Godwin teaching Tai Chi with students"/> : app.slug === 'star120' ? <CompanyLogoArtwork src="/portfolio/star120-logo.webp" alt="Star120 debit-order system logo"/> : app.slug === 'from-digital' ? <IIImpactArtwork src="/portfolio/algoworks-website.webp" label="FROM / Algoworks" alt="Algoworks green and black brand artwork"/> : app.name === 'PrivySeal' ? <IIImpactArtwork src="/portfolio/privyseal-website.webp" label="PrivySeal" alt="Current PrivySeal website credential-verification artwork"/> : app.name === 'StraTech' ? <CompanyLogoArtwork src="/portfolio/stratech-logo.svg" alt="StraTech Strategic Technologies logo"/> : app.name === 'SwiftVEE' ? <SwiftVeeArtwork/> : app.name === 'JUMO' ? <IIImpactArtwork src="/portfolio/jumo-website-art.webp" label="JUMO" alt="Current JUMO website artwork with layered purple orbital forms"/> : app.name === 'Lobster Ink' ? <IIImpactArtwork src="/portfolio/lobster-ink.webp" label="Lobster Ink" alt="Current Lobster Ink website hospitality-training artwork"/> : app.name === 'IMB' ? <IMBArtwork/> : app.name === 'IIIMPACT' ? <IIImpactArtwork/> : app.name === 'Roof Ops' ? <PhoneScreens screens={roofScreens}/> : app.name === 'Between Breaths' ? <PhoneScreens screens={pauseScreens}/> : app.name === 'Taoist Breath' ? <PhoneScreens screens={breathScreens}/> : app.name === 'True Essence' ? <div class="gratefulfor-phones"><div class="portfolio-phone"><img src="/portfolio/true-essence-practice.webp" alt="True Essence daily practice introduction on a phone" width="1170" height="2532"/></div><div class="portfolio-phone"><img src="/portfolio/true-essence-sage.webp" alt="True Essence reflection and conversation with the Sage on a phone" width="1170" height="2532"/></div></div> : app.name === 'AI Ching app' ? <div class="gratefulfor-phones"><div class="portfolio-phone"><img src="/portfolio/aiching-library.webp" alt="AI Ching app library of the 64 hexagrams" width="1170" height="2532"/></div><div class="portfolio-phone"><img src="/portfolio/aiching-interpretation.webp" alt="The Creative interpretation in the AI Ching app" width="1170" height="2532"/></div></div> : app.name === 'GratefulFor' ? <div class="gratefulfor-phones"><div class="portfolio-phone"><img src="/portfolio/gratefulfor-reading.webp" alt="GratefulFor on iPhone showing a Bird Of Paradise and its gratitude" width="1170" height="2532"/></div><div class="portfolio-phone"><img src="/portfolio/gratefulfor-planting.webp" alt="Choosing a plant and writing a gratitude on iPhone" width="1170" height="2532"/></div></div> : app.name === 'TapScribe' ? <div class="tapscribe-composition"><img class="tapscribe-composition__library" src="/portfolio/tap2.webp" alt="TapScribe Library with a test recording and its local transcript" width="820" height="619" /><img class="tapscribe-composition__hud" src="/portfolio/tap1.webp" alt="TapScribe recording HUD with microphone and meeting audio levels" width="347" height="339" /></div> : app.name === 'TypeScoop' ? <div class="typescoop-capture"><p class="project-case__shortcut" aria-label="Command Shift 2"><kbd>⌘</kbd><kbd>⇧</kbd><kbd>2</kbd></p><img src={app.image} alt="Capture screen text with Command + Shift + 2, then paste it into your next app" width="1500" height="1000"/></div> : app.image ? <img src={app.image} alt={`${app.name} product preview`} width="800" height="540" loading="lazy" /> : <div><p class="eyebrow">{app.kind}</p><h3>{app.name}</h3><p>{app.title}</p></div>}</div></article>)}
+ <div class="portfolio-controls" hidden><button {...patternAttributes('choice','story',{'type':'button','data-app-prev':'','aria-label':'Previous app'})}>←</button><nav class="portfolio-rail" aria-label="Choose an app">{projects.map((app,i)=><button {...patternAttributes('choice','story',{'type':'button','data-app-select':i,'aria-pressed':i===0?'true':'false'})}><PortfolioThumbnail app={app}/><strong>{app.name}</strong>{app.name==='TypeScoop'&&<span>In development</span>}</button>)}</nav><button {...patternAttributes('choice','story',{'type':'button','data-app-next':'','aria-label':'Next app'})}>→</button></div><div class="site-section-heading"><span data-app-count>01 / 22</span><a href="/apps">View all projects →</a></div>
+</section>
+<script define:vars={{paintings}}>
+const paintingElement = document.getElementById('hero-painting');
+const refresh = document.getElementById('painting-refresh');
+let currentPainting = paintingElement.getAttribute('src');
+let busy = false;
+function showAnotherPainting(preserveScroll = false) {
+ if (busy) return;
+ const scrollPosition = {left:window.scrollX,top:window.scrollY};
+ const pool = paintings.filter(p => p.src !== currentPainting);
+ if (!pool.length) return;
+ const next = pool[Math.floor(Math.random() * pool.length)];
+ busy = true;
+ refresh.disabled = true;
+ refresh.setAttribute('aria-busy', 'true');
+ const image = new Image();
+ const finish = () => { busy = false; refresh.disabled = false; refresh.removeAttribute('aria-busy'); };
+ image.onload = () => {
+  currentPainting = next.src;
+  paintingElement.width = image.naturalWidth;
+  paintingElement.height = image.naturalHeight;
+  paintingElement.src = next.src;
+  paintingElement.alt = next.title + ', painted by James Godwin';
+  const title = next.title.charAt(0).toUpperCase() + next.title.slice(1);
+  document.getElementById('painting-title').textContent = title;
+  try { localStorage.setItem('portfolio-painting', next.src); } catch {}
+  if (preserveScroll) window.scrollTo({...scrollPosition,behavior:"instant"});
+  finish();
+ };
+ image.onerror = () => { finish(); };
+ image.src = next.src;
+}
+refresh.hidden = false;
+refresh.addEventListener('click', () => showAnotherPainting(true));
+try { currentPainting = localStorage.getItem('portfolio-painting') || currentPainting; } catch {}
+showAnotherPainting();
+</script>
+<script>
+const shelf=document.querySelector('[data-app-shelf]');
+if(shelf){const panels=[...shelf.querySelectorAll<HTMLElement>('[data-app-feature]')];const buttons=[...shelf.querySelectorAll<HTMLButtonElement>('[data-app-select]')];let current=0;const select=(index:number)=>{current=(index+panels.length)%panels.length;panels.forEach((p,i)=>p.hidden=i!==current);buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===current)));shelf.querySelector('[data-app-count]')!.textContent=String(current+1).padStart(2,'0')+' / '+String(panels.length).padStart(2,'0');const rail=buttons[current].parentElement; if(rail) rail.scrollLeft=buttons[current].offsetLeft-rail.offsetLeft;};panels.forEach((p,i)=>p.hidden=i!==0);shelf.querySelector<HTMLElement>('.portfolio-controls')!.hidden=false;buttons.forEach((b,i)=>b.addEventListener('click',()=>select(i)));shelf.querySelector('[data-app-prev]')?.addEventListener('click',()=>select(current-1));shelf.querySelector('[data-app-next]')?.addEventListener('click',()=>select(current+1));}
+</script>

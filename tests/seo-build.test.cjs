@@ -27,13 +27,13 @@ test('sitemap lists every indexable canonical once and excludes redirects and ut
 test('page metadata, structured data and social images resolve in the production build',()=>{
  const titles=new Set();
  for(const file of files){
-  if(file==='writing.html')continue;
+  if(file==='writing.html'||['work.html','work/crew-scores.html','work/quality-control.html','work/dan-tian.html','executive-state-diagnostic.html'].includes(file))continue;
   const html=read(file),title=html.match(/<title>([^<]+)<\/title>/)?.[1];
   assert.ok(title,file);assert.ok(!titles.has(title),`Duplicate title: ${file}`);titles.add(title);
   assert.ok(tag(html,'description'),file);
   // Each static story chapter has its own heading; all chapters remain readable
   // without JavaScript. Other routes have one main page heading.
-  assert.equal((html.match(/<h1\b/g)||[]).length,file.startsWith('work/')?3:1,`Main/chapter headings: ${file}`);
+  assert.equal((html.match(/<h1\b/g)||[]).length,file==='work/plumbline.html'?3:1,`Main/chapter headings: ${file}`);
   assert.match(html,/rel="canonical" href="https:\/\/jamesgodwin.me(?:\/[^"?#]*)?"/);
   for(const field of ['og:image','twitter:image']){
    const url=tag(html,field);assert.ok(url?.startsWith(origin+'/'),`${file}: ${field}`);

@@ -16,7 +16,7 @@ const legalOutput = `
 <p>I do not sell or rent personal information. Information may be processed by service providers that support communication, analytics, hosting, or agreed client work. Enquiry and business records are retained only for as long as reasonably needed for communication, delivery, accounting, legal, or security purposes.</p>
 <h3>Your choices</h3>
 <p>You may ask what personal information I hold about you, request a correction, or request deletion where there is no legal reason to retain it. You can also unsubscribe from marketing email using the link in the message.</p>
-<p>Contact: <!--email_off--><a href="mailto:james@jamesgodwin.me">james@jamesgodwin.me</a><!--/email_off--> or <a href="tel:+27686038834">+27 68 603 8834</a>.</p>
+<p>Contact me at <!--email_off--><a href="mailto:james@jamesgodwin.me">james@jamesgodwin.me</a><!--/email_off--> or <a href="tel:+27686038834">+27 68 603 8834</a>.</p>
 <hr>
 <h3 id="terms">Terms &amp; Conditions</h3>
 <p>You may use this website for lawful personal and business research. The writing, images, books, artwork, interface, and other original material on this site remain the intellectual property of James Godwin or their stated owners. They may not be copied, republished, sold, or redistributed without permission.</p>
@@ -40,7 +40,7 @@ const legalOutput = `
 <p>Descriptions of previous work and client experiences illustrate particular engagements; they are not guarantees that every person, team, or business will achieve the same outcome.</p>
 <h3 id="image-credits">Image credits</h3>
 <p>The quality-control story uses <a href="https://commons.wikimedia.org/wiki/File:Roof_waterproofing_with_polyurethane_liquid_membrane_in_Egaleo_Athens.webp">Roof waterproofing with polyurethane liquid membrane in Egaleo Athens</a> by Μάριος-Μητσόγλου, licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. The photo is resized and cropped for display; derivatives retain that licence. It is a reference photograph, not a photograph of the client’s work.</p>
-<p>Last updated: 20 October 2026.</p>
-<hr><p class="commands-text"><span class="commands">Available commands:</span> help, about, diagnostic, systems, workshops, apps, books, sanctuary, contact, taoism, now, paintings, philosophy, uxui, legal, themes (default, dark, stillness, mountains, essence, tao, zen, snow, void)</p>`;
+<p>Last updated on 20 October 2026.</p>
+<hr><p class="commands-text"><span class="commands">Available commands</span> help, about, diagnostic, systems, workshops, apps, books, sanctuary, contact, taoism, now, paintings, philosophy, uxui, legal, themes (default, dark, stillness, mountains, essence, tao, zen, snow, void)</p>`;
 
 export default legalOutput;

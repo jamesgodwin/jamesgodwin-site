@@ -1,4 +1,5 @@
 import metadata from '../siteMetadata';
+import { projects } from '../portfolio.js';
 import { noteArchivePages } from '../note-pagination.js';
 import { publishedEssays, essayPath } from '../essays.js';
 import { publishedNotes, notePath } from '../notes.js';
@@ -8,18 +9,20 @@ export async function GET() {
  const lines = [
   '# James Godwin',
   '',
-  '> Product designer and full-stack developer in Sedgefield, South Africa. I help founders get fast-built and AI-assisted products ready for real use.',
+  '> Product designer and full-stack developer in Sedgefield, South Africa. I help founders and teams shape ideas, bring them to fruition and get existing builds over the line.',
   '',
   'This is my personal portfolio and writing site. My work connects UX, accessibility, front-end and back-end development, and deployment. Links below lead to public, server-rendered HTML.',
   '',
   '## Work',
   '',
-  ...['work','crewScores','qualityControl','tapscribe','plumbline'].map(key=>{
+  ...['tapscribe','plumbline'].map(key=>{
    const page=metadata.sectionMetadata[key];
    return `- [${page.title.split(' | ')[0]}](${page.url}): ${page.description}`;
   }),
   '',
-  'The scoring and quality-control stories concern the same roofing client. TapScribe is my own product, developed from a coach’s need for private local recording and transcription. Plumbline is work with IIIMPACT and remains in progress; its design-tool projections and developer plugins are not presented as completed products. AI Ching is my own codebase used as a design-system test case.',
+  'The Roof Ops story brings scoring and quality control together for the same roofing client. TapScribe was developed from a coach’s need for private local recording and transcription. Plumbline is work with IIIMPACT and remains in progress; its design-tool projections and developer plugins are not presented as completed products. AI Ching is my own codebase used as a design-system test case.',
+  '',
+  ...projects.filter(project=>project.url.startsWith('/')).map(project=>`- [${project.name}](${metadata.siteUrl}${project.url}): ${project.story}`),
   '',
   '## About and contact',
   '',

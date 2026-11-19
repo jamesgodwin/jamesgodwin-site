@@ -2,24 +2,23 @@
 
 ## Current Focus
 
-Publication of “The app is the visible part” is complete. Website/HEY and Paper Trail filing are verified; James confirms LinkedIn/X posts, subscriber email and Search Console submission. [Publication record](specs/assets/app-visible-part-publication/publication-pack.md).
+Refine the portfolio showcase and individual case studies with James, one project at a time. [Current scope and review corrections](specs/portfolio-showcase.md). Local implementation is in progress; publication is separate.
 
 ## Where Work Stopped
 
-16 November2026: James approved the complete illustrated preview with “Perfect, let’s continue.” Sourcef0cba67267e35d0d3cbd8c610e7f9cb3b45d3b6a deployed successfully as Cloudflarede1d68a3-1026-4cfd-851d-0455903c1abf. Clean Node22.23.4 npm ci/build/design and43 tests pass. Live full body, canonical, cover and archive/sitemap/llms verified. [Evidence](logs/2026-11-16-001-visible-app-essay-preparation.md).
+19 November 2026, existing `main` checkout at `/Users/nitro/code/jamesgodwin-site`; local server http://127.0.0.1:3000/. Twenty-two-entry collection combines products, client systems and career/consulting work. Career order is fixed: IIIMPACT, FROM Digital / Algoworks, SwiftVEE, PrivySeal, StraTech, JUMO, Lobster Ink, IMB, Star120. These career entries link externally. Dantian now follows Between Breaths, with /dantian connecting early-twenties practice, teaching, philosophy and related apps; genuine teaching photo and reciprocal Taoism/philosophy links. Google-programme credibility line links primary sources; career dates verified against live LinkedIn. IIIMPACT has website-sourced artwork and an external CTA to iiimpact.ai; no subpage. Explicit case pages now cover TapScribe, GratefulFor, AI Ching app/website, TypeScoop, True Essence, Harmonic Echo, Taoist Breath, Between Breaths and Roof Ops. Cape Vision now has a fictional workflow illustration and detailed WhatsApp/patient-CRM story; real patient screenshots are excluded. Osteopathy also has a fictional appointment → medical-aid-reference invoice → email illustration and detailed story, based on James’s latest account. Roof Ops uses supplied scoring PWA screens and Ben’s AI-prototype-to-working-system story, with old scoring/QC routes redirecting to the combined story.
 
-Website: https://jamesgodwin.me/essays/the-app-is-the-visible-part
-HEY: https://world.hey.com/jrsg/the-app-is-the-visible-part-9ea9e152
+Use genuine supplied screenshots, WebP optimisation, equal phone sizes, shared shadows and spaced centered captions. Ownership labels removed. TypeScoop leads with capture/Command–Shift–2, followed by HUD, piping and CLI; its capture video is embedded and playback checked. Between Breaths source confirms local reminders and global active presence, not breathing-phase synchronisation. AI Ching website has translations and a sourced +51% March–October Google-click chart, including its dip.
 
-HEY draft2327239087 sent fromjrsg@hey.com toworld@hey.com. CLI returned406 but public index/post prove successful publication; browser confirms full body/date/footer and loaded cover. Do not resend. Social payloads and image are in DOCS/specs/assets/app-visible-part-publication/. James confirmed LinkedIn and X publication on 16 November 2026; post URLs were not independently verified. James also confirmed emailing subscribers and submitting the article to Google Search Console on 16 November 2026. At James’s explicit request, exact HEY post 1282743224 was moved to Paper Trail (1625722); full destination listing and absence from Imbox verified.
+Hero painting is beside the text; underlay concepts are superseded. All24 originals retained. Two file margins cropped; CSS letterboxing fixed by intrinsic dimensions. Latest content review complete: stale wording/repetition cleaned up, Work collection link and AI Ching cross-links added. Build/design passes77pages plus5redirects;19 component/content,9 built-route/SEO and6 essay/import checks pass. Browser refresh confirms TapScribe stays first; no project shuffle. Desktop slices reviewed. Mobile browser review complete at320/390px across homepage, Apps and all16 case studies, including22carousel selections and legacy chapters. Spacing, shortcut keys, product links and two-phone sizing refined; no page overflow. Physical-device/Safari review remains unverified. About now uses James’s complete supplied revision, including the new hero introduction, own products and Tai Chi/JUMO/Just Being connection; metadata and all supplied links are aligned. Old Work redirects to homepage #work; duplicate scoring/QC redirect to Roof Ops, with navigation and discovery updated. Return to Stillness replaces Executive State Diagnostic (/return-to-stillness; old URL redirects). James corrected his JUMO programme name to Just Being. Return to Stillness and Stillness Under Pressure now display James’s complete supplied drafts. He explicitly authorised the workshop replacement, resolving the earlier wait. The private session is one hour and the workshop offers 90 minutes, half/full day or a short series. Both pages are linked from About, Dantian, Taoism and Philosophy. Now links the George class; Paintings links Procreate. The hero uses Painted by me and the Google Launchpad line beneath its introduction. Final navigation audit has no broken internal links; Playwright checks passed32routes at320/390px plus all22showcase selections and the practice/contact journey. All authored site copy has been reviewed for colons and long dashes, including essay text and accessible labels. Old /work/dan-tian redirects to /dantian. Source review confirms Tan’s6competencies/4emotional, with learnedEQ framing; research limits in spec assets/emotional-intelligence-research.md. Contact intent UI loads independently of analytics; renamed label runtime verified. No commit, push or deployment. [Session evidence](logs/2026-11-19-001-portfolio-showcase-exploration.md).
 
 ## Next Recommended Step
 
-No further action is required for this article’s publication. Resume the first actionable Backlog item when requested, extending original-versus-imported provenance support to Notes before the next website-original Note.
+Continue James’s review of the local portfolio, About and the two practice pages, now using his supplied copy. Publication remains separate.
 
 ## Blockers
 
-None for this publication. Search Console submission is owner-confirmed; Google indexing itself has not been verified.
+None for the initial index/story work. Owner review of artwork/copy and client identities/screens remains before publication. Fictional client illustrations are labelled and use no patient data. TypeScoop remains in development; do not claim unfinished native-sync or rendering upgrades as released.
 
 ## Parallel Threads
 
@@ -29,9 +28,9 @@ None for this publication. Search Console submission is owner-confirmed; Google 
 
 ## Needs Decisions
 
-None for the completed publication.
+- Review client names/screens and copy before publication. FROM Digital entry is implemented, with work contracted through IIIMPACT. Refresh-randomised project ordering is superseded by the fixed career order; painting rotation remains; Another painting swaps image/caption in place without reloading or resetting the selected project.
 
 ## Read These First
 
-- DOCS/specs/assets/app-visible-part-publication/publication-pack.md — published URLs, channel payloads and completion evidence
-- DOCS/runbooks/publish-writing.md — complete publishing/discovery sequence
+- DOCS/specs/portfolio-showcase.md — selected direction, personal stories, evidence and execution slices
+- DOCS/runbooks/use-design-system.md — shared tokens/recipes and checks

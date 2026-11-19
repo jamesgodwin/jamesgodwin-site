@@ -1,6 +1,7 @@
 ---
 title: "Why FluidVoice Has Become Part of How I Work"
 date: "2026-08-18"
+updated: "2026-11-19"
 category: "AI & work"
 lead: "How local voice input became part of my everyday workflow."
 cover: "../../assets/writing/why-fluidvoice-has-become-part-of-how-i-work-cover.png"
@@ -58,6 +59,6 @@ That is what FluidVoice has done for me. It has made voice input feel less like 
 
 If you have tried voice input before and stopped using it, was transcription quality really the problem, or was the tool simply not ready at the moment the thought arrived?
 
-FluidVoice product page: https://altic.dev/fluid
+[FluidVoice product page](https://altic.dev/fluid)
 
-FluidVoice source repository: https://github.com/altic-dev/FluidVoice
+[FluidVoice source repository](https://github.com/altic-dev/FluidVoice)

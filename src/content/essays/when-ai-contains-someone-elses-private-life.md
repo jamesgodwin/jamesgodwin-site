@@ -1,6 +1,7 @@
 ---
 title: "When Your AI Assistant Contains Someone Else's Private Life"
 date: "2026-06-16"
+updated: "2026-11-19"
 category: "AI & work"
 lead: "The privacy boundary changes when the information belongs to someone else."
 cover: "../../assets/writing/when-ai-contains-someone-elses-private-life-cover.png"
@@ -26,7 +27,7 @@ The temptation is also different. The tool works better with detail, so the pers
 
 Businesses are starting to recognise a version of this problem with client documents. A consultant pastes client notes into a public AI tool. A lawyer asks for help summarising a matter. A therapist drafts from session notes. A financial adviser uses AI to make sense of a client's circumstances. In each case, the issue is not only whether AI is useful. It is whether the person whose information is inside the prompt gave permission for that use, and whether the workflow has enough boundaries around it.
 
-The personal version is less discussed, but it may become just as common. People will upload message histories from partners, children, parents, friends, colleagues, clients, and staff because they want help understanding what happened. The tool may feel private because the interface is quiet, but the ethical question remains: whose life is inside the prompt?
+The personal version is less discussed, but it may become just as common. People will upload message histories from partners, children, parents, friends, colleagues, clients, and staff because they want help understanding what happened. The tool may feel private because the interface is quiet, but whose life is inside the prompt?
 
 There are practical ways to handle this more carefully, and the first is to separate reflection from extraction. If you want to understand your own reaction, you may not need to paste the full conversation. You can describe the situation in your own words, remove names, remove identifying details, and leave out anything the other person would reasonably expect to stay between you. You can ask the AI to help you understand your own feelings, options, and communication patterns without feeding it another person's private text.
 

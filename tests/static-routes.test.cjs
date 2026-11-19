@@ -6,6 +6,12 @@ test('every existing route keeps its canonical URL and renders the current metad
   const { default: metadata } = await import('../src/siteMetadata.js');
   const currentPages = [metadata.defaultMetadata, ...Object.values(metadata.pageMetadata)];
   for (const meta of baseline) {
+    if(meta.path==='/executive-state-diagnostic'){
+      const redirect=fs.readFileSync('dist/executive-state-diagnostic.html','utf8');
+      assert.ok(redirect.includes('0;url=/return-to-stillness'));
+      assert.ok(fs.existsSync('dist/return-to-stillness.html'));
+      continue;
+    }
     const current = currentPages.find(page => page.path === meta.path);
     assert.ok(current, `Missing metadata for preserved route ${meta.path}`);
     const file = meta.path === '/' ? 'dist/index.html' : `dist${meta.path}.html`;

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650" role="img" aria-labelledby="title desc">
+<title id="title">Cape Vision patient records and WhatsApp reminders</title><desc id="desc">Illustrated workflow with fictional patient Avery Morgan. A patient record connects to a WhatsApp appointment reminder and staff follow-up. This is not a screenshot of the client application.</desc>
+<defs><filter id="depth" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#17251F" flood-opacity=".16"/></filter></defs>
+<g font-family="Arial, sans-serif" fill="#17251F">
+<rect x="24" y="24" width="952" height="602" rx="24" fill="#E9EDE5"/>
+<text x="64" y="73" font-size="15" letter-spacing="2" fill="#56675E">CAPE VISION · CONNECTED COMMUNICATION</text>
+<g filter="url(#depth)"><rect x="64" y="116" width="505" height="334" rx="16" fill="#FBFAF6"/>
+<path d="M64 170H569" stroke="#CDD4CC"/><circle cx="90" cy="144" r="5" fill="#ABB8AC"/><circle cx="108" cy="144" r="5" fill="#CDD4CC"/>
+<text x="137" y="151" font-size="17">Patient management</text>
+<circle cx="114" cy="224" r="26" fill="#E9EDE5"/><text x="114" y="231" text-anchor="middle" font-size="18">AM</text>
+<text x="158" y="221" font-size="25" font-weight="700">Avery Morgan</text><text x="158" y="247" font-size="16" fill="#56675E">Fictional patient record</text>
+<path d="M90 278H543" stroke="#D4D4D4"/>
+<text x="92" y="311" font-size="15" fill="#56675E">APPOINTMENT</text><text x="92" y="342" font-size="22">Tuesday · 10:30</text>
+<rect x="90" y="372" width="250" height="42" rx="8" fill="#214E40"/><text x="215" y="399" text-anchor="middle" font-size="17" fill="#FBFAF6">Prepare WhatsApp reminder</text></g>
+<path d="M565 294H636" fill="none" stroke="#214E40" stroke-width="3" stroke-dasharray="6 6"/><path d="m625 284 12 10-12 10" fill="none" stroke="#214E40" stroke-width="3"/>
+<g filter="url(#depth)"><rect x="649" y="102" width="271" height="386" rx="35" fill="#202520"/><rect x="657" y="110" width="255" height="370" rx="28" fill="#FBFAF6"/>
+<rect x="732" y="119" width="104" height="13" rx="7" fill="#202520"/>
+<text x="681" y="171" font-size="19" font-weight="700">WhatsApp reminder</text><path d="M657 191H912" stroke="#CDD4CC"/>
+<rect x="675" y="214" width="218" height="185" rx="13" fill="#E0E8DC"/>
+<text x="691" y="245" font-size="17"><tspan x="691">Hello Avery,</tspan><tspan x="691" dy="32">a reminder of your</tspan><tspan x="691" dy="25">appointment on</tspan><tspan x="691" dy="25" font-weight="700">Tuesday at 10:30.</tspan><tspan x="691" dy="32">Cape Vision</tspan></text>
+<text x="785" y="444" text-anchor="middle" font-size="13" fill="#56675E">Fictional message example</text></g>
+<g font-size="19" font-weight="700"><text x="92" y="539">Patient record</text><text x="428" y="539">WhatsApp reminder</text><text x="772" y="539">Follow-up</text></g>
+<path d="M257 533H392m-10-6 10 6-10 6M639 533H735m-10-6 10 6-10 6" fill="none" stroke="#56675E" stroke-width="2"/>
+<text x="500" y="589" text-anchor="middle" font-size="15" fill="#56675E">Illustrated workflow · fictional information · not the client interface</text>
+</g></svg>

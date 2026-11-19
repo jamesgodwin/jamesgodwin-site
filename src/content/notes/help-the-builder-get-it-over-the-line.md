@@ -1,7 +1,7 @@
 ---
 title: "Help the Builder Get It Over the Line"
 date: "2026-09-14"
-updated: "2026-10-20"
+updated: "2026-11-19"
 category: "Product work"
 lead: "Helping someone protect what is already good in their build and get it ready for real use."
 cover: "../../assets/notes/help-the-builder-get-it-over-the-line.jpg"
@@ -9,7 +9,7 @@ coverAlt: "An illustrated figure climbing steps, with the words “The idea work
 sourceUrl: "https://lnkd.in/p/dbTZD-Gf"
 postId: "LI-00102"
 draft: false
-relatedWork: {"href": "/work/crew-scores", "label": "Ben’s scoring app"}
+relatedWork: {"href": "/work/roof-ops", "label": "Ben’s scoring app"}
 sourceHash: "5cd340a323b2001eb5763f9be07550f3d9fea83d196f1eac18b37aebd57d92d0"
 importedBodyHash: "6a21c092a8b5665f0da123dc0c5192860510502bed0d448dd390f4c79c75e125"
 ---

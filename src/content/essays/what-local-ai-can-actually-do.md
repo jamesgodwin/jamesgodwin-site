@@ -1,6 +1,7 @@
 ---
 title: "What Local AI Can Actually Do for a Law, Finance, Accounting, or Health Practice"
 date: "2026-06-23"
+updated: "2026-11-19"
 category: "AI & work"
 lead: "Where local AI can help with document-heavy work, and where human judgement belongs."
 cover: "../../assets/writing/what-local-ai-can-actually-do-cover.png"
@@ -12,7 +13,7 @@ sourceHash: "eb67ca923c61ea548a7ba1c96dea95ed4588096f50c2f078dbabd7b615342e64"
 importedBodyHash: "9f177eaef80874446b730565116d75a939918576f8a73b96baf6f77c0a2d8dc9"
 ---
 
-One reason many professional firms still feel stuck with AI is that the conversation becomes abstract too quickly. People talk about models, compliance, disruption, automation, and policy while the owner is still trying to answer a simpler question: what would this actually help us do on an ordinary Tuesday without creating a new confidentiality problem?
+One reason many professional firms still feel stuck with AI is that the conversation becomes abstract too quickly. People talk about models, compliance, disruption, automation, and policy while the owner is still asking a simpler question. What would this actually help us do on an ordinary Tuesday without creating a new confidentiality problem?
 
 That is the right question to ask. A law firm, accounting practice, financial advisory business, or health practice does not need another vague promise about AI changing everything. It needs a clear view of whether a controlled local workflow could save time, reduce document friction, and improve clarity without sending sensitive material into an uncontrolled public tool.
 
@@ -28,7 +29,7 @@ A local setup might begin with a machine inside the office or controlled network
 
 In a small law practice, one realistic use is matter summarisation. A lawyer or assistant may have correspondence, pleadings, notes, reports, and attachments spread across a folder. Before a meeting or court preparation session, someone has to re-orient quickly. A local AI workspace can help summarise the file set, extract key dates, identify named parties, highlight open actions, and draft a rough chronology for review. It does not replace legal judgement. It reduces the time spent reconstructing the file before the real thinking begins.
 
-Another legal use is comparison. Firms constantly deal with versions: draft agreements, amended clauses, revised witness statements, settlement language, policy documents, and procedural notes. A local workflow can compare two versions and show what changed in plain language. That is not glamorous, but it is useful. It helps a professional focus attention faster and reduces the chance that a meaningful change gets buried inside routine redrafting.
+Another legal use is comparison. Firms constantly deal with versions of draft agreements, amended clauses, revised witness statements, settlement language, policy documents, and procedural notes. A local workflow can compare two versions and show what changed in plain language. That is not glamorous, but it is useful. It helps a professional focus attention faster and reduces the chance that a meaningful change gets buried inside routine redrafting.
 
 In accounting or tax work, the document burden is different but just as real. There may be bank exports, reconciliations, management accounts, payroll notes, tax correspondence, invoice trails, and client explanations arriving in fragments. Local AI can help organise a pack of material into a practical working summary, what period is covered, what items still need clarification, which figures appear inconsistent, what deadlines are mentioned, and what follow-up questions should be asked before final sign-off. Again, the value is not that the machine "does the accounting". The value is that it clears repetitive fog around the work.
 

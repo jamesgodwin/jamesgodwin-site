@@ -13,7 +13,7 @@ const reflections = {
     body: 'Before adding another strategy, notice what has tightened: your breath, your pace, or the range of options you can perceive.',
     nextMove: 'Let your next decision wait for one unforced exhale.',
     command: 'diagnostic',
-    action: 'Explore the Executive State Diagnostic'
+    action: 'Explore Return to Stillness'
   },
   team: {
     label: 'In a team',

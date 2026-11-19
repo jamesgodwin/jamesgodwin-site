@@ -1,0 +1,17 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ProjectCaseStudy from '../../components/site/ProjectCaseStudy.astro';
+import metadata from '../../siteMetadata';
+const project={
+ name:'True Essence',phone:true,logo:'/trueessence-logo.svg',title:'A daily return to stillness.',
+ summary:'A daily space for reflection, guided practice and writing. Shaped by my Tao reading and Tai Chi practice, True Essence begins with the idea that you’re not broken. You’ve simply forgotten.',
+ role:'Product design · Web development · Reflective experience',website:'https://trueessence.space/',
+ hero:'/portfolio/true-essence-practice.webp',heroAlt:'True Essence on a phone introducing daily reflection, guided practice, writing and the Sage',heroCaption:'A short introduction to the daily practice, one screen at a time.',
+ sections:[
+ {label:'The starting point',title:'Begin with what is already there.',paragraphs:['True Essence grew from my daily Tao reading and what I have learned through Tai Chi. Self-help can leave you feeling that you are broken and need to be fixed. I wanted to begin somewhere gentler.','For me, returning to the breath and stillness creates room to notice what is already there. The intention was to turn that personal practice into a daily journey someone else could make space for.'],links:[{href:'/dantian',label:'The practice behind True Essence'}]},
+ {label:'The daily journey',title:'Small steps. Consistently applied.',paragraphs:['The experience brings together a short reflection, a guided practice and a space to think and write. A numbered sequence makes the current step visible, while the reading has room to breathe.','The design gives each part of the journey its own space. Rather than asking someone to take everything in at once, it offers one place to pause before moving on.']},
+ {label:'The Sage',title:'A conversation around your reflection.',paragraphs:['Writing can be a starting point for a further conversation. The Sage responds to the reflection and offers a question to explore, keeping the exchange close to what the person has just written.','The screen keeps the original words visible alongside the response. The aim is to support reflection and give someone room to consider their own experience.'],image:'/portfolio/true-essence-sage.webp',alt:'True Essence phone screen showing a saved reflection and a follow-up question from the Sage',width:1170,height:2532,caption:'A saved reflection and the Sage’s follow-up question, kept together in the same flow.'}
+ ]};
+const pageMetadata={...metadata.defaultMetadata,title:'True Essence | James Godwin',description:project.summary,url:metadata.siteUrl+'/work/true-essence'};
+---
+<SiteLayout metadata={pageMetadata} current="work"><ProjectCaseStudy project={project}/></SiteLayout>

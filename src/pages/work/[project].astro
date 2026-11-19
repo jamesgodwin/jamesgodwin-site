@@ -1,0 +1,9 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { projects } from '../../portfolio.js';
+import metadata from '../../siteMetadata';
+export function getStaticPaths(){return projects.filter(p=>p.url.startsWith('/') && !['tapscribe','gratefulfor','ai-ching','ai-ching-website','typescoop','true-essence','harmonic-echo','taoist-breath','between-breaths','roof-ops','capevision','osteopathy-practice','dantian'].includes(p.slug)).map(project=>({params:{project:project.slug},props:{project}}));}
+const { project }=Astro.props;
+const pageMetadata={...metadata.defaultMetadata,title:project.name+' | James Godwin',description:project.story,url:metadata.siteUrl+project.url};
+---
+<SiteLayout metadata={pageMetadata} current="work"><header class="concept-intro">{project.kind && <p class="eyebrow">{project.kind}</p>}<h1>{project.name}</h1><p class="concept-lead">{project.title}</p></header><div class="case-feature"><div class="case-feature__copy"><h2>About the project</h2><p>{project.story}</p><h3>My contribution</h3><p>{project.kind === 'Client system' ? 'Design, development and ongoing work on the practice’s operational tools.' : 'Product design and development, from the original idea through the working experience.'}</p>{project.productUrl&&<a href={project.productUrl}>Visit {project.name} →</a>}<a href="/apps">Explore all my apps →</a></div><div class="case-feature__visual">{project.image && <img src={project.image} alt={project.name+' preview'} width="800" height="540"/>}</div></div><div class="concept-invitation"><a href="/">← Back to the portfolio</a><a href="/contact?about=product-clarity">Talk about your product →</a></div></SiteLayout>

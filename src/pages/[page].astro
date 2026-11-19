@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import ContactPage from '../components/ContactPage.astro';
+import AppsIndex from '../components/site/AppsIndex.astro';
 import Action from '../components/ui/Action.astro';
 import PageHero from '../components/ui/PageHero.astro';
 import ContentProse from '../components/ui/ContentProse.astro';
@@ -16,8 +17,8 @@ const body = route.content.replace(/(<img[^>]+src=")(?!(?:https?:)?\/)([^"]+)/g,
 <article class:list={['site-page',p?.bodyClassName]} data-command={command}>
   <Action recipe="back" href="/">← Home</Action>
   <PageHero title={heading} presentation={p} command={command} />
-  <ContentProse>
+  {command === 'apps' ? <AppsIndex/> : <ContentProse>
     {command==='contact' || command==='workshop-enquiry' ? <ContactPage workshop={command==='workshop-enquiry'} /> : command==='sanctuary' ? <p><a href="https://trueessence.space/" target="_blank" rel="noopener noreferrer">Continue to True Essence</a></p> : <Fragment set:html={body} />}
-  </ContentProse>
+  </ContentProse>}
 </article>
 </SiteLayout>

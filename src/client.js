@@ -7,7 +7,7 @@ import themes from './themes';
 import unlearn from './outputs/unlearn';
 import { getContactIntentFromSearch, getContactIntentLabel } from './contactIntent';
 
-const paths = { diagnostic:'/executive-state-diagnostic', 'little-panda':'/little-panda', 'workshop-enquiry':'/contact?about=workshop' };
+const paths = { diagnostic:'/return-to-stillness', 'little-panda':'/little-panda', 'workshop-enquiry':'/contact?about=workshop' };
 const navigate = command => {
   if (command === 'sanctuary') { window.open('https://trueessence.space/', '_blank', 'noopener,noreferrer'); return; }
   location.assign(paths[command] || `/${command}`);
@@ -61,7 +61,7 @@ let intent='general';
 if (contact) {
   intent = contact.dataset.workshop === 'true' ? 'workshop' : getContactIntentFromSearch(location.search);
   const copy = {
-    diagnostic:'If you want to request an Executive State Diagnostic, reach out directly using the options below. I respond personally within 24 hours.',
+    diagnostic:'If you want to ask about Return to Stillness, reach out directly using the options below. I respond personally within 24 hours.',
     workshop:'If you want to explore a Stillness Under Pressure workshop for your team, reach out directly using the options below. I respond personally within 24 hours.',
     'workflow-system':'If you want to ask about a workflow system, start with one of the direct contact options below.',
     'product-clarity':'Tell me what your product does, where people get stuck and what you want to improve. I respond personally.'

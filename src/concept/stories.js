@@ -7,7 +7,7 @@ export const stories = [
  benStory,
  qualityStory,
  {
-  id:'local',title:'Transcription stays local.',context:'TapScribe · My own product',
+  id:'local',title:'Transcription stays local.',context:'TapScribe',
   summary:'In my own recording app, I found a moment where people could be left stuck without an explanation.',
   image:local,alt:'TapScribe Library showing a recorded meeting and a local transcript.',
   contribution:'Native app · Local AI · Recovery states · Accessibility',

@@ -1,0 +1,33 @@
+{
+  "reviewed": "2026-11-19",
+  "scope": "All 24 supplied paintings visually reviewed; full-width near-white top/bottom bands removed from web derivatives only. White painted backgrounds beside subjects retained.",
+  "crops": [
+    {
+      "id": "an-african-smile",
+      "sourceSize": [
+        750,
+        1334
+      ],
+      "crop": [
+        0,
+        83,
+        750,
+        1034
+      ]
+    },
+    {
+      "id": "andrew",
+      "sourceSize": [
+        750,
+        1334
+      ],
+      "crop": [
+        0,
+        53,
+        750,
+        1281
+      ]
+    }
+  ],
+  "originals": "Unchanged in artwork/ and user Desktop folder."
+}

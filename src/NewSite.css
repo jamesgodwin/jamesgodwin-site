@@ -424,7 +424,8 @@ body.theme-void.image-theme.content-visible .background-container {
   margin: var(--space-18) 0;
 }
 
-.book-card h4 {
+.book-card h4,
+.route-page__body .book-card h4 {
   margin: 0 0 var(--space-10);
 }
 

@@ -13,6 +13,12 @@ const philosophyOutput = `
 <hr>
 <h3>Two parts of one life</h3>
 <p>Designing and building software is my professional work. Tai Chi is a long-standing practice that shapes how I observe, decide and work with people.</p>
-<p>Both reward close attention to what is actually happening.</p>`;
+<p>Both reward close attention to what is actually happening.</p>
+<p>Dantian brings my teaching to the web and connects this practice with the products I build. <a href="/dantian">Read the Dantian story →</a></p>
+<hr>
+<h3>Explore it in practice</h3>
+<p>I share this through <a href="/return-to-stillness">Return to Stillness</a>, a one to one session exploring breath, posture and attention, and <a href="/workshops">Stillness Under Pressure</a>, a workshop for teams.</p>
+<p>You can also see how I bring that attention into <a href="/uxui">product design and development</a>, or explore the <a href="/#work">work in my portfolio</a>.</p>
+`;
 
 export default philosophyOutput;

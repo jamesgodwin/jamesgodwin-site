@@ -1,6 +1,7 @@
 ---
 title: "Some Things Need Roots Before They Need an Audience"
 date: "2026-09-01"
+updated: "2026-11-19"
 category: "Reflection"
 lead: "Matching the visibility of an idea to the kind of evidence it needs next."
 cover: "../../assets/writing/some-things-need-roots-before-an-audience-cover.png"
@@ -68,4 +69,4 @@ Some things do need an audience. But first they may need roots, a useful witness
 
 What are you currently making visible, and what might still need time to take root?
 
-Source text, *Han Feizi*, “Difficulty of Persuasion”: https://ctext.org/hanfeizi/shuo-nan
+Source text from [*Han Feizi*, “Difficulty of Persuasion”](https://ctext.org/hanfeizi/shuo-nan).

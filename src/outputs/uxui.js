@@ -14,7 +14,7 @@ const uxuiOutput = `<h3>When the product is almost there</h3>
 <h3 id="work-example">From prototype to a working app</h3>
 <p>Ben had used AI to prototype staff scoring for his roofing business. I connected staff records, calculations, supervisor access and deployment. The app later grew to include quality control and project measurements.</p>
 <p>In client-reported feedback from June 2026, Ben said supervisors found the app easy to use and that it gave him clearer visibility into the work.</p>
-<p><a href="/work/crew-scores">Read Ben’s story →</a> · <a href="/systems#client-example">Read his feedback</a></p>
+<p><a href="/work/roof-ops">Read Ben’s story →</a> · <a href="/systems#client-example">Read his feedback</a></p>
 <hr>
 <p><a href="/contact?about=product-clarity">Talk about your product →</a></p>
 <p>For internal tools and field-to-office workflows, explore <a href="/systems">Workflow Systems</a>.</p>`;

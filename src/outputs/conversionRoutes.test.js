@@ -12,7 +12,7 @@ describe('conversion route outputs', () => {
     expect(diagnosticOutput).toContain('/contact?about=diagnostic');
     expect(pagePresentation.diagnostic.facts).not.toContain('$350 USD');
     expect(pagePresentation.diagnostic.facts).toContain('One-to-one practice');
-    expect(diagnosticOutput).toContain('Request a private session');
+    expect(diagnosticOutput).toContain('Ask about Return to Stillness');
     expect(diagnosticOutput).not.toContain('contact form');
     expect(diagnosticOutput).not.toContain('form-name" value="executive-state-diagnostic"');
   });
@@ -25,9 +25,9 @@ describe('conversion route outputs', () => {
   test('systems routes workflow enquiries through the shared contact path', () => {
     expect(systemsOutput).not.toContain('https://wa.me/27686038834');
     expect(systemsOutput).toContain('/contact?about=workflow-system');
-    expect(pagePresentation.systems.facts).toContain('R7,500 ZAR audit');
-    expect(systemsOutput).toContain('R7,500 ZAR');
-    expect(systemsOutput).toContain('R1,500 ZAR per month');
+    expect(pagePresentation.systems.facts).toContain('Workflow audit');
+    expect(systemsOutput).not.toMatch(/R[\d,]+|ZAR/);
+    expect(systemsOutput).not.toContain('fixed price');
   });
 
   test('product page explains the work and leads to a labelled product enquiry', () => {

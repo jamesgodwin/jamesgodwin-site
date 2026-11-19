@@ -1,6 +1,7 @@
 ---
 title: "The Report AI Should Produce Before You Trust Its UI"
 date: "2026-07-28"
+updated: "2026-11-19"
 category: "Design & development"
 lead: "A convincing screen needs an honest record of components, gaps and assumptions."
 cover: "../../assets/writing/the-report-ai-should-produce-before-you-trust-its-ui-cover.png"
@@ -44,7 +45,7 @@ This is especially important when AI is introduced into a busy product team. Und
 
 The report creates a little more room in that moment. It asks the team to see the boundary between evidence and inference. That is not a refusal to move quickly. It is a way of moving quickly without asking someone to repair the consequences later.
 
-The practical version can stay simple. Before an agent-generated UI moves forward, ask for five things:
+The practical version can stay simple. Before an agent-generated UI moves forward, ask for these five things.
 
 - the approved components it used
 - the patterns it inferred

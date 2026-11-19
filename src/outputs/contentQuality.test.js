@@ -11,13 +11,13 @@ import workshopsOutput from './workshops';
 
 describe('public content quality', () => {
   test('keeps claims and commitments specific to what the site can support', () => {
-    expect(aboutOutput).toContain('products or workflows are almost there');
+    expect(aboutOutput).toContain("Most of my work starts with an idea that isn't quite there yet.");
     expect(aboutOutput).toContain('href="/uxui"');
     expect(aboutOutput).toContain('href="/systems#client-example"');
     expect(aboutOutput).toContain('id="how-i-work"');
     expect(aboutOutput).toContain('Product and workflow work');
     expect(aboutOutput).toContain('Practice and workshops');
-    expect(aboutOutput).toContain('href="/executive-state-diagnostic"');
+    expect(aboutOutput).toContain('href="/return-to-stillness"');
     expect(aboutOutput).toContain('href="/workshops"');
     expect(aboutOutput).toContain('https://trueessence.space/');
     expect(aboutOutput).toContain('href="/books"');
@@ -27,14 +27,14 @@ describe('public content quality', () => {
     expect(aboutOutput).not.toContain('Available commands:');
     expect(aboutOutput).not.toContain('strategy problems often begin as state problems');
 
-    expect(nowOutput).toContain('Updated 20 October 2026');
+    expect(nowOutput).toContain('Updated 19 November 2026');
     expect(nowOutput).toContain('href="/uxui"');
     expect(nowOutput).toContain('href="/systems"');
     expect(nowOutput).toContain('TapScribe');
     expect(nowOutput).not.toContain('private pilot');
     expect(nowOutput).toContain('Plumbline with IIIMPACT');
     expect(nowOutput).toContain('in progress');
-    expect(nowOutput).toContain('Tai Chi and dantian breathing practice');
+    expect(nowOutput).toContain('Tai Chi and Taoist breathing practice');
     expect(nowOutput).not.toContain('weekly LinkedIn leadership series');
     expect(nowOutput).not.toContain('Available commands:');
 

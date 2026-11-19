@@ -1,7 +1,7 @@
 ---
 title: "Most Businesses Don't Have an AI Problem"
 date: "2026-10-05"
-updated: "2026-10-20"
+updated: "2026-11-19"
 category: "Business systems"
 lead: "Before adding AI, make the decisions and handoffs in the actual work visible."
 cover: "../../assets/notes/most-businesses-dont-have-an-ai-problem.jpg"
@@ -11,7 +11,7 @@ postId: "LI-00107"
 draft: false
 sourceHash: "a8f9b19caf9bea75f1675ae7abee80a87791ea843687a53d46a3a616a5e41e06"
 importedBodyHash: "6d188c36dc555b4569d84a7cf514b06577c9f676f0c293f35ae9649a807ceedc"
-relatedWork: {"href": "/work/quality-control", "label": "The Roof Ops quality-control story"}
+relatedWork: {"href": "/work/roof-ops", "label": "The Roof Ops quality-control story"}
 ---
 
 An internal app for a service business had to answer an ordinary question. What was happening on each job, and who could see it?

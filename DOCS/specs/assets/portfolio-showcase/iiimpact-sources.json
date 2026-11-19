@@ -1,0 +1,13 @@
+{
+  "retrieved": "2026-11-19",
+  "page": "https://iiimpact.ai/",
+  "images": [
+    "https://iiimpact.ai/art/sector-energy.jpg?v=6",
+    "https://iiimpact.ai/art/sector-enterprise.jpg"
+  ],
+  "attribution": "IIIMPACT website sector artwork, not James\u2019s own design or client screenshots.",
+  "roleSource": "James: contract senior UX consulting and front-end work across oil/gas, engineering, cybersecurity and startups.",
+  "navigation": "Thumbnail selects feature; feature CTA links externally. No local case page.",
+  "selectedArtwork": "https://iiimpact.ai/og.jpg?v=6",
+  "revision": "Replaced small paired sector illustrations with single full-bleed1200x630 official social portrait, optimised WebP; clear IIIMPACT overlay."
+}

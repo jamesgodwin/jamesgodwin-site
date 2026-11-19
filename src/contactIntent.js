@@ -1,5 +1,5 @@
 const ALLOWED_CONTACT_INTENTS = {
-  diagnostic: 'Executive State Diagnostic',
+  diagnostic: 'Return to Stillness',
   workshop: 'Stillness Under Pressure Workshop',
   'workflow-system': 'Workflow System',
   'product-clarity': 'Product Clarity',

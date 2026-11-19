@@ -14,18 +14,18 @@ const taoismOutput = `
 <p>Tai Chi gives me a practical way to work with that pattern. It develops awareness of tension as it arises, strengthens the ability to relax without collapsing, and trains steadiness as conditions accelerate.</p>
 <hr>
 <h3>In everyday life</h3>
-<p>Tai Chi can help people practise:</p>
+<p>Tai Chi offers a way to practise the following.</p>
 <ul class="legal-list"><li>Recognising escalation earlier</li><li>Softening defensive posture</li><li>Slowing reactive speech</li><li>Working with the breath under load</li><li>Remaining present in difficult conversations</li></ul>
 <p>These are things to practise and observe in daily life.</p>
 <hr>
-<h3>Introduction sessions</h3>
-<p>I offer Tai Chi introduction sessions for people who want to experience this work directly.</p>
-<p>In one hour, we explore simple principles of posture and breathing, with time to notice how they feel.</p>
-<p><a href="/contact">Contact me to enquire about upcoming sessions.</a></p>
+<h3>Explore the practice</h3>
+<p>If you'd like to try this for yourself, <a href="/return-to-stillness">Return to Stillness</a> is a one hour, one to one session. We explore breath, posture and simple movement, with time to notice how they feel. No Tai Chi experience is needed.</p>
+<p>For teams, <a href="/workshops">Stillness Under Pressure</a> brings the practice into working life. It grew out of Just Being, the programme I created for engineers at JUMO, and offers a way to notice pressure before it takes over a conversation.</p>
 <hr>
+<p>Dantian brings my teaching to the web and connects this practice with the products I build. <a href="/dantian">Read the Dantian story →</a></p>
 <h3>Books</h3>
 <p><strong>The Tao of Pooh</strong> by Benjamin Hoff offers a simple introduction to Taoist principles through story.</p>
 <p>My own <strong>The Flow of Life, 365 Days with Tao</strong> is a daily reflection companion drawing from Taoist thought and the I Ching. <a href="/books">Explore my books →</a></p>
-<hr><p class="commands-text"><span class="commands">Available commands:</span> help, diagnostic, workshop-enquiry, about, workshops, apps, books, sanctuary, contact, taoism, now, paintings, philosophy, uxui, legal, themes (default, dark, stillness, mountains, essence, tao, zen, snow, void)</p>`;
+<hr><p class="commands-text"><span class="commands">Available commands</span> help, diagnostic, workshop-enquiry, about, workshops, apps, books, sanctuary, contact, taoism, now, paintings, philosophy, uxui, legal, themes (default, dark, stillness, mountains, essence, tao, zen, snow, void)</p>`;
 
 export default taoismOutput;

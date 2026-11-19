@@ -1,6 +1,7 @@
 ---
 title: "Decentralisation Is Not About Crypto"
 date: "2026-05-31"
+updated: "2026-11-19"
 category: "Reflection"
 lead: "Thinking about trust, coordination and leadership without a single centre of control."
 cover: "../../assets/writing/decentralisation-is-not-about-crypto-cover.png"
@@ -16,7 +17,7 @@ When people dismiss cryptocurrency, I often find myself wanting to slow the conv
 
 But because I think most people are stopping at the wrong layer.
 
-Crypto may be the doorway, but decentralisation is the deeper mind shift: learning to imagine order without a centre of control.
+Crypto may be the doorway, but decentralisation asks us to imagine order without a centre of control.
 
 The deeper question is not whether someone should buy Bitcoin, trade tokens, or believe in a particular blockchain. The deeper question is what happens when a civilisation built around centres of authority begins to imagine order without a familiar centre of control.
 

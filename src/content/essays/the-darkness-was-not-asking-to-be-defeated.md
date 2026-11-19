@@ -1,6 +1,7 @@
 ---
 title: "The Darkness Was Not Asking to Be Defeated"
 date: "2026-08-25"
+updated: "2026-11-19"
 category: "Reflection"
 lead: "Reconsidering light, darkness and the expectation of permanent balance."
 cover: "../../assets/writing/the-darkness-was-not-asking-to-be-defeated-cover.png"
@@ -62,4 +63,4 @@ We do not become whole by choosing the light. We become whole when we stop aband
 
 What season of your life are you treating as a failure simply because it does not look like summer?
 
-TangSaying channel: https://www.youtube.com/@TangSaying
+[TangSaying channel](https://www.youtube.com/@TangSaying)

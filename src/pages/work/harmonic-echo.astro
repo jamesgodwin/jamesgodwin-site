@@ -1,0 +1,19 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ProjectCaseStudy from '../../components/site/ProjectCaseStudy.astro';
+import metadata from '../../siteMetadata';
+const project={
+ name:'Harmonic Echo',slug:'harmonic-echo',logo:'/portfolio/harmonic-echo-icon.webp',title:'See your humming take shape.',
+ summary:'A short humming practice becomes a personal piece of generative art. Harmonic Echo brings sound, colour and geometry together in a quiet creative pause on your iPhone.',
+ role:'Product design · iPhone development · Audio interaction · Generative art',
+ website:'https://apps.apple.com/za/app/harmonic-echo/id6752900195',
+ hero:'/portfolio/harmonic-echo-phones.webp',heroAlt:'Two iPhones showing Harmonic Echo’s introduction and colourful geometry during a humming session',heroCaption:'Your voice and the artwork share one simple, focused experience.',
+ sections:[
+ {label:'The starting point',title:'Curiosity about humming became something visual.',paragraphs:['Harmonic Echo began with my curiosity about humming and the idea of watching sound take shape. I wanted a brief practice that could also leave you with something personal to keep.','The intention is to offer a creative pause. Hum comfortably, notice the sound and watch an image develop. There is no need to aim for a particular note or make it a performance.']},
+ {label:'The artwork',title:'A voice, expressed through colour and geometry.',paragraphs:['The artwork combines different arrangements of rings, lines, fragments and colour. Each image gives the sound a visual form, turning a session into something you can look back at.','The appeal for me is the connection between making a sound and making an image. The artwork becomes another reason to stay curious about the practice.'],image:'/portfolio/harmonic-echo-artwork.webp',alt:'Six examples of Harmonic Echo artwork with colourful circular geometry, fine connecting lines and scattered dots',width:490,height:370,caption:'Six pieces of artwork created with Harmonic Echo.'},
+ {label:'The experience',title:'A little room to hum.',paragraphs:['The interface keeps attention on the session and the evolving image. It brings together the sound of your voice, the passing time and a visual response.','Humming is the interaction, rather than a score to chase. The product is designed around comfortable effort and a short moment of attention, with audio analysis kept on the device.']},
+ {label:'Continuing the work',title:'Still exploring what a voice can create.',paragraphs:['I am continuing to refine the visual experience and how it responds to humming, exploring how the artwork can feel more closely connected to the person making the sound.','The design challenge is to make that relationship feel immediate and personal, while keeping the experience simple enough to return to.']}
+ ]};
+const pageMetadata={...metadata.defaultMetadata,title:'Harmonic Echo | James Godwin',description:project.summary,url:metadata.siteUrl+'/work/harmonic-echo'};
+---
+<SiteLayout metadata={pageMetadata} current="work"><ProjectCaseStudy project={project}/></SiteLayout>

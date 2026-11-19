@@ -1,0 +1,4 @@
+---
+const { thumbnail=false, labelLead, src="/portfolio/iiimpact-portrait.webp", label="IIIMPACT", alt="Black and red portrait artwork from the IIIMPACT website" }=Astro.props;
+---
+<div class:list={["iiimpact-artwork",{"iiimpact-artwork--thumbnail":thumbnail,"iiimpact-artwork--teaching":Boolean(labelLead)}]} aria-hidden={thumbnail ? 'true' : undefined}><img src={src} alt={thumbnail ? '' : alt} width="1200" height="630" loading="lazy"/><strong>{labelLead && <small>{labelLead}</small>}{label}</strong></div>

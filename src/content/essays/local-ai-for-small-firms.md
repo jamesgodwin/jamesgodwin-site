@@ -1,6 +1,7 @@
 ---
 title: "How a Small Firm Could Use AI Without Sending Client Documents to the Cloud"
 date: "2026-06-09"
+updated: "2026-11-19"
 category: "AI & work"
 lead: "A practical starting point for using AI with sensitive client documents."
 cover: "../../assets/writing/local-ai-for-small-firms-cover.png"
@@ -50,7 +51,7 @@ The important part is that the approved documents stay inside the controlled env
 
 For example, the firm creates a temporary project workspace using copied sample or approved client documents. The source-of-truth files remain untouched. The workspace may contain correspondence, meeting notes, reports, contracts, policy documents, or a collection of PDFs related to one matter or project.
 
-The local AI can then help with practical work such as:
+The local AI can then help with practical tasks like these.
 
 - Summarising the document set
 - Extracting dates, people, actions, and missing information

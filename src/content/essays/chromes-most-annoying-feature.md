@@ -1,6 +1,7 @@
 ---
 title: "Chrome's Most Annoying Feature Is Trying to Help Me"
 date: "2026-08-11"
+updated: "2026-11-19"
 category: "Design & development"
 lead: "When protective friction delays an action without explaining the risk."
 cover: "../../assets/writing/chromes-most-annoying-feature-cover.png"
@@ -36,7 +37,7 @@ Modern browsers can restore a surprising amount after they reopen. Ordinary tabs
 
 That difference gives Chrome enough information to make a better decision. Most quit requests could remain immediate because the browser has nothing unusual to protect. When meaningful non-restorable state exists, Chrome could show a conditional confirmation that explains the consequence.
 
-The dialogue does not need to be complicated. It could say that quitting will close an incognito window, interrupt an active download, or discard unsaved form content where that state can be detected. The choices could remain familiar: `Cancel` and `Quit Chrome`.
+The dialogue does not need to be complicated. It could say that quitting will close an incognito window, interrupt an active download, or discard unsaved form content where that state can be detected. The familiar choices of `Cancel` and `Quit Chrome` would be enough.
 
 The goal would not be to inventory a person's private browsing activity in a warning box. A careful design could use restrained categories and counts rather than revealing page titles or sensitive content. The important change is that the friction would be tied to actual risk and would help the person make a more informed decision.
 

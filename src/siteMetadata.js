@@ -2,7 +2,7 @@ const siteUrl = 'https://jamesgodwin.me';
 
 const defaultMetadata = {
   title: 'James Godwin | Product Design and Full-Stack Development',
-  description: 'I help founders finish fast-built and AI-assisted products, closing UX, accessibility and implementation gaps across design, front-end, back-end and deployment.',
+  description: 'I help founders and teams shape ideas, bring them to fruition and get existing builds over the line, through product direction, UX and hands-on development.',
   image: `${siteUrl}/og-case-shelf.png`,
   imageWidth: 1200,
   imageHeight: 630,
@@ -13,17 +13,17 @@ const defaultMetadata = {
 const pageMetadata = {
   about: {
     title: 'About James Godwin | Product Designer and Full-Stack Developer',
-    description: 'Product designer and full-stack developer helping founders connect UX, accessibility and implementation. Based in Sedgefield, South Africa.',
+    description: "I help founders and teams find a direction, shape a product and get it into people's hands. Based in Sedgefield, South Africa.",
     path: '/about'
   },
   diagnostic: {
-    title: 'Executive State Diagnostic | James Godwin',
-    description: 'A private 45-minute introduction to James Godwin\'s personal Tai Chi and Qigong practice, working with breath, posture, attention and the dantian.',
-    path: '/executive-state-diagnostic'
+    title: 'Return to Stillness | James Godwin',
+    description: 'A private one-hour session drawing on James Godwin’s personal Tai Chi and Qigong practice, exploring breath, posture, attention and the dantian.',
+    path: '/return-to-stillness'
   },
   systems: {
     title: 'Simple Workflow Systems for Service Businesses | James Godwin',
-    description: 'Fixed-price workflow audits and internal apps for service businesses and field teams. Bring jobs, records and handovers into one place.',
+    description: 'Workflow audits and internal apps for service businesses and field teams. Bring jobs, records and handovers into one place.',
     path: '/systems'
   },
   workshops: {
@@ -68,7 +68,7 @@ const pageMetadata = {
   },
   now: {
     title: 'Now | James Godwin',
-    description: 'What James Godwin is working on now, from client apps and Plumbline with IIIMPACT to TapScribe, TypeScoop, writing and Tai Chi.',
+    description: 'What James Godwin is working on in November 2026, including client products, Plumbline with IIIMPACT, Mac apps, AI Ching, writing and Tai Chi teaching.',
     path: '/now'
   },
   paintings: {
@@ -117,9 +117,6 @@ const getMetadataForCommand = (commandName) => {
 };
 
 const sectionMetadata=Object.fromEntries(Object.entries({
- work:{title:'Work | Product Design and Development | James Godwin',description:'Stories of helping people turn stalled products and scattered workflows into working apps, across design, development and deployment.',path:'/work'},
- crewScores:{title:'Daily scores. Clear totals. | A client story | James Godwin',description:'Ben had started an app with AI and needed help connecting daily scores, useful totals and deployment. A story of getting the pieces working together.',path:'/work/crew-scores'},
- qualityControl:{title:'Proof of a job done. | A client story | James Godwin',description:'How Ben’s roofing team brought paper checks and site photos into editable procedure templates and a shared quality-control record.',path:'/work/quality-control'},
  tapscribe:{title:'Private conversations. Fewer steps. | TapScribe | James Godwin',description:'How a coach’s disconnected local recording and transcription workflow became TapScribe, a native Mac app.',path:'/work/tapscribe'},
  plumbline:{title:'One design system. Across the tools. | Plumbline with IIIMPACT | James Godwin',description:'Design systems rooted in client code, with AI Ching as a test case. Plumbline with IIIMPACT; design-tool projections and developer plugins in progress.',path:'/work/plumbline'},
  essays:{title:'Essays | James Godwin',description:'Essays on building software, working with AI, design systems and the things I keep coming back to.',path:'/essays'},

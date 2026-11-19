@@ -272,3 +272,14 @@ html[data-design="case-study"] {
     --type-ring-tracking: var(--tracking-0_08em);
   }
 }
+
+:root {
+ --radius-painting: 16px;
+ --shadow-painting: 0 8px 28px rgba(23,37,31,0.12);
+ --shadow-painting-caption: 0 2px 10px rgba(23,37,31,0.08);
+}
+
+:root { --size-portfolio-feature: 440px; --size-portfolio-mobile-copy: 340px; --size-portfolio-image: 320px; }
+:root { --filter-app-depth: drop-shadow(0 12px 16px rgba(23,37,31,0.18)); }
+
+:root { --radius-phone-frame: 24px; --border-phone-frame: 5px solid #202520; }

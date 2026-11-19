@@ -1,0 +1,4 @@
+---
+const { screens, thumbnail=false }=Astro.props;
+---
+<div class:list={["phone-screens",{"phone-screens--thumbnail":thumbnail}]}>{screens.map(screen=><span class="portfolio-phone"><img src={screen.src} alt={thumbnail ? '' : screen.alt} width="1170" height="2532" loading="lazy"/></span>)}</div>

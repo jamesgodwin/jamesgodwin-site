@@ -2,6 +2,7 @@
 coverQuality: 75
 title: "A ban is not a workflow. Pressure routes around it."
 date: "2026-06-30"
+updated: "2026-11-19"
 category: "AI & work"
 lead: "Why an approved path matters more than a blanket ban."
 cover: "../../assets/writing/a-ban-is-not-a-workflow-cover.png"
@@ -15,7 +16,7 @@ importedBodyHash: "915384004cf86d5e5e0999838d61310a84edd75e505fd12a60c5417984018
 
 One of the most common early reactions to AI inside a professional business is simple, ban ChatGPT.
 
-That reaction is understandable. If a law firm, financial practice, accounting team, health business, HR function, or consulting group handles sensitive material every day, public AI tools can feel like an obvious new exposure. The owner or partner imagines confidential documents being pasted into a cloud service, with unclear retention, unclear routing, and unclear downstream consequences. So the quickest response is often a policy line that says some version of: do not use it.
+That reaction is understandable. If a law firm, financial practice, accounting team, health business, HR function, or consulting group handles sensitive material every day, public AI tools can feel like an obvious new exposure. The owner or partner imagines confidential documents being pasted into a cloud service, with unclear retention, unclear routing, and unclear downstream consequences. So the quickest response is often a policy telling people not to use it.
 
 The problem is that a ban answers the technology question faster than it answers the workflow question.
 
@@ -43,7 +44,7 @@ That workflow is slower to set up than a ban, but far more believable in practic
 
 It also respects something important about human behaviour. Most people are not trying to create confidentiality risk. They are trying to finish work inside the time and complexity available to them. If the safest route is also unusable, the business should not be surprised when people drift toward the route that feels usable. A safer workflow works because it gives staff a path that is both clearer and more realistic under pressure.
 
-This is where many AI conversations become distorted by product language. People talk as if the key decision is choosing the right model. In most professional settings, the model is only one layer. The real design problem is the stack around it: hardware, permissions, approved folders, retrieval, templates, review rules, logging, output handling, and the practical boundaries of who can do what.
+This is where many AI conversations become distorted by product language. People talk as if the key decision is choosing the right model. In most professional settings, the model is only one layer. The real design problem is the stack around it, including hardware, permissions, approved folders, retrieval, templates, review rules, logging, output handling, and the practical boundaries of who can do what.
 
 That is why "banning ChatGPT" and "designing a safer workflow" are not opposite branding choices. They belong to two different levels of thought.
 
