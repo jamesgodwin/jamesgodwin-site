@@ -53,6 +53,12 @@ Do not load log or archive content during routine startup. Read specific histori
 
 For a missing reference, search narrowly for a moved or renamed equivalent and repair the link when the match is clear. Continue independent work. Surface unresolved gaps that affect the task; do not create a standalone log just to report a harmless broken link. If missing information prevents a correct next step, explain the dependency and ask only for what is needed.
 
+### Source handoff
+
+Use the Shared Context mapping in `DOCS/PROJECT.md` only when the task needs shared context or a Source update; read only the relevant current owners, not the whole vault. This repository retains detailed work, evidence, backlog and handoff authority.
+
+After a meaningful decision, outcome, blocker or supported lesson changes the shared picture, record it in its local owner first. Reread the mapped Source overview immediately before writing, merge a few dated sentences with the outcome, owning path/date, evidence actually checked, relevant revision or worktree, uncertainty and resumption route, then read the saved change back. Follow Source's mapped project-knowledge contract and use its handoff registry to distinguish configured routes from tested behaviour. Skip unchanged summaries and routine implementation detail. If Source is unavailable, leave a precise handover and continue independent project work; do not claim a completed rollup. This handoff adds no publishing, contact, deployment, sync, installation or other permissions.
+
 ## C. Work modes and development
 
 Infer the mode from the user's request. Do not require a formal mode selection.

@@ -90,3 +90,12 @@ The agreed sequence is website publication, HEY republication and James’s subs
 - `npm run build:catalogue` then `npm run preview:catalogue`: built catalogue at `http://127.0.0.1:4175/design-system/`, written separately to ignored `output/design-system/catalogue-build/`.
 - Default builds omit `/design-system/`; it is noindex, excluded from sitemap/navigation and loads no analytics or form scripts. `npm run test:catalogue` verifies the two built outputs.
 - `npm run check:design` checks tokens and recipe ownership; `npm run test:design` tests the guard, including planted violations. Commands and maintenance contracts: [use the design system](runbooks/use-design-system.md).
+
+## Shared Context
+
+Source holds this project's cross-project overview; detailed implementation, work status and evidence remain in this repository's existing owners.
+
+- Source vault root: `/Users/nitro/Library/CloudStorage/Dropbox/Source`.
+- Project overview: [shared Source card](</Users/nitro/Library/CloudStorage/Dropbox/Source/Projects/James Godwin Website/INDEX.md>).
+- Rollup policy: [Shared Project Knowledge](</Users/nitro/Library/CloudStorage/Dropbox/Source/Projects/Shared Project Knowledge.md>).
+- Adoption evidence: [Source Handoff Registry](</Users/nitro/Library/CloudStorage/Dropbox/Source/Projects/Source Handoff Registry.md>).
